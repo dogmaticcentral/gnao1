@@ -1,0 +1,13 @@
+scratch/*
+downloads/*
+raw_tables/*
+
+*.ods
+*.ttf
+*.csv
+*.tsv
+*.pyc
+*.db
+*.txt
+*.html
+.idea/*
