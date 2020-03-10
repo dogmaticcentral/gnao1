@@ -1,5 +1,5 @@
 
-// compile with  g++ -o  tinyx tinyxml2.cpp db_parse.cpp  -O3
+// compile with  g++ -o  readb tinyxml2.cpp db_parse.cpp  -O3
 
 #include <stdio.h>
 #include "tinyxml2.h"
@@ -18,23 +18,29 @@ using namespace std;
 void parseDrug(XMLNode *node) {
     XMLElement *e = node->ToElement();
     if(strcmp(e->Attribute("type"), "small molecule")) return; // otherwise we have all sorts of shit here, including fish
-    printf("%s  %s  %s\n", e->Value(), e->Attribute("type"), node->FirstChildElement("name")->GetText());
+    printf("%s\t%s\n", e->Value(),  node->FirstChildElement("name")->GetText());
     for(XMLNode *sib = node->FirstChildElement("synonyms")->FirstChildElement("synonym"); sib; sib = sib->NextSibling()){
-          printf("     synonym %s\n", sib->ToElement()->GetText());
+          printf("     synonym\t%s\n", sib->ToElement()->GetText());
     }
     for(XMLNode *sib = node->FirstChildElement("products")->FirstChildElement("product"); sib; sib = sib->NextSibling()){
-          printf("     product %s\n", sib->FirstChildElement("name")->ToElement()->GetText());
+          printf("     product\t%s\n", sib->FirstChildElement("name")->ToElement()->GetText());
     }
     for(XMLNode *sib = node->FirstChildElement("targets")->FirstChildElement("target"); sib; sib = sib->NextSibling()){
-          printf("     target %s\n",  sib->FirstChildElement("name")->ToElement()->GetText());
-          printf("            id %s\n",  sib->FirstChildElement("id")->ToElement()->GetText());
+          printf("     target\t%s\n",  sib->FirstChildElement("name")->ToElement()->GetText());
+          printf("            identifier\t%s\n",  sib->FirstChildElement("id")->ToElement()->GetText());
+          if (  sib->FirstChildElement("polypeptide")
+                && sib->FirstChildElement("polypeptide")->FirstChildElement("gene-name")
+                && sib->FirstChildElement("polypeptide")->FirstChildElement("gene-name")->GetText() ) {
+                printf("            gene-name\t%s\n",   sib->FirstChildElement("polypeptide")->FirstChildElement("gene-name")->GetText() );
+          }
           for(XMLNode *nephew = sib->FirstChildElement("actions")->FirstChildElement("action");
                         nephew; nephew = nephew->NextSibling()){
-                printf("            action %s\n", nephew->ToElement()->GetText());
+                if ( nephew->ToElement()->GetText()) {
+                    printf("            action\t%s\n", nephew->ToElement()->GetText());
+                }
           }
     }
 
-    //exit(1);
 }
 
 
