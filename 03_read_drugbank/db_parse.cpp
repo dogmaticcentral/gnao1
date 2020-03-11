@@ -17,13 +17,16 @@ using namespace std;
 // and elements have attributes, text itd)
 void parseDrug(XMLNode *node) {
     XMLElement *e = node->ToElement();
-    if(strcmp(e->Attribute("type"), "small molecule")) return; // otherwise we have all sorts of shit here, including fish
+    // if(strcmp(e->Attribute("type"), "small molecule")) return; // otherwise we have all sorts of shit here, including fish
     printf("%s\t%s\n", e->Value(),  node->FirstChildElement("name")->GetText());
     for(XMLNode *sib = node->FirstChildElement("synonyms")->FirstChildElement("synonym"); sib; sib = sib->NextSibling()){
           printf("     synonym\t%s\n", sib->ToElement()->GetText());
     }
     for(XMLNode *sib = node->FirstChildElement("products")->FirstChildElement("product"); sib; sib = sib->NextSibling()){
           printf("     product\t%s\n", sib->FirstChildElement("name")->ToElement()->GetText());
+    }
+    for(XMLNode *sib = node->FirstChildElement("international-brands")->FirstChildElement("international-brand"); sib; sib = sib->NextSibling()){
+          printf("     brand\t%s\n", sib->FirstChildElement("name")->ToElement()->GetText());
     }
     for(XMLNode *sib = node->FirstChildElement("targets")->FirstChildElement("target"); sib; sib = sib->NextSibling()){
           printf("     target\t%s\n",  sib->FirstChildElement("name")->ToElement()->GetText());

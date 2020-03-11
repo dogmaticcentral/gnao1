@@ -19,11 +19,13 @@ def main():
 	drug_name = ""
 	target_name = ""
 	target = {}
+	d =0
 	for line in inf:
 		field = line.strip().split('\t')
 		if field[0] == "drug":
+			d += 1
 			# store targets for the previous name
-			if drug_name:
+			if drug_name and len(target)>0:
 				drug[drug_name]["targets"] = target
 			# new name
 			drug_name = field[1]
@@ -38,7 +40,7 @@ def main():
 					if field[0] == keyword and  field[1] and len(field[1])>0:
 						target[target_name][keyword] = field[1]
 			if drug_name:
-				for keyword in ["synonym", "product"]:
+				for keyword in ["synonym", "product", "brand"]:
 					if field[0] == keyword and  field[1] and len(field[1])>0:
 						plural = keyword+"s"
 						if plural not in drug[drug_name]:
@@ -49,14 +51,15 @@ def main():
 		if not data: continue # this is a stub entry (work in progress) from Databank
 
 		tgt_list= []
-		for tgt, tgt_info in data["targets"].items():
-			if "gene-name" in tgt_info:
-				tgt_info_chunk = tgt_info["gene-name"]
-			else:
-				tgt_info_chunk = tgt
-			if "action"  in tgt_info:
-				tgt_info_chunk += ":"+ tgt_info["action"].strip()
-			tgt_list.append(tgt_info_chunk)
+		if "targets" in data:
+			for tgt, tgt_info in data["targets"].items():
+				if "gene-name" in tgt_info:
+					tgt_info_chunk = tgt_info["gene-name"]
+				else:
+					tgt_info_chunk = tgt
+				if "action"  in tgt_info:
+					tgt_info_chunk += ":"+ tgt_info["action"].strip()
+				tgt_list.append(tgt_info_chunk)
 		name = name.replace("'","")
 		fixed_fields = {"name":name}
 		update_fields = {}
@@ -64,6 +67,8 @@ def main():
 			update_fields["synonyms"] = ";".join(list(data["synonyms"])).replace("'","")
 		if "products" in data:
 			update_fields["products"] = ";".join(list(data["products"])[:20]).replace("'","")
+		if "brands" in data:
+			update_fields["brands"] = ";".join(list(data["brands"])[:20]).replace("'","")
 		if tgt_list:
 			update_fields["targets"] = ";".join(tgt_list).replace("'","")
 		if not update_fields: continue
@@ -76,7 +81,6 @@ def main():
 				print(k,v)
 
 			exit()
-
 
 	cursor.close()
 	db.close()

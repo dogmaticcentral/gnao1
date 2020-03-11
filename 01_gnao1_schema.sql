@@ -36,6 +36,7 @@ CREATE TABLE `drugs` (
    `synonyms`  text CHARACTER SET utf8mb4 ,
    `products`  text CHARACTER SET utf8mb4,
    `targets`   text CHARACTER SET utf8mb4,
+   `brands`   text CHARACTER SET utf8mb4,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
