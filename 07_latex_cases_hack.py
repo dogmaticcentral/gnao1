@@ -1,4 +1,9 @@
 #!/usr/bin/python3 -u
+
+# this is a really bad idea - write the paper first,
+# then parse the latex table
+# a couple of years later
+
 import os
 import re
 
@@ -26,7 +31,7 @@ def parse_latex(infile):
 			sex = field[1]
 			pheno_short = field[2]
 			therapy = {}
-			if len(pheno_short)>2 or "not reported" in field[3]:
+			if  "not reported" in field[3]:
 				# the first are "MD+E" - need to review those manually
 				pass
 			else:
@@ -35,13 +40,40 @@ def parse_latex(infile):
 					if len(th) == 0: continue
 					if 'not treated' in th: continue
 					th = th.replace(";"," ").replace(".", " ").replace(",", " ").replace("  "," ").replace("'","")
-					th = th.replace(" and "," ")
-					if "no effect:" in th:
-						th = th.replace("no effect:","").strip()
-						therapy["treatment_ineff"+"_"+pheno_short] = th
-					else: # if it does not say anything it is probably effective
-						th = th.replace("effective:","").strip()
-						therapy['treatment_effective'+"_"+pheno_short] = th
+					th = th.replace("+", " ").replace(" and "," ")
+					if len(pheno_short)>2: # this is MD+E (or E+MD)
+						if "no effect:" in th:
+							th = th.replace("no effect:","").strip()
+							epi = []
+							md = []
+							for t in th.split():
+								[drug, pht] = t.split("_")
+								if len(drug)==0: continue
+								if pht=="E": epi.append(drug)
+								if pht=="MD": md.append(drug)
+							therapy["treatment_ineff_E"] = " ".join(epi)
+							therapy["treatment_ineff_MD"] = " ".join(md)
+
+						else: # if it does not say anything it is probably effective
+							th = th.replace("effective:","").strip()
+							epi = []
+							md = []
+							print(th)
+							for t in th.split():
+								[drug, pht] = t.split("_")
+								if len(drug)==0: continue
+								if pht=="E": epi.append(drug)
+								if pht=="MD": md.append(drug)
+							therapy["treatment_effective_E"] = " ".join(epi)
+							therapy["treatment_effective_MD"] = " ".join(md)
+
+					else:
+						if "no effect:" in th:
+							th = th.replace("no effect:","").strip()
+							therapy["treatment_ineff"+"_"+pheno_short] = th
+						else: # if it does not say anything it is probably effective
+							th = th.replace("effective:","").strip()
+							therapy['treatment_effective'+"_"+pheno_short] = th
 
 			if len(field[-2])==0:
 				phenotype = field[-1]

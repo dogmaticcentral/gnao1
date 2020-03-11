@@ -86,15 +86,15 @@ def sort_out_per_symptom(targets_compact, count):
 			count[direction][target] += 1
 
 
-def sort_out_per_variant(variant, effectiveness, targets_compact, count):
-	if not variant in count:
-		count[variant] = {"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}}
+def sort_out_per_position(position, effectiveness, targets_compact, count):
+	if not position in count:
+		count[position] = {"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}}
 
 	for descriptor in targets_compact.split(";"):
 		action, targets = descriptor.split(":")
 		direction = get_direction(action)
 		if not direction: continue
-		count_ref = count[variant][effectiveness][direction]
+		count_ref = count[position][effectiveness][direction]
 		for target in targets.split(","):
 			# ignore sub-divisions fo the mome
 			target = target.split("[")[0]
@@ -114,16 +114,11 @@ def main():
 	cursor.execute('SET character_set_connection=utf8mb4')
 	switch_to_db(cursor,"gnao1")
 
-	# targets = find_targets(cursor, "nitrazepam")
-	# print(targets)
-	# print()
-	# print(process(targets))
-	# exit()
 
 	count = {"E" :{"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}},
 	         "MD":{"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}} }
 
-	count_per_variant = {}
+	count_per_position = {}
 
 	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases";
 	for line in hard_landing_search(cursor,qry):
@@ -136,12 +131,15 @@ def main():
 			for effectiveness, drugs in  treatment[symptom].items():
 				if drugs is None: continue
 				for drug in drugs.split(","):
+					if len(drug)==0: continue
 					targets = find_targets(cursor, drug)
-					if not targets: continue
+					if not targets or targets=="not found": continue
+					# print("*******************")
+					# print(drug, len(drug))
 					targets_compact = process(targets)
 					print(protein, symptom, colored(effectiveness,'green' if effectiveness=="eff" else 'red'), drug, targets_compact)
 					sort_out_per_symptom(targets_compact, count[symptom][effectiveness])
-					sort_out_per_variant(protein, effectiveness, targets_compact, count_per_variant)
+					sort_out_per_position(protein[:-1], effectiveness, targets_compact, count_per_position)
 					mechanism = True
 		if mechanism: print()
 
@@ -158,30 +156,30 @@ def main():
 
 	print()
 	print()
-	for variant in count_per_variant.keys():
+	for position in count_per_position.keys():
 		print()
 		print("================================")
 		target_mentions = {}
 		for effectiveness in ["ineff", "eff"]:
 			for direction in ["up", "down"]:
-				target_ct = count_per_variant[variant][effectiveness][direction]
+				target_ct = count_per_position[position][effectiveness][direction]
 				if not target_ct: continue
 				sorted_target_ct = sorted(target_ct.keys(), key=lambda i: target_ct[i],reverse=True)
-				print(variant, effectiveness, direction)
+				print(position, effectiveness, direction)
 				for target in sorted_target_ct:
 					if not target in target_mentions: target_mentions[target] = 0
 					target_mentions[target] += target_ct[target]
 					print("\t", target, target_ct[target])
+		if not target_mentions: continue
 		print("-------------------------------")
-		sorted_target_mentions =  sorted(target_mentions.keys(), key=lambda i: target_mentions[i],reverse=True)
+		sorted_target_mentions = sorted(target_mentions.keys(), key=lambda i: target_mentions[i],reverse=True)
+
 		for target in sorted_target_mentions:
-			ineff_up   = count_per_variant[variant]["ineff"]["up"].get(target,0)
-			ineff_down = count_per_variant[variant]["ineff"]["down"].get(target,0)
-			eff_up     = count_per_variant[variant]["eff"]["up"].get(target,0)
-			eff_down   = count_per_variant[variant]["eff"]["down"].get(target,0)
-			efficiency = eff_up + eff_down   - (ineff_up + ineff_down)
-			direction  = eff_up + ineff_down - (eff_down + ineff_up)
-			print(" %10s  %2d  %2d %2d" % (target, target_mentions[target], efficiency, direction))
+			ineff_up   = count_per_position[position]["ineff"]["up"].get(target,0)
+			ineff_down = count_per_position[position]["ineff"]["down"].get(target,0)
+			eff_up     = count_per_position[position]["eff"]["up"].get(target,0)
+			eff_down   = count_per_position[position]["eff"]["down"].get(target,0)
+			print(" %10s  %2d  |  %2d   %2d  %2d  %2d " % (target, target_mentions[target], eff_up, eff_down, ineff_up, ineff_down))
 
 	cursor.close()
 	db.close()
