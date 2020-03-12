@@ -120,7 +120,8 @@ def main():
 
 	count_per_variant = {}
 
-	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases";
+	qry  = " select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD"
+	qry += " from cases order by substr(protein,2,length(protein)-2)*1"
 	for line in hard_landing_search(cursor,qry):
 		[protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
 		treatment = {"E":{"eff":treatment_effective_E, "ineff":treatment_ineff_E},
@@ -154,9 +155,11 @@ def main():
 					if target_ct[target]<3: continue
 					print("\t", target, target_ct[target])
 
+	variants_sorted = sorted([v for v in count_per_variant.keys() if not 'del' in v], key=lambda var: int(var[1:-1]))
+
 	print()
 	print()
-	for variant in count_per_variant.keys():
+	for variant in variants_sorted:
 		print()
 		print("================================")
 		target_mentions = {}
@@ -173,35 +176,12 @@ def main():
 		if not target_mentions: continue
 		print("-------------------------------")
 		sorted_target_mentions = sorted(target_mentions.keys(), key=lambda i: target_mentions[i],reverse=True)
-		max_mentions = target_mentions[sorted_target_mentions[0]]
-		effective_up = []
-		effective_down = []
-		inert = []
 		for target in sorted_target_mentions:
 			ineff_up   = count_per_variant[variant]["ineff"]["up"].get(target,0)
 			ineff_down = count_per_variant[variant]["ineff"]["down"].get(target,0)
 			eff_up     = count_per_variant[variant]["eff"]["up"].get(target,0)
 			eff_down   = count_per_variant[variant]["eff"]["down"].get(target,0)
-			efficiency = eff_up + eff_down - (ineff_up + ineff_down)
-			direction  = eff_up + 0.5*ineff_down - (eff_down + 0.5*ineff_up)
 			print(" %10s  %2d  |  %2d   %2d  %2d  %2d " % (target, target_mentions[target], eff_up, eff_down, ineff_up, ineff_down))
-			# if max_mentions == 1 or target_mentions[target]>1:
-			# 	if efficiency>0.5*target_mentions[target]:
-			# 		if  eff_up + 0.5*ineff_down > 2*(eff_down + 0.5*ineff_up):
-			# 			effective_up.append(target)
-			# 		elif eff_down + 0.5*ineff_up > 2*(eff_up + 0.5*ineff_down):
-			# 			effective_down.append(target)
-			# 	elif efficiency < -0.5*target_mentions[target]:
-			# 		inert.append(target)
-		# print("----------")
-		# print(variant)
-		# if effective_up:
-		# 	print ("effective up", effective_up)
-		# if effective_down:
-		# 	print ("effective down", effective_down)
-		# if inert:
-		# 	print ("no effect:", inert)
-		#
 
 	cursor.close()
 	db.close()

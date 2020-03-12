@@ -2,6 +2,11 @@
 import os
 from utils.mysql import *
 
+# could not find assoicated phenotype (typically, only lumped up in  statistics)
+# in  23042115 could not find gnao1 at all
+# 29389947 is citing Nakamura
+# 26795593 not clear is it epilepsy only,or if they are rporting only epilepsy
+useless = [28135719, 29390993, 25533962, 23042115, 29389947, 25363768, 26633542, 26795593]
 
 ####################
 def parse_tsv(infile, cases, publications):
@@ -16,7 +21,7 @@ def parse_tsv(infile, cases, publications):
 				header = line.split('\t')
 			else:
 				named_fields = dict(zip(header, line.split('\t')))
-				pubmed = named_fields['Source'].lower().replace('pubmed','').strip()
+				pubmed = int(named_fields['Source'].lower().replace('pubmed','').strip())
 				ref = named_fields['Reference']
 				if not 'HGVS cDNA' in named_fields: continue
 				cdna = named_fields['HGVS cDNA'].replace('c.','')
@@ -50,11 +55,23 @@ def main():
 		parse_tsv("{}/{}".format(indir, infile), cases, publications)
 
 	for pubmed, ref in publications.items():
-		print(ref, cases[pubmed])
-		store_or_update(cursor, "publications",{"pubmed":pubmed},{"reference":ref})
-		# there is a problem with storing cases at his point: HGMD is not keeping track of
+		if pubmed in useless: continue
+		qry = "select count(*) from cases where pubmed=%d " % pubmed
+		number_of_cases = hard_landing_search(cursor, qry)[0][0]
+		if number_of_cases>0: continue
+		qry = "select pubmedcentral from publications where pubmed=%d" % pubmed
+		ret = error_intolerant_search(cursor, qry)
+		pmc = ret[0][0] if ret else "none"
+		print("{}\t{}\t{}".format(pubmed, pmc, ref))
+
+		# store_or_update(cursor, "publications",{"pubmed":pubmed},{"reference":ref})
+		# there is a problem with this: HGMD is not keeping track of
 		# same publication describing multiple cases with the same mutation
 		# for cdna, protein , pheno in cases[pubmed]:
+		# 	print(cdna, protein)
+		# 	fixed = {"pubmed":pubmed, "cdna":cdna}
+		# 	update = {"protein": protein, "phenotype":pheno}
+		# 	store_or_update(cursor, "cases", fixed, update)
 
 	cursor.close()
 	db.close()

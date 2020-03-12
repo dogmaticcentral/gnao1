@@ -1,0 +1,686 @@
+\documentclass[11pt]{scrartcl}
+
+\usepackage[margin=3.0cm]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+
+
+% arguments:
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+% arguments: opening/closing bracket, separator between multiple citations
+% citation style: ‘ n’ for numerical style, ‘s’ for numerical superscript style,
+% or ‘a’ for author–yearstyle
+% punctuation between the author names and the year
+% punctuation between years or numbers when common author lists are suppressed:
+% ‘,’ or ‘;'
+
+\bibpunct{}{}{,}{a}{}{;}
+
+
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{makecell}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[2pt]}
+\renewcommand\cellgape{\Gape[2pt]}
+
+
+\def\etal{\emph{et al.}\,}
+
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue
+            ]{hyperref}
+
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+%\title{A  structural  map of disease mutations in GNAO1 protein}
+%\subtitle{From molecular to physiological impact}
+%\title{Rational dissection of GNAO1-related phenotypes using molecular modeling}
+
+\title{Molecular map of GNAO1-related disease phenotypes and reactions to treatment}
+\subtitle{Supplementary Information}
+\author{Ivana Mihalek, Meredith Park, McKenna Kelly, Saima Kayani, \\ Jeff L. Waugh, Annapurna Poduri, and Olaf Bodamer}
+
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    Table S2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\subsection{Shorthands}
+
+ The reference numbers refer to the list in this document, rather than in the main text. Shorthands:
+E: epilepsy-related symptoms. MD: movement disorder-related symptoms
+
+IF: interface. KD: ketogenic diet.  GTCs: generalized tonic-clonic seizures. NTR: neurotransmitter release.  NE: neuronal excitability, GEF: guanine nucleotide exchange factor.
+
+For the shorthands used in square brackets, see above.
+
+For the medication discussion and full list of in|effective medication see the original reference (where applicable).
+\clearpage
+
+\subsection{Table of variants}
+\textbf{Table S2.} Variants, phenotypes and treatments.
+The reaction to treatment in most cases indicates the trend, rather than the (in)ability of the drug to completely resolve the symptoms.
+'No effect' sometimes includes exacerbation of the existing symptoms.
+\newcounter{CaseNo}
+% 1 - 10
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+	&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+	&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+	&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+	\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\hline
+		\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum} &F	&  E
+		& \makecell[l]{no effect: \\ oxcarbazepine\\ levetiracetam\\ |effective: \\ phenobarbital \\ clobazam}
+		& \makecell[l]{GABA$_A\uparrow$\\VGCC$\downarrow$\\NTR$\downarrow$}	&p.G40W	  & \makecell[l]{catalytic pocket}	&catalysis	&focal epilepsy	&	\\
+
+	\hline
+		\stepcounter{CaseNo} \arabic{CaseNo}  &\cite{law2015clinical}  & F	& MD+E	& not reported	&n/a	&p.G40R
+			& catalytic pocket 	& catalysis	&EOEE	 & \makecell[l]{bilateral\\ twitching\\ in upper \\ limbs}\\
+
+	\hline
+		\stepcounter{CaseNo} \arabic{CaseNo} & \cite{bruun2018prospective} &M	&  E	& not reported
+			& n/a	&p.G40R	 & \makecell[l]{catalytic pocket}	& catalysis	& EOEE	&	\\
+
+	\hline
+        \stepcounter{CaseNo} \arabic{CaseNo}  & \cite{kelly2019spectrum}  & M	&E
+        &\makecell[l]{no effect: \\ levetiracetam\\ |effective:\\ topiramate \\ phenobarbital\\ clobazam} & \makecell[l]{GABA$_A\uparrow$\\VGCC$\downarrow$\\VGSC$\downarrow$\\NTR$\downarrow$}	 &p.G40R
+        & catalytic pocket	& catalysis	&EOEE	& \\
+
+	\hline
+         \stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  & M	&MD+E	&\makecell[l]{|effective:\\levetiracetam_E}
+         & \makecell[l]{NTR $\downarrow$}	 &p.G40E
+         & catalytic pocket	&catalysis	&EOEE	&spastic quad \\
+
+	\hline
+        \stepcounter{CaseNo} \arabic{CaseNo}  & \cite{kelly2019spectrum}  & F	&MD+E
+        &\makecell[l]{|effective:\\levetiracetam_E}	& \makecell[l]{NTR $\downarrow$}
+        &p.G40E	& catalytic pocket	&catalysis	&EOEE	&\makecell[l]{dystonia\\spasticity} \\
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+% 11-18
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo}  & \cite{zhu2015whole}  & M &MD+E & not reported & n/a   &p.G42R&  cat pocket & catalysis &  EOEE & choreoathetosis\\
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo}  & \cite{gawlinski2016peho}  &	F &E	&not reported	&n/a	&p.G45E	&RGS interface 	&catalysis	&EOEE	&\\
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} & \cite{danti2017gnao1}  & M	&MD+E	&\makecell[l]{effective:\\tetrabenazine_MD}
+	& \makecell[l]{NTR$\downarrow$} &p.S47G & ion binding	& catalysis	&focal seizures	&dystonia\\
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} & \cite{danti2017gnao1}  & F	&MD+E	&not reported	&n/a&p.I56T	&IF btw domains	& \makecell[l]{improper\\opening/closing \\ of helix domain?}
+    &focal seizures	&\makecell[l]{dyskinetic\\tongue movements; \\upper limb\\dyskinesia}\\
+\hline
+
+
+\hline
+     \stepcounter{CaseNo} \arabic{CaseNo}  &  \cite{nakamura2013novo}  & F	&E	&not reported	&n/a	&p.D174G
+     &\makecell[l]{helix;\\inward pointing\\sidechain \\ $<10\AA$ \\ from cat. pocket}	&catalysis (?)	&EE	&\\
+
+\hline
+      \stepcounter{CaseNo} \arabic{CaseNo} & \cite{marce2016gnao1}  & F	& MD+E
+      &\makecell[l]{no effect:phenobarbital_E, valproate_E, levetiracetam_E,
+vigabatrin_E, carbamazepine_E, zonisamide_E, clobazam_E, topiramate_E lacosamide_E hydroaltesone_E }
+         & NE $\downarrow$	&p.L199P
+        &	&catalysis	&EOEE	&\makecell[l]{orolingual\\ dyskinesia}\\
+
+ \hline
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hline
+\end{tabular}
+\end{sidewaystable}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+% 11-18
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hline
+	\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{arya2017gnao1}  & M	&MD+E
+	&\makecell[l]{no effect:zonisamide_E\\ |effective: clobazam_E,  clonazepam_MD}
+	& \makecell[l]{VGSC$\downarrow$\\ VGCC$\downarrow$\\ NE$\downarrow$ \\GABA$_A\uparrow$}	& p.G203R
+	& \makecell[l]{close to \\salt-bridge\\ and cat pocket\\ Nakamura:\\ ddG for GTP  up}
+	& empty pocket	&seizures	& chorea \\
+
+\hline
+	\stepcounter{CaseNo} \arabic{CaseNo}  & \citenum{nakamura2013novo}  & F	& MD+E	&not reported	&n/a	&p.G203R
+	& &empty pocket	&EOEE	&\makecell[l]{severe\\ choreoathetosis}\\
+
+\hline
+	\stepcounter{CaseNo} \arabic{CaseNo} & \cite{saitsu2016phenotypic}  & F	& MD+E	&not reported	&n/a	&p.G203R
+		&  & empty pocket  &EOEE	&severe chorea \\
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} & \cite{schorling2017expanding}   & F & MD+E	&
+        \makecell[l]{no effect: levodopa_E | effective:  sulthiame_E levetiracetam_E clobazam_E tiapride_E}
+    & \makecell[l]{VGSC$\downarrow$\\ VGCC$\downarrow$\\ GABA$_A\uparrow$\\GABA$_B\uparrow$\\ ADCY$\downarrow$} 	&p.G203R
+    &\ 	& empty pocket 	&\makecell[l]{severe epilepsy}	&\makecell[l]{severe dystonia}\\
+
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} & \cite{schorling2017expanding}  & F & MD+E
+     &\makecell[l]{no effect:  phenobarbital_E, levetiracetam_E, topiramate_E, valproate_E, vigabatrin_E,
+     oxcarbazepine_E, phenytoin_E, clobazam_E, lacosamide_E, methylprednisolone_E gabapentin_MD  trihexyphenidyl_MD
+     |effective: lamotrigine_E zonisamide_E baclofen_MD benzodiazepine_MD}
+    &  \makecell[l]{NTR$\downarrow$\\ GABA$_A\uparrow$\\D2$\downarrow$; D3$\downarrow$} 	&p.G203R
+    & 	& empty pocket 	&\makecell[l]{severe epilepsy}	&\makecell[l]{severe dystonia}\\
+
+
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} 	 & \cite{schirinzi2018phenomenology}  &F	&MD+E
+    &  \makecell[l]{no effect: phenobarbital_E, carbamazepine_E , benzodiazepine_E |effective: topiramate_E clonazepam_MD}
+    & \makecell[l]{VGSC$\downarrow$\\ GABA$_A\uparrow$} 	&p.G203R
+    &  & empty pocket  & EOEE	& \makecell[l]{dystonia; \\ paroxysmal\\ ballism;\\ chorea} \\
+
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} 	 & \cite{schirinzi2018phenomenology}  &M	&MD+E
+    &\makecell[l]{effective: tetrabenazine_MD \\ lorazepam_MD \\ baclofen_MD \\phenobarbital_E}
+    & \makecell[l]{NTR$\downarrow$\\ GABA$_A\uparrow$ \\ VGCC$\downarrow$\\GABA$_B\uparrow$\\ ADCY$\downarrow$} 	&p.G203R
+    &  & empty pocket  & EOEE	&  \makecell[l]{ 4 limbs\\ dyskinesia;\\ chaotic \\spontaneous\\ motility} \\
+
+
+
+
+\hline
+    \stepcounter{CaseNo} \arabic{CaseNo} 	 & \cite{xiong2018recurrent}  &F	&MD+E
+    & \makecell[l]{no effect: valproate_E|effective: topiramate_E levetiracetam_E vigabatrin_E}
+    & \makecell[l]{NTR$\downarrow$\\ GABA$_A\uparrow$ \\ VGSC$\downarrow$ } 	&p.G203R
+    &  & empty pocket  & EOEE	&  \makecell[l]{lack of \\ psychomotor\\ development} \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+\end{tabular}
+\end{sidewaystable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+% 11-18
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% patient 2
+ \hline
+ \stepcounter{CaseNo} \arabic{CaseNo} 	 & \cite{koy2018deep}  &M	&MD+E
+ & \makecell[l]{|effective: \\ levodopa_MD,\\ tetrabenazine_MD benzodiazepine_MD}
+ & \makecell[l]{dopamine$\uparrow$} 	&p.G204R
+ &  & empty pocket  & EOEE	&  \makecell[l]{hypotonia;\\dystonic \\posturing;\\chorea;\\ballism } \\
+
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}   & M & MD
+& \makecell[l]{no effect: \\ sinemet \\ |effective: \\ botox }	&  mAChR$\downarrow$	&p.S207Y
+& \makecell[l]{effector IF\\RGS IF}	& effector	&	&\makecell[l]{motor delays \\ generalized \\dystonia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{yamashita2020neuroimaging}   & F & MD
+  & \makecell[l]{no effect: \\ levodopa \\  tetrabenazine \\ trihexyphenidyl \\ clonazepam \\
+	botox \\ pramipexole}	&  	&p.S207F
+& \makecell[l]{effector IF\\RGS IF}	& effector	&	&\makecell[l]{choreoathetosis\\dystonia\\bradykinesia}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+
+
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+		\hline
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{kelly2019spectrum}  & F	& (unclear)	&	&	&p.R209C
+& salt bridge	&effector	&	& \makecell[l]{(?)\\hypotonia}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  &	\cite{danti2017gnao1}  &M &MD+E	&not reported	&n/a	&p.R209C
+& salt bridge	& effector		&GTCs	&hyperkinetic\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  &\cite{danti2017gnao1}  &M	&MD+E	&not reported	&n/a	&p.R209C
+& salt bridge 	& effector 	&\makecell[l]{focal\\seizures}
+& \makecell[l]{complex\\ stereotypies;\\ dyskinetic \\motor pattern}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & 	\cite{saitsu2016phenotypic}  & F&MD+E	&not reported	&n/a	&p.R209C
+& salt bridge	& effector	&\makecell[l]{focal\\dyscognitive\\ seizures}	&severe chorea\\
+
+%%% patient 3
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{waak2017gnao1}  &  F& MD+E
+&\makecell[l]{no effect: \\midazolam_MD |effective:\\ clonidine_MD benzhexol_MD }
+& \makecell[l]{ADRA$\uparrow$\\ADCY$\downarrow$}	&p.R209C
+&  salt bridge	& effector	& GTCs	&\makecell[l]{chorea; \\dystonia;\\ ballism;\\ oro-facio-lingual\\dyskinesia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{malaquias2019gnao1}  &F	&MD
+& \makecell[l]{no effect:\\ clonazepam \\ trihexyphenidyl\\ |effective: levodopa}  &dopamine$\uparrow$	&p.R209C
+&salt bridge	&effector	&  &\makecell[l]{hyperkinetic\\movements;\\generalized\\disabling tremor}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{honey2018gnao1}  &M	&MD
+& \makecell[l]{no effect:\\chlorpromazine \\ |effective: levodopa \\ clonazepam \\ bromocriptine}
+&\makecell[l]{dopamine$\uparrow$\\GABA$_A\uparrow$ \\D2$\uparrow$, ADCY$\downarrow$}	&p.R209C
+&salt bridge	&effector	&  &\makecell[l]{dystonic storm;\\chorea, ballismus,\\ orofacial\\dyskinesia,\\dystonia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{koy2018deep}  &F	&MD
+& \makecell[l]{no effect: tetrabenazine\\ trihexyphenidyl\\ levodopa}
+& \makecell[l]{}	&p.R209C
+&salt bridge	&effector	&  &\makecell[l]{dystona w\\ hyperkinetic\\features;\\ orofacial\\dyskinesia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{koy2018deep}  &M	&MD+E
+& \makecell[l]{no effect: levetiracetam_E  baclofen_MD  botox_MD  trihexyphenidyl_MD
+    \\ | effective: valproate_E  topiramate_E  lamotrigine_E  tetrabenazine_MD}
+&\makecell[l]{}	&p.R209C
+&salt bridge	&effector	& \makecell[l]{tonic-clonic and \\ partial\\complex\\frontal\\seizures} &\makecell[l]{decreased\\muscle tone,\\dystonia,\\athetosis}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{schirinzi2018phenomenology}  &F	&MD
+& \makecell[l]{no effect: midazolam, propofol, phenytoin, baclofen, clonazepam, levodopa, tetrabenazine, clonidine
+|effective: haloperidol, curare}
+&\makecell[l]{}	&p.R209C
+&salt bridge	&effector
+&  trunk hypotonia; generalized choreo-ballistic hyperkinesia}\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+
+
+\end{tabular}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%19-27
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  &\cite{ananth2016clinical}  &	F&MD
+& {\scriptsize \makecell[l]{no effect:\\clonidine, \\valproate, \\clonazepam, \\bethanechol; \\ |effective: \\dexmedetomidine, \\ propofol,  midazolam}}
+& \makecell[l]{ADRA$\uparrow$ \\ ADCY$\downarrow$ \\GABA$_A\uparrow$ }
+ &p.R209G
+&salt bridge	&effector	&	&chorea\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{ananth2016clinical}  &M	&MD
+&{\scriptsize \makecell[l]{effective: dexmedetomidine, \\benzodiazepine \\risperidone.}}
+& \makecell[l]{D2$\downarrow$ 5-HT2$\downarrow$\\dopamine$\uparrow$ \\ ADRA$\uparrow$ \\ ADCY$\downarrow$ \\GABA$_A\uparrow$ }	&p.R209H
+&salt bridge	&effector	&	&\makecell[l]{chorea and\\ ballismus}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} &  \cite{dhamija2016gnao1}  &	M &  MD
+& \makecell[l]{\\ tetrabenazine\\\\trihexyphenidyl}
+& \makecell[l]{NTR$\downarrow$ \\ mAChR$\uparrow$\\ D1$\uparrow$  D2$\downarrow$\\dopamine$\uparrow$}	&  p.R209H
+&salt bridge	&effector	&	&\makecell[l]{dystonia;\\severe chorea}\\
+
+\hline
+ \stepcounter{CaseNo} \arabic{CaseNo} & \cite{kulkarni2016progressive}  &M	&MD
+ &{\scriptsize \makecell[l]{no effect:\\ clonazepam \\ |effective:\\  'valproate'}}
+& GABA $\uparrow$ (?)
+&p.R209H	&salt bridge	&effector	&	&severe choreathetosis\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{kulkarni2016progressive}  &	M	&MD	&\makecell[l]{|effective: clonazepam}	&na	&p.R209H
+&salt bridge	&effector	&	&severe choreathetosis\\
+
+\hline
+ \stepcounter{CaseNo} \arabic{CaseNo} & \cite{menke2016recurrent}  &M	&MD	&not reported	&n/a	&p.R209H
+ &salt bridge	&effector	&
+&\makecell[l]{mobile dystonia\\ with myoclonic jerks}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{menke2016recurrent}  &M	&MD	&not reported	&n/a	&p.R209L
+&salt bridge	&effector	&	 &\makecell[l]{mobile dystonia\\ with myoclonic jerks}\\
+
+
+
+\hline
+	\end{tabular}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%28 - 26
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  &	F&MD 	& levodopa	& dopamine $\uparrow$	&p.A221D
+&\makecell[l]{close to\\ Cterm helix} &\makecell[l]{GPCR\\ (GEF)}	&	&\makecell[l]{dysarthia,\\dystonia,\\ tremor and\\ parkinsonsim}\\
+
+\hline
+ \stepcounter{CaseNo} \arabic{CaseNo} &  \cite{saitsu2016phenotypic}  &F	&MD+E
+ &	\makecell[l]{no effect: valproate_E  clonazepam_E  \\ |effective:  prednisone_E}
+
+ &  GCR$\downarrow$ %\makecell[l]{refractory to \\anti-epileptic \\drugs}
+ &p.A227V	&\makecell[l]{2nd row to\\ catalytic pocket}	& \makecell[l]{catalysis\\(folding?)}
+ &\makecell[l]{EOEE\\(infantile\\spasms)}
+ &\makecell[l]{hand \\ stereotypies}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{talvik2015clinical}  &F	&MD+E
+&\makecell[l]{no effect:  \\phenobarbitone_E, \\vigabatrine_E,  \\lamotrigine_E.}
+	&	&p.Y231C	&cryptic	&	&EOEE	&\makecell[l]{stereotypic\\ spasm-like \\movements}\\
+		\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{yilmaz2016excellent}  &F &MD
+&\makecell[l]{no effect: KD |effective:\\  midazolam;\\ fentanyl; \\pimozide.}
+& \makecell[l]{GABA$_A\uparrow$;\\ OPRM1$\uparrow$\\ ADCY$\downarrow$;\\ VGCC$\downarrow$; \\ NTR$\downarrow$; D2$\downarrow$; \\ ADRA$\downarrow$; \\5-HT2$\downarrow$}
+& p.Q233P
+& \makecell[l]{IF with \\helical domain\\ when closed}	&	&	&\makecell[l]{choreathetosis \\and orofacial\\ dyskinesia}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{waak2017gnao1}   &M &MD
+&{\scriptsize  \makecell[l]{no effect: levodopa \\diazepam, clobazam, \\
+		benzhexol, clonidine,\\ prednisolone,  baclofen, \\ dexmedetomidine,\\ midazolam, ketamine \\
+		|effective: botox clonazepam\\ phenobarbital\\ tetrabenazine }}
+&  \makecell[l]{ GABA$_A\uparrow$ (?)\\ VGCC$\downarrow$; \\NTR$\downarrow$ }	& p.E237K
+		& \makecell[l]{effector IF (?)}	& \makecell[l]{effector IF\\RGS IF}	&	&\makecell[l]{chorea; \\ hemiballism;\\dystonia;\\ oro-facio-lingual\\dyskinesia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{okumura2018patient}   &F &MD	& not reported
+&  	& p.E237K
+& \makecell[l]{effector IF (?)}	& \makecell[l]{effector IF\\RGS IF}	&	&\makecell[l]{hypotonia; \\dystonic \\ features.}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{koy2018deep}  &M	&MD
+& \makecell[l]{not reported}
+&\makecell[l]{}	&p.E237K
+&	& &	& \makecell[l]{severe\\hypotonia;\\ballism;\\dystonia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{koy2018deep}  &M	&MD
+& \scriptsize{\makecell[l]{no effect:clonazepam,\\ trihexyphenidyl,\\ tetrabenazine,\\ amitriptyline,\\ pimozide}}
+&\makecell[l]{}	&p.E237K
+&	& &	& \makecell[l]{dystonic and \\dyskinetic \\features; chorea} \\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{schirinzi2018phenomenology}  &F	&MD
+&
+&\makecell[l]{}	&p.E237K
+&	& &	& global hypotonia;  choreiform and dyskinetic movements \\
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+	\end{tabular}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{ananth2016clinical}  &M	&MD	&\makecell[l]{intermittent \\chorea not treated}	&	&p.E246K
+	&salt bridge	& effector	&	 &\makecell[l]{chorea \\and \\ballismus}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{ananth2016clinical}   & F &MD
+&\tiny{\makecell[l]{no effect: clonazepam\\clonidine and trazodone; \\|effective: tetrabenazine.}}
+& VMAT2$\downarrow$; NTR$\downarrow$ &p.E246K
+& salt bridge	& effector	&	&\makecell[l]{chorea \\and \\ballismus} \\
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{ananth2016clinical}  & F &MD	&
+\tiny{\makecell[l]{no effect: topiramate, \\levetiracetam, \\valproate \\and clonidine.\\
+		 |effective:\\ clonazepam \\and clobazam. \\
+		effective: \\ baclofen  clobazam \\ tetrabenazine \\ haloperidol  diazepam  diazepam.}}
+    	&  \makecell[l]{ GABA$_B\uparrow$; \\ADCY$\downarrow$\\ VMAT2$\downarrow$; NTR$\downarrow$\\ D2$\downarrow$;  ADRA$\downarrow$;\\ 5-HT2$\downarrow$}
+		& p.E246K
+	    & salt bridge	& effector	&	&\makecell[l]{chorea \\and \\ballismus}\\
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{ananth2016clinical}  & M	&MD	&\makecell[l]{no effect: \\oxcarbazepine \\and clonazepam.\\
+	|effective: \\diazepam and \\tetrabenazine.}
+& \makecell[l]{GABA$_A\uparrow$\\VMAT2$\downarrow$; NTR$\downarrow$}		& p.E246K
+	&  salt bridge &  effector	&	&\makecell[l]{mild \\dyskinesia first, \\then generalized \\chorea}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{waak2017gnao1}  &  F&MD
+&{\tiny \makecell[l]{no effect:levodopa;  clobazam; clonidine\\ benzhexol, carbamazepine, \\
+	nitrazepam, lorazepam, \\
+	acetazolamide, biotin, \\
+	botox, \\
+	prednisolone, immunoglobulin, \\ midazolam   \\
+	 |effective:\\ tetrabenazine \\ phenobarbital  }}
+& \makecell[l]{VMAT2$\downarrow$; NTR$\downarrow$\\ GABA$_A\uparrow$\\VGCC$\downarrow$; }
+&p.E246K
+& salt bridge 	& effector	& 	&\makecell[l]{chorea; \\dystonia;\\ hemiballism;\\ oro-facio-lingual\\dyskinesia}\\
+
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+		\hline
+		&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+		&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+		&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+
+%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{saitsu2016phenotypic}  &F &MD	&not reported	&n/a	&p.E246K
+& salt bridge 	& effector		&	&severe athetosis\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{takezawa2018genomic}  &	F &	 MD
+& not reported
+& n/a	&p.E246K
+	& salt bridge	& effector		& 	&\makecell[l]{dyskinesia,\\ global \\ developmental delays}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{schorling2017expanding}  & M &	MD
+&	\makecell[l]{no effect: levodopa;\\   |effective:\\ not reported }
+& n/a	&p.E246K
+& salt bridge	&	effector	&\makecell[l]{}	&\makecell[l]{dystonia}\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{schorling2017expanding}   & F &	MD+E
+&	\makecell[l]{ |effective:\\ oxcarbazepine_E\\ levetiracetam_E }
+& \makecell[l]{	VGSC$\downarrow$\\NTR$\downarrow$} &p.E246K
+&  salt bridge 	& effector	&\makecell[l]{epilepsy}	&\makecell[l]{}\\
+
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{benato2019long}   &F &	MD
+&{\tiny 	\makecell[l]{ no effect:\\ trihexyphenidyl\\ nitrazepam \\ clonazepam\\ tetrabenazine \\ baclofen\\ levodopa \\ levetiracetam \\ phenobarbital}}
+&   &p.E246K
+&  salt bridge 	& effector	&\makecell[l]{}	&\makecell[l]{dystonia\\ chorea\\ ballismus\\hyperkynesia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{benato2019long}   &F &	MD
+&{\tiny 	\makecell[l]{no effect: \\ baclofen \\ trihexyphenidyl\\ tetrabenazine\\ pimozide  \\|effective:\\ flunitrazepam}}
+& \makecell[l]{GABA$_A\uparrow$	} &p.E246K
+&  salt bridge 	& effector	&\makecell[l]{}	&\makecell[l]{hyperkinetic\\spells; \\ choreo-ballistic\\ movements; \\ dystonia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{danti2017gnao1}  &	M&MD+E
+& effective: tetrabenazine_MD
+& \makecell[l]{VMAT2$\downarrow$; NTR$\downarrow$}	&p.E246G
+& salt bridge	& effector		&\makecell[l]{GTCs and \\focal seizures}	&\makecell[l]{dystonia,\\spasticity}\\
+
+
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+&\thead{Ref}	&\thead{Sex}	& \thead{\makecell{Pheno}}	&\thead{Therapy}
+&\thead{\makecell{Effective\\drug\\mechanism}}	& \thead{Variant}	& \thead{Location}
+&\thead{\makecell{Impact\\estimate}} 	&\thead{E type} 	&\thead{MD type} \\
+		\hline
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{appenzeller2014novo}  &F	&E	&not reported	&n/a	&p.A270H	&catalytic pocket	& catalysis	&EOEE	&\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{schirinzi2018phenomenology}  &F	&MD+E	&
+{\scriptsize \makecell[l]{effective: \\ lamotrigine_E \\ + valproate_E  \\ + trihexyphenidyl_MD  \\ + melatonin_E  }}
+& \makecell[l]{GABA$\uparrow$; \\VGSC$\downarrow$;\\ mAChR$\uparrow$; \\ D1$\uparrow$; D2$\downarrow$;\\ dopamine$\uparrow$;\\ ADCY$\downarrow$}	&p.D273V
+&\makecell[l]{catalytic pocket}	& empty pocket	&EOEE	&
+{\scriptsize \makecell[l]{poor head \\ and turn ctrl; \\ axial hypotonia;\\lower limbs\\hypertonia; \\spasticity}} \\
+
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  &F	&MD+E	& levodopa_MD	&  dopamine $\uparrow$	&p.D273V
+&\makecell[l]{catalytic pocket}	& empty pocket	&EOEE	&Dyskinesia\\
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{appenzeller2014novo}  &F	&E	&not reported	&n/a	& p.F275S
+& cryptic	& 	&EOEE	&\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{nakamura2013novo}  &F	&E	&not reported	&n/a	&p.I279N	&cryptic	&	&EOEE	&\\
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  &F	&MD+E	&not reported	&n/a	&p.I279N	&cryptic	&	&EOEE	& \makecell[l]{choreoathetoid \\movements, \\akathisia}\\
+
+
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{gerald2018neonatal}  &F	&E
+&{\scriptsize \makecell[l]{no effect:\\pyridoxine,\\
+	levetiracetam, \\fosphenytoin, \\valproate, \\clobazam, \\zonisamide,\\
+	rufinamide, \\prednisone, KD, \\ACTH, immunoglobulin}}
+&	&p.L284S	&cryptic	&	&EOEE	& \\
+%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo}  & \cite{kelly2019spectrum}  &F	&E	& lacosamide
+& VGSC$\downarrow$	&p.Y291N	&cryptic	&	&EOEE	&\\
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  &	F&\makecell[l]{MD,\\ MD+E}
+& effective: trihexyphenidyl_MD
+& \makecell[l]{mAChR$\uparrow$; \\ D1$\uparrow$; D2$\downarrow$;\\ dopamine$\uparrow$}
+	&p.I344del	&C-term helix	& GPCR	&one seizure
+&\makecell[l]{mild\\spasticity,\\ dystonia, \\chorea,\\ dysarthria}\\
+
+%%%%%%%%%%%%%%%%%
+\hline
+\stepcounter{CaseNo} \arabic{CaseNo} & \cite{kelly2019spectrum}  &F &E	&levetiracetam	&	NTR$\downarrow$ &\makecell[l]{p.R349\\G352\\delinsQGCA}
+&\makecell[l]{C-term helix}
+&\makecell[l]{\textit{enhanced} \\opening of Ga}
+& \makecell{atypical\\staring\\spells}	&\makecell{oromotor\\apraxia}\\
+		\hline
+	\end{tabular}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+% Bibliography
+\bibliographystyle{pnas-new}
+\bibliography{gnao}
+
+
+\end{document}

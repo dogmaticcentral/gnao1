@@ -111,7 +111,8 @@ def main():
 		name = m.group(1)
 		year = m.group(2)
 		ref = "{} ({})".format(name.capitalize(),year)
-		in_db = error_intolerant_search(cursor, "select pubmed, reference from publications where reference like '%s%%'"%ref)
+		qry =  "select pubmed, reference from publications where reference like '%s%%'"%ref
+		in_db = error_intolerant_search(cursor,qry)
 		if not in_db:
 			# the pubmed ids that are not in HGMD have to be provided manually (or some smarter way if possible)
 			print(pub, "not found")
@@ -125,15 +126,13 @@ def main():
 			for th_type, drugs in therapy.items():
 				drugs_clean_list = ",".join(set(drugs.split()))
 				update[th_type] = drugs_clean_list
-			print(fixed)
-			print(update)
-			print()
 			#store_or_update(cursor, "cases", fixed, update)
 			# at this point we have no way of knowing whether
 			# the same mutation refers to the same or different patient
 			# so we have to trust the input
 			all_fields = dict(fixed) # copy
 			for k,v in update.items(): all_fields[k]=v
+			#print(all_fields)
 			store_without_checking(cursor, "cases", all_fields)
 			#exit()
 
