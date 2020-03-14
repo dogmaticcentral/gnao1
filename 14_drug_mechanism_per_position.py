@@ -154,9 +154,10 @@ def main():
 					if target_ct[target]<3: continue
 					print("\t", target, target_ct[target])
 
+	pos_sorted = sorted([v for v in count_per_position.keys() if not 'de' in v], key=lambda var: int(var[1:]))
 	print()
 	print()
-	for position in count_per_position.keys():
+	for position in pos_sorted:
 		print()
 		print("================================")
 		target_mentions = {}
@@ -179,12 +180,16 @@ def main():
 			ineff_down = count_per_position[position]["ineff"]["down"].get(target,0)
 			eff_up     = count_per_position[position]["eff"]["up"].get(target,0)
 			eff_down   = count_per_position[position]["eff"]["down"].get(target,0)
-			print(" %10s  %2d  |  %2d   %2d  %2d  %2d " % (target, target_mentions[target], eff_up, eff_down, ineff_up, ineff_down))
+			diff_up    = eff_up - ineff_up
+			diff_down  = eff_down - ineff_down
+			fraction_up   = diff_up/(eff_up+ineff_up) if (eff_up+ineff_up)>0 else 0
+			fraction_down = diff_down/(eff_down+ineff_down) if (eff_down+ineff_down) >0 else 0
+			# print(" %10s  %2d  |  %2d   %2d  %2d  %2d " % (target, target_mentions[target], eff_up, eff_down, ineff_up, ineff_down))
+			print(" %10s  %2d  |  %2d   %5.2f      %2d  %5.2f " %
+			      (target, target_mentions[target], diff_up, fraction_up,  diff_down, fraction_down))
 
 	cursor.close()
 	db.close()
-
-
 
 
 #########################################

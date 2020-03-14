@@ -40,12 +40,15 @@ def main():
 					if field[0] == keyword and  field[1] and len(field[1])>0:
 						target[target_name][keyword] = field[1]
 			if drug_name:
-				for keyword in ["synonym", "product", "brand"]:
-					if field[0] == keyword and  field[1] and len(field[1])>0:
-						plural = keyword+"s"
-						if plural not in drug[drug_name]:
-							drug[drug_name][plural] = set()
-						drug[drug_name][plural].add(field[1])
+				if field[0] == "pubchem":
+					drug[drug_name]["pubchem"] = field[1]
+				else:
+					for keyword in ["synonym", "product", "brand"]:
+						if field[0] == keyword and  field[1] and len(field[1])>0:
+							plural = keyword+"s"
+							if plural not in drug[drug_name]:
+								drug[drug_name][plural] = set()
+							drug[drug_name][plural].add(field[1])
 
 	for name, data in drug.items():
 		if not data: continue # this is a stub entry (work in progress) from Databank
@@ -63,6 +66,8 @@ def main():
 		name = name.replace("'","")
 		fixed_fields = {"name":name}
 		update_fields = {}
+		if "pubchem" in data:
+			update_fields["pubchem"] = data["pubchem"];
 		if "synonyms" in data:
 			update_fields["synonyms"] = ";".join(list(data["synonyms"])).replace("'","")
 		if "products" in data:

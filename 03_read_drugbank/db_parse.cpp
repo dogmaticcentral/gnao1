@@ -19,6 +19,15 @@ void parseDrug(XMLNode *node) {
     XMLElement *e = node->ToElement();
     // if(strcmp(e->Attribute("type"), "small molecule")) return; // otherwise we have all sorts of shit here, including fish
     printf("%s\t%s\n", e->Value(),  node->FirstChildElement("name")->GetText());
+
+    for(XMLNode *sib = node->FirstChildElement("external-identifiers")->FirstChildElement("external-identifier"); sib; sib = sib->NextSibling()){
+          XMLNode *nephew = sib->FirstChildElement("resource");
+          if (!nephew) continue;
+          if ( strcmp(nephew->ToElement()->GetText(), "PubChem Compound")) continue;
+          printf("     pubchem\t%s\n", nephew->NextSibling()->ToElement()->GetText());
+          break;
+    }
+
     for(XMLNode *sib = node->FirstChildElement("synonyms")->FirstChildElement("synonym"); sib; sib = sib->NextSibling()){
           printf("     synonym\t%s\n", sib->ToElement()->GetText());
     }

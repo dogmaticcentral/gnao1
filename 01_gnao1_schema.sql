@@ -33,10 +33,11 @@ DROP TABLE IF EXISTS `drugs`;
 CREATE TABLE `drugs` (
    `id` mediumint(9) NOT NULL AUTO_INCREMENT,
    `name` text CHARACTER SET utf8mb4,
+   `pubchem`   int,
    `synonyms`  text CHARACTER SET utf8mb4 ,
    `products`  text CHARACTER SET utf8mb4,
    `targets`   text CHARACTER SET utf8mb4,
-   `brands`   text CHARACTER SET utf8mb4,
+   `brands`    text CHARACTER SET utf8mb4,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
