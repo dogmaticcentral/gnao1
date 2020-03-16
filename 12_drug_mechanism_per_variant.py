@@ -3,25 +3,6 @@
 from utils.mysql import *
 from termcolor import colored
 
-def find_targets(cursor, drug):
-	targets = []
-	# try the name first
-	qry = "select targets from drugs where name='%s'" % drug
-
-	ret = error_intolerant_search(cursor,qry)
-	if not ret:
-		for other_names in ["synonyms", "products", "brands"]:
-			qry = "select targets from drugs where %s like '%%%s%%'" % (other_names, drug)
-			ret = error_intolerant_search(cursor,qry)
-			if ret: break
-	if ret:
-		for line in ret:
-			if not line[0]:continue
-			targets.extend(line)
-
-		if targets: return ";".join(targets)
-
-	return "not found"
 
 main_players = ["GABRA", "GABR", "GABBR",  "ADRA", "CHRNA", "CHRM", "SLC", "KCN", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC"]
@@ -61,6 +42,9 @@ def process(targets):
 	retstr = []
 	for activity, genelist in genes.items():
 		retstr.append("{}:{}".format(activity, collapse(genelist)))
+		print(activity, genelist)
+
+	exit()
 	return ";".join(retstr)
 
 
@@ -73,35 +57,63 @@ def get_direction(action):
 	else:
 		return None # not recognized (such as "ligand", "binder" etc)
 
+####################################
+def get_drug_effectivenes(cursor):
+	variants_sorted = []
+	drug_eff_per_variant = {}
+	drug_ineff_per_variant = {}
+	qry  = " select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD"
+	qry += " from cases order by substr(protein,2,length(protein)-2)*1"
+	for line in hard_landing_search(cursor,qry):
+		[variant, drug_effective_E, drug_ineff_E, drug_effective_MD, drug_ineff_MD] = [l.strip().strip(",") if l else "" for l in line]
+		if variant not in variants_sorted:
+			variants_sorted.append(variant)
+			drug_eff_per_variant[variant] = {}
+			drug_ineff_per_variant[variant] = {}
+		for drug in drug_effective_E.split(",")+drug_effective_MD.split(","):
+			if not drug: continue
+			if not drug in drug_eff_per_variant[variant]:
+				drug_eff_per_variant[variant][drug] = 0
+				drug_ineff_per_variant[variant][drug] = 0
+			drug_eff_per_variant[variant][drug] += 1
+		for drug in drug_ineff_E.split(",")+drug_ineff_MD.split(","):
+			if not drug: continue
+			if not drug in drug_ineff_per_variant[variant]:
+				drug_ineff_per_variant[variant][drug]= 0
+				drug_eff_per_variant[variant][drug]= 0
+			drug_ineff_per_variant[variant][drug] += 1
 
-def sort_out_per_symptom(targets_compact, count):
-	for descriptor in targets_compact.split(";"):
-		action, targets = descriptor.split(":")
-		direction = get_direction(action)
-		if not direction: continue
-		for target in targets.split(","):
-			# ignore sub-divisions fo the mome
-			target = target.split("[")[0]
-			if not target in count[direction]: count[direction][target] = 0
-			count[direction][target] += 1
+	return [drug_eff_per_variant, drug_ineff_per_variant, variants_sorted]
 
 
-def sort_out_per_variant(variant, effectiveness, targets_compact, count):
-	if not variant in count:
-		count[variant] = {"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}}
+def find_targets(cursor, drug):
+	targets = []
+	# try the name first
+	qry = "select targets from drugs where name='%s'" % drug
 
-	for descriptor in targets_compact.split(";"):
-		action, targets = descriptor.split(":")
-		direction = get_direction(action)
-		if not direction: continue
-		count_ref = count[variant][effectiveness][direction]
-		for target in targets.split(","):
-			# ignore sub-divisions fo the mome
-			target = target.split("[")[0]
-			if not target in count_ref: count_ref[target] = 0
-			count_ref[target] += 1
+	ret = error_intolerant_search(cursor,qry)
+	if not ret:
+		for other_names in ["synonyms", "products", "brands"]:
+			qry = "select targets from drugs where %s like '%%%s%%'" % (other_names, drug)
+			ret = error_intolerant_search(cursor,qry)
+			if ret: break
+	if ret:
+		for line in ret:
+			if not line[0]:continue
+			targets.extend(line[0].split(";"))
 
+	return targets
 
+#########################################
+def drugs_decompose(cursor, drugs):
+	targets = {}
+	all_targets = set()
+	for drug in drugs:
+		targets[drug] = find_targets(cursor, drug)
+		all_targets.update([e.split(":")[0] for e in targets[drug] ])
+	print("\n".join(sorted(all_targets)))
+	print(len(all_targets))
+	exit()
 #########################################
 def main():
 
@@ -114,80 +126,18 @@ def main():
 	cursor.execute('SET character_set_connection=utf8mb4')
 	switch_to_db(cursor,"gnao1")
 
+	[drug_eff_per_variant, drug_ineff_per_variant, variants_sorted] = get_drug_effectivenes(cursor)
 
-	count = {"E" :{"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}},
-	         "MD":{"ineff":{"up":{}, "down":{}}, "eff":{"up":{}, "down":{}}} }
-
-	count_per_variant = {}
-
-	qry  = " select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD"
-	qry += " from cases order by substr(protein,2,length(protein)-2)*1"
-	for line in hard_landing_search(cursor,qry):
-		[protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
-		treatment = {"E":{"eff":treatment_effective_E, "ineff":treatment_ineff_E},
-					"MD":{"eff":treatment_effective_MD, "ineff":treatment_ineff_MD}}
-
-		mechanism = False
-		for symptom in ["E", "MD"]:
-			for effectiveness, drugs in  treatment[symptom].items():
-				if drugs is None: continue
-				for drug in drugs.split(","):
-					if len(drug)==0: continue
-					targets = find_targets(cursor, drug)
-					if not targets or targets=="not found": continue
-					# print("*******************")
-					# print(drug, len(drug))
-					targets_compact = process(targets)
-					print(protein, symptom, colored(effectiveness,'green' if effectiveness=="eff" else 'red'), drug, targets_compact)
-					sort_out_per_symptom(targets_compact, count[symptom][effectiveness])
-					sort_out_per_variant(protein, effectiveness, targets_compact, count_per_variant)
-					mechanism = True
-		if mechanism: print()
-
-	for symptom in ["E", "MD"]:
-		for effectiveness in ["ineff", "eff"]:
-			for direction in ["up", "down"]:
-				if not count[symptom][effectiveness][direction]: continue
-				target_ct = count[symptom][effectiveness][direction]
-				sorted_target_ct = sorted(target_ct.keys(), key=lambda i: target_ct[i],reverse=True)
-				print(symptom, effectiveness, direction)
-				for target in sorted_target_ct[:3]:
-					if target_ct[target]<3: continue
-					print("\t", target, target_ct[target])
-
-	variants_sorted = sorted([v for v in count_per_variant.keys() if not 'del' in v], key=lambda var: int(var[1:-1]))
-
-	print()
-	print()
+	all_drugs = set()
 	for variant in variants_sorted:
-		print()
-		print("================================")
-		target_mentions = {}
-		for effectiveness in ["ineff", "eff"]:
-			for direction in ["up", "down"]:
-				target_ct = count_per_variant[variant][effectiveness][direction]
-				if not target_ct: continue
-				sorted_target_ct = sorted(target_ct.keys(), key=lambda i: target_ct[i],reverse=True)
-				print(variant, effectiveness, direction)
-				for target in sorted_target_ct:
-					if not target in target_mentions: target_mentions[target] = 0
-					target_mentions[target] += target_ct[target]
-					print("\t", target, target_ct[target])
-		if not target_mentions: continue
-		print("-------------------------------")
-		sorted_target_mentions = sorted(target_mentions.keys(), key=lambda i: target_mentions[i],reverse=True)
-		for target in sorted_target_mentions:
-			ineff_up   = count_per_variant[variant]["ineff"]["up"].get(target,0)
-			ineff_down = count_per_variant[variant]["ineff"]["down"].get(target,0)
-			eff_up     = count_per_variant[variant]["eff"]["up"].get(target,0)
-			eff_down   = count_per_variant[variant]["eff"]["down"].get(target,0)
-			diff_up    = eff_up - ineff_up
-			diff_down  = eff_down - ineff_down
-			fraction_up   = diff_up/(eff_up+ineff_up) if (eff_up+ineff_up)>0 else 0
-			fraction_down = diff_down/(eff_down+ineff_down) if (eff_down+ineff_down) >0 else 0
-			# print(" %10s  %2d  |  %2d   %2d  %2d  %2d " % (target, target_mentions[target], eff_up, eff_down, ineff_up, ineff_down))
-			print(" %10s  %2d  |  %2d   %5.2f      %2d  %5.2f " %
-				(target, target_mentions[target], diff_up, fraction_up,  diff_down, fraction_down))
+		if len(drug_eff_per_variant[variant])==0: continue
+		all_drugs.update(set(drug_eff_per_variant[variant].keys()))
+		# print("====================")
+		# print(variant)
+		# for drug, eff in  drug_eff_per_variant[variant].items():
+		# 	ineff = drug_ineff_per_variant[variant][drug]
+		# 	print("\t %20s  %3d   %3d %3d" % (drug, eff-ineff, eff, ineff))
+	drugs_decompose(cursor, all_drugs)
 
 	cursor.close()
 	db.close()

@@ -15,10 +15,50 @@ using namespace std;
 // not we have elements and nodes here
 // (nodes have parents and siblings and such
 // and elements have attributes, text itd)
+void checkProdrug(XMLNode *node) {
+   // is this a prodrug? this way of looking for prodrugs does not guarantee anything,
+    // but drugbank itslef has only 14 names listed as prodrugs - this was for example
+    // you cannot find that levodopa is prodrug of dopamine
+    int prodrug = 0;
+    for(XMLNode *sib = node->FirstChildElement("categories")->FirstChildElement("category"); sib; sib = sib->NextSibling()){
+          for(XMLNode *nephew = sib->FirstChildElement(); nephew; nephew = nephew->NextSibling()){
+                if ( nephew->ToElement()->GetText() && !strcmp(nephew->ToElement()->GetText(), "Prodrugs")) {
+                    prodrug  = 1;
+                }
+          }
+    }
+    if (! prodrug) {
+        const char * text = node->FirstChildElement("description")->GetText();
+        if (text) {
+            if (strstr(text, "prodrug") || strstr(text, "Prodrug") || strstr(text, "pro-drug"))  prodrug  = 1;
+        }
+    }
+    if (! prodrug) {
+        const char * text = node->FirstChildElement("pharmacodynamics")->GetText();
+        if (text) {
+            if (strstr(text, "prodrug") || strstr(text, "Prodrug") || strstr(text, "pro-drug"))  prodrug  = 1;
+        }
+    }
+     if (! prodrug && node->FirstChildElement("mechanism-of-action") && node->FirstChildElement("mechanism-of-action")->GetText()) {
+        const char * text = node->FirstChildElement("mechanism-of-action")->GetText();
+        if (text) {
+            if (strstr(text, "prodrug") || strstr(text, "Prodrug") || strstr(text, "pro-drug"))  prodrug  = 1;
+        }
+    }
+
+    if (prodrug)  printf("     prodrug\tmaybe\n");
+
+}
+
 void parseDrug(XMLNode *node) {
     XMLElement *e = node->ToElement();
     // if(strcmp(e->Attribute("type"), "small molecule")) return; // otherwise we have all sorts of shit here, including fish
+    //if ( strcmp(node->FirstChildElement("name")->GetText(), "Levodopa")) return;
+    // printf("%s\t%s  %d\n", e->Value(),  node->FirstChildElement("name")->GetText(), node->GetLineNum());
+
     printf("%s\t%s\n", e->Value(),  node->FirstChildElement("name")->GetText());
+
+    checkProdrug(node);
 
     for(XMLNode *sib = node->FirstChildElement("external-identifiers")->FirstChildElement("external-identifier"); sib; sib = sib->NextSibling()){
           XMLNode *nephew = sib->FirstChildElement("resource");
@@ -27,6 +67,7 @@ void parseDrug(XMLNode *node) {
           printf("     pubchem\t%s\n", nephew->NextSibling()->ToElement()->GetText());
           break;
     }
+
 
     for(XMLNode *sib = node->FirstChildElement("synonyms")->FirstChildElement("synonym"); sib; sib = sib->NextSibling()){
           printf("     synonym\t%s\n", sib->ToElement()->GetText());
@@ -52,6 +93,7 @@ void parseDrug(XMLNode *node) {
                 }
           }
     }
+
 
 }
 

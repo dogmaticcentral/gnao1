@@ -42,6 +42,8 @@ def main():
 			if drug_name:
 				if field[0] == "pubchem":
 					drug[drug_name]["pubchem"] = field[1]
+				elif field[0] == "prodrug":
+					drug[drug_name]["prodrug"] = field[1]
 				else:
 					for keyword in ["synonym", "product", "brand"]:
 						if field[0] == keyword and  field[1] and len(field[1])>0:
@@ -67,7 +69,9 @@ def main():
 		fixed_fields = {"name":name}
 		update_fields = {}
 		if "pubchem" in data:
-			update_fields["pubchem"] = data["pubchem"];
+			update_fields["pubchem"] = data["pubchem"]
+		if "prodrug" in data:
+			update_fields["is_prodrug_of"] = data["prodrug"]
 		if "synonyms" in data:
 			update_fields["synonyms"] = ";".join(list(data["synonyms"])).replace("'","")
 		if "products" in data:
