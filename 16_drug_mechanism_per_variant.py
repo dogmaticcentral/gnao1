@@ -71,12 +71,14 @@ def get_drug_effectivenes(cursor):
 			drug_eff_per_variant[variant] = {}
 			drug_ineff_per_variant[variant] = {}
 		for drug in drug_effective_E.split(",")+drug_effective_MD.split(","):
+			if drug=='KD': continue
 			if not drug: continue
 			if not drug in drug_eff_per_variant[variant]:
 				drug_eff_per_variant[variant][drug] = 0
 				drug_ineff_per_variant[variant][drug] = 0
 			drug_eff_per_variant[variant][drug] += 1
 		for drug in drug_ineff_E.split(",")+drug_ineff_MD.split(","):
+			if drug=='KD': continue
 			if not drug: continue
 			if not drug in drug_ineff_per_variant[variant]:
 				drug_ineff_per_variant[variant][drug]= 0
@@ -86,34 +88,83 @@ def get_drug_effectivenes(cursor):
 	return [drug_eff_per_variant, drug_ineff_per_variant, variants_sorted]
 
 
+#########################################
+def get_active_moieties_for_prodrugs(cursor, drugs):
+	active_moiety = {}
+	ret = error_intolerant_search(cursor, "select name, is_prodrug_of from drugs where is_prodrug_of is not null")
+	if ret:
+		for name, is_prodrug_of in ret:
+			if is_prodrug_of and is_prodrug_of!="maybe":
+				active_moiety[name.lower()] = is_prodrug_of.lower()
+	return active_moiety
+
+
+#########################################
 def find_targets(cursor, drug):
+	generic_name = ""
 	targets = []
 	# try the name first
-	qry = "select targets from drugs where name='%s'" % drug
-
+	qry = "select name, targets from drugs where name='%s'" % drug
 	ret = error_intolerant_search(cursor,qry)
-	if not ret:
-		for other_names in ["synonyms", "products", "brands"]:
-			qry = "select targets from drugs where %s like '%%%s%%'" % (other_names, drug)
+
+	if not ret or not ret[0][1]:
+		for other_names in ["synonyms", "brands", "products"]:
+			qry = "select name, targets from drugs where %s like '%%;%s;%%'" % (other_names, drug)
 			ret = error_intolerant_search(cursor,qry)
 			if ret: break
-	if ret:
-		for line in ret:
-			if not line[0]:continue
-			targets.extend(line[0].split(";"))
+	if not ret: return[drug.lower(), targets]
+	for line in ret:
+		if len(line)!=2 or not line[0] or not line[1]:continue
+		generic_name = line[0]
+		targets.extend([t.upper() for t in line[1].split(";")])
+	if len(targets)==0:
+		print("select name, targets from drugs where %s like '%%;%s;%%'" % ("products", drug))
+		print("! no targets for", drug, generic_name)
+		exit()
+	return [generic_name.lower(), targets]
 
-	return targets
 
 #########################################
 def drugs_decompose(cursor, drugs):
 	targets = {}
-	all_targets = set()
-	for drug in drugs:
-		targets[drug] = find_targets(cursor, drug)
-		all_targets.update([e.split(":")[0] for e in targets[drug] ])
-	print("\n".join(sorted(all_targets)))
-	print(len(all_targets))
-	exit()
+	generic_name = {}
+	active_moiety = get_active_moieties_for_prodrugs(cursor, drugs)
+	if not active_moiety:
+		print("active_moiety does not seem to have been set,; run 05_fix_prodrugs first")
+		exit()
+	for drug in [d.lower()for d in list(drugs) + list(active_moiety.values())]:
+		[generic_name[drug], targets[drug]] = find_targets(cursor, drug)
+
+	return [generic_name, active_moiety, targets]
+
+
+#########################################
+def get_activities(cursor, targets, generic_name, active_moiety):
+	not_found = 0
+	found = 0
+	for drug, tgts in targets.items():
+		if not tgts: continue
+		target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
+		drug  = drug.lower()
+		# the second arg is default if val for the first not found in the dictionary
+		drug_name = active_moiety.get(generic_name[drug], generic_name[drug])
+		qry  = "select target_symbol, ki from affinities where drug_name='%s' " % drug_name
+		qry += "and target_symbol in (%s)" % target_string
+		ret = error_intolerant_search(cursor, qry)
+		if not ret:
+			not_found += 1
+			# print("'%s',"%drug, end =" ")
+			qry = "select count(*) from affinities where drug_name='%s' " % drug_name
+			count_any = hard_landing_search(cursor, qry)[0][0]
+			print(drug, drug_name, count_any, target_string)
+			continue
+		# print(drug, target_string)
+		# print(ret)
+		# print()
+	print(found, not_found)
+	return ""
+
+
 #########################################
 def main():
 
@@ -132,12 +183,9 @@ def main():
 	for variant in variants_sorted:
 		if len(drug_eff_per_variant[variant])==0: continue
 		all_drugs.update(set(drug_eff_per_variant[variant].keys()))
-		# print("====================")
-		# print(variant)
-		# for drug, eff in  drug_eff_per_variant[variant].items():
-		# 	ineff = drug_ineff_per_variant[variant][drug]
-		# 	print("\t %20s  %3d   %3d %3d" % (drug, eff-ineff, eff, ineff))
-	drugs_decompose(cursor, all_drugs)
+
+	[generic_name, active_moiety, targets] = drugs_decompose(cursor, all_drugs)
+	activities = get_activities(cursor, targets, generic_name, active_moiety)
 
 	cursor.close()
 	db.close()

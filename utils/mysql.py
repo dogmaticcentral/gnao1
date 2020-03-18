@@ -44,7 +44,10 @@ def val2mysqlval(value):
 	if  value is None:
 		return  "null "
 	elif type(value) is str:
-		return "\'%s\'" % value
+		if "'" in value:
+			return "\"%s\"" % value
+		else:
+			return "\'%s\'" % value
 	return "{}".format(value)
 
 
@@ -120,7 +123,7 @@ def store_or_update(cursor, table, fixed_fields, update_fields, verbose=False, p
 		qry += " values "
 		qry += "(" + ",".join([val2mysqlval(v) for v in vals]) + ")"
 
-	rows   = search_db (cursor, qry, verbose)
+	rows = search_db (cursor, qry, verbose)
 
 	if verbose: print("qry:",qry,"\n", "rows:", rows)
 	# if there is a return, it is an error msg
@@ -130,7 +133,7 @@ def store_or_update(cursor, table, fixed_fields, update_fields, verbose=False, p
 		return False
 
 	if not exists:
-		rows = search_db (cursor, "select last_insert_id()" )
+		rows = search_db (cursor, "select last_insert_id()")
 		try:
 			primary_keys =  rows[0]
 		except:

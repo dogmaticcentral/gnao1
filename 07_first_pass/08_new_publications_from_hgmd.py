@@ -8,6 +8,7 @@ from utils.mysql import *
 # 26795593 not clear is it epilepsy only,or if they are rporting only epilepsy
 useless = [28135719, 29390993, 25533962, 23042115, 29389947, 25363768, 26633542, 26795593]
 
+
 ####################
 def parse_tsv(infile, cases, publications):
 

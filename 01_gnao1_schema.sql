@@ -44,15 +44,13 @@ CREATE TABLE `drugs` (
 
 
 
-DROP TABLE IF EXISTS `activities`;
-CREATE TABLE `activities` (
-   `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-   `pubchem_CID`   int NOT NULL,
-   `drug_name` text,
+DROP TABLE IF EXISTS `affinities`;
+CREATE TABLE `affinities` (
+   `id` mediumint(9) NOT NULL,
+   `drug_name` text  CHARACTER SET utf8mb4,
    `target_symbol`   varchar(20) NOT NULL,
-   `activity`  float,
-   `activity_name`  text,
-   `pubchem_AIDs`   text NOT NULL,
+   `ki`  float,
+   `kidb_id` mediumint(9) ,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

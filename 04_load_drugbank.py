@@ -73,23 +73,34 @@ def main():
 		if "prodrug" in data:
 			update_fields["is_prodrug_of"] = data["prodrug"]
 		if "synonyms" in data:
-			update_fields["synonyms"] = ";".join(list(data["synonyms"])).replace("'","")
+			# use semicolon at the beginning and end so we can search by similarity for '%;qry;%'
+			update_fields["synonyms"] = ";" + ";".join(list(data["synonyms"])).strip().replace("'","") + ";"
 		if "products" in data:
-			update_fields["products"] = ";".join(list(data["products"])[:20]).replace("'","")
+			# prouct names are often garbage, like naems for cough drops and such, I don't know how to handle this
+			update_fields["products"] = ";" + ";".join(list(data["products"])[:100]).strip().replace("'","")+ ";"
 		if "brands" in data:
-			update_fields["brands"] = ";".join(list(data["brands"])[:20]).replace("'","")
+			update_fields["brands"] = ";" + ";".join(list(data["brands"])).strip().replace("'","")+ ";"
 		if tgt_list:
 			update_fields["targets"] = ";".join(tgt_list).replace("'","")
 		if not update_fields: continue
 
-		# print(fixed_fields)
-		# print(update_fields)
 		if not store_or_update(cursor, "drugs", fixed_fields, update_fields):
 			print(name)
 			for k, v in  data["targets"].items():
 				print(k,v)
 
 			exit()
+
+
+	# fixes:
+	qry = "update drugs set brands = concat('Hydroaltesone;Hidroaltesona;', brands ) where name = 'Hydrocortisone'"
+	error_intolerant_search(cursor, qry)
+	# surrogates, I don't know what to do when somebody quotes in the case description that they used "curare"
+	# of "benzodiazepines' - that's too generics
+	qry = "update drugs set  products = concat('curare;', products) where name = 'Pancuronium'"
+	error_intolerant_search(cursor, qry)
+	qry = "update drugs set  products = concat('benzodiazepines;', products) where name = 'Clonazepam'"
+	error_intolerant_search(cursor, qry)
 
 	cursor.close()
 	db.close()
