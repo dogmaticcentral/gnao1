@@ -33,6 +33,7 @@ DROP TABLE IF EXISTS `drugs`;
 CREATE TABLE `drugs` (
    `id` mediumint(9) NOT NULL AUTO_INCREMENT,
    `name` text CHARACTER SET utf8mb4,
+   `drugbank_id`  varchar(10) NOT NULL,
    `pubchem`   int,
    `synonyms`  text CHARACTER SET utf8mb4 ,
    `products`  text CHARACTER SET utf8mb4,
@@ -43,17 +44,37 @@ CREATE TABLE `drugs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-
-DROP TABLE IF EXISTS `affinities`;
-CREATE TABLE `affinities` (
-   `id` mediumint(9) NOT NULL,
-   `drug_name` text  CHARACTER SET utf8mb4,
-   `target_symbol`   varchar(20) NOT NULL,
-   `ki`  float,
-   `kidb_id` mediumint(9) ,
-    PRIMARY KEY (`id`)
+-- to get around importing problem with mysql
+-- sudo mv bindingdb.tsv /var/lib/mysql-files/
+-- sudo  mysqlimport gnao1  /var/lib/mysql-files/bindingdb.tsv
+DROP TABLE IF EXISTS `bindingdb`;
+CREATE TABLE `bindingdb`(
+   `bindingdb_id` int  NOT NULL,
+   `ki_nM`  int,
+   `drugbank_ligand_id` varchar(10) NOT NULL,
+   `uniprot_target_ids` text NOT NULL,
+    PRIMARY KEY (`bindingdb_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
+DROP TABLE IF EXISTS `pdsp`;
+CREATE TABLE `pdsp`(
+   `id` int  NOT NULL,
+   `drug_name` text CHARACTER SET utf8mb4,
+   `target_symbol`  varchar(50) NOT NULL,
+   `ki_nM`  int,
+   `species`  varchar(50) NOT NULL,
+     PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `pubchem`;
+CREATE TABLE `pubchem`(
+   `id` int  NOT NULL  AUTO_INCREMENT,
+   `drug_name` text CHARACTER SET utf8mb4,
+   `target_symbol`  varchar(50) NOT NULL,
+   `ki_nM`  int,
+     PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -1,13 +1,13 @@
 #!/usr/bin/python3 -u
 
-# I could not get this shit to work - some values
-# are given as IC50, some as Ki, some values are missing from some tables
-# but can be found in other, the xml is a complete clunker - enough
-# movingot to Ki database - no bull collection from UNC https://pdsp.unc.edu/databases/pdsp.php
+# Ki values in pubchem are uM
+
+# https://bulletin.acscinf.org/PDFs/251nm/2016_spring_CINF_170.pdf ? is this still alive?
 
 
 from utils.mysql import *
 import urllib3, os
+import numpy as np
 from bs4 import BeautifulSoup
 
 
@@ -82,13 +82,6 @@ def download_pubchem(pubchem_dir, pcids):
 		url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/%d/assaysummary/CSV" % pcid
 		fetch_info(url, fnm)
 
-
-#########################################
-# IC50 = half maximal inhibitory concentration
-# EC50 = half maximal effective concentration (for excitatory drugs)
-# AC50 = half maximal activation concentration
-# Ki is related to those by Cheng-Prusoff equation https://en.wikipedia.org/wiki/IC50#Cheng_Prusoff_equation
-
 #########################################
 def parse_pubchem(pubchem_dir, pcids2drugname, gene_symb):
 	pubchem_entries = []
@@ -136,35 +129,42 @@ def parse_pubchem(pubchem_dir, pcids2drugname, gene_symb):
 			pubchem_entries.append([pcid, drugname,  gene_symb[gene_id], activity, activity_name, aid])
 	return pubchem_entries
 
+########################################
+def reject_outliers(data, m=1):
+	if len(data)<2 or len(set(data))==1: return data[0], data
 
-#########################################
+	mean = np.mean(data)
+	if len(data)<3: return mean, data
+
+	bound = m*np.std(data)
+	filtered = list(filter(lambda d: abs(d-mean)<bound, data))
+	if len(filtered)==0:
+		bound *=2
+		filtered = list(filter(lambda d: abs(d-mean)<bound, data))
+	new_mean = np.mean(filtered)
+	return new_mean, filtered
+
+########################################
+def clean_ki_value(ki_string):
+	return str(max(round(float(ki_string)), 1))
+
+##################
 def store_affinities(cursor, pubchem_entries):
 	# before storing,  average the values from the same experiment
 	activities = {}
-	for pcid, drugname,  target_symbol, activity, activity_name, aid in pubchem_entries:
-		key = "_".join([str(i) for i in [drugname,  target_symbol]])
+	for pcid, drug_name,  target_symbol, activity, activity_name, aid in pubchem_entries:
+		key = "_".join([str(i) for i in [drug_name,  target_symbol]])
 		if not key in activities: activities[key] = []
 		activities[key].append(float(activity))
 
-
 	for key, values in activities.items():
-		avg_activity = sum(values)/len(values)
-		print(key, "%.5f"% avg_activity, values)
-		[drugname, target_symbol] = key.split("_")
-		qry = "select * from affinities where drug_name='{}' and target_symbol='{}'".format(drugname, target_symbol)
-		ret = error_intolerant_search(cursor, qry)
-		if ret:
-			for line in ret:
-				print("\t", line)
-	# for key, values in activities.items():
-	# 	avg_activity = sum(values)/len(values)
-	# 	[pcid, drugname,  target_symbol, activity_name] = key.split("_")
-	# 	pcid = int(pcid)
-	# 	aids_string  = ",".join(aids[key])
-	# 	fixed_fields  = {"pubchem_CID":pcid, "target_symbol": target_symbol, "pubchem_AIDs":aids_string}
-	# 	update_fields = {"drug_name": drugname, "activity": avg_activity, "activity_name":activity_name}
-	# 	store_or_update(cursor, "activities", fixed_fields, update_fields)
-
+		avg_ki, filtered_values = reject_outliers(values)
+		avg_ki *= 1000 # we use nM here
+		[drug_name, target_symbol] = key.split("_")
+		fixed = {"drug_name":drug_name, "target_symbol":target_symbol}
+		update = {"ki_nM":clean_ki_value(avg_ki)}
+		store_or_update(cursor, "pubchem", fixed, update)
+		print(drug_name, target_symbol, "%.2e" % avg_ki)
 
 
 #########################################

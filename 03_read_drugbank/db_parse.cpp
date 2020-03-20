@@ -57,6 +57,7 @@ void parseDrug(XMLNode *node) {
     // printf("%s\t%s  %d\n", e->Value(),  node->FirstChildElement("name")->GetText(), node->GetLineNum());
 
     printf("%s\t%s\n", e->Value(),  node->FirstChildElement("name")->GetText());
+    printf("     drugbank_id\t%s\n", node->FirstChildElement("drugbank-id")->GetText());
 
     checkProdrug(node);
 

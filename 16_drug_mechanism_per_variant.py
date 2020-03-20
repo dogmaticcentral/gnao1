@@ -89,7 +89,7 @@ def get_drug_effectivenes(cursor):
 
 
 #########################################
-def get_active_moieties_for_prodrugs(cursor, drugs):
+def get_active_moieties_for_prodrugs(cursor):
 	active_moiety = {}
 	ret = error_intolerant_search(cursor, "select name, is_prodrug_of from drugs where is_prodrug_of is not null")
 	if ret:
@@ -103,43 +103,51 @@ def get_active_moieties_for_prodrugs(cursor, drugs):
 def find_targets(cursor, drug):
 	generic_name = ""
 	targets = []
+	drugbank_id = ""
 	# try the name first
-	qry = "select name, targets from drugs where name='%s'" % drug
+	qry = "select name, drugbank_id, targets from drugs where name='%s'" % drug
 	ret = error_intolerant_search(cursor,qry)
 
 	if not ret or not ret[0][1]:
 		for other_names in ["synonyms", "brands", "products"]:
-			qry = "select name, targets from drugs where %s like '%%;%s;%%'" % (other_names, drug)
+			qry = "select name,  drugbank_id, targets from drugs where %s like '%%;%s;%%'" % (other_names, drug)
 			ret = error_intolerant_search(cursor,qry)
 			if ret: break
-	if not ret: return[drug.lower(), targets]
+
+	if not ret:
+		print(drug, "not found")
+		return None
+
 	for line in ret:
-		if len(line)!=2 or not line[0] or not line[1]:continue
+		if len(line)!=3 or not line[0] or not line[1] or not line[2]: continue
 		generic_name = line[0]
-		targets.extend([t.upper() for t in line[1].split(";")])
-	if len(targets)==0:
-		print("select name, targets from drugs where %s like '%%;%s;%%'" % ("products", drug))
+		drugbank_id = line[1]
+		targets.extend([t.upper() for t in line[2].split(";")])
+
+	if len(targets) == 0:
+		print("select name,  drugbank_id, targets from drugs where %s like '%%;%s;%%'" % ("products", drug))
 		print("! no targets for", drug, generic_name)
 		exit()
-	return [generic_name.lower(), targets]
+
+	return [generic_name.lower(), drugbank_id, targets]
 
 
 #########################################
 def drugs_decompose(cursor, drugs):
 	targets = {}
 	generic_name = {}
-	active_moiety = get_active_moieties_for_prodrugs(cursor, drugs)
-	if not active_moiety:
-		print("active_moiety does not seem to have been set,; run 05_fix_prodrugs first")
-		exit()
-	for drug in [d.lower()for d in list(drugs) + list(active_moiety.values())]:
-		[generic_name[drug], targets[drug]] = find_targets(cursor, drug)
+	drugbank_id = {}
+	for drug in drugs:
+		ret = find_targets(cursor, drug)
+		if not ret: continue
+		[generic_name[drug], drugbank_id[drug], targets[drug]] = ret
 
-	return [generic_name, active_moiety, targets]
+	return [generic_name, drugbank_id, targets]
 
 
 #########################################
-def get_activities(cursor, targets, generic_name, active_moiety):
+def get_activities(cursor, targets, generic_name, drugbank_id, active_moiety):
+
 	not_found = 0
 	found = 0
 	for drug, tgts in targets.items():
@@ -147,21 +155,35 @@ def get_activities(cursor, targets, generic_name, active_moiety):
 		target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
 		drug  = drug.lower()
 		# the second arg is default if val for the first not found in the dictionary
-		drug_name = active_moiety.get(generic_name[drug], generic_name[drug])
-		qry  = "select target_symbol, ki from affinities where drug_name='%s' " % drug_name
-		qry += "and target_symbol in (%s)" % target_string
+		if not drug in generic_name: continue
+		active_moiety_name = active_moiety.get(generic_name[drug], generic_name[drug])
+		if not active_moiety_name in generic_name: continue
+		if not generic_name[active_moiety_name] in drugbank_id: continue
+		dbid = drugbank_id[generic_name[active_moiety_name]]
+
+		qry = "select uniprot_target_ids, ki_nM from bindingdb where drugbank_ligand_id='%s'" % dbid
 		ret = error_intolerant_search(cursor, qry)
+
+		if not ret:
+			qry = "select * from pdsp where drug_name='{}'".format(generic_name[drug])
+			ret = error_intolerant_search(cursor, qry)
+
+		if not ret:
+			qry = "select * from pubchem where drug_name='{}'".format(generic_name[drug])
+			ret = error_intolerant_search(cursor, qry)
+
+
 		if not ret:
 			not_found += 1
-			# print("'%s',"%drug, end =" ")
-			qry = "select count(*) from affinities where drug_name='%s' " % drug_name
-			count_any = hard_landing_search(cursor, qry)[0][0]
-			print(drug, drug_name, count_any, target_string)
+			print("\nnot found {}, generic name {}, dbid {}".format(drug, generic_name[drug], dbid))
+			#exit()
 			continue
+		found += 1
 		# print(drug, target_string)
 		# print(ret)
 		# print()
-	print(found, not_found)
+	print(len(targets), found, not_found)
+	
 	return ""
 
 
@@ -183,9 +205,16 @@ def main():
 	for variant in variants_sorted:
 		if len(drug_eff_per_variant[variant])==0: continue
 		all_drugs.update(set(drug_eff_per_variant[variant].keys()))
+		all_drugs.update(set(drug_ineff_per_variant[variant].keys()))
 
-	[generic_name, active_moiety, targets] = drugs_decompose(cursor, all_drugs)
-	activities = get_activities(cursor, targets, generic_name, active_moiety)
+	active_moiety = get_active_moieties_for_prodrugs(cursor)
+	if not active_moiety:
+		print("active_moiety does not seem to have been set; run 05_fix_prodrugs first")
+		exit()
+
+	[generic_name, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
+	activities = get_activities(cursor, targets, generic_name, drugbank_id, active_moiety)
+
 
 	cursor.close()
 	db.close()

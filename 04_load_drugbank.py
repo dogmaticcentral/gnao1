@@ -43,7 +43,11 @@ def main():
 				if field[0] == "pubchem":
 					drug[drug_name]["pubchem"] = field[1]
 				elif field[0] == "prodrug":
-					drug[drug_name]["prodrug"] = field[1]
+					drug[drug_name]["is_prodrug_of"] = field[1]
+				elif field[0] == "drugbank_id":
+					if field[1][:2] != "DB":
+						print("unexpected drugbank id {} for name {}".format(field[1], drug_name))
+					drug[drug_name]["drugbank_id"] = field[1]
 				else:
 					for keyword in ["synonym", "product", "brand"]:
 						if field[0] == keyword and  field[1] and len(field[1])>0:
@@ -66,12 +70,12 @@ def main():
 					tgt_info_chunk += ":"+ tgt_info["action"].strip()
 				tgt_list.append(tgt_info_chunk)
 		name = name.replace("'","")
-		fixed_fields = {"name":name}
+		fixed_fields  = {"name":name.lower()}
 		update_fields = {}
-		if "pubchem" in data:
-			update_fields["pubchem"] = data["pubchem"]
-		if "prodrug" in data:
-			update_fields["is_prodrug_of"] = data["prodrug"]
+		for fnm in ["pubchem", "is_prodrug_of", "drugbank_id"]:
+			if fnm in data:
+				update_fields[fnm] = data[fnm]
+
 		if "synonyms" in data:
 			# use semicolon at the beginning and end so we can search by similarity for '%;qry;%'
 			update_fields["synonyms"] = ";" + ";".join(list(data["synonyms"])).strip().replace("'","") + ";"
@@ -88,18 +92,20 @@ def main():
 			print(name)
 			for k, v in  data["targets"].items():
 				print(k,v)
-
 			exit()
 
 
 	# fixes:
-	qry = "update drugs set brands = concat('Hydroaltesone;Hidroaltesona;', brands ) where name = 'Hydrocortisone'"
+	qry = "update drugs set brands = concat(';Hydroaltesone;Hidroaltesona', brands ) where name = 'Hydrocortisone'"
 	error_intolerant_search(cursor, qry)
 	# surrogates, I don't know what to do when somebody quotes in the case description that they used "curare"
-	# of "benzodiazepines' - that's too generics
-	qry = "update drugs set  products = concat('curare;', products) where name = 'Pancuronium'"
+	# of "benzodiazepines' - that's too generic
+	qry = "update drugs set  products = concat(';curare', products) where name = 'Pancuronium'"
 	error_intolerant_search(cursor, qry)
-	qry = "update drugs set  products = concat('benzodiazepines;', products) where name = 'Clonazepam'"
+	qry = "update drugs set  products = concat(';benzodiazepine;benzodiazepines', products) where name = 'Clonazepam'"
+	error_intolerant_search(cursor, qry)
+	# Benzodiazepine by itself is investigational drug (?! I don't really care)
+	qry = "delete from drugs where name='Benzodiazepine'"
 	error_intolerant_search(cursor, qry)
 
 	cursor.close()
