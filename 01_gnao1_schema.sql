@@ -46,9 +46,9 @@ CREATE TABLE `drugs` (
 
 -- to get around importing problem with mysql
 -- sudo mv bindingdb.tsv /var/lib/mysql-files/
--- sudo  mysqlimport gnao1  /var/lib/mysql-files/bindingdb.tsv
-DROP TABLE IF EXISTS `bindingdb`;
-CREATE TABLE `bindingdb`(
+-- sudo  mysqlimport gnao1  /var/lib/mysql-files/bindingdb_ki.tsv
+DROP TABLE IF EXISTS `bindingdb_ki`;
+CREATE TABLE `bindingdb_ki`(
    `bindingdb_id` int  NOT NULL,
    `ki_nM`  int,
    `drugbank_ligand_id` varchar(10) NOT NULL,
@@ -58,8 +58,8 @@ CREATE TABLE `bindingdb`(
 
 
 
-DROP TABLE IF EXISTS `pdsp`;
-CREATE TABLE `pdsp`(
+DROP TABLE IF EXISTS `pdsp_ki`;
+CREATE TABLE `pdsp_ki`(
    `id` int  NOT NULL,
    `drug_name` text CHARACTER SET utf8mb4,
    `target_symbol`  varchar(50) NOT NULL,
@@ -69,12 +69,27 @@ CREATE TABLE `pdsp`(
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `pubchem`;
-CREATE TABLE `pubchem`(
+DROP TABLE IF EXISTS `pubchem_ki`;
+CREATE TABLE `pubchem_ki`(
    `id` int  NOT NULL  AUTO_INCREMENT,
    `drug_name` text CHARACTER SET utf8mb4,
    `target_symbol`  varchar(50) NOT NULL,
    `ki_nM`  int,
      PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+DROP TABLE IF EXISTS `literature_ki`;
+CREATE TABLE `literature_ki`(
+   `id` int  NOT NULL  AUTO_INCREMENT,
+   `drug_name` text CHARACTER SET utf8mb4,
+   `target_symbol`  varchar(50) NOT NULL,
+   `ki_nM`  int,
+   `pubmed`    int,
+   `pubmedcentral`    varchar(20),
+   `other_sources` text,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 

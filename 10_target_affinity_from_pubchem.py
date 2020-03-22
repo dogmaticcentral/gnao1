@@ -163,7 +163,7 @@ def store_affinities(cursor, pubchem_entries):
 		[drug_name, target_symbol] = key.split("_")
 		fixed = {"drug_name":drug_name, "target_symbol":target_symbol}
 		update = {"ki_nM":clean_ki_value(avg_ki)}
-		store_or_update(cursor, "pubchem", fixed, update)
+		store_or_update(cursor, "pubchem_ki", fixed, update)
 		print(drug_name, target_symbol, "%.2e" % avg_ki)
 
 

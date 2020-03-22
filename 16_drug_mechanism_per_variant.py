@@ -3,6 +3,21 @@
 from utils.mysql import *
 from termcolor import colored
 
+# phenobarbitone is a sphenobarbital ynonym
+# phenobarbital  = a nonselective central nervous system depressant.
+# It promotes binding to inhibitory gamma-aminobutyric acid subtype receptors,
+# and modulates chloride currents through receptor channels. It also inhibits glutamate induced depolarizations.
+# pyridoxine is vitamin B6 (vitamin B6 is a cofactor for both glutamic acid decarboxylase and GABA transaminase)
+
+# the enzymes required for the synthesis and metabolism of GABA in the brain.
+# biotin ? not clear why taht was administered at all
+
+# The precise mechanism(s) by which rufinamide exerts its antiepileptic effect is unknown.
+# The results of in vitro studies suggest that the principal mechanism of action of rufinamide is
+# modulation of the activity of sodium channels and, in particular, prolongation of the inactive state of the channel.
+
+# {} is set literal
+ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "immunoglobulin", "rufinamide"}
 
 main_players = ["GABRA", "GABR", "GABBR",  "ADRA", "CHRNA", "CHRM", "SLC", "KCN", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC"]
@@ -65,20 +80,19 @@ def get_drug_effectivenes(cursor):
 	qry  = " select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD"
 	qry += " from cases order by substr(protein,2,length(protein)-2)*1"
 	for line in hard_landing_search(cursor,qry):
-		[variant, drug_effective_E, drug_ineff_E, drug_effective_MD, drug_ineff_MD] = [l.strip().strip(",") if l else "" for l in line]
+		[variant, drug_effective_E, drug_ineff_E, drug_effective_MD, drug_ineff_MD] = \
+			[l.strip().strip(",").lower() if l else "" for l in line]
 		if variant not in variants_sorted:
 			variants_sorted.append(variant)
 			drug_eff_per_variant[variant] = {}
 			drug_ineff_per_variant[variant] = {}
 		for drug in drug_effective_E.split(",")+drug_effective_MD.split(","):
-			if drug=='KD': continue
 			if not drug: continue
 			if not drug in drug_eff_per_variant[variant]:
 				drug_eff_per_variant[variant][drug] = 0
 				drug_ineff_per_variant[variant][drug] = 0
 			drug_eff_per_variant[variant][drug] += 1
 		for drug in drug_ineff_E.split(",")+drug_ineff_MD.split(","):
-			if drug=='KD': continue
 			if not drug: continue
 			if not drug in drug_ineff_per_variant[variant]:
 				drug_ineff_per_variant[variant][drug]= 0
@@ -139,9 +153,10 @@ def drugs_decompose(cursor, drugs):
 	drugbank_id = {}
 	for drug in drugs:
 		ret = find_targets(cursor, drug)
-		if not ret: continue
+		if not ret:
+			print(drug, "has no target  ****")
+			continue
 		[generic_name[drug], drugbank_id[drug], targets[drug]] = ret
-
 	return [generic_name, drugbank_id, targets]
 
 
@@ -151,25 +166,37 @@ def get_activities(cursor, targets, generic_name, drugbank_id, active_moiety):
 	not_found = 0
 	found = 0
 	for drug, tgts in targets.items():
-		if not tgts: continue
+		if not tgts:
+			print("no tgts for", drug)
+			continue
 		target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
 		drug  = drug.lower()
 		# the second arg is default if val for the first not found in the dictionary
-		if not drug in generic_name: continue
+		if not drug in generic_name:
+			print("no generic name for", drug)
+			continue
 		active_moiety_name = active_moiety.get(generic_name[drug], generic_name[drug])
-		if not active_moiety_name in generic_name: continue
-		if not generic_name[active_moiety_name] in drugbank_id: continue
+		if not active_moiety_name in generic_name:
+			print(active_moiety_name, "has no generic name")
+			continue
+		if not generic_name[active_moiety_name] in drugbank_id:
+			print(generic_name[active_moiety_name], " has no drugbank id")
+			continue
 		dbid = drugbank_id[generic_name[active_moiety_name]]
 
-		qry = "select uniprot_target_ids, ki_nM from bindingdb where drugbank_ligand_id='%s'" % dbid
+		qry = "select uniprot_target_ids, ki_nM from bindingdb_ki where drugbank_ligand_id='%s'" % dbid
 		ret = error_intolerant_search(cursor, qry)
 
 		if not ret:
-			qry = "select * from pdsp where drug_name='{}'".format(generic_name[drug])
+			qry = "select * from pdsp_ki where drug_name='{}'".format(generic_name[drug])
 			ret = error_intolerant_search(cursor, qry)
 
 		if not ret:
-			qry = "select * from pubchem where drug_name='{}'".format(generic_name[drug])
+			qry = "select * from pubchem_ki where drug_name='{}'".format(generic_name[drug])
+			ret = error_intolerant_search(cursor, qry)
+
+		if not ret:
+			qry = "select * from literature_ki where drug_name='{}'".format(generic_name[drug])
 			ret = error_intolerant_search(cursor, qry)
 
 
@@ -186,6 +213,20 @@ def get_activities(cursor, targets, generic_name, drugbank_id, active_moiety):
 	
 	return ""
 
+#########################################
+def deconvolute_bindingdb(cursor, drugdb_id):
+	for line in hard_landing_search(cursor, "select * from bindingdb_ki where drugbank_ligand_id='%s'"%drugdb_id):
+		[bindingdb_id , ki_nM , drugbank_ligand_id,  uniprot_target_ids] = line
+		uniprot_ids = uniprot_target_ids.split(",")
+		qry  = "select uniprot_id, hgnc_approved from identifier_maps.uniprot_hgnc "
+		qry += "where uniprot_id in (%s)" % ",".join(["'%s'"%u for u in uniprot_ids])
+		ret = error_intolerant_search(cursor, qry)
+		if not ret:
+			print("no ret for\nqry")
+			exit()
+		hgnc_target_ids = ",".join([r[1] for r in ret])
+		print(hgnc_target_ids+"\t"+str(int(round(float(ki_nM)/3))))
+	exit()
 
 #########################################
 def main():
@@ -206,20 +247,20 @@ def main():
 		if len(drug_eff_per_variant[variant])==0: continue
 		all_drugs.update(set(drug_eff_per_variant[variant].keys()))
 		all_drugs.update(set(drug_ineff_per_variant[variant].keys()))
-
+	all_drugs = all_drugs.difference(ignored)
 	active_moiety = get_active_moieties_for_prodrugs(cursor)
 	if not active_moiety:
 		print("active_moiety does not seem to have been set; run 05_fix_prodrugs first")
 		exit()
 
 	[generic_name, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
+	print('hydrocortisone' in all_drugs)
+	print('hydrocortisone' in list(active_moiety.values()))
+	print('hydrocortisone' in targets)
 	activities = get_activities(cursor, targets, generic_name, drugbank_id, active_moiety)
-
 
 	cursor.close()
 	db.close()
-
-
 
 
 #########################################

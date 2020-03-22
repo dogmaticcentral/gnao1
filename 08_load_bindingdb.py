@@ -27,7 +27,7 @@ def main():
 	# fields: 0=bindingdb id; 7: organism; 8=Ki in nM; 32=DrugBank ID of Ligand;
 	# 36: Number of Protein Chains in Target; 41: UniProt (SwissProt) Primary ID of Target Chain
 	inf = open("/storage/databases/bindingdb/BindingDB_All.tsv", "r")
-	outf = open("bindingdb.tsv", "w")
+	outf = open("bindingdb_ki.tsv", "w")
 
 	for line in inf:
 		field = line.strip().split('\t')
@@ -37,7 +37,6 @@ def main():
 
 		field[8] = clean_ki_value(field[8])
 		if not field[8]: continue
-
 
 		number_of_chains = int(field[36])
 		uniprot_field_idx = 41

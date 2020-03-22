@@ -204,7 +204,7 @@ def main():
 		else:
 			named_fields = dict(zip(header, [e.strip() for e in line.split('\t')] ))
 		ki = named_fields["ki Val"]
-		if ki == "UNDEFINED" or ki=='10000': continue
+		if ki == "UNDEFINED": continue
 
 		drug_name = named_fields["Ligand Name"]
 		if drug_name.isdigit(): continue
@@ -233,10 +233,11 @@ def main():
 	db.close()
 
 
-	outf = open("pdsp.tsv", "w")
+	outf = open("pdsp_ki.tsv", "w")
 	idx = 0
 	for key, ki in ki_values['human'].items():
 		new_mean, filtered_ki = reject_outliers(ki)
+		if new_mean>50000: continue
 		#print(idx, key, ki, "%.1e" % new_mean)
 		[drug_name, target_symbol] = key.split("_")
 		idx += 1
@@ -267,21 +268,64 @@ if __name__ == '__main__':
 '''
       CHLORPROMAZINE   chlorpromazine   Dopamine D1 high   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2869639&dopt=Abstract
       CHLORPROMAZINE   chlorpromazine   Dopamine D1 low   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2869639&dopt=Abstract
+            DIAZEPAM   diazepam   Cholecystokinin   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=3014519&dopt=Abstract
+         HALOPERIDOL   haloperidol   OPIATE Sigma   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract 
+         HALOPERIDOL   haloperidol   OPIATE Sigma   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract 
          HALOPERIDOL   haloperidol   5-HT-S2   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8093723&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8093723&dopt=Abstract 
          HALOPERIDOL   haloperidol   Dopamine D1A   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1831904&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1831904&dopt=Abstract 
          HALOPERIDOL   haloperidol   Dopamine D1B   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1831904&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1831904&dopt=Abstract 
          HALOPERIDOL   haloperidol   Dopamine D2A   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9430133&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9430133&dopt=Abstract 
          HALOPERIDOL   haloperidol   Dopamine D1 high   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2869639&dopt=Abstract
          HALOPERIDOL   haloperidol   Dopamine D1 low   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2869639&dopt=Abstract
+         HALOPERIDOL   haloperidol   Angiotensin II AT2   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   ADENOSINE A2   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   Glutamate-NMDA-Channel   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   GABA A Benzodiazepine omega5   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
          HALOPERIDOL   haloperidol   Glutamate-NMDA-Polyamine   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   GABA uptake   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   Glycine, strychnine   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   Glycine   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   GABA A Benzodiazepine omega2   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
+         HALOPERIDOL   haloperidol   GABA A Benzodiazepine omega1   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8996185&dopt=Abstract
          HALOPERIDOL   haloperidol   NT   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8935801&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8935801&dopt=Abstract 
+         HALOPERIDOL   haloperidol   Adrenaline Beta   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=11927170&dopt=Abstract
+         HALOPERIDOL   haloperidol   Muscarine Acetylcholine   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=11927170&dopt=Abstract
             Ketamine   ketamine   OPIATE Sigma   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract 
             Ketamine   ketamine   OPIATE Sigma   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2989489&dopt=Abstract 
+            Ketamine   ketamine   SERT   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   MOR   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   DOR   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   KOR   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   GABA-A   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha 1A Adrenergic Receptor   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha 1B Adrenergic Receptor   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha 2A Adrenergic Receptor   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha 2B Adrenergic Receptor   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha 2C Adrenergic Receptor   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Beta 1   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Beta 2   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Muscarinic M2   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Muscarinic M3   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Muscarinic M4   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Muscarinic M5   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Sigma 2 PC12   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Beta 3   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   BZP Rat Brain Site   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Benzodiazepine peripheral   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   Alpha1D   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   CB1   http://pdsp.med.unc.edu/pdsp.php
+            Ketamine   ketamine   CB2   http://pdsp.med.unc.edu/pdsp.php
          RISPERIDONE   risperidone   5-HT2C-INI   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=10991983&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=10991983&dopt=Abstract 
          RISPERIDONE   risperidone   Dopamine D2A   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9430133&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9430133&dopt=Abstract 
          RISPERIDONE   risperidone   NT   http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8935801&dopt=Abstract http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8935801&dopt=Abstract 
+         RISPERIDONE   risperidone   Adrenaline Beta   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=11927170&dopt=Abstract
+         RISPERIDONE   risperidone   Muscarine Acetylcholine   http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=11927170&dopt=Abstract
          RISPERIDONE   risperidone   hD2L   http://jpet.aspetjournals.org/content/350/3/589.long
          RISPERIDONE   risperidone   hD3   http://jpet.aspetjournals.org/content/350/3/589.long
          RISPERIDONE   risperidone   hH1   http://jpet.aspetjournals.org/content/350/3/589.long
+         RISPERIDONE   risperidone   hM1   http://jpet.aspetjournals.org/content/350/3/589.long
          RISPERIDONE   risperidone   rD2   http://jpet.aspetjournals.org/content/350/3/589.long
+           TRAZODONE   trazodone   5-HT5   http://pdsp.med.unc.edu/pdsp.php
+           TRAZODONE   trazodone   Benzodiazepine peripheral   http://pdsp.med.unc.edu/pdsp.php
+
 '''
