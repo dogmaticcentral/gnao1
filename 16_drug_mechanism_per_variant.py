@@ -16,8 +16,17 @@ from termcolor import colored
 # The results of in vitro studies suggest that the principal mechanism of action of rufinamide is
 # modulation of the activity of sodium channels and, in particular, prolongation of the inactive state of the channel.
 
+# Pre and post-synaptic effects of VPA depend on a very broad spectrum of actions, including the regulation of
+#  ionic currents and the facilitation of GABAergic over glutamatergic transmission. ... Epigenetic mechanisms,
+#  including histone deacetylases (HDACs), BDNF and GDNF modulation are pivotal to orientate neurons toward
+#  a neuroprotective status and promote dendritic spines organization.
+
+# Corticotropin (ACTH or adrenocorticotropic hormone) is a polypeptide hormone produced and secreted by the pituitary
+# gland. It is an important player in the hypothalamic-pituitary-adrenal axis.
+
 # {} is set literal
-ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "immunoglobulin", "rufinamide"}
+ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "immunoglobulin", "rufinamide",
+           "valproic acid", "valproate", "acth", "corticotropin", "botox", "botulinum toxin type a"}
 
 main_players = ["GABRA", "GABR", "GABBR",  "ADRA", "CHRNA", "CHRM", "SLC", "KCN", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC"]
@@ -114,15 +123,19 @@ def get_active_moieties_for_prodrugs(cursor):
 
 
 #########################################
-def find_targets(cursor, drug):
-	generic_name = ""
-	targets = []
-	drugbank_id = ""
+def find_targets(cursor, drug, generic_names, targets, drugbank_id):
+	gnms = []
 	# try the name first
 	qry = "select name, drugbank_id, targets from drugs where name='%s'" % drug
 	ret = error_intolerant_search(cursor,qry)
+	if ret and len(ret)>1:
+		# this should not have happened - durg name should be akey in the drugs table
+		# how to make sure that a brand name  does not appear under two generic names?
+		print("duplicate entry in drugs table for", drug)
+		print(ret)
+		exit()
 
-	if not ret or not ret[0][1]:
+	if not ret:
 		for other_names in ["synonyms", "brands", "products"]:
 			qry = "select name,  drugbank_id, targets from drugs where %s like '%%;%s;%%'" % (other_names, drug)
 			ret = error_intolerant_search(cursor,qry)
@@ -132,83 +145,96 @@ def find_targets(cursor, drug):
 		print(drug, "not found")
 		return None
 
+	# len(ret) can be >1: # two drugs combined in a product, for example carbidopa + levodopa = sinemet
 	for line in ret:
-		if len(line)!=3 or not line[0] or not line[1] or not line[2]: continue
-		generic_name = line[0]
-		drugbank_id = line[1]
-		targets.extend([t.upper() for t in line[2].split(";")])
+		if len(line)!=3:
+			print("data missing for %s (?)" % drug)
+			continue
 
-	if len(targets) == 0:
-		print("select name,  drugbank_id, targets from drugs where %s like '%%;%s;%%'" % ("products", drug))
-		print("! no targets for", drug, generic_name)
-		exit()
+		generic_name = line[0] # generic name
+		dbid = line[1]
+		if not line[2]:
+			print("! no targets for", drug, generic_name, "(targets column  is null)")
+			continue
 
-	return [generic_name.lower(), drugbank_id, targets]
+		# targets and dbid are ssociated with generic name, not brand
+		gnms.append(generic_name)
+		drugbank_id[generic_name] = dbid
+		targets[generic_name] = [t.upper() for t in line[2].split(";")]
+		if len(targets) == 0:
+			print("! no targets for", drug, generic_name, "(targets column == empty string)")
+			continue
+
+	if len(gnms) == 0: return None
+	generic_names[drug] = gnms
+	return "ok"
 
 
 #########################################
 def drugs_decompose(cursor, drugs):
 	targets = {}
-	generic_name = {}
+	generic_names = {}
 	drugbank_id = {}
 	for drug in drugs:
-		ret = find_targets(cursor, drug)
+		ret = find_targets(cursor, drug, generic_names, targets, drugbank_id)
 		if not ret:
-			print(drug, "has no target  ****")
+			print(drug, " - no targets reported ****")
 			continue
-		[generic_name[drug], drugbank_id[drug], targets[drug]] = ret
-	return [generic_name, drugbank_id, targets]
+
+	return [generic_names, drugbank_id, targets]
 
 
 #########################################
-def get_activities(cursor, targets, generic_name, drugbank_id, active_moiety):
+def get_activities(cursor, drugs, generic_names, drugbank_id, targets, active_moiety):
 
 	not_found = 0
 	found = 0
-	for drug, tgts in targets.items():
-		if not tgts:
-			print("no tgts for", drug)
-			continue
-		target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
-		drug  = drug.lower()
-		# the second arg is default if val for the first not found in the dictionary
-		if not drug in generic_name:
-			print("no generic name for", drug)
-			continue
-		active_moiety_name = active_moiety.get(generic_name[drug], generic_name[drug])
-		if not active_moiety_name in generic_name:
-			print(active_moiety_name, "has no generic name")
-			continue
-		if not generic_name[active_moiety_name] in drugbank_id:
-			print(generic_name[active_moiety_name], " has no drugbank id")
-			continue
-		dbid = drugbank_id[generic_name[active_moiety_name]]
+	for drug in sorted(drugs):
 
-		qry = "select uniprot_target_ids, ki_nM from bindingdb_ki where drugbank_ligand_id='%s'" % dbid
-		ret = error_intolerant_search(cursor, qry)
+		print(drug, generic_names[drug])
 
-		if not ret:
-			qry = "select * from pdsp_ki where drug_name='{}'".format(generic_name[drug])
+		for generic_name in generic_names[drug]:
+			active =  active_moiety.get(generic_name, generic_name)
+			print("\t", generic_name, active, drugbank_id[active])
+			if not targets[active]:
+				print("\t no tgts for", targets[active])
+				not_found += 1
+				continue
+			print("\t", targets[active])
+
+			# target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
+
+			dbid = drugbank_id[active]
+
+			qry = "select uniprot_target_ids, ki_nM from bindingdb_ki where drugbank_ligand_id='%s'" % dbid
 			ret = error_intolerant_search(cursor, qry)
 
-		if not ret:
-			qry = "select * from pubchem_ki where drug_name='{}'".format(generic_name[drug])
-			ret = error_intolerant_search(cursor, qry)
+			if not ret:
+				qry = "select * from pdsp_ki where drug_name='{}'".format(active)
+				ret = error_intolerant_search(cursor, qry)
 
-		if not ret:
-			qry = "select * from literature_ki where drug_name='{}'".format(generic_name[drug])
-			ret = error_intolerant_search(cursor, qry)
+			if not ret:
+				qry = "select * from pubchem_ki where drug_name='{}'".format(active)
+				ret = error_intolerant_search(cursor, qry)
 
+			if not ret:
+				qry = "select * from literature_ki where drug_name='{}'".format(active)
+				ret = error_intolerant_search(cursor, qry)
 
-		if not ret:
-			not_found += 1
-			print("\nnot found {}, generic name {}, dbid {}".format(drug, generic_name[drug], dbid))
-			#exit()
-			continue
+			if not ret:
+				not_found += 1
+				print("\nnot found {}  dbid {}".format(active,  dbid))
+				#exit()
+				continue
+			print(qry)
+			#print(ret)
+			print()
+			exit()
+
 		found += 1
-		# print(drug, target_string)
-		# print(ret)
-		# print()
+
+		exit()
+
 	print(len(targets), found, not_found)
 	
 	return ""
@@ -253,11 +279,8 @@ def main():
 		print("active_moiety does not seem to have been set; run 05_fix_prodrugs first")
 		exit()
 
-	[generic_name, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
-	print('hydrocortisone' in all_drugs)
-	print('hydrocortisone' in list(active_moiety.values()))
-	print('hydrocortisone' in targets)
-	activities = get_activities(cursor, targets, generic_name, drugbank_id, active_moiety)
+	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
+	activities = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety)
 
 	cursor.close()
 	db.close()
