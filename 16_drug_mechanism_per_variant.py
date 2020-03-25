@@ -1,6 +1,8 @@
 #!/usr/bin/python3 -u
+import math
 
 from utils.mysql import *
+import numpy as np
 from termcolor import colored
 
 # phenobarbitone is a sphenobarbital ynonym
@@ -28,29 +30,8 @@ from termcolor import colored
 ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "immunoglobulin", "rufinamide",
            "valproic acid", "valproate", "acth", "corticotropin", "botox", "botulinum toxin type a"}
 
-main_players = ["GABRA", "GABR", "GABBR",  "ADRA", "CHRNA", "CHRM", "SLC", "KCN", "OPR", "PPAR", "PCC", "MCC",
-				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC"]
-
-#########################################
-def collapse(gene_list, ):
-	group = {}
-	isolates = []
-	for gene in gene_list:
-		player_found = False
-		for player in main_players:
-			if gene[:len(player)] == player:
-				if not player in group: group[player] = []
-				group[player].append(gene[len(player):])
-				player_found = True
-				break
-		if not player_found:
-			isolates.append(gene)
-
-	retfields = isolates
-	for player, members in group.items():
-		retfields.append("{}[{}]".format(player,"|".join( sorted(list(set(members)))  )))
-	return ",".join(retfields)
-
+main_players = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", "MTNR", "OPR", "PPAR", "PCC", "MCC",
+                "GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER"]
 
 #########################################
 def process(targets):
@@ -79,7 +60,8 @@ def get_direction(action):
 	elif action in ["antagonist", "inverse agonist", "blocker", "inhibitor"]:
 		return "down"
 	else:
-		return None # not recognized (such as "ligand", "binder" etc)
+		return "unk" # not recognized (such as "ligand", "binder" etc)
+
 
 ####################################
 def get_drug_effectivenes(cursor):
@@ -185,74 +167,218 @@ def drugs_decompose(cursor, drugs):
 
 
 #########################################
-def get_activities(cursor, drugs, generic_names, drugbank_id, targets, active_moiety):
+def get_activities(cursor, drugs, generic_names, drugbank_id, targets, active_moiety, verbose = False):
 
 	not_found = 0
 	found = 0
+	target_activity = {}
 	for drug in sorted(drugs):
 
-		print(drug, generic_names[drug])
+		if verbose: print("===============================")
+		if verbose: print(drug, generic_names[drug])
+
+		target_activity[drug] = {}
 
 		for generic_name in generic_names[drug]:
 			active =  active_moiety.get(generic_name, generic_name)
-			print("\t", generic_name, active, drugbank_id[active])
 			if not targets[active]:
-				print("\t no tgts for", targets[active])
+				if verbose: print("\t no tgts for", active)
 				not_found += 1
 				continue
-			print("\t", targets[active])
+			if verbose: print("\t", generic_name, active, drugbank_id[active])
+			if verbose: print("\t", targets[active])
 
-			# target_string = ",".join(["'%s'"%t.split(":")[0] for t in tgts])
+			for tgt in targets[active]:
+				if ":" not in tgt: tgt += ":unk"
+				hgnc_id, action = tgt.split(":")
 
-			dbid = drugbank_id[active]
+				direction = get_direction(action.lower())
+				target_activity[drug][hgnc_id.upper()] = [direction, 10000000]
 
-			qry = "select uniprot_target_ids, ki_nM from bindingdb_ki where drugbank_ligand_id='%s'" % dbid
-			ret = error_intolerant_search(cursor, qry)
+			drugdb_id = drugbank_id[active]
+			ki_val = deconvolute_bindingdb(cursor, drugdb_id)
+			if ki_val and len(ki_val)>0:
+				if verbose: print("from binding db")
+				hgnc_ids = sorted(ki_val.keys(), key= lambda hgnc_id: ki_val[hgnc_id])
+				for hgnc_id in hgnc_ids:
+					ki =  ki_val[hgnc_id]
+					if hgnc_id not in target_activity[drug]:
+						target_activity[drug][hgnc_id] = ["unk", ki]
+					else:
+						if target_activity[drug][hgnc_id][1]>ki:
+							target_activity[drug][hgnc_id][1]=ki
+					if verbose: print("\t", hgnc_id, ki)
 
-			if not ret:
-				qry = "select * from pdsp_ki where drug_name='{}'".format(active)
+			for table in ["pdsp_ki", "pubchem_ki", "literature_ki"]:
+				qry = "select target_symbol, ki_nM from {} where drug_name='{}'".format(table, active)
 				ret = error_intolerant_search(cursor, qry)
+				if ret:
+					if verbose: print("from", table)
+					for line in sorted(ret, key= lambda line: line[1]):
+						[hgnc_id , ki] = line
+						if hgnc_id not in target_activity[drug]:
+							target_activity[drug][hgnc_id] = ["unk", ki]
+						else:
+							if target_activity[drug][hgnc_id][1]>ki:
+								target_activity[drug][hgnc_id][1]=ki
 
-			if not ret:
-				qry = "select * from pubchem_ki where drug_name='{}'".format(active)
-				ret = error_intolerant_search(cursor, qry)
+						if verbose: print("\t",hgnc_id , ki)
 
-			if not ret:
-				qry = "select * from literature_ki where drug_name='{}'".format(active)
-				ret = error_intolerant_search(cursor, qry)
-
-			if not ret:
-				not_found += 1
-				print("\nnot found {}  dbid {}".format(active,  dbid))
-				#exit()
-				continue
-			print(qry)
-			#print(ret)
-			print()
-			exit()
+			if verbose: print()
 
 		found += 1
 
-		exit()
-
-	print(len(targets), found, not_found)
+	if verbose: print(len(targets), found, not_found)
 	
-	return ""
+	return target_activity
+
 
 #########################################
 def deconvolute_bindingdb(cursor, drugdb_id):
-	for line in hard_landing_search(cursor, "select * from bindingdb_ki where drugbank_ligand_id='%s'"%drugdb_id):
-		[bindingdb_id , ki_nM , drugbank_ligand_id,  uniprot_target_ids] = line
+	ret = error_intolerant_search(cursor,
+			"select uniprot_target_ids, ki_nM from bindingdb_ki where drugbank_ligand_id='%s'"% drugdb_id)
+	if not ret: return None
+	ki_val = {}
+	for line in ret:
+		[uniprot_target_ids, ki_nM] = line
 		uniprot_ids = uniprot_target_ids.split(",")
 		qry  = "select uniprot_id, hgnc_approved from identifier_maps.uniprot_hgnc "
 		qry += "where uniprot_id in (%s)" % ",".join(["'%s'"%u for u in uniprot_ids])
 		ret = error_intolerant_search(cursor, qry)
 		if not ret:
 			print("no ret for\nqry")
-			exit()
+			continue
 		hgnc_target_ids = ",".join([r[1] for r in ret])
-		print(hgnc_target_ids+"\t"+str(int(round(float(ki_nM)/3))))
-	exit()
+		ki_val[hgnc_target_ids] = ki_nM
+
+	return ki_val
+
+
+########################################
+def reject_outliers(data, m=1):
+	if len(data)<2 or len(set(data))==1: return data[0]
+
+	mean = np.mean(data)
+	if len(data)<3: return mean
+
+	bound = m*np.std(data)
+	filtered = list(filter(lambda d: abs(d-mean)<bound, data))
+	if len(filtered)==0:
+		bound *=2
+		filtered = list(filter(lambda d: abs(d-mean)<bound, data))
+	new_mean = np.mean(filtered)
+	return new_mean
+
+#########################################
+def collapse(targets):
+
+	compact = []
+
+	group = {}
+	for target, activity in targets.items():
+		player_found = False
+		for player in main_players:
+			target = target.replace("GABAA","GABR")
+			if target[:len(player)] == player:
+				if not player in group:
+					group[player] = {'directions': set(), 'kis': []}
+				group[player]['directions'].add(activity[0])
+				group[player]['kis'].append(activity[1])
+				player_found = True
+				break
+		if not player_found:
+			group[target] = {'directions': set(activity[0]), 'kis': [activity[1]]}
+
+	sorted_players = sorted(group.keys(), key = lambda player: min(group[player]['kis']))
+	cutoff_ki = 100*min(group[sorted_players[0]]['kis'])
+	for player in sorted_players:
+		activities = group[player]
+		min_ki = int(min(activities['kis']))
+		if min_ki>cutoff_ki: continue
+
+		direction = 'unk'
+		if {'down','up'}.issubset(activities['directions']):
+			direction = 'conflicting'
+		elif 'down' in activities['directions']:
+			direction = 'down'
+		elif 'up' in activities['directions']:
+			direction = 'up'
+		compact.append([player, direction, min_ki])
+	return compact
+
+
+def make_compact_profiles(target_activity):
+	compact_profile = {}
+	for drug, targets in target_activity.items():
+		compact_profile[drug] = collapse(targets)
+	return compact_profile
+
+
+#########################################
+def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight):
+	# effecitveness shoud be "eff" or "ineff"; perhaps I should have a way to enforce is
+	if not variant in weight: weight[variant] = {}
+
+	# tagets compac is array of triplet, for example
+	# [['ADRA', 'up', 1], ['NISCH', 'unk', 50]]
+	for descriptor in targets_compact:
+		target, direction, ki = descriptor
+
+		if target not in weight[variant]:
+			weight[variant][target] = {"eff_up":0, "ineff_up":0, "eff_down":0, "ineff_down":0}
+
+		if direction == "unk" or direction== "conflicting": continue
+		eff_dir = "{}_{}".format(effectiveness, direction)
+		weight[variant][target][eff_dir] += 1.0/math.log(2+ki)
+		#weight[variant][target][eff_dir] += 1.0/(1+ki)
+
+
+#################
+def drug_effectivness_matrix(cursor, targets_compact):
+
+
+	weight_per_variant = {}
+
+	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases";
+	for line in hard_landing_search(cursor,qry):
+		[variant, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
+		treatment = {"E":{"eff":treatment_effective_E, "ineff":treatment_ineff_E},
+					"MD":{"eff":treatment_effective_MD, "ineff":treatment_ineff_MD}}
+
+		mechanism = False
+		for symptom in ["E", "MD"]:
+			for effectiveness, drugs in  treatment[symptom].items():
+				if drugs is None: continue
+				for drug in drugs.lower().split(","):
+					if len(drug)==0: continue
+					if drug in ignored: continue
+					if mechanism: print("*******************")
+					if mechanism: print(effectiveness, drug)
+					if mechanism: print(variant, symptom, colored(effectiveness,'green' if effectiveness=="eff" else 'red'), drug, targets_compact[drug])
+					sort_out_weights_per_variant(variant[:-1], effectiveness, targets_compact[drug], weight_per_variant)
+
+		if mechanism: print()
+
+	norm = {}
+	for variant, weights in weight_per_variant.items():
+		norm[variant] = 0.0
+		for target, eff_vals in weights.items():
+			m = max(eff_vals.values())
+			if norm[variant] < m: norm[variant] = m
+
+
+	for variant, weights in weight_per_variant.items():
+		print(variant)
+		if norm[variant]==0: continue
+		for target, eff_vals in weights.items():
+			outstr = ""
+			for eff, val in eff_vals.items():
+				if val>=0.01: outstr += "\t\t %s  %.2f\n" % (eff, val/norm[variant])
+			if outstr:
+				print("\t", target)
+				print(outstr)
+	return
+
 
 #########################################
 def main():
@@ -280,7 +406,9 @@ def main():
 		exit()
 
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
-	activities = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety)
+	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety)
+	targets_compact = make_compact_profiles(target_activity)
+	drug_effectivness_matrix(cursor, targets_compact)
 
 	cursor.close()
 	db.close()

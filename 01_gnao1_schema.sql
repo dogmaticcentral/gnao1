@@ -49,11 +49,11 @@ CREATE TABLE `drugs` (
 -- sudo  mysqlimport gnao1  /var/lib/mysql-files/bindingdb_ki.tsv
 DROP TABLE IF EXISTS `bindingdb_ki`;
 CREATE TABLE `bindingdb_ki`(
-   `bindingdb_id` int  NOT NULL,
-   `ki_nM`  int,
+   `id` int  NOT NULL,
    `drugbank_ligand_id` varchar(10) NOT NULL,
    `uniprot_target_ids` text NOT NULL,
-    PRIMARY KEY (`bindingdb_id`)
+   `ki_nM`  int,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
