@@ -144,9 +144,11 @@ def reject_outliers(data, m=1):
 	new_mean = np.mean(filtered)
 	return new_mean, filtered
 
+
 ########################################
 def clean_ki_value(ki_string):
 	return str(max(round(float(ki_string)), 1))
+
 
 ##################
 def store_affinities(cursor, pubchem_entries):

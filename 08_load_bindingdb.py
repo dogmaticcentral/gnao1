@@ -25,7 +25,36 @@ def reject_outliers(data, m=1):
 	new_mean = np.mean(filtered)
 	return new_mean
 
+
 #########################################
+def uniprot2hgnc(cursor, uniprot_ids):
+	hgnc_symbols = []
+	for uniprot in uniprot_ids:
+		uniprot = uniprot.replace(" ", "")
+		if len(uniprot) == 0: continue
+		qry = "select hgnc_approved from identifier_maps.uniprot_hgnc "
+		qry += "where uniprot_id ='%s'" % uniprot
+		ret = error_intolerant_search(cursor, qry)
+		if not ret: continue
+		hgnc_symbols.append(ret[0][0])
+	return hgnc_symbols
+
+
+def compact_name_for_complexes(hgnc_symbols):
+	if len(hgnc_symbols)<2: return hgnc_symbols
+	compact = None
+	for complex_name in ["GABR"]:
+		# filter returns iterator, not list
+		if len(list(filter(lambda nm: nm[:len(complex_name)]==complex_name, hgnc_symbols))) == len(hgnc_symbols):
+			fam_members = []
+			for hgnc in hgnc_symbols:
+				fam_members.append(hgnc[len(complex_name):])
+			compact = "{}-{}".format(complex_name, "".join(sorted(fam_members)))
+			break
+	if compact: return [compact]
+	return hgnc_symbols
+
+
 def main():
 
 	db = connect_to_mysql("/home/ivana/.tcga_conf")
@@ -56,16 +85,37 @@ def main():
 		number_of_chains = int(field[36])
 		uniprot_field_idx = 41
 		max_idx = min(uniprot_field_idx+number_of_chains*12, len(field))
-		uniprot_ids = ",".join(sorted(([field[i] for i in range(uniprot_field_idx,max_idx,12) if field[i] != ""])))
-		uniprot_ids = uniprot_ids.replace(" ","")
-		if not uniprot_ids or len(uniprot_ids)==0: continue
+		# the problem here is that in the majority cases this list does not represent a complex,
+		# as indicated in the header ("Number of Protein Chains in Target (>1 implies a multichain complex")
+		# rather this seems to be alist of proteins to which this measeurement could apply
+		# for example O43570,P00915,P00918,P22748,P23280,P35218,P43166,Q16790,Q8N1Q1,Q9ULX7,Q9Y2D0
+		# which are all different carbonc anhydrases, not some multiprotein complex
+		# if number_of_chains > 1:
+		# 	printed = False
+		# 	for i in range(uniprot_field_idx,max_idx,12):
+		# 		uniprot = field[i].replace(" ","")
+		# 		if len(uniprot) == 0: continue
+		# 		qry = "select hgnc_approved from identifier_maps.uniprot_hgnc "
+		# 		qry += "where uniprot_id ='%s'" % uniprot
+		# 		ret = error_intolerant_search(cursor, qry)
+		# 		hgnc = " not found" if not ret else ret[0][0]
+		# 		print(uniprot, hgnc)
+		# 		printed = True
+		# 	if printed: print(field[0],"\n")
+		# this calls for a better solution, but for now keep GABR as a complex, break up the rest
+		# uniprot_ids = ",".join(sorted(([field[i] for i in range(uniprot_field_idx,max_idx,12) if field[i] != ""])))
+		# uniprot_ids = uniprot_ids.replace(" ","")
+		# if not uniprot_ids or len(uniprot_ids)==0: continue
 
-		key = "{}_{}".format(drugbank_id, uniprot_ids)
-		if key not in ki_vals: ki_vals[key] = []
-		ki_vals[key].append(ki)
+		hgnc_symbols = uniprot2hgnc(cursor, [field[i] for i in range(uniprot_field_idx,max_idx,12)])
+		hgnc_compact = compact_name_for_complexes(hgnc_symbols)
+
+		for hgnc in hgnc_compact:
+			key = "{}_{}".format(drugbank_id, hgnc)
+			if key not in ki_vals: ki_vals[key] = []
+			ki_vals[key].append(ki)
 
 	inf.close()
-
 
 	outf = open("bindingdb_ki.tsv", "w")
 	idx = 0
@@ -73,7 +123,9 @@ def main():
 		mean = reject_outliers(data)
 		drugbank_id, uniprot_ids = key.split("_")
 		idx += 1
-		outf.write("\t".join([str(idx), drugbank_id, uniprot_ids, str(int(round(mean)))]) + "\n")
+		ret = error_intolerant_search(cursor, "select name from drugs where drugbank_id='%s'" % drugbank_id)
+		drugname = drugbank_id if not ret else ret[0][0]
+		outf.write("\t".join([str(idx), drugname, uniprot_ids, str(int(round(mean)))]) + "\n")
 	outf.close()
 
 	cursor.close()

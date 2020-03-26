@@ -45,17 +45,27 @@ CREATE TABLE `drugs` (
 
 
 -- to get around importing problem with mysql
--- sudo mv bindingdb.tsv /var/lib/mysql-files/
+-- sudo mv bindingdb_ki.tsv /var/lib/mysql-files/
 -- sudo  mysqlimport gnao1  /var/lib/mysql-files/bindingdb_ki.tsv
 DROP TABLE IF EXISTS `bindingdb_ki`;
 CREATE TABLE `bindingdb_ki`(
-   `id` int  NOT NULL,
-   `drugbank_ligand_id` varchar(10) NOT NULL,
-   `uniprot_target_ids` text NOT NULL,
+   `id` int  NOT NULL  AUTO_INCREMENT,
+   `drug_name` text CHARACTER SET utf8mb4,
+   `target_symbol`  varchar(50) NOT NULL,
    `ki_nM`  int,
-    PRIMARY KEY (`id`)
+   `mode_of_action` varchar(50) ,
+     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `guidetopharm_ki`;
+CREATE TABLE `guidetopharm_ki`(
+   `id` int  NOT NULL  AUTO_INCREMENT,
+   `drug_name` text CHARACTER SET utf8mb4,
+   `target_symbol`  varchar(100) NOT NULL,
+   `ki_nM`  int,
+   `mode_of_action` varchar(50) ,
+     PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `pdsp_ki`;
@@ -64,7 +74,9 @@ CREATE TABLE `pdsp_ki`(
    `drug_name` text CHARACTER SET utf8mb4,
    `target_symbol`  varchar(50) NOT NULL,
    `ki_nM`  int,
+   `mode_of_action` varchar(50) ,
    `species`  varchar(50) NOT NULL,
+
      PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -75,6 +87,7 @@ CREATE TABLE `pubchem_ki`(
    `drug_name` text CHARACTER SET utf8mb4,
    `target_symbol`  varchar(50) NOT NULL,
    `ki_nM`  int,
+   `mode_of_action` varchar(50) ,
      PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,6 +99,7 @@ CREATE TABLE `literature_ki`(
    `drug_name` text CHARACTER SET utf8mb4,
    `target_symbol`  varchar(50) NOT NULL,
    `ki_nM`  int,
+   `mode_of_action` varchar(50) ,
    `pubmed`    int,
    `pubmedcentral`    varchar(20),
    `other_sources` text,
