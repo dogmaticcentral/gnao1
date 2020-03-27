@@ -299,15 +299,15 @@ def collapse(targets):
 	for target, activity in targets.items():
 		[direction, ki] = activity
 		family_found = False
-		for family in main_families:
-			if target[:len(family)] == family:
-				if family not in group: group[family] = {}
-				if direction not in group[family]: group[family][direction] = {"fam_members": set(), "min_ki": 1000000}
-				group[family][direction]["fam_members"].add(target[len(family):].replace("-",""))
-				group[family][direction]["min_ki"] = min([ki,group[family][direction]["min_ki"]])
-				#print(target, family, direction, group[family][direction])
-				family_found = True
-				break
+		# for family in main_families:
+		# 	if target[:len(family)] == family:
+		# 		if family not in group: group[family] = {}
+		# 		if direction not in group[family]: group[family][direction] = {"fam_members": set(), "min_ki": 1000000}
+		# 		group[family][direction]["fam_members"].add(target[len(family):].replace("-",""))
+		# 		group[family][direction]["min_ki"] = min([ki,group[family][direction]["min_ki"]])
+		# 		#print(target, family, direction, group[family][direction])
+		# 		family_found = True
+		# 		break
 		if not family_found:
 			if target not in group: group[target] = {}
 			if direction not in group[target]: group[target][direction] = {"fam_members": None, "min_ki": ki}
@@ -340,7 +340,6 @@ def make_compact_profiles(target_activity):
 		print("==============")
 		print(drug)
 		compact_profile[drug] = collapse(targets)
-	exit()
 	return compact_profile
 
 
@@ -349,7 +348,7 @@ def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight
 	# effecitveness shoud be "eff" or "ineff"; perhaps I should have a way to enforce is
 	if not variant in weight: weight[variant] = {}
 
-	# tagets compac is array of triplet, for example
+	# tagets compact is array of triplet, for example
 	# [['ADRA', 'up', 1], ['NISCH', 'unk', 50]]
 	for descriptor in targets_compact:
 		target, direction, ki = descriptor
@@ -399,7 +398,10 @@ def drug_effectivness_matrix(cursor, targets_compact, verbose=False):
 	for variant, weights in weight_per_variant.items():
 		print(variant)
 		if norm[variant] == 0: continue
-		for target, eff_vals in weights.items():
+		targets_sorted = sorted(weights.keys(), key= lambda k: max(weights[k].values()), reverse=True)
+		for target in targets_sorted:
+			# for target, eff_vals in weights.items():
+			eff_vals = weights[target]
 			outstr = ""
 			for eff, val in eff_vals.items():
 				if val >= 0.01: outstr += "\t\t %s  %.2f\n" % (eff, val / norm[variant])
@@ -419,7 +421,7 @@ def main():
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
 	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
 	targets_compact = make_compact_profiles(target_activity)
-	drug_effectivness_matrix(cursor, targets_compact)
+	drug_effectivness_matrix(cursor, targets_compact, verbose=True)
 
 	cursor.close()
 	db.close()

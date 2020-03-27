@@ -2,7 +2,7 @@
 from math import sqrt
 
 from utils.mysql import *
-from utils.pymol import *
+from utils.pymol_constants import *
 
 [EPI, MOV, BOTH] = ["epi", "mov", "both"]
 
