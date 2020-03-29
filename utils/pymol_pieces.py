@@ -1,142 +1,83 @@
+from math import acos, sqrt, fabs, sin
 
 from pymol import cmd
+
+
+# from pyquaternion import Quaternion # will not take matrix that is (numerically) non-orthogona;
+import numpy as np
+import quaternion  # pip3 install numpy-quaternion and numba
+
+
+def pymol_chdir(outdir):
+	cmd.cd(outdir)
+
 
 def load_structures(structure_home, structures):
 
 	if "gnao" in structures:
-		cmd.load("{}/{}".format(structure_home,"gnao1_after_1azsC.to_3sn6A.pdb"),"gnao")
+		cmd.load("{}/{}".format(structure_home, "gnao1_after_1azsC.to_3sn6A.pdb"), "gnao")
+	if "substrate" in structures:
+		cmd.load("{}/{}".format(structure_home, "3c7kA.GDP.to_3sn6A.pdb"), "substrate")
 	cmd.hide("all")
 	return
 
 
+def residue_color(main_object, res_id, rgb_color_list):
+	color_name  = "cnm_{}_{}".format(main_object, res_id)
+	cmd.set_color(color_name, rgb_color_list)
+	cmd.color(color_name, "{} and resi {}".format(main_object, res_id))
 
 
-def mat2quat(m):
+def clump_representation(regions, color, name):
+	# show regions as clumps or blobs
+	cmd.set("surface_quality", 1)
+	cmd.alter("all", "b=50")
+	cmd.alter("all", "q=1")
+	cmd.set("gaussian_resolution", 5)
 
-	tr = m[0] + m[4] + m[8]
-
-	#    m00=0 m01=1 m02=2
-	#    m10=3 m11=4 m12=5
-	#    m20=6 m21=7 m22=8
-
-	if (tr > 0):
-		S = sqrt(tr+1) * 2
-		qw = 0.25 * S
-		qx = (m[7] - m[5]) / S
-		qy = (m[2] - m[6]) / S
-		qz = (m[3] - m[1]) / S
-
-	elif ((m[0] > m[4])&(m[0] > m[8])):
-		S = sqrt(1 + m[0] - m[4] - m[8]) * 2
-		qw = (m[7] - m[5]) / S
-		qx = 0.25 * S
-		qy = (m[1] + m[3]) / S
-		qz = (m[2] + m[6]) / S
-
-	elif (m[4] > m[8]):
-		S = sqrt(1 + m[4] - m[0] - m[8]) * 2
-		qw = (m[2] - m[6]) / S
-		qx = (m[1] + m[3]) / S
-		qy = 0.25 * S
-		qz = (m[5] + m[7]) / S
-
-	else:
-		S = sqrt(1 + m[8] - m[0] - m[4]) * 2
-		qw = (m[3] - m[1]) / S
-		qx = (m[2] + m[6]) / S
-		qy = (m[5] + m[7]) / S
-		qz = 0.25 * S
-
-	return [qx,qy,qz,qw]
-
-def quat2mat(Q):
-
-	xx = Q[0]*Q[0]
-	xy = Q[0]*Q[1]
-	xz = Q[0]*Q[2]
-	xw = Q[0]*Q[3]
-	yy = Q[1]*Q[1]
-	yz = Q[1]*Q[2]
-	yw = Q[1]*Q[3]
-	zz = Q[2]*Q[2]
-	zw = Q[2]*Q[3]
-
-	M = [1.0 - 2*yy - 2*zz,     2*xy - 2*zw,      2*xz + 2*yw,
-		 2*xy + 2*zw,       1 - 2*xx - 2*zz,      2*yz - 2*xw,
-		 2*xz - 2*yw,           2*yz + 2*xw,  1 - 2*xx - 2*yy]
-
-	return M
+	idx = 0
+	for region in regions:
+		idx += 1
+		mapname  = "map_{}_{}".format(name, idx)
+		surfname = "surf_{}_{}".format(name, idx)
+		cmd.map_new(mapname, "gaussian", 1, region, 2)
+		cmd.isosurface(surfname, mapname)
+		cmd.color(color, surfname)
 
 
-#----------------------------------------------------------
-# Methods to perform Spherical Linear Interpolation (SLERP)
-# The code has been translated to python from sources
-# available at http://www.euclideanspace.com/maths/
-#          algebra/realNormedAlgebra/quaternions/slerp/
-#----------------------------------------------------------
-def slerp(qa, qb, t):
-	qm=[]
+def view_string2view(view_string):
+	return [float(f) for f in view_string.split(",")]
 
-	#Calculate angles between quaternions
-	cosHalfTheta = qa[0] * qb[0] + qa[1] * qb[1] + qa[2] * qb[2] + qa[3] * qb[3]
-	#if qa=qb or qa=-qb then theta = 0 and we can return qa
 
-	if (cosHalfTheta < 0):
-		for i in range(4):
-			qb[i] = -qb[i];
-		cosHalfTheta = -cosHalfTheta
+def view2view_string(view):
+	return ",".join([str(f) for f in view])
 
-	if (abs(cosHalfTheta) >= 1.0):
-		for i in range(4):
-			qm.insert(i,qa[i])
-		return qm
 
-	#Calculate temporary values
-	halfTheta = acos(cosHalfTheta)
-	sinHalfTheta = sqrt(1.0 - cosHalfTheta*cosHalfTheta)
+def view2quat(view):
 
-	if (fabs(sinHalfTheta) < 0.000005):
-		#fabs is floating point absolute
-		for i in range(4):
-			qm.insert(i, qa[i] * 0.5 + qb[i] * 0.5)
-		return qm
+	array  = np.array(view[:9])
+	matrix = np.asmatrix(array.reshape((3,3)))
+	return quaternion.from_rotation_matrix(matrix)
 
-	ratioA = sin((1 - t) * halfTheta) / sinHalfTheta
-	ratioB = sin(t * halfTheta) / sinHalfTheta
-	#calculate Quaternion
-	for i in range(4):
-		qm.insert(i, qa[i] * ratioA + qb[i] * ratioB)
-	return qm
 
-# Changes position of the camera
-# @frames: number of frames to animate
-# @x: view matrix of the starting frame
-# @y: view matrix of the target frame
-def changeView (frames, x, y):
 
-	setView(x)
-	ray()
+def view_interpolate(view_init_str, view_last_str, number_of_frames=5, frameno_offset=0):
 
+	view_init = view_string2view(view_init_str)
+	view_last = view_string2view(view_last_str)
 	# get quaternions for interpolation
-	# between starting and target scenes
-	qstart = mat2quat(x[:9])
-	qend   = mat2quat(y[:9])
+	qstart = view2quat(view_init)
+	qend   = view2quat(view_last)
 
-	for frame in range(1, frames+1):
-		n = []
-		qcur   = slerp(qstart, qend, frame/frames)
-		matcur = quat2mat(qcur)
+	for frameno in range(1, number_of_frames + 1):
 
-		for i in range(9):
-			update = 0 if abs(matcur[i]) < 0.001 else matcur[i]
-			n.append(update)
+		qcur   = quaternion.slerp(qstart, qend, 0, number_of_frames, frameno)
+		intermediate_view = list(quaternion.as_rotation_matrix(qcur).flatten())
 
-		for i in range(9,len(x)):
-			update = x[i] + (y[i] - x[i]) * (frame/frames)
+		for i in range(9, len(view_init)):
+			update = view_init[i] + (view_last[i] - view_init[i]) * (frameno / number_of_frames)
 			if abs(update) < 0.001: update = 0
-			n.append(update)
+			intermediate_view.append(update)
 
-		setView(n)
-
-		ray()
-
+		cmd.set_view(view2view_string(intermediate_view))
+		cmd.png("frm" + str(frameno_offset + frameno).zfill(3), width=1920, height=1080, ray=True)

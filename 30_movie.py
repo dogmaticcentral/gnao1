@@ -4,35 +4,49 @@
 # (thus, run from pymol GUI; then )
 # note that pymol pieces imports pymol.py
 import os
+from math import sqrt
 
 from utils.pymol_pieces import *
 from utils.pymol_constants import *
+from utils.pheno_scene_views import *
+from utils.utils import *
 
 frames_home = "/home/ivana/projects/gnao1db/movie"
 
 
-region_range = {"tmd1":["resi 1-45","resi 645-870"], "tmd2":["resi 1340-1395","resi 1665-1905"],
-				"Rdomain":["resi 1141-1271","resi 2161-2260"],
-				"nbd1":["resi 960-1140"], "nbd2":["resi 1940-2160"],
-				"ecd1":["resi 50-335","resi 365-640"], "ecd2":["resi 1405-1660"]}
-
-region_color = {"tmd1":"blue", "tmd2":"green", "Rdomain":"grey",
-				"nbd1":"yellow", "nbd2":"magenta", "ecd1":"cyan", "ecd2":"orange"}
+# pheno is defined in pymol_constants
+def pheno_residues():
+	for resi, counts in pheno.items():
+		norm = sqrt(sum([ct**2 for ct in counts.values()]))
+		residue_color("gnao", resi, [counts["mov"]/norm, counts["both"]/norm, counts["epi"]/norm])
+		cmd.show("spheres", "{} and resi {}".format("gnao", resi))
 
 
 ###################################
 @cmd.extend
-def gnao_movie():
+def gnao():
 
 	for dep in [structure_home, frames_home]:
 		if not os.path.exists(dep):
 			print(dep, "not found")
 			return
 
-	load_structures(structure_home, ["gnao"])
-	# tweak_orientation()
-	# define_regions(region_range)
 	cmd.bg_color("white")
-	#
-	# # en guard
-	cmd.set_view(home_view)
+
+	load_structures(structure_home, ["gnao", "substrate"])
+	# tweak_orientation()
+	clump_representation(["substrate"], "pink", "substr")
+	pheno_residues()  # color by phenotype and show as speheres
+
+	subdir_prep(frames_home, "pheno")
+	pymol_chdir("{}/{}".format(frames_home, "pheno"))
+
+	cmd.set_view(pheno_view[0])
+	cmd.png("frm000", width=1920, height=1080, ray=True)
+
+	for keyfrm in range(0,len(pheno_view)-1):
+		view_interpolate(pheno_view[keyfrm], pheno_view[keyfrm+1], number_of_frames=10, frameno_offset=keyfrm*10)
+
+	view_interpolate(pheno_view[-1], pheno_view[0], number_of_frames=10, frameno_offset=keyfrm*10)
+
+	#cmd.quit()

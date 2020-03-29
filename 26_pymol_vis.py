@@ -1,17 +1,15 @@
 #!/usr/bin/python3 -u
 from math import sqrt
 
-from utils.mysql import *
+
 from utils.pymol_constants import *
+
+from utils.mysql import *
 
 [EPI, MOV, BOTH] = ["epi", "mov", "both"]
 
-#########################################
-def main():
 
-	#angle = "epilepsy"
-	#angle = "md"
-	angle="adcyc"
+def get_pheno_per_pos():
 
 	db = connect_to_mysql("/home/ivana/.tcga_conf")
 	cursor = db.cursor()
@@ -43,6 +41,25 @@ def main():
 		else:
 			continue
 
+	cursor.close()
+	db.close()
+
+	return pheno
+
+
+#########################################
+def main():
+
+	#angle = "epilepsy"
+	#angle = "md"
+	angle="adcyc"
+
+	pheno = get_pheno_per_pos()
+
+	# for use in the movie script
+	# print(pheno)
+	# exit()
+
 	with open("{}_map.pml".format(angle), "w") as outf:
 		if  angle=="epilepsy":
 			outf.write(header_epi)
@@ -60,8 +77,7 @@ def main():
 			outf.write("show spheres, Ga_%d\n" % pos)
 		outf.write(footer)
 
-	cursor.close()
-	db.close()
+
 
 
 #########################################
