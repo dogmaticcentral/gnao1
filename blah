@@ -1,0 +1,4373 @@
+==============
+acetazolamide
+CA1
+	 down None 250
+CA2
+	 down None 12
+CA4
+	 down None 74
+CA12
+	 down None 6
+CA14
+	 down None 41
+CA3
+	 down None 20000
+CA7
+	 down None 2
+AQP1
+	 down None 10000000
+CA5A
+	 unk None 61
+CA5B
+	 unk None 52
+CA9
+	 unk None 25
+PON1
+	 unk None 743000
+CA13
+	 unk None 1
+CA6
+	 unk None 1
+==============
+amitriptyline
+SLC6A2
+	 down None 22
+SLC6A4
+	 down None 3
+HTR2A
+	 down None 4
+HTR1A
+	 unk None 450
+OPRD1
+	 up None 10000000
+OPRK1
+	 up None 10000000
+NTRK1
+	 up None 10000000
+NTRK2
+	 up None 10000000
+ADRA1A
+	 down None 4
+ADRA1D
+	 down None 52
+ADRA2A
+	 up None 132
+HRH1
+	 down None 1
+KCNQ2
+	 down None 10000000
+KCNA1
+	 down None 10000000
+HRH2
+	 down None 66
+HRH4
+	 unk None 34
+SIGMAR1
+	 up None 433
+HTR2C
+	 down None 3
+ADRA1B
+	 down None 10000000
+HTR7
+	 down None 124
+HTR1D
+	 unk None 10000000
+OPRM1
+	 unk None 10000000
+HTR1B
+	 unk None 145
+HTR6
+	 down None 65
+KCNQ3
+	 down None 10000000
+CHRM1
+	 down None 3
+KCNH2
+	 down None 14411
+DRD2
+	 unk None 266
+CHRM3
+	 down None 5
+CHRM5
+	 down None 6
+SLC6A3
+	 unk None 2915
+CHRM2
+	 down None 12
+CHRM4
+	 down None 1
+DRD1
+	 unk None 89
+DRD3
+	 unk None 134
+DRD5
+	 unk None 170
+HRH3
+	 unk None 38429
+ADRB2
+	 unk None 10000
+ADRA2B
+	 unk None 4
+ADRA2C
+	 unk None 9
+HTR2B
+	 unk None 45
+==============
+baclofen
+GABBR1
+	 up None 6000
+GABBR2
+	 up None 6000
+GABBR1|GABBR2|KCTD16|KCTD8|KCTD12
+	 up None 10000000
+==============
+benzhexol
+CHRM1
+	 down None 1
+CHRM2
+	 down None 7
+CHRM3
+	 down None 3
+CHRM4
+	 down None 1
+CHRM5
+	 down None 9
+SIGMAR1
+	 unk None 45
+==============
+benzodiazepine
+GABRA1
+	 up None 1
+TSPO
+	 unk None 10000000
+NR1I2
+	 up None 10000000
+GABRA3
+	 up None 1
+GABR-A1B1C2
+	 unk None 1
+GABR-A2B1C2
+	 unk None 2
+GABR-A6B3C2
+	 unk None 2
+GABRB3
+	 unk None 1
+GABRA5
+	 unk None 1
+GABRP
+	 unk None 1
+GABRE
+	 unk None 1
+GABRQ
+	 unk None 1
+GABRG3
+	 unk None 1
+GABRB1
+	 unk None 1
+GABRD
+	 unk None 1
+GABRA2
+	 up None 1
+GABRA6
+	 unk None 1
+GABRA4
+	 unk None 1
+GABRG1
+	 unk None 1
+GABR-A1B2G2
+	 unk None 1
+GABR-A2B2G2
+	 unk None 1
+GABR-A3B2G2
+	 unk None 2
+GABR-A5B2G2
+	 unk None 1
+==============
+bethanechol
+CHRM2
+	 up None 97
+CHRM1
+	 up None 97
+CHRM3
+	 up None 97
+CHRM4
+	 up None 97
+CHRM5
+	 unk None 97
+==============
+bromocriptine
+DRD2
+	 up None 4
+DRD3
+	 up None 7
+HTR1D
+	 up None 10
+ADRA2A
+	 down None 6
+HTR1A
+	 up None 13
+ADRA2C
+	 down None 28
+ADRA2B
+	 down None 16
+HTR2B
+	 down None 5
+DRD4
+	 down None 552
+HTR2A
+	 up None 10
+HTR1B
+	 up None 355
+HTR2C
+	 up None 278
+DRD5
+	 up None 496
+DRD1
+	 up None 682
+ADRA1A
+	 up None 4
+ADRA1B
+	 up None 1
+ADRA1D
+	 up None 1
+HTR7
+	 down None 30
+HTR6
+	 up None 30
+ADRB1
+	 unk None 589
+ADRB2
+	 unk None 741
+HRH1
+	 unk None 10000
+ABCB1
+	 unk None 3385
+==============
+carbamazepine
+SCN1A
+	 down None 10000000
+CHRNA4
+	 unk None 10000000
+NR1I2
+	 up None 10000000
+DRD1
+	 unk None 10000
+DRD2
+	 unk None 10000
+HRH1
+	 unk None 55000
+HTR1A
+	 unk None 10000
+AVPR1B
+	 unk None 10000
+HRH3
+	 unk None 100000
+HRH4
+	 unk None 100000
+HTR2A
+	 unk None 10000
+HTR2C
+	 unk None 10000
+HTR3A
+	 unk None 10000
+SCN9A
+	 unk None 32700
+FZD8
+	 down None 10000000
+==============
+chlorpromazine
+DRD2
+	 down None 3
+DRD1
+	 down None 102
+HTR1A
+	 down None 673
+HTR2A
+	 down None 3
+ADRA1A
+	 down None 1
+ADRA1B
+	 down None 1
+HRH1
+	 down None 3
+KCNH2
+	 down None 4774
+DRD3
+	 down None 2
+DRD4
+	 down None 18
+DRD5
+	 down None 133
+HTR2C
+	 down None 16
+ADRA2A
+	 down None 132
+CHRM1
+	 down None 32
+CHRM3
+	 down None 44
+SMPD1
+	 down None 10000000
+CALM1
+	 down None 19280
+ORM1
+	 unk None 10000000
+HTR6
+	 down None 20
+HTR7
+	 down None 21
+HRH4
+	 unk None 50
+CHRM5
+	 unk None 18
+AOX1
+	 unk None 620
+HTR2B
+	 unk None 6
+ADRA2B
+	 down None 12
+ADRA2C
+	 down None 46
+ADRB1
+	 unk None 10000
+ADRB2
+	 unk None 10000
+CHRM2
+	 unk None 198
+CHRM4
+	 unk None 40
+HRH2
+	 unk None 174
+HRH3
+	 unk None 20869
+HTR1B
+	 unk None 1489
+HTR1D
+	 unk None 452
+HTR1E
+	 unk None 344
+HTR3A
+	 unk None 877
+HTR5A
+	 unk None 118
+PTGER3
+	 unk None 10000
+PTGER4
+	 unk None 10000
+SLC6A3
+	 unk None 2100
+SLC6A4
+	 unk None 42
+CHRN-A2B2
+	 unk None 10000
+CHRN-A2B4
+	 unk None 10000
+CHRN-A3B2
+	 unk None 10000
+CHRNA7
+	 unk None 10000
+CHRN-A1B2
+	 unk None 10000
+SLC6A2
+	 unk None 19
+CNR1
+	 unk None 10000
+TRPV1
+	 unk None 910
+NISCH
+	 unk None 492
+CYP2D6
+	 unk None 7000
+ABCB1
+	 unk None 6400
+MC3R
+	 unk None 21244
+MC4R
+	 unk None 14619
+MC5R
+	 unk None 7145
+OPRD1
+	 unk None 7365
+OPRK1
+	 unk None 4433
+OPRM1
+	 unk None 5844
+ADRA1D
+	 unk None 2
+SIGMAR1
+	 unk None 189
+TACR2
+	 unk None 9065
+
+	 unk None 10000000
+TRPC5
+	 unk None 10000000
+==============
+clobazam
+GABRA1
+	 up None 10000000
+GABR-A1B2G2
+	 unk None 519
+GABR-A2B2G2
+	 unk None 205
+GABR-A3B2G2
+	 unk None 753
+GABR-A5B2G2
+	 unk None 331
+==============
+clonazepam
+GABRA1
+	 up None 1
+TSPO
+	 unk None 10000000
+NR1I2
+	 up None 10000000
+GABRA3
+	 up None 1
+GABR-A1B1C2
+	 unk None 1
+GABR-A2B1C2
+	 unk None 2
+GABR-A6B3C2
+	 unk None 2
+GABRB3
+	 unk None 1
+GABRA5
+	 unk None 1
+GABRP
+	 unk None 1
+GABRE
+	 unk None 1
+GABRQ
+	 unk None 1
+GABRG3
+	 unk None 1
+GABRB1
+	 unk None 1
+GABRD
+	 unk None 1
+GABRA2
+	 up None 1
+GABRA6
+	 unk None 1
+GABRA4
+	 unk None 1
+GABRG1
+	 unk None 1
+GABR-A1B2G2
+	 unk None 1
+GABR-A2B2G2
+	 unk None 1
+GABR-A3B2G2
+	 unk None 2
+GABR-A5B2G2
+	 unk None 1
+==============
+clonidine
+ADRA2A
+	 up None 23
+ADRA2B
+	 up None 26
+ADRA2C
+	 up None 25
+ADRA1A
+	 up None 316
+ADRA1B
+	 up None 316
+ADRA1D
+	 up None 126
+HTR2A
+	 unk None 10000
+NISCH
+	 unk None 9
+SLC6A2
+	 unk None 1000
+DRD2
+	 unk None 10000
+HTR1B
+	 unk None 10000
+MAOA
+	 unk None 1000
+MAOB
+	 unk None 1000
+SLC22A1
+	 down None 550
+HTR1A
+	 unk None 3236
+==============
+curare
+CHRNA2
+	 down None 10000000
+CHRM2
+	 down None 10000000
+CHRM3
+	 down None 10000000
+CHRN-A4B2
+	 unk None 10000
+CHRNA1
+	 down None 10000000
+==============
+dexmedetomidine
+ADRA2A
+	 up None 2
+ADRA1A
+	 unk None 200
+ADRA1B
+	 unk None 316
+ADRA1D
+	 unk None 1
+ADRA2B
+	 up None 19
+ADRA2C
+	 up None 9
+SLC6A2
+	 unk None 1000
+NISCH
+	 unk None 50
+MAOA
+	 unk None 1000
+MAOB
+	 unk None 1000
+==============
+diazepam
+GABRA1
+	 up None 13
+GABRA2
+	 up None 15
+GABRA3
+	 up None 14
+GABRA5
+	 up None 10
+GABRB1
+	 up None 10
+GABRB2
+	 up None 10000000
+GABRB3
+	 up None 14
+GABRG1
+	 up None 10
+GABRG2
+	 up None 10000000
+GABRG3
+	 up None 10
+GABRD
+	 up None 10
+GABRE
+	 up None 10
+GABRP
+	 up None 10
+GABRR1
+	 up None 10000000
+GABRR2
+	 up None 10000000
+GABRR3
+	 up None 10000000
+GABRQ
+	 up None 10
+TSPO
+	 up None 10000000
+GABR-A3B2G2
+	 unk None 12
+GABR-A1B2G2
+	 unk None 12
+GABR-A3B3G2
+	 unk None 24
+GABR-A5B3G2
+	 unk None 11
+GABR-A1B3G2
+	 unk None 14
+GABR-A1B3C2
+	 unk None 14
+GABR-A6B3C2
+	 unk None 17
+GABR-A1B1C2
+	 unk None 16
+GABR-A2B1C2
+	 unk None 17
+GABR-A3B3C2
+	 unk None 15
+GABR-A5B3C2
+	 unk None 11
+GABR-A2B3C2
+	 unk None 20
+DRD1
+	 unk None 10000
+DRD2
+	 unk None 10000
+HTR3A
+	 unk None 10000
+GABR-A1B2C2
+	 unk None 14
+GABR-A2B2C2
+	 unk None 8
+GABR-A3B2C2
+	 unk None 14
+HTR1A
+	 unk None 10000
+GABRA6
+	 unk None 10
+GABRA4
+	 unk None 10
+==============
+fentanyl
+OPRM1
+	 up None 2
+OPRD1
+	 up None 624
+OPRK1
+	 up None 196
+ABCB1
+	 unk None 10000000
+OPRL1
+	 unk None 40
+MAOA
+	 unk None 5462
+MAOB
+	 unk None 5462
+==============
+flunitrazepam
+TSPO
+	 up None 10000000
+GABRA2
+	 up None 2
+GABRA4
+	 up None 10000000
+GABRA5
+	 up None 2
+GABRA6
+	 up None 10000000
+GABRA3
+	 up None 4
+GABRA1
+	 up None 2
+GABRB3
+	 up None 2
+GABRG2
+	 up None 10000000
+GABR-A3B3G2
+	 unk None 4
+GABR-A1B3G2
+	 unk None 2
+GABR-A1B2G2
+	 unk None 4
+GABR-A5B3G2
+	 unk None 2
+GABR-A1B3C2
+	 unk None 2
+GABR-A6B3C2
+	 unk None 16
+GABR-A1B1C2
+	 unk None 12
+GABR-A2B1C2
+	 unk None 5
+GABR-A5B1C2
+	 unk None 6
+GABR-A5B3C2
+	 unk None 2
+GABR-A3B3C2
+	 unk None 4
+GABR-A2B3C2
+	 unk None 2
+HRH1
+	 unk None 10000
+==============
+fosphenytoin
+SCN5A
+	 down None 10000000
+SCN1A
+	 down None 10000000
+NR1I2
+	 unk None 10000000
+SCN1B
+	 unk None 10000000
+SCN3A
+	 unk None 10000000
+KCNH2
+	 down None 10000000
+CACNA1C
+	 down None 10000000
+SCN2A
+	 down None 10000000
+SCN8A
+	 down None 10000000
+GABRA1
+	 unk None 10000000
+CYP2C9
+	 unk None 8000
+SCN4A
+	 unk None 24000
+==============
+gabapentin
+CACNA2D1
+	 down None 59
+CACNA2D2
+	 down None 153
+CACNA1B
+	 down None 10000000
+ADORA1
+	 up None 10000000
+KCNQ3
+	 up None 10000000
+KCNQ5
+	 up None 10000000
+==============
+haloperidol
+DRD2
+	 down None 2
+DRD1
+	 down None 80
+GRIN2B
+	 down None 10000000
+HTR2A
+	 down None 87
+DRD3
+	 down None 5
+MCHR1
+	 unk None 10000000
+SLC18A2
+	 unk None 10000000
+HTR2C
+	 unk None 3676
+SIGMAR1
+	 unk None 1
+HRH1
+	 down None 440
+CHRM3
+	 unk None 4670
+ADRA1A
+	 unk None 11
+ADRA2A
+	 unk None 1130
+ADRA2B
+	 unk None 480
+ADRA2C
+	 unk None 268
+HTR1A
+	 down None 1634
+HTR6
+	 unk None 5507
+HTR7
+	 down None 372
+HTR1B
+	 unk None 276
+SLC6A4
+	 unk None 1800
+HTR1D
+	 down None 2520
+HTR1F
+	 unk None 5000
+ADRB2
+	 unk None 5000
+TAC1
+	 unk None 1000
+HTR2B
+	 down None 23
+H1-0
+	 unk None 780
+SLC6A2
+	 unk None 2112
+UGT1A9
+	 unk None 344000
+KCNH2
+	 unk None 316
+EBP
+	 unk None 190
+ADRA1B
+	 unk None 8
+ADRB1
+	 unk None 10000
+CHRM1
+	 unk None 1600
+CHRM2
+	 unk None 4670
+CHRM4
+	 unk None 4670
+CHRM5
+	 unk None 3732
+DRD4
+	 down None 5
+DRD5
+	 down None 162
+HRH2
+	 unk None 1003
+HRH4
+	 unk None 55000
+HTR1E
+	 unk None 7500
+HTR3A
+	 unk None 9159
+HTR5A
+	 unk None 2247
+PTGER3
+	 unk None 10000
+PTGER4
+	 unk None 10000
+SLC6A3
+	 unk None 6199
+TBXA2R
+	 unk None 1000
+HTR7B
+	 unk None 501
+CHRN-A3B4
+	 unk None 10000
+CHRN-A2B4
+	 unk None 10000
+CHRNA7
+	 unk None 10000
+CHRN-A2B2
+	 unk None 10000
+CHRN-A1B2
+	 unk None 10000
+CHRN-A3B2
+	 unk None 10000
+AVPR1B
+	 unk None 10000
+TACR1
+	 unk None 1000
+HRH3
+	 unk None 100000
+ADORA1
+	 unk None 10000
+CCKBR
+	 unk None 1000
+CNR1
+	 unk None 10000
+GLUTAMATE KAINATE
+	 unk None 10000
+GRIA3
+	 unk None 10000
+OPRM1
+	 unk None 992
+NISCH
+	 unk None 10000
+TMEM97
+	 unk None 14
+OPRD1
+	 unk None 1000
+AGTR1
+	 unk None 10000
+PTAFR
+	 unk None 1000
+HTR4
+	 unk None 10000
+OPRK1
+	 unk None 1000
+ADRA1D
+	 unk None 19
+ABCB1
+	 unk None 200
+KCNH1
+	 unk None 10000000
+==============
+hydroaltesone
+NR3C1
+	 up None 12
+ANXA1
+	 up None 10000000
+SERPINA6
+	 unk None 13
+==============
+ketamine
+GRIN3A
+	 down None 420
+TACR1
+	 down None 10000000
+DRD2
+	 up None 10000
+OPRD1
+	 unk None 10000000
+SLC6A2
+	 down None 10000
+OPRK1
+	 up None 10000
+OPRM1
+	 unk None 10000000
+CHRM1
+	 unk None 10000
+HTR2A
+	 down None 10000
+HTR1A
+	 down None 10000
+HTR3A
+	 up None 10000
+CHRNA7
+	 down None 10000000
+BCHE
+	 down None 10000000
+NOS1
+	 down None 10000000
+DRD1
+	 unk None 10000
+DRD3
+	 unk None 10000
+DRD4
+	 unk None 10000
+DRD5
+	 unk None 10000
+GRIK4
+	 unk None 10000
+HRH1
+	 unk None 10000
+HRH2
+	 unk None 10000
+HTR1B
+	 unk None 10000
+HTR1D
+	 unk None 10000
+HTR1E
+	 unk None 10000
+HTR2B
+	 unk None 10000
+HTR5A
+	 unk None 10000
+HTR6
+	 unk None 10000
+HTR7
+	 unk None 10000
+SLC6A3
+	 unk None 10000
+GRIA3
+	 unk None 3900
+HTR2C
+	 unk None 10000
+SIGMAR1
+	 unk None 10000
+GLUTAMATE KAINATE
+	 unk None 10000
+GRIN1
+	 unk None 420
+GRIN2B
+	 unk None 420
+GRIN3B
+	 unk None 420
+GRIN2D
+	 unk None 420
+GRIN2C
+	 unk None 420
+GRIN2A
+	 unk None 10000000
+==============
+lacosamide
+SCN9A
+	 down None 10000000
+SCN3A
+	 unk None 10000000
+SCN10A
+	 unk None 10000000
+CA1
+	 unk None 362
+CA2
+	 unk None 331
+CA4
+	 unk None 525
+CA5A
+	 unk None 4565
+CA5B
+	 unk None 341
+CA7
+	 unk None 4446
+CA9
+	 unk None 353
+CA12
+	 unk None 3713
+CA14
+	 unk None 473
+CA3
+	 unk None 374
+CA6
+	 unk None 412
+CA13
+	 unk None 1210
+==============
+lamotrigine
+CACNA1E
+	 down None 10000000
+SCN2A
+	 down None 10000000
+ADORA1
+	 down None 10000000
+ADORA2A
+	 down None 10000000
+ADRA1A
+	 down None 10000000
+ADRA2A
+	 down None 10000000
+ADRB1
+	 down None 10000000
+DRD1
+	 down None 10000000
+DRD2
+	 down None 10000000
+GABRA1
+	 down None 10000000
+HRH1
+	 down None 10000000
+OPRK1
+	 down None 10000000
+CHRM1
+	 down None 10000000
+HTR2A
+	 down None 10000000
+HTR3A
+	 down None 10000000
+SCN4A
+	 unk None 17000
+==============
+levetiracetam
+SV2A
+	 up None 10000
+CACNA1B
+	 down None 10000000
+==============
+levodopa
+DRD2
+	 up None 613
+DRD1
+	 up None 4819
+DRD5
+	 up None 10000000
+DRD3
+	 up None 91
+DRD4
+	 up None 34
+SLC6A3
+	 unk None 4018
+DBH
+	 unk None 10000000
+HTR1A
+	 unk None 10000000
+HTR7
+	 unk None 10000000
+SLC6A2
+	 down None 323
+SLC6A4
+	 down None 10000000
+HTR3A
+	 unk None 10000000
+HTR3B
+	 unk None 10000000
+SOD1
+	 unk None 10000000
+SLC18A2
+	 unk None 10000000
+TAAR1
+	 unk None 422
+MTNR1A
+	 unk None 7100
+MTNR1B
+	 unk None 9100
+ADRB2
+	 unk None 61000
+ADRA1D
+	 unk None 2512
+ADRA1A
+	 unk None 2512
+ADRA1B
+	 unk None 2512
+==============
+lorazepam
+GABRA1
+	 up None 5
+TSPO
+	 unk None 10000000
+GABRA3
+	 unk None 6
+GABR-A3B2G2
+	 unk None 3
+GABR-A1B2G2
+	 unk None 4
+GABR-A3B3G2
+	 unk None 5
+GABR-A5B3G2
+	 unk None 4
+GABR-A1B3G2
+	 unk None 4
+GPR68
+	 up None 10000000
+==============
+melatonin
+MTNR1A
+	 up None 1
+MTNR1B
+	 up None 1
+ESR1
+	 down None 10000000
+RORB
+	 up None 10000000
+CALM1
+	 unk None 10000000
+MPO
+	 down None 10000000
+EPX
+	 down None 10000000
+CALR
+	 unk None 10000000
+ASMT
+	 unk None 10000000
+NQO2
+	 unk None 42
+HTR2B
+	 down None 5754
+CYP1A1
+	 unk None 59000
+CYP1B1
+	 unk None 14000
+HTR2A
+	 unk None 10000
+HTR2C
+	 unk None 10000
+AVPR1B
+	 unk None 10000
+HTR5A
+	 unk None 1000
+HTR7
+	 unk None 1000
+HTR5B
+	 unk None 1000
+MTNR1C
+	 unk None 2
+==============
+methylprednisolone
+NR3C1
+	 up None 5
+ANXA1
+	 up None 10000000
+TRPC5
+	 up None 10000000
+==============
+midazolam
+GABRA1
+	 up None 10000000
+GABRA2
+	 up None 10000000
+GABRA5
+	 up None 10000000
+GABRA3
+	 up None 10000000
+GABRA4
+	 up None 10000000
+GABRA6
+	 up None 10000000
+CYP3A4
+	 unk None 2470
+SLC22A1
+	 unk None 3700
+==============
+nitrazepam
+GABRA1
+	 up None 10000000
+GABRA2
+	 up None 10000000
+GABRA3
+	 up None 10000000
+GABRA4
+	 up None 10000000
+GABRA5
+	 up None 10000000
+GABRA6
+	 up None 10000000
+GABRB1
+	 up None 10000000
+GABRB2
+	 up None 10000000
+GABRB3
+	 up None 10000000
+GABRG1
+	 up None 10000000
+GABRG2
+	 up None 10000000
+GABRG3
+	 up None 10000000
+GABRD
+	 up None 10000000
+GABRE
+	 up None 10000000
+GABRP
+	 up None 10000000
+GABRR1
+	 up None 10000000
+GABRR2
+	 up None 10000000
+GABRR3
+	 up None 10000000
+GABRQ
+	 up None 10000000
+SCN1A
+	 unk None 10000000
+HRH1
+	 unk None 10000
+==============
+oxcarbazepine
+P2RX4
+	 unk None 10000000
+SCN3A
+	 unk None 165000
+SCN9A
+	 unk None 80000
+SCN10A
+	 unk None 654000
+==============
+phenytoin
+SCN5A
+	 down None 10000000
+SCN1A
+	 down None 10000000
+NR1I2
+	 unk None 10000000
+SCN1B
+	 unk None 10000000
+SCN3A
+	 unk None 10000000
+KCNH2
+	 down None 10000000
+CACNA1C
+	 down None 10000000
+SCN2A
+	 down None 10000000
+SCN8A
+	 down None 10000000
+GABRA1
+	 unk None 10000000
+CYP2C9
+	 unk None 8000
+SCN4A
+	 unk None 24000
+==============
+pimozide
+DRD2
+	 down None 3
+DRD3
+	 down None 1
+KCNH2
+	 down None 18
+CALM1
+	 down None 10000000
+HTR2C
+	 unk None 722
+HTR1D
+	 unk None 3100
+ADRA1A
+	 unk None 137
+HRH1
+	 down None 355
+HTR6
+	 unk None 71
+HTR7
+	 unk None 1
+CHRM3
+	 unk None 1955
+HRH4
+	 unk None 2000
+ADRA2A
+	 unk None 1593
+ADRA2B
+	 unk None 821
+ADRA2C
+	 unk None 376
+DRD1
+	 unk None 7748
+DRD4
+	 unk None 17
+HTR1A
+	 down None 563
+HTR2A
+	 down None 23
+HTR3A
+	 unk None 2951
+AVPR1B
+	 unk None 10000
+SLC6A3
+	 unk None 69
+CACNA1I
+	 down None 10000000
+KCNA10
+	 unk None 10000000
+==============
+pramipexole
+DRD3
+	 up None 2
+DRD2
+	 up None 454
+DRD4
+	 up None 7
+HTR1A
+	 up None 3603
+ADRA2A
+	 up None 887
+ADRA1A
+	 unk None 10000
+ADRA1B
+	 unk None 10000
+ADRA1D
+	 unk None 10000
+ADRA2B
+	 unk None 349
+ADRA2C
+	 unk None 5026
+ADRB1
+	 unk None 10000
+ADRB2
+	 unk None 10000
+CHRM1
+	 unk None 10000
+CHRM2
+	 unk None 10000
+CHRM3
+	 unk None 10000
+CHRM4
+	 unk None 10000
+CHRM5
+	 unk None 10000
+DRD1
+	 unk None 10000
+DRD5
+	 unk None 10000
+HRH1
+	 unk None 10000
+HRH2
+	 unk None 2683
+HRH4
+	 unk None 10000
+HTR1B
+	 unk None 5913
+HTR1D
+	 unk None 5830
+HTR1E
+	 unk None 10000
+HTR2A
+	 unk None 10000
+HTR2B
+	 unk None 10000
+HTR2C
+	 unk None 10000
+HTR3A
+	 unk None 10000
+HTR5A
+	 unk None 10000
+HTR6
+	 unk None 10000
+HTR7
+	 unk None 1188
+OPRD1
+	 unk None 10000
+OPRM1
+	 unk None 10000
+SLC6A3
+	 unk None 10000
+SLC6A4
+	 unk None 10000
+SLC6A2
+	 unk None 10000
+OPRK1
+	 unk None 10000
+TMEM97
+	 unk None 10000
+NISCH
+	 unk None 10000
+SIGMAR1
+	 unk None 4447
+HRH3
+	 unk None 10000
+==============
+prednisolone
+NR3C1
+	 up None 2
+NR3C2
+	 up None 19
+AR
+	 unk None 2761
+SERPINA6
+	 unk None 31
+==============
+prednisone
+NR3C1
+	 up None 521
+==============
+propofol
+GABRB2
+	 up None 10000000
+GABRB3
+	 up None 10000000
+SCN4A
+	 down None 10000000
+SCN2A
+	 down None 10000000
+GABRA1
+	 up None 10000000
+CA1
+	 unk None 98900
+CA2
+	 unk None 19500
+HTR2B
+	 unk None 950
+SLC6A2
+	 unk None 9316
+HTR2C
+	 unk None 6051
+==============
+risperidone
+HTR2A
+	 down None 1
+DRD2
+	 down None 1
+ADRA1A
+	 down None 2
+DRD3
+	 down None 7
+DRD4
+	 down None 11
+ADRA1B
+	 down None 1
+HTR1D
+	 down None 17
+HRH1
+	 down None 14
+ADRA2A
+	 down None 6
+ADRA2B
+	 up None 7
+ADRA2C
+	 up None 3
+HTR2C
+	 down None 24
+HTR1A
+	 down None 185
+DRD1
+	 down None 325
+HTR7
+	 down None 4
+HTR1B
+	 down None 10
+HTR6
+	 down None 1260
+HTR2B
+	 unk None 17
+SLC6A4
+	 unk None 1000
+HTR1F
+	 down None 1240
+ADRB1
+	 unk None 5000
+ADRB2
+	 unk None 5000
+TAC1
+	 unk None 1000
+KCNH2
+	 unk None 167
+H1-0
+	 unk None 14
+SIGMAR1
+	 unk None 950
+CHRM1
+	 unk None 4550
+CHRM2
+	 unk None 6300
+CHRM3
+	 unk None 6300
+CHRM4
+	 unk None 6300
+CHRM5
+	 unk None 6300
+DRD5
+	 unk None 290
+HRH2
+	 unk None 120
+HRH4
+	 unk None 55000
+HTR1E
+	 down None 5660
+HTR3A
+	 unk None 9159
+HTR5A
+	 unk None 206
+PTGER3
+	 unk None 10000
+PTGER4
+	 unk None 10000
+SLC6A3
+	 unk None 10000
+TBXA2R
+	 unk None 1000
+CHRN-A2B4
+	 unk None 10000
+CHRN-A3B2
+	 unk None 10000
+CHRNA7
+	 unk None 10000
+SLC6A2
+	 unk None 10000
+CHRN-A1B2
+	 unk None 10000
+CHRN-A2B2
+	 unk None 10000
+TACR1
+	 unk None 1000
+HRH3
+	 unk None 100000
+CCKBR
+	 unk None 1000
+CNR1
+	 unk None 10000
+OPRM1
+	 unk None 1000
+NISCH
+	 unk None 10000
+OPRD1
+	 unk None 1000
+PTAFR
+	 unk None 1000
+OPRK1
+	 unk None 1000
+ADRA1D
+	 down None 1
+==============
+sinemet
+DDC
+	 down None 10000000
+KDM4E
+	 unk None 1980
+DRD2
+	 up None 613
+DRD1
+	 up None 4819
+DRD5
+	 up None 10000000
+DRD3
+	 up None 91
+DRD4
+	 up None 34
+SLC6A3
+	 unk None 4018
+DBH
+	 unk None 10000000
+HTR1A
+	 unk None 10000000
+HTR7
+	 unk None 10000000
+SLC6A2
+	 down None 323
+SLC6A4
+	 down None 10000000
+HTR3A
+	 unk None 10000000
+HTR3B
+	 unk None 10000000
+SOD1
+	 unk None 10000000
+SLC18A2
+	 unk None 10000000
+TAAR1
+	 unk None 422
+MTNR1A
+	 unk None 7100
+MTNR1B
+	 unk None 9100
+ADRB2
+	 unk None 61000
+ADRA1D
+	 unk None 2512
+ADRA1A
+	 unk None 2512
+ADRA1B
+	 unk None 2512
+==============
+sulthiame
+CA2
+	 unk None 9
+CA1
+	 unk None 374
+CA9
+	 unk None 43
+CA4
+	 unk None 95
+CA5A
+	 unk None 81
+CA5B
+	 unk None 91
+CA7
+	 unk None 6
+CA12
+	 unk None 56
+CA14
+	 unk None 1540
+CA6
+	 unk None 134
+==============
+tetrabenazine
+SLC18A2
+	 down None 13
+DRD2
+	 down None 10000000
+SLC18A1
+	 down None 20000
+==============
+tiapride
+DRD2
+	 down None 128
+DRD3
+	 down None 210
+HTR1A
+	 down None 10000000
+ADRA1A
+	 down None 10000000
+ADRA2A
+	 down None 779
+DRD4
+	 unk None 14
+==============
+topiramate
+GABRA1
+	 up None 10000000
+SCN1A
+	 down None 10000000
+GRIK1
+	 down None 10000000
+CA2
+	 down None 20
+CA4
+	 down None 43
+CA1
+	 down None 245
+CA3
+	 down None 10000000
+CACNA1C
+	 down None 10000000
+CACNA1E
+	 down None 10000000
+CA5A
+	 unk None 63
+CA5B
+	 unk None 30
+CA9
+	 unk None 58
+CA7
+	 down None 1
+CA12
+	 down None 4
+CA14
+	 unk None 1460
+SIGMAR1
+	 unk None 10000
+TMEM97
+	 unk None 10000
+CA6
+	 unk None 45
+CA13
+	 unk None 47
+==============
+trazodone
+HTR2A
+	 down None 6
+HTR2C
+	 down None 47
+SLC6A4
+	 down None 102
+HTR1A
+	 up None 107
+HRH1
+	 down None 42
+ADRA1A
+	 down None 27
+ADRA2A
+	 down None 341
+DRD2
+	 unk None 3500
+SLC6A3
+	 unk None 7400
+SLC6A2
+	 unk None 8500
+HTR2B
+	 down None 68
+ADRA2C
+	 unk None 155
+ADRB1
+	 unk None 10000
+ADRB2
+	 unk None 10000
+CHRM1
+	 unk None 10000
+CHRM2
+	 unk None 10000
+CHRM3
+	 unk None 10000
+CHRM4
+	 unk None 10000
+CHRM5
+	 unk None 10000
+CNR1
+	 unk None 10000
+CNR2
+	 unk None 10000
+DRD1
+	 unk None 3730
+DRD4
+	 unk None 703
+DRD5
+	 unk None 10000
+HRH2
+	 unk None 3290
+HRH4
+	 unk None 10000
+HTR1B
+	 unk None 10000
+HTR1D
+	 unk None 106
+HTR1E
+	 unk None 10000
+HTR3A
+	 unk None 10000
+HTR6
+	 unk None 10000
+HTR7
+	 unk None 1782
+OPRD1
+	 unk None 10000
+OPRM1
+	 unk None 10000
+PTGER3
+	 unk None 10000
+PTGER4
+	 unk None 10000
+CHRN-A2B2
+	 unk None 10000
+CHRN-A2B4
+	 unk None 10000
+CHRN-A3B2
+	 unk None 10000
+CHRN-A3B4
+	 unk None 10000
+CHRN-A4B2
+	 unk None 10000
+CHRN-A4B4
+	 unk None 10000
+DRD3
+	 unk None 353
+OPRK1
+	 unk None 10000
+SIGMAR1
+	 unk None 926
+TMEM97
+	 unk None 536
+HRH3
+	 unk None 10000
+ADRA1D
+	 unk None 130
+ADRA2B
+	 unk None 178
+==============
+trihexyphenidyl
+CHRM1
+	 down None 1
+CHRM2
+	 down None 7
+CHRM3
+	 down None 3
+CHRM4
+	 down None 1
+CHRM5
+	 down None 9
+SIGMAR1
+	 unk None 45
+==============
+vigabatrin
+GABBR1
+	 up None 10000000
+ABAT
+	 down None 300000
+SLC32A1
+	 down None 10000000
+==============
+vigabatrine
+GABBR1
+	 up None 10000000
+ABAT
+	 down None 300000
+SLC32A1
+	 down None 10000000
+==============
+zonisamide
+SCN1A
+	 down None 10000000
+SCN2A
+	 down None 10000000
+SCN3A
+	 down None 10000000
+SCN4A
+	 down None 10000000
+SCN5A
+	 down None 10000000
+SCN9A
+	 down None 10000000
+SCN11A
+	 down None 10000000
+SCN1B
+	 down None 10000000
+SCN2B
+	 down None 10000000
+SCN3B
+	 down None 10000000
+SCN4B
+	 down None 10000000
+CACNA1G
+	 down None 10000000
+CACNA1H
+	 down None 10000000
+CACNA1I
+	 down None 10000000
+CA1
+	 down None 56
+CA2
+	 down None 457
+CA3
+	 down None 10000000
+CA4
+	 down None 38438
+CA5A
+	 down None 20
+CA5B
+	 down None 6033
+CA6
+	 down None 10000000
+CA7
+	 down None 117
+CA8
+	 down None 10000000
+CA9
+	 down None 5
+CA10
+	 down None 10000000
+CA11
+	 down None 10000000
+CA12
+	 down None 11000
+CA13
+	 down None 10000000
+CA14
+	 down None 5250
+MAOB
+	 down None 10000000
+MAOA
+	 down None 10000000
+*******************
+eff clobazam
+G40W E [32meff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff oxcarbazepine
+G40W E [31mineff[0m oxcarbazepine [['SCN9A', 'unk', 80000], ['SCN3A', 'unk', 165000], ['SCN10A', 'unk', 654000]]
+*******************
+ineff levetiracetam
+G40W E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff clobazam
+G40R E [32meff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+eff topiramate
+G40R E [32meff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+ineff levetiracetam
+G40R E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff levetiracetam
+G40E E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff levetiracetam
+G40E E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+ineff sinemet
+S207Y MD [31mineff[0m sinemet [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['KDM4E', 'unk', 1980], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+
+*******************
+eff levodopa
+A221D MD [32meff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+*******************
+eff levodopa
+D273V MD [32meff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+
+*******************
+eff lacosamide
+Y291N E [32meff[0m lacosamide [['CA2', 'unk', 331], ['CA5B', 'unk', 341], ['CA9', 'unk', 353], ['CA1', 'unk', 362], ['CA3', 'unk', 374], ['CA6', 'unk', 412], ['CA14', 'unk', 473], ['CA4', 'unk', 525], ['CA13', 'unk', 1210], ['CA12', 'unk', 3713], ['CA7', 'unk', 4446], ['CA5A', 'unk', 4565]]
+
+*******************
+eff trihexyphenidyl
+I344del MD [32meff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+
+*******************
+eff levetiracetam
+R349 G352 delinsQGCA E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+
+
+
+
+*******************
+eff tetrabenazine
+S47G MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+
+
+
+
+*******************
+eff tetrabenazine
+E246G MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+
+
+
+
+*******************
+ineff clobazam
+L199P E [31mineff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff topiramate
+L199P E [31mineff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+ineff vigabatrin
+L199P E [31mineff[0m vigabatrin [['ABAT', 'down', 300000], ['GABBR1', 'up', 10000000], ['SLC32A1', 'down', 10000000]]
+*******************
+ineff lacosamide
+L199P E [31mineff[0m lacosamide [['CA2', 'unk', 331], ['CA5B', 'unk', 341], ['CA9', 'unk', 353], ['CA1', 'unk', 362], ['CA3', 'unk', 374], ['CA6', 'unk', 412], ['CA14', 'unk', 473], ['CA4', 'unk', 525], ['CA13', 'unk', 1210], ['CA12', 'unk', 3713], ['CA7', 'unk', 4446], ['CA5A', 'unk', 4565]]
+*******************
+ineff carbamazepine
+L199P E [31mineff[0m carbamazepine [['DRD1', 'unk', 10000], ['DRD2', 'unk', 10000], ['HTR1A', 'unk', 10000], ['AVPR1B', 'unk', 10000], ['HTR2A', 'unk', 10000], ['HTR2C', 'unk', 10000], ['HTR3A', 'unk', 10000], ['SCN9A', 'unk', 32700], ['HRH1', 'unk', 55000], ['HRH3', 'unk', 100000], ['HRH4', 'unk', 100000]]
+*******************
+ineff hydroaltesone
+L199P E [31mineff[0m hydroaltesone [['NR3C1', 'up', 12], ['SERPINA6', 'unk', 13]]
+*******************
+ineff zonisamide
+L199P E [31mineff[0m zonisamide [['CA9', 'down', 5], ['CA5A', 'down', 20], ['CA1', 'down', 56], ['CA7', 'down', 117], ['CA2', 'down', 457]]
+*******************
+ineff levetiracetam
+L199P E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff clobazam
+G203R E [32meff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff zonisamide
+G203R E [31mineff[0m zonisamide [['CA9', 'down', 5], ['CA5A', 'down', 20], ['CA1', 'down', 56], ['CA7', 'down', 117], ['CA2', 'down', 457]]
+*******************
+eff clonazepam
+G203R MD [32meff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+
+
+*******************
+eff prednisone
+A227V E [32meff[0m prednisone [['NR3C1', 'up', 521]]
+*******************
+ineff clonazepam
+A227V E [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+
+*******************
+eff clobazam
+G203R E [32meff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+eff sulthiame
+G203R E [32meff[0m sulthiame [['CA7', 'unk', 6], ['CA2', 'unk', 9], ['CA9', 'unk', 43], ['CA12', 'unk', 56], ['CA5A', 'unk', 81], ['CA5B', 'unk', 91], ['CA4', 'unk', 95], ['CA6', 'unk', 134], ['CA1', 'unk', 374]]
+*******************
+eff levetiracetam
+G203R E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+*******************
+eff tiapride
+G203R E [32meff[0m tiapride [['DRD4', 'unk', 14], ['DRD2', 'down', 128], ['DRD3', 'down', 210], ['ADRA2A', 'down', 779]]
+*******************
+ineff levodopa
+G203R E [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+*******************
+eff lamotrigine
+G203R E [32meff[0m lamotrigine [['SCN4A', 'unk', 17000]]
+*******************
+eff zonisamide
+G203R E [32meff[0m zonisamide [['CA9', 'down', 5], ['CA5A', 'down', 20], ['CA1', 'down', 56], ['CA7', 'down', 117], ['CA2', 'down', 457]]
+*******************
+ineff clobazam
+G203R E [31mineff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff topiramate
+G203R E [31mineff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+ineff methylprednisolone
+G203R E [31mineff[0m methylprednisolone [['NR3C1', 'up', 5]]
+*******************
+ineff phenytoin
+G203R E [31mineff[0m phenytoin [['CYP2C9', 'unk', 8000], ['SCN4A', 'unk', 24000]]
+*******************
+ineff vigabatrin
+G203R E [31mineff[0m vigabatrin [['ABAT', 'down', 300000], ['GABBR1', 'up', 10000000], ['SLC32A1', 'down', 10000000]]
+*******************
+ineff lacosamide
+G203R E [31mineff[0m lacosamide [['CA2', 'unk', 331], ['CA5B', 'unk', 341], ['CA9', 'unk', 353], ['CA1', 'unk', 362], ['CA3', 'unk', 374], ['CA6', 'unk', 412], ['CA14', 'unk', 473], ['CA4', 'unk', 525], ['CA13', 'unk', 1210], ['CA12', 'unk', 3713], ['CA7', 'unk', 4446], ['CA5A', 'unk', 4565]]
+*******************
+ineff oxcarbazepine
+G203R E [31mineff[0m oxcarbazepine [['SCN9A', 'unk', 80000], ['SCN3A', 'unk', 165000], ['SCN10A', 'unk', 654000]]
+*******************
+ineff levetiracetam
+G203R E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+*******************
+eff baclofen
+G203R MD [32meff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+eff benzodiazepine
+G203R MD [32meff[0m benzodiazepine [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff trihexyphenidyl
+G203R MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff gabapentin
+G203R MD [31mineff[0m gabapentin [['CACNA2D1', 'down', 59], ['CACNA2D2', 'down', 153]]
+
+
+*******************
+eff oxcarbazepine
+E246K E [32meff[0m oxcarbazepine [['SCN9A', 'unk', 80000], ['SCN3A', 'unk', 165000], ['SCN10A', 'unk', 654000]]
+*******************
+eff levetiracetam
+E246K E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff topiramate
+G203R E [32meff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+ineff carbamazepine
+G203R E [31mineff[0m carbamazepine [['DRD1', 'unk', 10000], ['DRD2', 'unk', 10000], ['HTR1A', 'unk', 10000], ['AVPR1B', 'unk', 10000], ['HTR2A', 'unk', 10000], ['HTR2C', 'unk', 10000], ['HTR3A', 'unk', 10000], ['SCN9A', 'unk', 32700], ['HRH1', 'unk', 55000], ['HRH3', 'unk', 100000], ['HRH4', 'unk', 100000]]
+*******************
+ineff benzodiazepine
+G203R E [31mineff[0m benzodiazepine [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+eff clonazepam
+G203R MD [32meff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+*******************
+eff lorazepam
+G203R MD [32meff[0m lorazepam [['GABR-A3B2G2', 'unk', 3], ['GABR-A1B2G2', 'unk', 4], ['GABR-A5B3G2', 'unk', 4], ['GABR-A1B3G2', 'unk', 4], ['GABRA1', 'up', 5], ['GABR-A3B3G2', 'unk', 5], ['GABRA3', 'unk', 6]]
+*******************
+eff tetrabenazine
+G203R MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+eff baclofen
+G203R MD [32meff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+
+*******************
+eff haloperidol
+R209C MD [32meff[0m haloperidol [['SIGMAR1', 'unk', 1], ['DRD2', 'down', 2], ['DRD3', 'down', 5], ['DRD4', 'down', 5], ['ADRA1B', 'unk', 8], ['ADRA1A', 'unk', 11], ['TMEM97', 'unk', 14], ['ADRA1D', 'unk', 19], ['HTR2B', 'down', 23], ['DRD1', 'down', 80], ['HTR2A', 'down', 87]]
+*******************
+eff curare
+R209C MD [32meff[0m curare [['CHRN-A4B2', 'unk', 10000]]
+*******************
+ineff midazolam
+R209C MD [31mineff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+*******************
+ineff propofol
+R209C MD [31mineff[0m propofol [['HTR2B', 'unk', 950], ['HTR2C', 'unk', 6051], ['SLC6A2', 'unk', 9316], ['CA2', 'unk', 19500]]
+*******************
+ineff phenytoin
+R209C MD [31mineff[0m phenytoin [['CYP2C9', 'unk', 8000], ['SCN4A', 'unk', 24000]]
+*******************
+ineff baclofen
+R209C MD [31mineff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+ineff clonazepam
+R209C MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff levodopa
+R209C MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff tetrabenazine
+R209C MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff clonidine
+R209C MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+
+
+*******************
+eff melatonin
+D273V E [32meff[0m melatonin [['MTNR1A', 'up', 1], ['MTNR1B', 'up', 1], ['MTNR1C', 'unk', 2], ['NQO2', 'unk', 42]]
+*******************
+eff lamotrigine
+D273V E [32meff[0m lamotrigine [['SCN4A', 'unk', 17000]]
+*******************
+eff trihexyphenidyl
+D273V MD [32meff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+
+*******************
+eff vigabatrin
+G203R E [32meff[0m vigabatrin [['ABAT', 'down', 300000], ['GABBR1', 'up', 10000000], ['SLC32A1', 'down', 10000000]]
+*******************
+eff topiramate
+G203R E [32meff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+eff levetiracetam
+G203R E [32meff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff tetrabenazine
+G204R MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+eff benzodiazepine
+G204R MD [32meff[0m benzodiazepine [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff levodopa
+G204R MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+*******************
+ineff trihexyphenidyl
+R209C MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff tetrabenazine
+R209C MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff levodopa
+R209C MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+
+*******************
+eff topiramate
+R209C E [32meff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+eff lamotrigine
+R209C E [32meff[0m lamotrigine [['SCN4A', 'unk', 17000]]
+*******************
+ineff levetiracetam
+R209C E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+*******************
+eff tetrabenazine
+R209C MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff trihexyphenidyl
+R209C MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff baclofen
+R209C MD [31mineff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+
+
+*******************
+ineff trihexyphenidyl
+E237K MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff tetrabenazine
+E237K MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff clonazepam
+E237K MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff pimozide
+E237K MD [31mineff[0m pimozide [['DRD3', 'down', 1], ['HTR7', 'unk', 1], ['DRD2', 'down', 3], ['DRD4', 'unk', 17], ['KCNH2', 'down', 18], ['HTR2A', 'down', 23], ['SLC6A3', 'unk', 69], ['HTR6', 'unk', 71]]
+*******************
+ineff amitriptyline
+E237K MD [31mineff[0m amitriptyline [['HRH1', 'down', 1], ['CHRM4', 'down', 1], ['SLC6A4', 'down', 3], ['HTR2C', 'down', 3], ['CHRM1', 'down', 3], ['HTR2A', 'down', 4], ['ADRA1A', 'down', 4], ['ADRA2B', 'unk', 4], ['CHRM3', 'down', 5], ['CHRM5', 'down', 6], ['ADRA2C', 'unk', 9], ['CHRM2', 'down', 12], ['SLC6A2', 'down', 22], ['HRH4', 'unk', 34], ['HTR2B', 'unk', 45], ['ADRA1D', 'down', 52], ['HTR6', 'down', 65], ['HRH2', 'down', 66], ['DRD1', 'unk', 89]]
+
+*******************
+ineff levodopa
+S207F MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff trihexyphenidyl
+S207F MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff tetrabenazine
+S207F MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff clonazepam
+S207F MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff pramipexole
+S207F MD [31mineff[0m pramipexole [['DRD3', 'up', 2], ['DRD4', 'up', 7]]
+
+*******************
+eff clonidine
+R209C MD [32meff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+eff benzhexol
+R209C MD [32meff[0m benzhexol [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff midazolam
+R209C MD [31mineff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+
+*******************
+eff tetrabenazine
+E237K MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+eff clonazepam
+E237K MD [32meff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff levodopa
+E237K MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff clobazam
+E237K MD [31mineff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff ketamine
+E237K MD [31mineff[0m ketamine [['GRIN3A', 'down', 420], ['GRIN1', 'unk', 420], ['GRIN2B', 'unk', 420], ['GRIN3B', 'unk', 420], ['GRIN2D', 'unk', 420], ['GRIN2C', 'unk', 420], ['GRIA3', 'unk', 3900], ['DRD2', 'up', 10000], ['SLC6A2', 'down', 10000], ['OPRK1', 'up', 10000], ['CHRM1', 'unk', 10000], ['HTR2A', 'down', 10000], ['HTR1A', 'down', 10000], ['HTR3A', 'up', 10000], ['DRD1', 'unk', 10000], ['DRD3', 'unk', 10000], ['DRD4', 'unk', 10000], ['DRD5', 'unk', 10000], ['GRIK4', 'unk', 10000], ['HRH1', 'unk', 10000], ['HRH2', 'unk', 10000], ['HTR1B', 'unk', 10000], ['HTR1D', 'unk', 10000], ['HTR1E', 'unk', 10000], ['HTR2B', 'unk', 10000], ['HTR5A', 'unk', 10000], ['HTR6', 'unk', 10000], ['HTR7', 'unk', 10000], ['SLC6A3', 'unk', 10000], ['HTR2C', 'unk', 10000], ['SIGMAR1', 'unk', 10000], ['GLUTAMATE KAINATE', 'unk', 10000]]
+*******************
+ineff baclofen
+E237K MD [31mineff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+ineff clonidine
+E237K MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff diazepam
+E237K MD [31mineff[0m diazepam [['GABR-A2B2C2', 'unk', 8], ['GABRA5', 'up', 10], ['GABRB1', 'up', 10], ['GABRG1', 'up', 10], ['GABRG3', 'up', 10], ['GABRD', 'up', 10], ['GABRE', 'up', 10], ['GABRP', 'up', 10], ['GABRQ', 'up', 10], ['GABRA6', 'unk', 10], ['GABRA4', 'unk', 10], ['GABR-A5B3G2', 'unk', 11], ['GABR-A5B3C2', 'unk', 11], ['GABR-A3B2G2', 'unk', 12], ['GABR-A1B2G2', 'unk', 12], ['GABRA1', 'up', 13], ['GABRA3', 'up', 14], ['GABRB3', 'up', 14], ['GABR-A1B3G2', 'unk', 14], ['GABR-A1B3C2', 'unk', 14], ['GABR-A1B2C2', 'unk', 14], ['GABR-A3B2C2', 'unk', 14], ['GABRA2', 'up', 15], ['GABR-A3B3C2', 'unk', 15], ['GABR-A1B1C2', 'unk', 16], ['GABR-A6B3C2', 'unk', 17], ['GABR-A2B1C2', 'unk', 17], ['GABR-A2B3C2', 'unk', 20], ['GABR-A3B3G2', 'unk', 24]]
+*******************
+ineff prednisolone
+E237K MD [31mineff[0m prednisolone [['NR3C1', 'up', 2], ['NR3C2', 'up', 19], ['SERPINA6', 'unk', 31]]
+*******************
+ineff dexmedetomidine
+E237K MD [31mineff[0m dexmedetomidine [['ADRA1D', 'unk', 1], ['ADRA2A', 'up', 2], ['ADRA2C', 'up', 9], ['ADRA2B', 'up', 19], ['NISCH', 'unk', 50]]
+*******************
+ineff benzhexol
+E237K MD [31mineff[0m benzhexol [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff midazolam
+E237K MD [31mineff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+
+*******************
+eff tetrabenazine
+E246K MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff levodopa
+E246K MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff clobazam
+E246K MD [31mineff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff carbamazepine
+E246K MD [31mineff[0m carbamazepine [['DRD1', 'unk', 10000], ['DRD2', 'unk', 10000], ['HTR1A', 'unk', 10000], ['AVPR1B', 'unk', 10000], ['HTR2A', 'unk', 10000], ['HTR2C', 'unk', 10000], ['HTR3A', 'unk', 10000], ['SCN9A', 'unk', 32700], ['HRH1', 'unk', 55000], ['HRH3', 'unk', 100000], ['HRH4', 'unk', 100000]]
+*******************
+ineff clonidine
+E246K MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff acetazolamide
+E246K MD [31mineff[0m acetazolamide [['CA13', 'unk', 1], ['CA6', 'unk', 1], ['CA7', 'down', 2], ['CA12', 'down', 6], ['CA2', 'down', 12], ['CA9', 'unk', 25], ['CA14', 'down', 41], ['CA5B', 'unk', 52], ['CA5A', 'unk', 61], ['CA4', 'down', 74]]
+*******************
+ineff nitrazepam
+E246K MD [31mineff[0m nitrazepam [['HRH1', 'unk', 10000]]
+*******************
+ineff prednisolone
+E246K MD [31mineff[0m prednisolone [['NR3C1', 'up', 2], ['NR3C2', 'up', 19], ['SERPINA6', 'unk', 31]]
+*******************
+ineff lorazepam
+E246K MD [31mineff[0m lorazepam [['GABR-A3B2G2', 'unk', 3], ['GABR-A1B2G2', 'unk', 4], ['GABR-A5B3G2', 'unk', 4], ['GABR-A1B3G2', 'unk', 4], ['GABRA1', 'up', 5], ['GABR-A3B3G2', 'unk', 5], ['GABRA3', 'unk', 6]]
+*******************
+ineff benzhexol
+E246K MD [31mineff[0m benzhexol [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff midazolam
+E246K MD [31mineff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+
+*******************
+eff levodopa
+R209C MD [32meff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff trihexyphenidyl
+R209C MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff clonazepam
+R209C MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+*******************
+eff levodopa
+R209C MD [32meff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+eff clonazepam
+R209C MD [32meff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+eff bromocriptine
+R209C MD [32meff[0m bromocriptine [['ADRA1B', 'up', 1], ['ADRA1D', 'up', 1], ['DRD2', 'up', 4], ['ADRA1A', 'up', 4], ['HTR2B', 'down', 5], ['ADRA2A', 'down', 6], ['DRD3', 'up', 7], ['HTR1D', 'up', 10], ['HTR2A', 'up', 10], ['HTR1A', 'up', 13], ['ADRA2B', 'down', 16], ['ADRA2C', 'down', 28], ['HTR7', 'down', 30], ['HTR6', 'up', 30]]
+*******************
+ineff chlorpromazine
+R209C MD [31mineff[0m chlorpromazine [['ADRA1A', 'down', 1], ['ADRA1B', 'down', 1], ['DRD3', 'down', 2], ['ADRA1D', 'unk', 2], ['DRD2', 'down', 3], ['HTR2A', 'down', 3], ['HRH1', 'down', 3], ['HTR2B', 'unk', 6], ['ADRA2B', 'down', 12], ['HTR2C', 'down', 16], ['DRD4', 'down', 18], ['CHRM5', 'unk', 18], ['SLC6A2', 'unk', 19], ['HTR6', 'down', 20], ['HTR7', 'down', 21], ['CHRM1', 'down', 32], ['CHRM4', 'unk', 40], ['SLC6A4', 'unk', 42], ['CHRM3', 'down', 44], ['ADRA2C', 'down', 46], ['HRH4', 'unk', 50]]
+
+*******************
+eff midazolam
+R209G MD [32meff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+*******************
+eff propofol
+R209G MD [32meff[0m propofol [['HTR2B', 'unk', 950], ['HTR2C', 'unk', 6051], ['SLC6A2', 'unk', 9316], ['CA2', 'unk', 19500]]
+*******************
+eff dexmedetomidine
+R209G MD [32meff[0m dexmedetomidine [['ADRA1D', 'unk', 1], ['ADRA2A', 'up', 2], ['ADRA2C', 'up', 9], ['ADRA2B', 'up', 19], ['NISCH', 'unk', 50]]
+*******************
+ineff clonidine
+R209G MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff clonazepam
+R209G MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff bethanechol
+R209G MD [31mineff[0m bethanechol [['CHRM2', 'up', 97], ['CHRM1', 'up', 97], ['CHRM3', 'up', 97], ['CHRM4', 'up', 97], ['CHRM5', 'unk', 97]]
+
+*******************
+eff risperidone
+R209H MD [32meff[0m risperidone [['HTR2A', 'down', 1], ['DRD2', 'down', 1], ['ADRA1B', 'down', 1], ['ADRA1D', 'down', 1], ['ADRA1A', 'down', 2], ['ADRA2C', 'up', 3], ['HTR7', 'down', 4], ['ADRA2A', 'down', 6], ['DRD3', 'down', 7], ['ADRA2B', 'up', 7], ['HTR1B', 'down', 10], ['DRD4', 'down', 11], ['HRH1', 'down', 14], ['H1-0', 'unk', 14], ['HTR1D', 'down', 17], ['HTR2B', 'unk', 17], ['HTR2C', 'down', 24]]
+*******************
+eff benzodiazepine
+R209H MD [32meff[0m benzodiazepine [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+eff dexmedetomidine
+R209H MD [32meff[0m dexmedetomidine [['ADRA1D', 'unk', 1], ['ADRA2A', 'up', 2], ['ADRA2C', 'up', 9], ['ADRA2B', 'up', 19], ['NISCH', 'unk', 50]]
+
+
+*******************
+eff tetrabenazine
+E246K MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff trazodone
+E246K MD [31mineff[0m trazodone [['HTR2A', 'down', 6], ['ADRA1A', 'down', 27], ['HRH1', 'down', 42], ['HTR2C', 'down', 47], ['HTR2B', 'down', 68], ['SLC6A4', 'down', 102], ['HTR1D', 'unk', 106], ['HTR1A', 'up', 107], ['ADRA1D', 'unk', 130], ['ADRA2C', 'unk', 155], ['ADRA2B', 'unk', 178], ['ADRA2A', 'down', 341], ['DRD3', 'unk', 353], ['TMEM97', 'unk', 536]]
+*******************
+ineff clonidine
+E246K MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff clonazepam
+E246K MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+*******************
+eff clobazam
+E246K MD [32meff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+eff haloperidol
+E246K MD [32meff[0m haloperidol [['SIGMAR1', 'unk', 1], ['DRD2', 'down', 2], ['DRD3', 'down', 5], ['DRD4', 'down', 5], ['ADRA1B', 'unk', 8], ['ADRA1A', 'unk', 11], ['TMEM97', 'unk', 14], ['ADRA1D', 'unk', 19], ['HTR2B', 'down', 23], ['DRD1', 'down', 80], ['HTR2A', 'down', 87]]
+*******************
+eff tetrabenazine
+E246K MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+eff clonazepam
+E246K MD [32meff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+eff baclofen
+E246K MD [32meff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+eff diazepam
+E246K MD [32meff[0m diazepam [['GABR-A2B2C2', 'unk', 8], ['GABRA5', 'up', 10], ['GABRB1', 'up', 10], ['GABRG1', 'up', 10], ['GABRG3', 'up', 10], ['GABRD', 'up', 10], ['GABRE', 'up', 10], ['GABRP', 'up', 10], ['GABRQ', 'up', 10], ['GABRA6', 'unk', 10], ['GABRA4', 'unk', 10], ['GABR-A5B3G2', 'unk', 11], ['GABR-A5B3C2', 'unk', 11], ['GABR-A3B2G2', 'unk', 12], ['GABR-A1B2G2', 'unk', 12], ['GABRA1', 'up', 13], ['GABRA3', 'up', 14], ['GABRB3', 'up', 14], ['GABR-A1B3G2', 'unk', 14], ['GABR-A1B3C2', 'unk', 14], ['GABR-A1B2C2', 'unk', 14], ['GABR-A3B2C2', 'unk', 14], ['GABRA2', 'up', 15], ['GABR-A3B3C2', 'unk', 15], ['GABR-A1B1C2', 'unk', 16], ['GABR-A6B3C2', 'unk', 17], ['GABR-A2B1C2', 'unk', 17], ['GABR-A2B3C2', 'unk', 20], ['GABR-A3B3G2', 'unk', 24]]
+*******************
+ineff topiramate
+E246K MD [31mineff[0m topiramate [['CA7', 'down', 1], ['CA12', 'down', 4], ['CA2', 'down', 20], ['CA5B', 'unk', 30], ['CA4', 'down', 43], ['CA6', 'unk', 45], ['CA13', 'unk', 47], ['CA9', 'unk', 58], ['CA5A', 'unk', 63]]
+*******************
+ineff clonidine
+E246K MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff levetiracetam
+E246K MD [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff diazepam
+E246K MD [32meff[0m diazepam [['GABR-A2B2C2', 'unk', 8], ['GABRA5', 'up', 10], ['GABRB1', 'up', 10], ['GABRG1', 'up', 10], ['GABRG3', 'up', 10], ['GABRD', 'up', 10], ['GABRE', 'up', 10], ['GABRP', 'up', 10], ['GABRQ', 'up', 10], ['GABRA6', 'unk', 10], ['GABRA4', 'unk', 10], ['GABR-A5B3G2', 'unk', 11], ['GABR-A5B3C2', 'unk', 11], ['GABR-A3B2G2', 'unk', 12], ['GABR-A1B2G2', 'unk', 12], ['GABRA1', 'up', 13], ['GABRA3', 'up', 14], ['GABRB3', 'up', 14], ['GABR-A1B3G2', 'unk', 14], ['GABR-A1B3C2', 'unk', 14], ['GABR-A1B2C2', 'unk', 14], ['GABR-A3B2C2', 'unk', 14], ['GABRA2', 'up', 15], ['GABR-A3B3C2', 'unk', 15], ['GABR-A1B1C2', 'unk', 16], ['GABR-A6B3C2', 'unk', 17], ['GABR-A2B1C2', 'unk', 17], ['GABR-A2B3C2', 'unk', 20], ['GABR-A3B3G2', 'unk', 24]]
+*******************
+eff tetrabenazine
+E246K MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff oxcarbazepine
+E246K MD [31mineff[0m oxcarbazepine [['SCN9A', 'unk', 80000], ['SCN3A', 'unk', 165000], ['SCN10A', 'unk', 654000]]
+*******************
+ineff clonazepam
+E246K MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+*******************
+eff trihexyphenidyl
+R209H MD [32meff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+eff tetrabenazine
+R209H MD [32meff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+
+*******************
+ineff clonazepam
+R209H MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+*******************
+ineff clonidine
+R209H MD [31mineff[0m clonidine [['NISCH', 'unk', 9], ['ADRA2A', 'up', 23], ['ADRA2C', 'up', 25], ['ADRA2B', 'up', 26], ['ADRA1D', 'up', 126], ['ADRA1A', 'up', 316], ['ADRA1B', 'up', 316], ['SLC22A1', 'down', 550]]
+*******************
+ineff clonazepam
+R209H MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+
+
+
+*******************
+ineff lamotrigine
+Y231C E [31mineff[0m lamotrigine [['SCN4A', 'unk', 17000]]
+*******************
+ineff vigabatrine
+Y231C E [31mineff[0m vigabatrine [['ABAT', 'down', 300000], ['GABBR1', 'up', 10000000], ['SLC32A1', 'down', 10000000]]
+
+*******************
+eff pimozide
+Q233P MD [32meff[0m pimozide [['DRD3', 'down', 1], ['HTR7', 'unk', 1], ['DRD2', 'down', 3], ['DRD4', 'unk', 17], ['KCNH2', 'down', 18], ['HTR2A', 'down', 23], ['SLC6A3', 'unk', 69], ['HTR6', 'unk', 71]]
+*******************
+eff midazolam
+Q233P MD [32meff[0m midazolam [['CYP3A4', 'unk', 2470], ['SLC22A1', 'unk', 3700]]
+*******************
+eff fentanyl
+Q233P MD [32meff[0m fentanyl [['OPRM1', 'up', 2], ['OPRL1', 'unk', 40], ['OPRK1', 'up', 196]]
+
+
+
+*******************
+ineff levodopa
+E246K MD [31mineff[0m levodopa [['DRD4', 'up', 34], ['DRD3', 'up', 91], ['SLC6A2', 'down', 323], ['TAAR1', 'unk', 422], ['DRD2', 'up', 613], ['ADRA1D', 'unk', 2512], ['ADRA1A', 'unk', 2512], ['ADRA1B', 'unk', 2512]]
+*******************
+ineff trihexyphenidyl
+E246K MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff tetrabenazine
+E246K MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff clonazepam
+E246K MD [31mineff[0m clonazepam [['GABRA1', 'up', 1], ['GABRA3', 'up', 1], ['GABR-A1B1C2', 'unk', 1], ['GABRB3', 'unk', 1], ['GABRA5', 'unk', 1], ['GABRP', 'unk', 1], ['GABRE', 'unk', 1], ['GABRQ', 'unk', 1], ['GABRG3', 'unk', 1], ['GABRB1', 'unk', 1], ['GABRD', 'unk', 1], ['GABRA2', 'up', 1], ['GABRA6', 'unk', 1], ['GABRA4', 'unk', 1], ['GABRG1', 'unk', 1], ['GABR-A1B2G2', 'unk', 1], ['GABR-A2B2G2', 'unk', 1], ['GABR-A5B2G2', 'unk', 1], ['GABR-A2B1C2', 'unk', 2], ['GABR-A6B3C2', 'unk', 2], ['GABR-A3B2G2', 'unk', 2]]
+*******************
+ineff baclofen
+E246K MD [31mineff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+ineff nitrazepam
+E246K MD [31mineff[0m nitrazepam [['HRH1', 'unk', 10000]]
+*******************
+ineff levetiracetam
+E246K MD [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff flunitrazepam
+E246K MD [32meff[0m flunitrazepam [['GABRA2', 'up', 2], ['GABRA5', 'up', 2], ['GABRA1', 'up', 2], ['GABRB3', 'up', 2], ['GABR-A1B3G2', 'unk', 2], ['GABR-A5B3G2', 'unk', 2], ['GABR-A1B3C2', 'unk', 2], ['GABR-A5B3C2', 'unk', 2], ['GABR-A2B3C2', 'unk', 2], ['GABRA3', 'up', 4], ['GABR-A3B3G2', 'unk', 4], ['GABR-A1B2G2', 'unk', 4], ['GABR-A3B3C2', 'unk', 4], ['GABR-A2B1C2', 'unk', 5], ['GABR-A5B1C2', 'unk', 6], ['GABR-A1B1C2', 'unk', 12], ['GABR-A6B3C2', 'unk', 16]]
+*******************
+ineff trihexyphenidyl
+E246K MD [31mineff[0m trihexyphenidyl [['CHRM1', 'down', 1], ['CHRM4', 'down', 1], ['CHRM3', 'down', 3], ['CHRM2', 'down', 7], ['CHRM5', 'down', 9], ['SIGMAR1', 'unk', 45]]
+*******************
+ineff tetrabenazine
+E246K MD [31mineff[0m tetrabenazine [['SLC18A2', 'down', 13]]
+*******************
+ineff baclofen
+E246K MD [31mineff[0m baclofen [['GABBR1', 'up', 6000], ['GABBR2', 'up', 6000]]
+*******************
+ineff pimozide
+E246K MD [31mineff[0m pimozide [['DRD3', 'down', 1], ['HTR7', 'unk', 1], ['DRD2', 'down', 3], ['DRD4', 'unk', 17], ['KCNH2', 'down', 18], ['HTR2A', 'down', 23], ['SLC6A3', 'unk', 69], ['HTR6', 'unk', 71]]
+
+
+
+*******************
+ineff clobazam
+L284S E [31mineff[0m clobazam [['GABR-A2B2G2', 'unk', 205], ['GABR-A5B2G2', 'unk', 331], ['GABR-A1B2G2', 'unk', 519], ['GABR-A3B2G2', 'unk', 753]]
+*******************
+ineff fosphenytoin
+L284S E [31mineff[0m fosphenytoin [['CYP2C9', 'unk', 8000], ['SCN4A', 'unk', 24000]]
+*******************
+ineff prednisone
+L284S E [31mineff[0m prednisone [['NR3C1', 'up', 521]]
+*******************
+ineff zonisamide
+L284S E [31mineff[0m zonisamide [['CA9', 'down', 5], ['CA5A', 'down', 20], ['CA1', 'down', 56], ['CA7', 'down', 117], ['CA2', 'down', 457]]
+*******************
+ineff levetiracetam
+L284S E [31mineff[0m levetiracetam [['SV2A', 'up', 10000]]
+
+*******************
+eff vigabatrin
+R177P E [32meff[0m vigabatrin [['ABAT', 'down', 300000], ['GABBR1', 'up', 10000000], ['SLC32A1', 'down', 10000000]]
+
+
+G40
+	 CA7
+		 eff_down  1.00
+
+	 CA12
+		 eff_down  0.61
+
+	 GABR-A2B2G2
+		 eff_unk  0.41
+
+	 GABR-A5B2G2
+		 eff_unk  0.38
+
+	 CA2
+		 eff_down  0.36
+
+	 GABR-A1B2G2
+		 eff_unk  0.35
+
+	 GABR-A3B2G2
+		 eff_unk  0.33
+
+	 CA5B
+		 eff_unk  0.32
+
+	 CA4
+		 eff_down  0.29
+
+	 CA6
+		 eff_unk  0.29
+
+	 CA13
+		 eff_unk  0.28
+
+	 CA9
+		 eff_unk  0.27
+
+	 CA5A
+		 eff_unk  0.26
+
+	 SV2A
+		 eff_up  0.24
+		 ineff_up  0.24
+
+	 SCN9A
+		 ineff_unk  0.10
+
+	 SCN3A
+		 ineff_unk  0.09
+
+	 SCN10A
+		 ineff_unk  0.08
+
+S207
+	 DRD3
+		 ineff_up  1.00
+
+	 DRD4
+		 ineff_up  0.87
+
+	 CHRM1
+		 ineff_down  0.78
+
+	 CHRM4
+		 ineff_down  0.78
+
+	 GABRA1
+		 ineff_up  0.78
+
+	 GABRA3
+		 ineff_up  0.78
+
+	 GABR-A1B1C2
+		 ineff_unk  0.78
+
+	 GABRB3
+		 ineff_unk  0.78
+
+	 GABRA5
+		 ineff_unk  0.78
+
+	 GABRP
+		 ineff_unk  0.78
+
+	 GABRE
+		 ineff_unk  0.78
+
+	 GABRQ
+		 ineff_unk  0.78
+
+	 GABRG3
+		 ineff_unk  0.78
+
+	 GABRB1
+		 ineff_unk  0.78
+
+	 GABRD
+		 ineff_unk  0.78
+
+	 GABRA2
+		 ineff_up  0.78
+
+	 GABRA6
+		 ineff_unk  0.78
+
+	 GABRA4
+		 ineff_unk  0.78
+
+	 GABRG1
+		 ineff_unk  0.78
+
+	 GABR-A1B2G2
+		 ineff_unk  0.78
+
+	 GABR-A2B2G2
+		 ineff_unk  0.78
+
+	 GABR-A5B2G2
+		 ineff_unk  0.78
+
+	 GABR-A2B1C2
+		 ineff_unk  0.62
+
+	 GABR-A6B3C2
+		 ineff_unk  0.62
+
+	 GABR-A3B2G2
+		 ineff_unk  0.62
+
+	 CHRM3
+		 ineff_down  0.53
+
+	 CHRM2
+		 ineff_down  0.39
+
+	 CHRM5
+		 ineff_down  0.36
+
+	 SLC18A2
+		 ineff_down  0.32
+
+	 SLC6A2
+		 ineff_down  0.30
+
+	 TAAR1
+		 ineff_unk  0.28
+
+	 DRD2
+		 ineff_up  0.27
+
+	 SIGMAR1
+		 ineff_unk  0.22
+
+	 ADRA1D
+		 ineff_unk  0.22
+
+	 ADRA1A
+		 ineff_unk  0.22
+
+	 ADRA1B
+		 ineff_unk  0.22
+
+	 KDM4E
+		 ineff_unk  0.11
+
+A221
+	 DRD4
+		 eff_up  1.00
+
+	 DRD3
+		 eff_up  0.79
+
+	 SLC6A2
+		 eff_down  0.62
+
+	 TAAR1
+		 eff_unk  0.59
+
+	 DRD2
+		 eff_up  0.56
+
+	 ADRA1D
+		 eff_unk  0.46
+
+	 ADRA1A
+		 eff_unk  0.46
+
+	 ADRA1B
+		 eff_unk  0.46
+
+D273
+	 MTNR1A
+		 eff_up  1.00
+
+	 MTNR1B
+		 eff_up  1.00
+
+	 CHRM1
+		 eff_down  1.00
+
+	 CHRM4
+		 eff_down  1.00
+
+	 MTNR1C
+		 eff_unk  0.79
+
+	 CHRM3
+		 eff_down  0.68
+
+	 CHRM2
+		 eff_down  0.50
+
+	 CHRM5
+		 eff_down  0.46
+
+	 DRD4
+		 eff_up  0.31
+
+	 NQO2
+		 eff_unk  0.29
+
+	 SIGMAR1
+		 eff_unk  0.29
+
+	 DRD3
+		 eff_up  0.24
+
+	 SLC6A2
+		 eff_down  0.19
+
+	 TAAR1
+		 eff_unk  0.18
+
+	 DRD2
+		 eff_up  0.17
+
+	 ADRA1D
+		 eff_unk  0.14
+
+	 ADRA1A
+		 eff_unk  0.14
+
+	 ADRA1B
+		 eff_unk  0.14
+
+	 SCN4A
+		 eff_unk  0.11
+
+Y291
+	 CA2
+		 eff_unk  1.00
+
+	 CA5B
+		 eff_unk  0.99
+
+	 CA9
+		 eff_unk  0.99
+
+	 CA1
+		 eff_unk  0.98
+
+	 CA3
+		 eff_unk  0.98
+
+	 CA6
+		 eff_unk  0.96
+
+	 CA14
+		 eff_unk  0.94
+
+	 CA4
+		 eff_unk  0.93
+
+	 CA13
+		 eff_unk  0.82
+
+	 CA12
+		 eff_unk  0.71
+
+	 CA7
+		 eff_unk  0.69
+
+	 CA5A
+		 eff_unk  0.69
+
+I344de
+	 CHRM1
+		 eff_down  1.00
+
+	 CHRM4
+		 eff_down  1.00
+
+	 CHRM3
+		 eff_down  0.68
+
+	 CHRM2
+		 eff_down  0.50
+
+	 CHRM5
+		 eff_down  0.46
+
+	 SIGMAR1
+		 eff_unk  0.29
+
+R349 G352 delinsQGC
+	 SV2A
+		 eff_up  1.00
+
+S47
+	 SLC18A2
+		 eff_down  1.00
+
+E246
+	 GABR-A1B2G2
+		 eff_unk  0.69
+		 ineff_unk  1.00
+
+	 GABRA1
+		 eff_up  0.69
+		 ineff_up  0.94
+
+	 GABR-A3B2G2
+		 eff_unk  0.47
+		 ineff_unk  0.85
+
+	 GABR-A2B2G2
+		 eff_unk  0.32
+		 ineff_unk  0.85
+
+	 GABR-A5B2G2
+		 eff_unk  0.31
+		 ineff_unk  0.84
+
+	 GABRA3
+		 eff_up  0.63
+		 ineff_up  0.79
+		 ineff_unk  0.14
+
+	 CHRM1
+		 ineff_down  0.79
+
+	 CHRM4
+		 ineff_down  0.79
+
+	 GABR-A1B1C2
+		 eff_unk  0.57
+		 ineff_unk  0.79
+
+	 GABRB3
+		 eff_up  0.42
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRA5
+		 eff_up  0.44
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRP
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRE
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRQ
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRG3
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRB1
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRD
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABRA2
+		 eff_up  0.68
+		 ineff_up  0.79
+
+	 GABRA6
+		 eff_unk  0.50
+		 ineff_unk  0.79
+
+	 GABRA4
+		 eff_unk  0.50
+		 ineff_unk  0.79
+
+	 GABRG1
+		 eff_up  0.23
+		 eff_unk  0.26
+		 ineff_unk  0.79
+
+	 GABR-A2B1C2
+		 eff_unk  0.56
+		 ineff_unk  0.63
+
+	 GABR-A6B3C2
+		 eff_unk  0.51
+		 ineff_unk  0.63
+
+	 CHRM3
+		 ineff_down  0.54
+
+	 SLC18A2
+		 eff_down  0.54
+		 ineff_down  0.21
+
+	 CA7
+		 ineff_down  0.47
+
+	 GABR-A5B3G2
+		 eff_unk  0.44
+		 ineff_unk  0.16
+
+	 GABR-A5B3C2
+		 eff_unk  0.44
+
+	 GABR-A1B3G2
+		 eff_unk  0.42
+		 ineff_unk  0.16
+
+	 GABR-A1B3C2
+		 eff_unk  0.42
+
+	 GABR-A2B3C2
+		 eff_unk  0.40
+
+	 CHRM2
+		 ineff_down  0.40
+
+	 GABR-A3B3C2
+		 eff_unk  0.37
+
+	 NISCH
+		 ineff_unk  0.36
+
+	 CHRM5
+		 ineff_down  0.36
+
+	 GABR-A3B3G2
+		 eff_unk  0.34
+		 ineff_unk  0.15
+
+	 CA6
+		 ineff_unk  0.34
+
+	 CA13
+		 ineff_unk  0.34
+
+	 CA12
+		 ineff_down  0.30
+
+	 ADRA2A
+		 ineff_up  0.27
+		 ineff_down  0.05
+
+	 ADRA2C
+		 ineff_up  0.26
+		 ineff_unk  0.06
+
+	 DRD3
+		 ineff_up  0.13
+		 eff_down  0.15
+		 ineff_down  0.26
+		 ineff_unk  0.05
+
+	 SIGMAR1
+		 eff_unk  0.26
+		 ineff_unk  0.23
+
+	 HTR7
+		 ineff_unk  0.26
+
+	 ADRA2B
+		 ineff_up  0.26
+		 ineff_unk  0.06
+
+	 GABR-A2B2C2
+		 eff_unk  0.25
+
+	 HTR2A
+		 eff_down  0.06
+		 ineff_down  0.23
+		 ineff_unk  0.03
+
+	 DRD2
+		 ineff_up  0.09
+		 eff_down  0.21
+		 ineff_down  0.18
+		 ineff_unk  0.03
+
+	 NR3C1
+		 ineff_up  0.21
+
+	 GABR-A1B2C2
+		 eff_unk  0.21
+
+	 GABR-A3B2C2
+		 eff_unk  0.21
+
+	 CA2
+		 ineff_down  0.20
+
+	 ADRA1D
+		 ineff_up  0.18
+		 eff_unk  0.10
+		 ineff_unk  0.13
+
+	 DRD4
+		 ineff_up  0.16
+		 eff_down  0.15
+		 ineff_unk  0.10
+
+	 CA9
+		 ineff_unk  0.16
+
+	 CA5B
+		 ineff_unk  0.16
+
+	 ADRA1A
+		 ineff_up  0.15
+		 ineff_down  0.09
+		 eff_unk  0.11
+		 ineff_unk  0.07
+
+	 ADRA1B
+		 ineff_up  0.15
+		 eff_unk  0.13
+		 ineff_unk  0.07
+
+	 CA4
+		 ineff_down  0.14
+
+	 CA5A
+		 ineff_unk  0.14
+
+	 GABR-A5B1C2
+		 eff_unk  0.14
+
+	 SLC22A1
+		 ineff_down  0.14
+		 ineff_unk  0.04
+
+	 TMEM97
+		 eff_unk  0.10
+		 ineff_unk  0.05
+
+	 SLC6A2
+		 ineff_down  0.10
+
+	 KCNH2
+		 ineff_down  0.10
+
+	 TAAR1
+		 ineff_unk  0.10
+
+	 NR3C2
+		 ineff_up  0.10
+
+	 HTR2B
+		 eff_down  0.09
+		 ineff_down  0.07
+
+	 HRH1
+		 ineff_down  0.08
+		 ineff_unk  0.09
+
+	 SERPINA6
+		 ineff_unk  0.08
+
+	 CA14
+		 ineff_down  0.08
+
+	 HTR2C
+		 ineff_down  0.07
+		 ineff_unk  0.03
+
+	 SLC6A3
+		 ineff_unk  0.07
+
+	 HTR6
+		 ineff_unk  0.07
+
+	 GABBR1
+		 eff_up  0.03
+		 ineff_up  0.07
+
+	 GABBR2
+		 eff_up  0.03
+		 ineff_up  0.07
+
+	 DRD1
+		 eff_down  0.07
+		 ineff_unk  0.03
+
+	 SV2A
+		 eff_up  0.03
+		 ineff_up  0.06
+
+	 SLC6A4
+		 ineff_down  0.06
+
+	 HTR1D
+		 ineff_unk  0.06
+
+	 HTR1A
+		 ineff_up  0.06
+		 ineff_unk  0.03
+
+	 SCN9A
+		 eff_unk  0.03
+		 ineff_unk  0.05
+
+	 CYP3A4
+		 ineff_unk  0.04
+
+	 AVPR1B
+		 ineff_unk  0.03
+
+	 HTR3A
+		 ineff_unk  0.03
+
+	 HRH3
+		 ineff_unk  0.03
+
+	 HRH4
+		 ineff_unk  0.03
+
+	 SCN3A
+		 eff_unk  0.02
+		 ineff_unk  0.02
+
+	 SCN10A
+		 eff_unk  0.02
+		 ineff_unk  0.02
+
+L199
+	 CA7
+		 ineff_down  1.00
+		 ineff_unk  0.11
+
+	 CA12
+		 ineff_down  0.50
+		 ineff_unk  0.11
+
+	 CA9
+		 ineff_down  0.46
+		 ineff_unk  0.37
+
+	 CA2
+		 ineff_down  0.43
+		 ineff_unk  0.15
+
+	 CA5B
+		 ineff_unk  0.41
+
+	 CA6
+		 ineff_unk  0.38
+
+	 CA13
+		 ineff_unk  0.36
+
+	 NR3C1
+		 ineff_up  0.34
+
+	 SERPINA6
+		 ineff_unk  0.33
+
+	 CA5A
+		 ineff_down  0.29
+		 ineff_unk  0.32
+
+	 CA4
+		 ineff_down  0.23
+		 ineff_unk  0.14
+
+	 CA1
+		 ineff_down  0.22
+		 ineff_unk  0.15
+
+	 GABR-A2B2G2
+		 ineff_unk  0.17
+
+	 GABR-A5B2G2
+		 ineff_unk  0.15
+
+	 CA3
+		 ineff_unk  0.15
+
+	 CA14
+		 ineff_unk  0.14
+
+	 GABR-A1B2G2
+		 ineff_unk  0.14
+
+	 GABR-A3B2G2
+		 ineff_unk  0.13
+
+	 DRD1
+		 ineff_unk  0.10
+
+	 DRD2
+		 ineff_unk  0.10
+
+	 HTR1A
+		 ineff_unk  0.10
+
+	 AVPR1B
+		 ineff_unk  0.10
+
+	 HTR2A
+		 ineff_unk  0.10
+
+	 HTR2C
+		 ineff_unk  0.10
+
+	 HTR3A
+		 ineff_unk  0.10
+
+	 SV2A
+		 ineff_up  0.10
+
+	 SCN9A
+		 ineff_unk  0.09
+
+	 HRH1
+		 ineff_unk  0.08
+
+	 HRH3
+		 ineff_unk  0.08
+
+	 HRH4
+		 ineff_unk  0.08
+
+	 ABAT
+		 ineff_down  0.07
+
+	 GABBR1
+		 ineff_up  0.06
+
+	 SLC32A1
+		 ineff_down  0.06
+
+G203
+	 GABR-A1B2G2
+		 eff_unk  1.00
+		 ineff_unk  0.30
+
+	 GABRA1
+		 eff_up  0.90
+		 ineff_up  0.25
+
+	 GABR-A2B2G2
+		 eff_unk  0.86
+		 ineff_unk  0.30
+
+	 GABR-A3B2G2
+		 eff_unk  0.86
+		 ineff_unk  0.24
+
+	 GABR-A5B2G2
+		 eff_unk  0.85
+		 ineff_unk  0.30
+
+	 GABRA3
+		 eff_up  0.76
+		 ineff_up  0.25
+		 eff_unk  0.13
+
+	 GABR-A1B1C2
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRB3
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRA5
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRP
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRE
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRQ
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRG3
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRB1
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRD
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRA2
+		 eff_up  0.76
+		 ineff_up  0.25
+
+	 GABRA6
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRA4
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABRG1
+		 eff_unk  0.76
+		 ineff_unk  0.25
+
+	 GABR-A2B1C2
+		 eff_unk  0.60
+		 ineff_unk  0.20
+
+	 GABR-A6B3C2
+		 eff_unk  0.60
+		 ineff_unk  0.20
+
+	 CA7
+		 eff_down  0.56
+		 ineff_down  0.31
+		 eff_unk  0.13
+		 ineff_unk  0.03
+
+	 CA12
+		 eff_down  0.31
+		 ineff_down  0.15
+		 eff_unk  0.07
+		 ineff_unk  0.03
+
+	 CHRM1
+		 ineff_down  0.25
+
+	 CHRM4
+		 ineff_down  0.25
+
+	 CA2
+		 eff_down  0.22
+		 ineff_down  0.13
+		 eff_unk  0.12
+		 ineff_unk  0.05
+
+	 CA5B
+		 eff_unk  0.22
+		 ineff_unk  0.13
+
+	 CA9
+		 eff_down  0.14
+		 ineff_down  0.14
+		 eff_unk  0.21
+		 ineff_unk  0.11
+
+	 CA6
+		 eff_unk  0.20
+		 ineff_unk  0.12
+
+	 CA5A
+		 eff_down  0.09
+		 ineff_down  0.09
+		 eff_unk  0.20
+		 ineff_unk  0.10
+
+	 CHRM3
+		 ineff_down  0.17
+
+	 GABR-A5B3G2
+		 eff_unk  0.15
+
+	 GABR-A1B3G2
+		 eff_unk  0.15
+
+	 CA4
+		 eff_down  0.15
+		 ineff_down  0.07
+		 eff_unk  0.06
+		 ineff_unk  0.04
+
+	 CA13
+		 eff_unk  0.14
+		 ineff_unk  0.11
+
+	 NR3C1
+		 ineff_up  0.14
+
+	 GABR-A3B3G2
+		 eff_unk  0.14
+
+	 CHRM2
+		 ineff_down  0.13
+
+	 CHRM5
+		 ineff_down  0.12
+
+	 SLC18A2
+		 eff_down  0.10
+
+	 DRD4
+		 ineff_up  0.08
+		 eff_unk  0.10
+
+	 GABBR1
+		 eff_up  0.08
+		 ineff_up  0.02
+
+	 SIGMAR1
+		 ineff_unk  0.07
+
+	 CA1
+		 eff_down  0.07
+		 ineff_down  0.07
+		 eff_unk  0.05
+		 ineff_unk  0.05
+
+	 CACNA2D1
+		 ineff_down  0.07
+
+	 GABBR2
+		 eff_up  0.06
+
+	 DRD3
+		 ineff_up  0.06
+		 eff_down  0.05
+
+	 SV2A
+		 eff_up  0.06
+		 ineff_up  0.03
+
+	 DRD2
+		 ineff_up  0.04
+		 eff_down  0.06
+		 ineff_unk  0.03
+
+	 CACNA2D2
+		 ineff_down  0.05
+
+	 SCN9A
+		 ineff_unk  0.05
+
+	 SLC6A2
+		 ineff_down  0.05
+
+	 CA3
+		 ineff_unk  0.05
+
+	 TAAR1
+		 ineff_unk  0.05
+
+	 CA14
+		 ineff_unk  0.04
+
+	 ADRA2A
+		 eff_down  0.04
+
+	 ADRA1D
+		 ineff_unk  0.04
+
+	 ADRA1A
+		 ineff_unk  0.04
+
+	 ADRA1B
+		 ineff_unk  0.04
+
+	 CYP2C9
+		 ineff_unk  0.03
+
+	 DRD1
+		 ineff_unk  0.03
+
+	 HTR1A
+		 ineff_unk  0.03
+
+	 AVPR1B
+		 ineff_unk  0.03
+
+	 HTR2A
+		 ineff_unk  0.03
+
+	 HTR2C
+		 ineff_unk  0.03
+
+	 HTR3A
+		 ineff_unk  0.03
+
+	 SCN4A
+		 eff_unk  0.03
+		 ineff_unk  0.03
+
+	 HRH1
+		 ineff_unk  0.03
+
+	 HRH3
+		 ineff_unk  0.02
+
+	 HRH4
+		 ineff_unk  0.02
+
+	 SCN3A
+		 ineff_unk  0.02
+
+	 ABAT
+		 eff_down  0.02
+		 ineff_down  0.02
+
+	 SCN10A
+		 ineff_unk  0.02
+
+	 SLC32A1
+		 eff_down  0.02
+		 ineff_down  0.02
+
+A227
+	 GABRA1
+		 ineff_up  1.00
+
+	 GABRA3
+		 ineff_up  1.00
+
+	 GABR-A1B1C2
+		 ineff_unk  1.00
+
+	 GABRB3
+		 ineff_unk  1.00
+
+	 GABRA5
+		 ineff_unk  1.00
+
+	 GABRP
+		 ineff_unk  1.00
+
+	 GABRE
+		 ineff_unk  1.00
+
+	 GABRQ
+		 ineff_unk  1.00
+
+	 GABRG3
+		 ineff_unk  1.00
+
+	 GABRB1
+		 ineff_unk  1.00
+
+	 GABRD
+		 ineff_unk  1.00
+
+	 GABRA2
+		 ineff_up  1.00
+
+	 GABRA6
+		 ineff_unk  1.00
+
+	 GABRA4
+		 ineff_unk  1.00
+
+	 GABRG1
+		 ineff_unk  1.00
+
+	 GABR-A1B2G2
+		 ineff_unk  1.00
+
+	 GABR-A2B2G2
+		 ineff_unk  1.00
+
+	 GABR-A5B2G2
+		 ineff_unk  1.00
+
+	 GABR-A2B1C2
+		 ineff_unk  0.79
+
+	 GABR-A6B3C2
+		 ineff_unk  0.79
+
+	 GABR-A3B2G2
+		 ineff_unk  0.79
+
+	 NR3C1
+		 eff_up  0.18
+
+R209
+	 GABRA1
+		 eff_up  0.40
+		 ineff_up  1.00
+
+	 GABRA3
+		 eff_up  0.40
+		 ineff_up  1.00
+
+	 GABR-A1B1C2
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRB3
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRA5
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRP
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRE
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRQ
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRG3
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRB1
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRD
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRA2
+		 eff_up  0.40
+		 ineff_up  1.00
+
+	 GABRA6
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRA4
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABRG1
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABR-A1B2G2
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABR-A2B2G2
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABR-A5B2G2
+		 eff_unk  0.40
+		 ineff_unk  1.00
+
+	 GABR-A2B1C2
+		 eff_unk  0.32
+		 ineff_unk  0.79
+
+	 GABR-A6B3C2
+		 eff_unk  0.32
+		 ineff_unk  0.79
+
+	 GABR-A3B2G2
+		 eff_unk  0.32
+		 ineff_unk  0.79
+
+	 CHRM1
+		 ineff_up  0.05
+		 eff_down  0.40
+		 ineff_down  0.66
+
+	 CHRM4
+		 ineff_up  0.05
+		 eff_down  0.40
+		 ineff_down  0.60
+		 ineff_unk  0.06
+
+	 ADRA1D
+		 eff_up  0.25
+		 ineff_up  0.14
+		 eff_down  0.20
+		 eff_unk  0.53
+		 ineff_unk  0.21
+
+	 CHRM3
+		 ineff_up  0.05
+		 eff_down  0.27
+		 ineff_down  0.47
+
+	 ADRA2C
+		 eff_up  0.39
+		 ineff_up  0.20
+		 eff_down  0.06
+		 ineff_down  0.06
+
+	 ADRA2A
+		 eff_up  0.39
+		 ineff_up  0.20
+		 eff_down  0.21
+
+	 DRD2
+		 eff_up  0.19
+		 ineff_up  0.07
+		 eff_down  0.36
+		 ineff_down  0.14
+
+	 SIGMAR1
+		 eff_unk  0.31
+		 ineff_unk  0.17
+
+	 ADRA2B
+		 eff_up  0.31
+		 ineff_up  0.20
+		 eff_down  0.08
+		 ineff_down  0.08
+
+	 CHRM2
+		 ineff_up  0.05
+		 eff_down  0.20
+		 ineff_down  0.30
+
+	 NISCH
+		 eff_unk  0.20
+		 ineff_unk  0.27
+
+	 CHRM5
+		 eff_down  0.18
+		 ineff_down  0.27
+		 ineff_unk  0.12
+
+	 HTR2A
+		 eff_up  0.09
+		 eff_down  0.25
+		 ineff_down  0.14
+
+	 ADRA1B
+		 eff_up  0.24
+		 ineff_up  0.11
+		 eff_down  0.20
+		 ineff_down  0.20
+		 eff_unk  0.15
+		 ineff_unk  0.06
+
+	 DRD3
+		 eff_up  0.20
+		 ineff_up  0.10
+		 eff_down  0.21
+		 ineff_down  0.16
+
+	 ADRA1A
+		 eff_up  0.16
+		 ineff_up  0.11
+		 eff_down  0.16
+		 ineff_down  0.20
+		 eff_unk  0.14
+		 ineff_unk  0.06
+
+	 CA7
+		 eff_down  0.20
+
+	 DRD4
+		 eff_up  0.12
+		 ineff_up  0.12
+		 eff_down  0.20
+		 ineff_down  0.07
+
+	 HTR7
+		 eff_down  0.19
+		 ineff_down  0.07
+
+	 HTR2B
+		 eff_down  0.18
+		 eff_unk  0.11
+		 ineff_unk  0.14
+
+	 SLC18A2
+		 eff_down  0.16
+		 ineff_down  0.16
+
+	 HRH1
+		 eff_down  0.08
+		 ineff_down  0.14
+
+	 CA12
+		 eff_down  0.12
+
+	 SLC22A1
+		 eff_down  0.03
+		 ineff_down  0.10
+		 eff_unk  0.03
+		 ineff_unk  0.05
+
+	 SLC6A2
+		 eff_down  0.08
+		 ineff_down  0.08
+		 eff_unk  0.02
+		 ineff_unk  0.10
+
+	 HTR1D
+		 eff_up  0.09
+		 eff_down  0.07
+
+	 HTR1B
+		 eff_down  0.09
+
+	 HTR1A
+		 eff_up  0.08
+
+	 TMEM97
+		 eff_unk  0.08
+
+	 H1-0
+		 eff_unk  0.08
+
+	 HTR2C
+		 eff_down  0.07
+		 ineff_down  0.08
+		 eff_unk  0.03
+		 ineff_unk  0.03
+
+	 TAAR1
+		 eff_unk  0.07
+		 ineff_unk  0.07
+
+	 CA2
+		 eff_down  0.07
+		 eff_unk  0.02
+		 ineff_unk  0.02
+
+	 HTR6
+		 eff_up  0.06
+		 ineff_down  0.07
+
+	 CA5B
+		 eff_unk  0.06
+
+	 SLC6A4
+		 ineff_unk  0.06
+
+	 CA4
+		 eff_down  0.06
+
+	 CA6
+		 eff_unk  0.06
+
+	 CA13
+		 eff_unk  0.06
+
+	 CYP3A4
+		 eff_unk  0.03
+		 ineff_unk  0.06
+
+	 HRH4
+		 ineff_unk  0.06
+
+	 CA9
+		 eff_unk  0.05
+
+	 CA5A
+		 eff_unk  0.05
+
+	 GABBR1
+		 ineff_up  0.05
+
+	 GABBR2
+		 ineff_up  0.05
+
+	 DRD1
+		 eff_down  0.05
+
+	 CYP2C9
+		 ineff_unk  0.02
+
+	 CHRN-A4B2
+		 eff_unk  0.02
+
+	 SV2A
+		 ineff_up  0.02
+
+	 SCN4A
+		 eff_unk  0.02
+		 ineff_unk  0.02
+
+G204
+	 GABRA1
+		 eff_up  1.00
+
+	 GABRA3
+		 eff_up  1.00
+
+	 GABR-A1B1C2
+		 eff_unk  1.00
+
+	 GABRB3
+		 eff_unk  1.00
+
+	 GABRA5
+		 eff_unk  1.00
+
+	 GABRP
+		 eff_unk  1.00
+
+	 GABRE
+		 eff_unk  1.00
+
+	 GABRQ
+		 eff_unk  1.00
+
+	 GABRG3
+		 eff_unk  1.00
+
+	 GABRB1
+		 eff_unk  1.00
+
+	 GABRD
+		 eff_unk  1.00
+
+	 GABRA2
+		 eff_up  1.00
+
+	 GABRA6
+		 eff_unk  1.00
+
+	 GABRA4
+		 eff_unk  1.00
+
+	 GABRG1
+		 eff_unk  1.00
+
+	 GABR-A1B2G2
+		 eff_unk  1.00
+
+	 GABR-A2B2G2
+		 eff_unk  1.00
+
+	 GABR-A5B2G2
+		 eff_unk  1.00
+
+	 GABR-A2B1C2
+		 eff_unk  0.79
+
+	 GABR-A6B3C2
+		 eff_unk  0.79
+
+	 GABR-A3B2G2
+		 eff_unk  0.79
+
+	 SLC18A2
+		 eff_down  0.41
+
+	 DRD4
+		 ineff_up  0.31
+
+	 DRD3
+		 ineff_up  0.24
+
+	 SLC6A2
+		 ineff_down  0.19
+
+	 TAAR1
+		 ineff_unk  0.18
+
+	 DRD2
+		 ineff_up  0.17
+
+	 ADRA1D
+		 ineff_unk  0.14
+
+	 ADRA1A
+		 ineff_unk  0.14
+
+	 ADRA1B
+		 ineff_unk  0.14
+
+E237
+	 CHRM4
+		 ineff_down  1.00
+
+	 CHRM1
+		 ineff_down  0.89
+		 ineff_unk  0.04
+
+	 CHRM3
+		 ineff_down  0.64
+
+	 GABR-A1B2G2
+		 eff_unk  0.33
+		 ineff_unk  0.53
+
+	 CHRM5
+		 ineff_down  0.48
+
+	 GABRA6
+		 eff_unk  0.33
+		 ineff_unk  0.48
+
+	 GABRA4
+		 eff_unk  0.33
+		 ineff_unk  0.48
+
+	 CHRM2
+		 ineff_down  0.47
+
+	 GABRA1
+		 eff_up  0.33
+		 ineff_up  0.47
+
+	 GABRA3
+		 eff_up  0.33
+		 ineff_up  0.47
+
+	 GABRA2
+		 eff_up  0.33
+		 ineff_up  0.46
+
+	 GABR-A1B1C2
+		 eff_unk  0.33
+		 ineff_unk  0.46
+
+	 GABR-A3B2G2
+		 eff_unk  0.26
+		 ineff_unk  0.46
+
+	 GABR-A2B2G2
+		 eff_unk  0.33
+		 ineff_unk  0.40
+
+	 GABR-A5B2G2
+		 eff_unk  0.33
+		 ineff_unk  0.40
+
+	 GABR-A2B1C2
+		 eff_unk  0.26
+		 ineff_unk  0.39
+
+	 GABR-A6B3C2
+		 eff_unk  0.26
+		 ineff_unk  0.39
+
+	 ADRA1D
+		 ineff_up  0.08
+		 ineff_down  0.09
+		 ineff_unk  0.38
+
+	 ADRA2A
+		 ineff_up  0.38
+
+	 HTR7
+		 ineff_unk  0.37
+
+	 HTR2A
+		 ineff_down  0.36
+
+	 GABRB3
+		 ineff_up  0.13
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRA5
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRP
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRE
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRQ
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRG3
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRB1
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRD
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 GABRG1
+		 ineff_up  0.15
+		 eff_unk  0.33
+		 ineff_unk  0.33
+
+	 DRD3
+		 ineff_up  0.08
+		 ineff_down  0.33
+		 ineff_unk  0.04
+
+	 HRH1
+		 ineff_down  0.33
+		 ineff_unk  0.04
+
+	 NR3C1
+		 ineff_up  0.26
+
+	 ADRA2C
+		 ineff_up  0.26
+		 ineff_unk  0.15
+
+	 NISCH
+		 ineff_unk  0.25
+
+	 ADRA2B
+		 ineff_up  0.23
+		 ineff_unk  0.20
+
+	 SIGMAR1
+		 ineff_unk  0.23
+
+	 DRD2
+		 ineff_up  0.10
+		 ineff_down  0.23
+
+	 SLC6A4
+		 ineff_down  0.23
+
+	 HTR2C
+		 ineff_down  0.23
+		 ineff_unk  0.04
+
+	 SLC6A2
+		 ineff_down  0.22
+
+	 ADRA1A
+		 ineff_up  0.06
+		 ineff_down  0.20
+		 ineff_unk  0.05
+
+	 DRD4
+		 ineff_up  0.10
+		 ineff_unk  0.16
+
+	 GABR-A2B2C2
+		 ineff_unk  0.16
+
+	 GABR-A5B3G2
+		 ineff_unk  0.14
+
+	 GABR-A5B3C2
+		 ineff_unk  0.14
+
+	 SLC18A2
+		 eff_down  0.14
+		 ineff_down  0.14
+
+	 HTR2B
+		 ineff_unk  0.13
+
+	 GABR-A1B3G2
+		 ineff_unk  0.13
+
+	 GABR-A1B3C2
+		 ineff_unk  0.13
+
+	 GABR-A1B2C2
+		 ineff_unk  0.13
+
+	 GABR-A3B2C2
+		 ineff_unk  0.13
+
+	 GABR-A3B3C2
+		 ineff_unk  0.13
+
+	 SLC6A3
+		 ineff_unk  0.13
+
+	 HTR6
+		 ineff_down  0.09
+		 ineff_unk  0.13
+
+	 KCNH2
+		 ineff_down  0.12
+
+	 DRD1
+		 ineff_unk  0.12
+
+	 NR3C2
+		 ineff_up  0.12
+
+	 GABR-A2B3C2
+		 ineff_unk  0.12
+
+	 GABR-A3B3G2
+		 ineff_unk  0.11
+
+	 SERPINA6
+		 ineff_unk  0.10
+
+	 HRH4
+		 ineff_unk  0.10
+
+	 HRH2
+		 ineff_down  0.09
+		 ineff_unk  0.04
+
+	 ADRA1B
+		 ineff_up  0.06
+		 ineff_unk  0.05
+
+	 GRIN3A
+		 ineff_down  0.06
+
+	 GRIN1
+		 ineff_unk  0.06
+
+	 GRIN2B
+		 ineff_unk  0.06
+
+	 GRIN3B
+		 ineff_unk  0.06
+
+	 GRIN2D
+		 ineff_unk  0.06
+
+	 GRIN2C
+		 ineff_unk  0.06
+
+	 TAAR1
+		 ineff_unk  0.06
+
+	 SLC22A1
+		 ineff_down  0.06
+		 ineff_unk  0.04
+
+	 CYP3A4
+		 ineff_unk  0.05
+
+	 GRIA3
+		 ineff_unk  0.04
+
+	 GABBR1
+		 ineff_up  0.04
+
+	 GABBR2
+		 ineff_up  0.04
+
+	 OPRK1
+		 ineff_up  0.04
+
+	 HTR1A
+		 ineff_down  0.04
+
+	 HTR3A
+		 ineff_up  0.04
+
+	 DRD5
+		 ineff_unk  0.04
+
+	 GRIK4
+		 ineff_unk  0.04
+
+	 HTR1B
+		 ineff_unk  0.04
+
+	 HTR1D
+		 ineff_unk  0.04
+
+	 HTR1E
+		 ineff_unk  0.04
+
+	 HTR5A
+		 ineff_unk  0.04
+
+	 GLUTAMATE KAINATE
+		 ineff_unk  0.04
+
+Y231
+	 SCN4A
+		 ineff_unk  1.00
+
+	 ABAT
+		 ineff_down  0.77
+
+	 GABBR1
+		 ineff_up  0.60
+
+	 SLC32A1
+		 ineff_down  0.60
+
+Q233
+	 DRD3
+		 eff_down  1.00
+
+	 HTR7
+		 eff_unk  1.00
+
+	 OPRM1
+		 eff_up  0.79
+
+	 DRD2
+		 eff_down  0.68
+
+	 DRD4
+		 eff_unk  0.37
+
+	 KCNH2
+		 eff_down  0.37
+
+	 HTR2A
+		 eff_down  0.34
+
+	 OPRL1
+		 eff_unk  0.29
+
+	 SLC6A3
+		 eff_unk  0.26
+
+	 HTR6
+		 eff_unk  0.26
+
+	 OPRK1
+		 eff_up  0.21
+
+	 CYP3A4
+		 eff_unk  0.14
+
+	 SLC22A1
+		 eff_unk  0.13
+
+L284
+	 CA9
+		 ineff_down  1.00
+
+	 CA5A
+		 ineff_down  0.63
+
+	 CA1
+		 ineff_down  0.48
+
+	 CA7
+		 ineff_down  0.41
+
+	 GABR-A2B2G2
+		 ineff_unk  0.36
+
+	 GABR-A5B2G2
+		 ineff_unk  0.34
+
+	 CA2
+		 ineff_down  0.32
+
+	 GABR-A1B2G2
+		 ineff_unk  0.31
+
+	 NR3C1
+		 ineff_up  0.31
+
+	 GABR-A3B2G2
+		 ineff_unk  0.29
+
+	 CYP2C9
+		 ineff_unk  0.22
+
+	 SV2A
+		 ineff_up  0.21
+
+	 SCN4A
+		 ineff_unk  0.19
+
+R177
+	 ABAT
+		 eff_down  1.00
+
+	 GABBR1
+		 eff_up  0.78
+
+	 SLC32A1
+		 eff_down  0.78
+

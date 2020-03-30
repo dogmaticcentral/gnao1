@@ -1,7 +1,8 @@
+
 from math import acos, sqrt, fabs, sin
 
 from pymol import cmd
-
+from math import pi, cos
 
 # from pyquaternion import Quaternion # will not take matrix that is (numerically) non-orthogona;
 import numpy as np
@@ -69,15 +70,24 @@ def view_interpolate(view_init_str, view_last_str, number_of_frames=5, frameno_o
 	qstart = view2quat(view_init)
 	qend   = view2quat(view_last)
 
-	for frameno in range(1, number_of_frames + 1):
-
-		qcur   = quaternion.slerp(qstart, qend, 0, number_of_frames, frameno)
-		intermediate_view = list(quaternion.as_rotation_matrix(qcur).flatten())
+	last_frame = frameno_offset
+	for frameno in range(1, number_of_frames+1):
+		# (quat start, quat end, time start, time end, time evaluated)
+		# of example (qstart, qend, 0, number_of_frames, frameno)
+		# (qstart, qend, 0, 1, frameno/number_of_frames) is npt working, even though these
+		# numbers ar esupposed to be floats - some numpy shit I would guess
+		#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
+		qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
+		# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
+		intermediate_view = [x if fabs(x)>0.001 else 0 for x in  list(quaternion.as_rotation_matrix(qcur).flatten())]
 
 		for i in range(9, len(view_init)):
 			update = view_init[i] + (view_last[i] - view_init[i]) * (frameno / number_of_frames)
-			if abs(update) < 0.001: update = 0
+			if fabs(update) < 0.001: update = 0
 			intermediate_view.append(update)
-
 		cmd.set_view(view2view_string(intermediate_view))
-		cmd.png("frm" + str(frameno_offset + frameno).zfill(3), width=1920, height=1080, ray=True)
+		cmd.png("frm" + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		last_frame += 1
+
+	return last_frame
+

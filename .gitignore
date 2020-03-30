@@ -1,6 +1,7 @@
 scratch/*
 downloads/*
 raw_tables/*
+movie/*
 svg/*
 *.svg
 *.ods
