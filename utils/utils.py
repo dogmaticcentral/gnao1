@@ -27,5 +27,6 @@ def convert_frames(frames_home, subdir):
 
 def subdir_prep(frames_home, subdir):
 	outdir = "{}/{}".format(frames_home, subdir)
-	if os.path.exists(outdir): shutil.rmtree(outdir)
-	os.makedirs(outdir)
+	#if os.path.exists(outdir): shutil.rmtree(outdir)
+	if not os.path.exists(outdir):
+		os.makedirs(outdir)

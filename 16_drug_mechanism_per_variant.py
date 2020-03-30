@@ -1,10 +1,11 @@
 #!/usr/bin/python3 -u
 import math
-
+import re
 from utils.mysql import *
 import numpy as np
-from termcolor import colored
-
+# from termcolor import colored
+# example:
+# colored(effectiveness, 'green')
 # phenobarbitone is a sphenobarbital ynonym
 # phenobarbital  = a nonselective central nervous system depressant.
 # It promotes binding to inhibitory gamma-aminobutyric acid subtype receptors,
@@ -299,24 +300,10 @@ def collapse(targets):
 	for target, activity in targets.items():
 		[direction, ki] = activity
 		family_found = False
-		# for family in main_families:
-		# 	if target[:len(family)] == family:
-		# 		if family not in group: group[family] = {}
-		# 		if direction not in group[family]: group[family][direction] = {"fam_members": set(), "min_ki": 1000000}
-		# 		group[family][direction]["fam_members"].add(target[len(family):].replace("-",""))
-		# 		group[family][direction]["min_ki"] = min([ki,group[family][direction]["min_ki"]])
-		# 		#print(target, family, direction, group[family][direction])
-		# 		family_found = True
-		# 		break
+
 		if not family_found:
 			if target not in group: group[target] = {}
 			if direction not in group[target]: group[target][direction] = {"fam_members": None, "min_ki": ki}
-
-	for family, directions in group.items():
-		print(family)
-		for direction, descr in directions.items():
-			print("\t", direction, descr["fam_members"], descr["min_ki"])
-
 
 
 	sorted_families = sorted(group.keys(), key=lambda family: min([val["min_ki"] for val in group[family].values()]))
@@ -337,8 +324,6 @@ def collapse(targets):
 def make_compact_profiles(target_activity):
 	compact_profile = {}
 	for drug, targets in target_activity.items():
-		print("==============")
-		print(drug)
 		compact_profile[drug] = collapse(targets)
 	return compact_profile
 
@@ -365,46 +350,47 @@ def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight
 
 #################
 def drug_effectivness_matrix(cursor, targets_compact, verbose=False):
-	weight_per_variant = {}
 
+	pattern = re.compile(r'\w(\d+)')
+	weight_per_position = {}
+	per_patient_descriptors = {}
 	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases";
 	for line in hard_landing_search(cursor, qry):
 		[variant, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
 		treatment = {"E": {"eff": treatment_effective_E, "ineff": treatment_ineff_E},
 					 "MD": {"eff": treatment_effective_MD, "ineff": treatment_ineff_MD}}
-
+		position = int(pattern.search(variant).group(1))
+		if position not in per_patient_descriptors: per_patient_descriptors[position] = []
 		for symptom in ["E", "MD"]:
 			for effectiveness, drugs in treatment[symptom].items():
 				if drugs is None: continue
 				for drug in drugs.lower().split(","):
 					if len(drug) == 0: continue
 					if drug in ignored: continue
-					if verbose: print("*******************")
-					if verbose: print(effectiveness, drug)
-					if verbose: print(variant, symptom,
-										colored(effectiveness, 'green' if effectiveness == "eff" else 'red'), drug,
-										targets_compact[drug])
-					sort_out_weights_per_variant(variant[:-1], effectiveness, targets_compact[drug], weight_per_variant)
-
-		if verbose: print()
-
+					per_patient_descriptors[position].append(f"{variant}  {symptom}  {effectiveness}  {drug}  {targets_compact[drug]}")
+					sort_out_weights_per_variant(position, effectiveness, targets_compact[drug], weight_per_position)
 	norm = {}
-	for variant, weights in weight_per_variant.items():
-		norm[variant] = 0.0
+	for position, weights in weight_per_position.items():
+		norm[position] = 0.0
 		for target, eff_vals in weights.items():
 			m = max(eff_vals.values())
-			if norm[variant] < m: norm[variant] = m
+			if norm[position] < m: norm[position] = m
 
-	for variant, weights in weight_per_variant.items():
-		print(variant)
-		if norm[variant] == 0: continue
-		targets_sorted = sorted(weights.keys(), key= lambda k: max(weights[k].values()), reverse=True)
+	positions_sorted = sorted(weight_per_position.keys(), key=lambda v: v)
+
+	for position in positions_sorted:
+		weights = weight_per_position[position]
+		if norm[position] == 0: continue
+		print("***********************************")
+		print(position)
+		# print("\n".join(per_patient_descriptors[position]))
+		targets_sorted = sorted(weights.keys(), key=lambda k: max(weights[k].values()), reverse=True)
 		for target in targets_sorted:
 			# for target, eff_vals in weights.items():
 			eff_vals = weights[target]
 			outstr = ""
 			for eff, val in eff_vals.items():
-				if val >= 0.01: outstr += "\t\t %s  %.2f\n" % (eff, val / norm[variant])
+				if val >= 0.01: outstr += "\t\t %s  %.2f\n" % (eff, val / norm[position])
 			if outstr:
 				print("\t", target)
 				print(outstr)
