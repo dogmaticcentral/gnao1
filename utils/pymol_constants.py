@@ -1,22 +1,21 @@
 
 structure_home = "/home/ivana/Dropbox/case_studies/gnao1/structures/composite"
 
+# ude for example 26_pymol_vis.py to get this
 pheno = {40: {'epi': 3, 'mov': 0, 'both': 3}, 207: {'epi': 0, 'mov': 2, 'both': 0},
-           209: {'epi': 0, 'mov': 11, 'both': 5}, 221: {'epi': 0, 'mov': 1, 'both': 0},
-           273: {'epi': 0, 'mov': 0, 'both': 2}, 279: {'epi': 1, 'mov': 0, 'both': 1},
-           291: {'epi': 1, 'mov': 0, 'both': 0}, 344: {'epi': 0, 'mov': 0, 'both': 1},
-           349: {'epi': 1, 'mov': 0, 'both': 0}, 42: {'epi': 0, 'mov': 0, 'both': 1},
-           45: {'epi': 1, 'mov': 0, 'both': 0}, 47: {'epi': 0, 'mov': 0, 'both': 1},
-           56: {'epi': 0, 'mov': 0, 'both': 1}, 246: {'epi': 0, 'mov': 10, 'both': 2},
-           174: {'epi': 1, 'mov': 0, 'both': 0}, 203: {'epi': 0, 'mov': 0, 'both': 8},
-           199: {'epi': 0, 'mov': 0, 'both': 1}, 227: {'epi': 0, 'mov': 0, 'both': 1},
-           237: {'epi': 0, 'mov': 5, 'both': 0}, 204: {'epi': 0, 'mov': 0, 'both': 1},
-           231: {'epi': 0, 'mov': 0, 'both': 1}, 233: {'epi': 0, 'mov': 1, 'both': 0},
-           270: {'epi': 1, 'mov': 0, 'both': 0}, 275: {'epi': 1, 'mov': 0, 'both': 0},
-           284: {'epi': 1, 'mov': 0, 'both': 0}, 177: {'epi': 0, 'mov': 0, 'both': 1},
-           228: {'epi': 0, 'mov': 0, 'both': 1}}
-
-
+         209: {'epi': 0, 'mov': 11, 'both': 5}, 221: {'epi': 0, 'mov': 1, 'both': 0},
+         273: {'epi': 0, 'mov': 0, 'both': 2}, 279: {'epi': 1, 'mov': 0, 'both': 1},
+         291: {'epi': 1, 'mov': 0, 'both': 0}, 344: {'epi': 0, 'mov': 0, 'both': 1},
+         349: {'epi': 1, 'mov': 0, 'both': 0}, 42: {'epi': 0, 'mov': 0, 'both': 1},
+         45: {'epi': 1, 'mov': 0, 'both': 0}, 47: {'epi': 0, 'mov': 0, 'both': 1},
+         56: {'epi': 0, 'mov': 0, 'both': 1}, 246: {'epi': 0, 'mov': 10, 'both': 2},
+         174: {'epi': 1, 'mov': 0, 'both': 0}, 203: {'epi': 0, 'mov': 0, 'both': 8},
+         199: {'epi': 0, 'mov': 0, 'both': 1}, 227: {'epi': 0, 'mov': 0, 'both': 1},
+         237: {'epi': 0, 'mov': 5, 'both': 0}, 204: {'epi': 0, 'mov': 0, 'both': 1},
+         231: {'epi': 0, 'mov': 0, 'both': 1}, 233: {'epi': 0, 'mov': 1, 'both': 0},
+         270: {'epi': 1, 'mov': 0, 'both': 0}, 275: {'epi': 1, 'mov': 0, 'both': 0},
+         284: {'epi': 1, 'mov': 0, 'both': 0}, 177: {'epi': 0, 'mov': 0, 'both': 1},
+         228: {'epi': 1, 'mov': 0, 'both': 0}}
 
 
 home_view = "    -0.106274568,    0.592931926,   -0.798209786,\
@@ -29,7 +28,11 @@ home_view = "    -0.106274568,    0.592931926,   -0.798209786,\
 header_ac = '''
 bg_color white
 load gnao1_after_1azsC.to_3sn6A.pdb, gnao
+
 load 6r3q_to_3sn6A.pdb, AC
+remove AC and chain B
+
+load 3c7kB.RGS.to_3sn6A.pdb, RGS
 
 hide all
 show cartoon, gnao
@@ -42,7 +45,14 @@ select MG, name mg
 show spheres, MG
 color lightpink, MG
 
+
+color cyan, AC
 show cartoon, AC
+
+color palegreen, RGS
+set transparency, 0.5
+show surface, RGS
+
 
 ##############################################
 ##############################################

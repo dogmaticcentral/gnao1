@@ -13,13 +13,43 @@ def pymol_chdir(outdir):
 	cmd.cd(outdir)
 
 
+def ghost_rep(selection):
+	cmd.hide("everything", selection)
+	cmd.color("white", selection)
+	cmd.set("transparency", 0.5, selection)
+	cmd.show("surface", selection)
+
+
+def interface_outline(reference_selection, interactant, color):
+	cmd.hide("everything", interactant)
+	name = "{}_if".format(interactant.replace("(","").replace(")","").replace(" ",""))
+	# move selection to its own object
+	cmd.create(name, "byres {} within 3 of {}".format(interactant, reference_selection))
+	cmd.color(color, name)
+	cmd.set("transparency", 0.7, name)
+	cmd.show("surface", name)
+
+
 def load_structures(structure_home, structures):
 
 	if "gnao" in structures:
 		cmd.load("{}/{}".format(structure_home, "gnao1_after_1azsC.to_3sn6A.pdb"), "gnao")
+		cmd.hide("everything", "gnao")
 	if "substrate" in structures:
 		cmd.load("{}/{}".format(structure_home, "3c7kA.GDP.to_3sn6A.pdb"), "substrate")
-	cmd.hide("all")
+		cmd.hide("everything", "substrate")
+	if "AC" in structures:
+		cmd.load("{}/{}".format(structure_home, "6r3q_to_3sn6A.pdb"), "AC")
+		cmd.remove("AC and chain B")
+		cmd.hide("everything", "AC")
+	if "RGS" in structures:
+		cmd.load("{}/{}".format(structure_home, "3c7kB.RGS.to_3sn6A.pdb"), "RGS")
+		cmd.hide("everything", "RGS")
+	if "GPCR" in structures:
+		cmd.load("{}/{}".format(structure_home, "3sn6R.GPCR.pdb"), "GPCR")
+		cmd.remove("resi 343-1200 and GPCR")
+		cmd.hide("everything", "GPCR")
+
 	return
 
 
@@ -29,9 +59,10 @@ def residue_color(main_object, res_id, rgb_color_list):
 	cmd.color(color_name, "{} and resi {}".format(main_object, res_id))
 
 
-def clump_representation(regions, color, name):
+def clump_representation(regions, color, name, transparency=0.0):
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
+	if transparency>0: cmd.set("transparency", transparency, name)
 	cmd.alter("all", "b=50")
 	cmd.alter("all", "q=1")
 	cmd.set("gaussian_resolution", 5)

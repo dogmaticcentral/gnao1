@@ -307,7 +307,6 @@ def collapse(targets):
 			if target not in group: group[target] = {}
 			if direction not in group[target]: group[target][direction] = {"fam_members": None, "min_ki": ki}
 
-
 	sorted_families = sorted(group.keys(), key=lambda family: min([val["min_ki"] for val in group[family].values()]))
 	cutoff_ki = 100 * min([val["min_ki"] for val in group[sorted_families[0]].values()])
 	for family in sorted_families:
@@ -326,9 +325,28 @@ def collapse(targets):
 def make_compact_profiles(target_activity):
 	compact_profile = {}
 	for drug, targets in target_activity.items():
-		compact_profile[drug] = collapse(targets)
+		compact_profile[drug] = collapse_coarse(targets)
 	return compact_profile
 
+
+#################
+direction_symbol = {"up":"↑", "down":"↓", "unk":"?"}
+
+
+def human_readable_activity(ki):
+	if ki>1000000:
+		return"weak"
+	if ki>1000:
+		return f"{int(ki/1000)}K"
+	return str(ki)
+
+
+def prettyprint(targets):
+	outgoing = []
+	for target in targets:
+		# target is assumed to have format [target_namr, direction, activity]
+		outgoing.append("{}{}{}".format(target[0], direction_symbol[target[1]], human_readable_activity(target[2])))
+	return ",".join(outgoing)
 
 
 #################
@@ -358,21 +376,29 @@ def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offs
 						if drug in ignored:
 							drugs_expanded.append(drug)
 							continue
-						drugs_expanded.append("{}:{}".format(drug,targets_compact[drug]))
+						drugs_expanded.append("{}: {}".format(drug,prettyprint(targets_compact[drug])))
 					if drugs_expanded:
-						therapy[id][symptom][effectiveness] = ";".join(drugs_expanded)
+						therapy[id][symptom][effectiveness] = ";  ".join(drugs_expanded)
 
 
 	# the row span for position:
-
 	row = row_offset
 
 	position_column = 0
 	position_row = row + 1
 	row_span = 4*sum([len(pts) for pts in patients.values()])
 	worksheet.merge_range(position_row, position_column, position_row+row_span-1, position_column, position)
+	# the image of this position, for the orientation
+	image_column = position_column + 1
+	worksheet.merge_range(position_row, image_column, position_row+row_span-1, image_column, "")
+	# 'object_position': 2 means "Move but don’t size with cells"; the offset is in pixels though it doe not seem to be working
+	# looks like the offset is from the upper left corner
+	y_offset = max(row_span/2-2,0)*50
+	image_name = f"schematics/schematic_{position}.png"
+	worksheet.insert_image(position_row, image_column, image_name, {'object_position': 2, 'x_offset': 0, 'y_offset': y_offset})
+
 	for variant in variants:
-		variant_column = position_column + 1
+		variant_column = image_column + 1
 		variant_row = row + 1
 		row_span = 4*len(patients[variant])
 		worksheet.merge_range(variant_row, variant_column, variant_row+row_span-1, variant_column, variant)
@@ -386,29 +412,77 @@ def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offs
 				symptom_column = pheno_column + 1
 				symptom_row  = row + 1
 				#  merge_range(first_row, first_col, last_row, last_col, data[, cell_format])
-				worksheet.merge_range(symptom_row, symptom_column, symptom_row+1, symptom_column, symptom)
+				worksheet.merge_range(symptom_row, symptom_column, symptom_row+1, symptom_column,
+				                      "epilepsy" if symptom == "E" else "movement disorder")
 				for eff, drugs in effectiveness.items():
 					row += 1
 					column = symptom_column + 1
-					worksheet.write_string(row, column, eff+"ective")
-					worksheet.write_string(row, column+1, f"{drugs}" if drugs else "")
+					worksheet.write_string(row, column, eff + "ective")
+					worksheet.write_string(row, column+1, drugs if drugs else "")
 			gender_column = pheno_column + 4
 			worksheet.merge_range(pheno_row, gender_column, pheno_row+3, gender_column, gender)
 			pubmed_column = gender_column + 1
-			pubmed_hyperlink = "http://pubmed.ncbi.nlm.nih.gov/%s"%pubmed
+			pubmed_hyperlink = "http://pubmed.ncbi.nlm.nih.gov/%s" % pubmed
 			worksheet.merge_range(pheno_row, pubmed_column, pheno_row+3, pubmed_column, "", xlsx_format["hyperlink"])
-			worksheet.write_url( pheno_row, pubmed_column, pubmed_hyperlink, string=str(pubmed))
+			worksheet.write_url(pheno_row, pubmed_column, pubmed_hyperlink, string=str(pubmed))
 
 	return row
 
+
+
+################
+def column_string(idx):
+	char = chr(ord('A')+idx)
+	return f"{char}:{char}"
+
+
+def set_column_widths(worksheet, header, wwrap_format):
+	# we'll put image in the second column - not sure what are the units here
+	# here:  https://stackoverflow.com/questions/47345811/excel-cell-default-measure-unit
+	# says that One unit of column width is equal to the width of one character in the Normal style (?)
+
+	idx = header.index("protein position")
+	worksheet.set_column(column_string(idx), len("position"))
+	idx = header.index("protein modification")
+	worksheet.set_column(column_string(idx), len("modification"))
+
+	for title in ["location schematic", "drugs"]:
+		idx = header.index(title)
+		worksheet.set_column(column_string(idx), 50, wwrap_format)
+
+	for title in ["phenotype", "symptom", "pubmed"]:
+		idx = header.index(title)
+		worksheet.set_column(column_string(idx), 2*len(title), wwrap_format)
+
+	for title in ["effectiveness", "gender"]:
+		idx = header.index(title)
+		worksheet.set_column(column_string(idx), len(title))
+
+
+
+################
+def write_header(worksheet, header, header_format):
+	worksheet.set_row(0, 40, header_format)
+	for column in range(len(header)):
+		worksheet.write_string(0, column, header[column])
 
 ################
 def table_creator(cursor, targets_compact):
 
 	# Create an new Excel file and add a worksheet.
 	workbook = xlsxwriter.Workbook('gnao1_therapy.xlsx')
-	worksheet = workbook.add_worksheet()
-	xlsx_format = {"hyperlink":workbook.add_format({'align': 'center','color': 'blue','underline': 1, 'valign': 'vcenter'}) }
+	worksheet = workbook.add_worksheet("GNAO1 variants and therapy")
+	xlsx_format = {"header":workbook.add_format({'align': 'center',  'valign': 'vcenter', 'bold': True, 'text_wrap': True}),
+	               "wordwrap":workbook.add_format({'align': 'left', 'text_wrap': True}),
+					"hyperlink":workbook.add_format({'align': 'center', 'color': 'blue', 'underline': 1, 'valign': 'vcenter'})}
+	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
+	worksheet.set_default_row(40)
+	header = ["protein position", "location schematic", "protein modification", "phenotype",
+	          "symptom", "effectiveness", "drugs", "gender", "pubmed"]
+	set_column_widths(worksheet, header, xlsx_format["wordwrap"])
+	write_header(worksheet, header, xlsx_format["header"])
+
+
 	pattern = re.compile(r'\w(\d+)')
 	variants = {} # well sort them per position
 	for [variant] in  hard_landing_search(cursor, "select distinct(protein) from cases"):

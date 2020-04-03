@@ -50,13 +50,13 @@ def get_pheno_per_pos():
 #########################################
 def main():
 
-	#angle = "epilepsy"
-	#angle = "md"
+	# angle = "epilepsy"
+	# angle = "md"
 	angle="adcyc"
 
 	pheno = get_pheno_per_pos()
 
-	# for use in the movie script
+	#for use in the movie script
 	# print(pheno)
 	# exit()
 
