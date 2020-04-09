@@ -30,25 +30,19 @@ def interface_outline(reference_selection, interactant, color):
 	cmd.show("surface", name)
 
 
-def load_structures(structure_home, structures):
+def load_structures(structure_home, structure_filename, structures):
 
-	if "gnao" in structures:
-		cmd.load("{}/{}".format(structure_home, "gnao1_after_1azsC.to_3sn6A.pdb"), "gnao")
-		cmd.hide("everything", "gnao")
-	if "substrate" in structures:
-		cmd.load("{}/{}".format(structure_home, "3c7kA.GDP.to_3sn6A.pdb"), "substrate")
-		cmd.hide("everything", "substrate")
+
+	for structure in structures:
+		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), structure)
+		cmd.hide("everything", structure)
+
 	if "AC" in structures:
-		cmd.load("{}/{}".format(structure_home, "6r3q_to_3sn6A.pdb"), "AC")
 		cmd.remove("AC and chain B")
-		cmd.hide("everything", "AC")
-	if "RGS" in structures:
-		cmd.load("{}/{}".format(structure_home, "3c7kB.RGS.to_3sn6A.pdb"), "RGS")
-		cmd.hide("everything", "RGS")
+
 	if "GPCR" in structures:
-		cmd.load("{}/{}".format(structure_home, "3sn6R.GPCR.pdb"), "GPCR")
 		cmd.remove("resi 343-1200 and GPCR")
-		cmd.hide("everything", "GPCR")
+
 
 	return
 
@@ -65,7 +59,7 @@ def clump_representation(regions, color, name, transparency=0.0):
 	if transparency>0: cmd.set("transparency", transparency, name)
 	cmd.alter("all", "b=50")
 	cmd.alter("all", "q=1")
-	cmd.set("gaussian_resolution", 5)
+	cmd.set("gaussian_resolution", 7)
 
 	idx = 0
 	for region in regions:

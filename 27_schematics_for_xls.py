@@ -15,7 +15,6 @@ from utils.utils import *
 frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
 
 
-
 def make_schematics(view):
 	residues = {"epi":[], "mov":[], "both":[]}
 
@@ -26,7 +25,7 @@ def make_schematics(view):
 			# epi_only.append(str(resi))
 			residues["epi"].append(str(resi))
 		elif counts["mov"]>0:
-			# any patient wiht movement disorder reported,  irrespective of epilepsy
+			# any patient with movement disorder reported,  irrespective of epilepsy
 			residues["mov"].append(str(resi))
 		else:
 			residues["both"].append(str(resi))

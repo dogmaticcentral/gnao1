@@ -1,5 +1,16 @@
 
 structure_home = "/home/ivana/Dropbox/case_studies/gnao1/structures/composite"
+structure_filename = {
+    "gnao":"gnao1_after_1azsC.to_3sn6A.pdb",
+    "substrate":"3c7kA.GDP.to_3sn6A.pdb",
+    "AC": "6r3q_to_3sn6A.pdb",
+    "RGS": "3c7kB.RGS.to_3sn6A.pdb",
+    "GPCR": "3sn6R.GPCR.pdb",
+    "gnao-gpcr":"gnao1_after_3sn6A.pdb",
+    "gbeta":"3sn6B.Gbeta.pdb",
+    "ggamma":"3sn6G.Ggamma.pdb",
+    "lipid":"lipid_to_3sn6.pdb"
+}
 
 # ude for example 26_pymol_vis.py to get this
 pheno = {40: {'epi': 3, 'mov': 0, 'both': 3}, 207: {'epi': 0, 'mov': 2, 'both': 0},
