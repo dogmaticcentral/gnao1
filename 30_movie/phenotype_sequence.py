@@ -80,14 +80,13 @@ def gnao():
 	# multiside view of the residues implicated
 	pheno_residues()  # color by phenotype and show as speheres
 	frame_offset = 0
-	# frist frame
+	# first frame
 	cmd.set_view(pheno_view[0])
 	cmd.png("frm" + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
 	frame_offset += 1
 	for keyfrm in range(len(pheno_view)-1):
 		# view_interpolate gives intermediate views not icluding the initial, but including the last one
-		frame_offset = view_interpolate(pheno_view[keyfrm], pheno_view[keyfrm+1],
-		                                               number_of_frames=25, frameno_offset=frame_offset)
+		frame_offset = view_interpolate(pheno_view[keyfrm], pheno_view[keyfrm+1], number_of_frames=25, frameno_offset=frame_offset)
 	# interpolate back to the initial view
 	view_interpolate(pheno_view[-1], pheno_view[0], number_of_frames=25, frameno_offset=frame_offset)
 

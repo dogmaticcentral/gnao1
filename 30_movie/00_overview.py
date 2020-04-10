@@ -2,21 +2,21 @@
 story = '''
 [* 02] (We see the GPCR in the clump representation in the mebrane with G-tetramer docked.)
 Upon activation GNAO1
-[* 04] exchanges  ADP ->  ATP
+[* 04] exchanges  GDP ->  GTP
 [* 06] dissociates from GPCR
 [* 08] dissociates from Gbg
 [* 10] undergoes conformational change - the helix domain repositions to the place previously taken by Gbg
 
 Otherwise the helix domain does not have any fine tuned function, 
-[* 12] as witnessed by the fact that it is as variable as the ATP-binding domain (ABD), 
+[* 12] as witnessed by the fact that it is as variable as the GTP-binding domain (GBD), 
 [* 14] and yet has no known disease mutations
 
-In the ABD, the side 
+In the GBD, the side 
 [* 16] opposite to the helix domain and behind the catalytic pocket
 [* 18] is the business end of the molecule, judged by tha available crystallograpic work
 [* 20] in particular, the salt bridge E246-R209 seems to be directly at the interface with  adenylyl cyclase
 (though some cautin: this is a model)
-[* 22] RGS, the enhancer that speeds up the ATP->ADP catalysis by orders of magnitude also binds here.
+[* 22] RGS, the enhancer that speeds up the GTP->GDP catalysis by orders of magnitude also binds here.
 
 It is at this location that we see the majority of 
 [* 24] mutations related to MD only phenotype.
@@ -39,7 +39,7 @@ a series of conventional therapties produced no effect (pubmed 29961512)
 [* 36] The E+MD cases have one common characteristic that when tractable they respond to therapies targeted
 at enhancing the weak baseline signal, such as increasing dopamine availability and enhancing the downstream GABA-A 
 receptors.  This can be rationalized by considering the protein location of these varaints which may slow down the rate
-of the ATP->ADP catalysis, without completely abolishing the process.
+of the GTP->GDP catalysis, without completely abolishing the process.
 
 [* 38] Even the  "empty pocket" mutants ... (?)
 

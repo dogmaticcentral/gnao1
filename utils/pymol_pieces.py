@@ -71,6 +71,7 @@ def clump_representation(regions, color, name, transparency=0.0):
 		cmd.color(color, surfname)
 
 
+
 def view_string2view(view_string):
 	return [float(f) for f in view_string.split(",")]
 
@@ -104,15 +105,89 @@ def view_interpolate(view_init_str, view_last_str, number_of_frames=5, frameno_o
 		#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
 		qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
 		# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
-		intermediate_view = [x if fabs(x)>0.001 else 0 for x in  list(quaternion.as_rotation_matrix(qcur).flatten())]
+		intermediate_view = [x if fabs(x)>0.001 else 0 for x in list(quaternion.as_rotation_matrix(qcur).flatten())]
 
 		for i in range(9, len(view_init)):
-			update = view_init[i] + (view_last[i] - view_init[i]) * (frameno / number_of_frames)
+			# pymol is sitll on python2; in python2 3/5 = 0; in python3 it is 0.6
+			update = view_init[i] + (view_last[i] - view_init[i]) * (float(frameno) / number_of_frames)
 			if fabs(update) < 0.001: update = 0
 			intermediate_view.append(update)
 		cmd.set_view(view2view_string(intermediate_view))
 		cmd.png("frm" + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 		last_frame += 1
+
+	return last_frame
+
+'''
+   Note that when homogenous is zero, the input matrix is NOT a
+    standard homogenous 4x4 transformation matrix.  Instead it is
+    something PyMOL-specific which consists of the following:
+
+    1) a 3x3 matrix containing the rotation in the upper-left quadrant
+
+    2) a 1x3 translation to be applied *before* rotation in the bottom row
+        (matrix[12],matrix[13],matrix[14]).
+
+    3) a 3x1 translation to be applied *after* rotation in the right-hand
+        column (matrix[3],matrix[7],matrix[11])
+
+    In other words, if the matrix is:
+
+    [  m0  m1  m2  m3 \\
+       m4  m5  m6  m7 \\
+       m8  m9 m10 m11 \\
+      m12 m13 m14 m15 ] 
+
+    Atoms will be transformed as follows
+
+    Y = M X
+
+    y0 = m0*(x0+m12) + m1*(x1+m13) +  m2*(x2+m14) + m3 \\
+    y1 = m4*(x0+m12) + m5*(x1+m13) +  m6*(x2+m14) + m7 \\
+    y2 = m8*(x0+m12) + m9*(x1+m13) + m10*(x2+m14) + m11 
+
+'''
+def tfm2quat(tfm):
+	array  = np.array(tfm[:3] + tfm[4:7] + tfm[8:11])
+	matrix = np.asmatrix(array.reshape((3,3)))
+	return quaternion.from_rotation_matrix(matrix)
+
+
+def intermediate_tfm(target_tfm, qstart, number_of_frames, frameno):
+	tfm = [0]*16
+	qend = tfm2quat(target_tfm)
+	qcur = quaternion.slerp(qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
+	intermediate_rot = list(quaternion.as_rotation_matrix(qcur).flatten())
+	tfm[0:3]  = intermediate_rot[:3]
+	tfm[4:7]  = intermediate_rot[3:6]
+	tfm[8:11] = intermediate_rot[6:9]
+	for index in [3,7,11]:
+		tfm[index] += target_tfm[index]*float(frameno)/number_of_frames
+	return tfm
+
+
+def object_tfm_interpolate(object_properties, number_of_frames=15, frameno_offset=0):
+
+	for objnm in object_properties.keys():
+		cmd.hide("everything", objnm)
+
+	qstart = quaternion.one # identity quat
+	last_frame = frameno_offset
+	for frameno in range(1, number_of_frames+1):
+		print(">>>>>>", frameno)
+		tmpnames = []
+		for objnm, [target_tfm, color] in object_properties.items():
+			tfm = intermediate_tfm(target_tfm, qstart, number_of_frames, frameno)
+			tmpnm = objnm + str(frameno)
+			cmd.copy(tmpnm, objnm, zoom=False)
+			cmd.transform_selection(tmpnm, tfm)
+			clump_representation([tmpnm], color, tmpnm)
+			tmpnames.append(tmpnm)
+		cmd.png("frm" + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		for tmpnm in tmpnames: cmd.remove(tmpnm)
+		last_frame += 1
+
+
 
 	return last_frame
 
