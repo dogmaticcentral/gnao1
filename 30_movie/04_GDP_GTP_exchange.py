@@ -1,9 +1,7 @@
 #!  /usr/local/bin/pymol -qc
 '''
-[* 02] (We see the GPCR in the clump representation in the mebrane with G-tetramer docked.
-Camera moves down to focus on G-tetramer.
+[* 04] exchange GTP for GDP
 '''
-
 # to tfm in pymol https://pymolwiki.org/index.php/Transform_selection
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
@@ -25,13 +23,40 @@ ac_tfm = (0.9867311120033264, -0.011104182340204716, -0.16198275983333588,
            0.039982229471206665, 0.985930860042572, 35.708624462858666,
            0.0, 0.0, 0.0, 1.0)
 
+GDP_tfm =( 0.655153214931488, 0.6992514729499817, -0.28604474663734436,
+           1.4341086765617277, -0.5195330381393433, 0.6918748021125793,
+           0.501392662525177, -51.4732342756246, 0.5485067367553711,
+           -0.1798793226480484, 0.8165683150291443, 47.4879674403151,
+           0.0, 0.0, 0.0, 1.0)
+
+GTP_tfm = (-0.29833900928497314, 0.8441516757011414, -0.4454231262207031,
+           -8.281023559674871, -0.7039517164230347, 0.12054120004177094,
+           0.6999441385269165, -68.63656814742853, 0.6445508599281311,
+           0.5223770141601562, 0.5582798719406128, 48.13979008729288,
+           0.0, 0.0, 0.0, 1.0)
+
+identity_tfm = (1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 0)
+
+def style_lipid(lipid_selection_name):
+	cmd.show("sticks",lipid_selection_name)
+	cmd.color("lightblue", lipid_selection_name)
+	cmd.set("stick_transparency", 0.7, lipid_selection_name)
+
+def make_GDP(in_name, new_name):
+	cmd.copy(new_name, in_name, zoom=0)
+	cmd.remove("{} and not resn GDP".format(new_name))
+	return
+
 @cmd.extend
 def sequence():
 
 	production = True
 
-	dirname = "02_gpcr"
-	frame_basename = "seq02frm"
+	dirname = "04_exchange"
+	frame_basename = "seq04frm"
 
 	time0 = time()
 
@@ -62,18 +87,23 @@ def sequence():
 		clump_representation(["gbeta"], "magenta", "gbeta")
 		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
 		clump_representation(["ggamma"], "palegreen", "ggamma")
-		clump_representation(["substrate_GDP"], "marine", "substrate_GDP", small_molecule=True)
+		#
+		# clump_representation(["AC"], "raspberry", "AC")
 
 		style_lipid("lipid")
 
-		frame_offset = 0
-		cmd.set_view(sequence_02_view[0])
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
-		# interpolate to the view from below - makes pngs
-		frame_offset += 1
-		frame_offset = view_interpolate(sequence_02_view[0], sequence_02_view[1], frame_basename,
-		                                number_of_frames=15, frameno_offset=frame_offset)
 
+		# camera is fixed, but the objects are moving to positions specified by their transformations
+		# the first boolean indicates whethter the trajectory should go in reverse
+		# and he decond one whether the object should be visualized using small molecule settings
+
+		object_properties = {"substrate_GDP": [identity_tfm, GDP_tfm, False,  "marine", True],
+		                     "substrate":     [identity_tfm, GTP_tfm, True, "pink", True]}
+		# this function will make clump represenations and make pngs
+		# after the function returns, the original objects will be hidden
+		frame_offset  = 0
+		frame_offset  = object_tfm_interpolate(sequence_04_view[0], object_properties, frame_basename,
+		                                       number_of_frames=15, frameno_offset=frame_offset)
 
 	else: # run from gui
 
