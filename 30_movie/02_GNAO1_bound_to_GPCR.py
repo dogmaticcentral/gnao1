@@ -19,11 +19,6 @@ from utils.utils import *
 
 frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
 
-ac_tfm = (0.9867311120033264, -0.011104182340204716, -0.16198275983333588,
-          -137.9303598023693, 0.004471524152904749, 0.9991387128829956,
-          -0.04125393182039261, -17.250826810116003, 0.16230133175849915,
-           0.039982229471206665, 0.985930860042572, 35.708624462858666,
-           0.0, 0.0, 0.0, 1.0)
 
 @cmd.extend
 def sequence():
@@ -44,9 +39,8 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "AC", "lipid", "substrate"]
+	all_structures = ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "lipid", "substrate"]
 	load_structures(structure_home, structure_filename, all_structures)
-	cmd.transform_selection("AC", ac_tfm)
 	make_GDP("substrate", "substrate_GDP")
 	# move the GTP out of the cat pocket - we'll return it later
 	# as we are re-creatin the process of activation
@@ -55,8 +49,6 @@ def sequence():
 
 	if production: # run without gui
 
-		# for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "AC"]:
-		# 	cmd.show_as("cartoon", struct)
 		clump_representation(["GPCR"], "orange", "GPCR")
 		clump_representation(["gnao-gpcr"], "lightblue", "gnao-gpcr")
 		clump_representation(["gbeta"], "magenta", "gbeta")
@@ -77,7 +69,7 @@ def sequence():
 
 	else: # run from gui
 
-		for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "AC"]:
+		for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
 			cmd.show_as("cartoon", struct)
 
 

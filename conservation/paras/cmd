@@ -1,0 +1,12 @@
+patch_sim_cutoff   0.4
+patch_min_length   0.4
+sink  0.3  
+skip_query 
+
+align   /var/www/html/cube/current/cube/static/workdir/AM194A/alnmt_w_pdb_seq.afa
+refseq  GNAO1
+method  rvet
+
+outn  /var/www/html/cube/current/cube/static/workdir/AM194A/specs_out
+pdbf      /var/www/html/cube/current/cube/static/workdir/AM194A/gnao1A.pdb
+pdbseq    gnao1A

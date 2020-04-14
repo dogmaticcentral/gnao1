@@ -3,22 +3,31 @@ story = '''
 [* 02] (We see the GPCR in the clump representation in the mebrane with G-tetramer docked.)
 Upon activation GNAO1
 [* 04] exchanges  GDP ->  GTP
-[* 06] dissociates from GPCR
-[* 08] dissociates from Gbg
-[* 10] undergoes conformational change - the helix domain repositions to the place previously taken by Gbg
+[* 06] G-hetertrimer dissociates from GPCR, and (then) dissociates into Gbg and Galpha
+[* 08] G-alpha undergoes conformational change 
+[* 10] and docks to ADCY
 
-Otherwise the helix domain does not have any fine tuned function, 
-[* 12] as witnessed by the fact that it is as variable as the GTP-binding domain (GBD), 
-[* 14] and yet has no known disease mutations
+The reverse process starts with
+[* 12] RGS docking
+[* 13] ATP breaks down into ADP and phosphate group
+[* 14] the complex at ADCY dissociates, and Gnao re-associates with Gbg
+[* 15] whe GPCR is ready, the G-trimer will dock, open, and the cycle is ready to repeat itself
 
-In the GBD, the side 
-[* 16] opposite to the helix domain and behind the catalytic pocket
-[* 18] is the business end of the molecule, judged by tha available crystallograpic work
-[* 20] in particular, the salt bridge E246-R209 seems to be directly at the interface with  adenylyl cyclase
-(though some cautin: this is a model)
-[* 22] RGS, the enhancer that speeds up the GTP->GDP catalysis by orders of magnitude also binds here.
+Switching to GNAO-centric view
+[* 16] GNAO1 has two large  lobes or  domains
+[* 17] the NBD has the following functions: Gbg binding, GPCR binding,  nucleotide binding/ catalytic site,
+ADCY binding, RGS binding
+The helix domain does not seem to have any kneo interactions
 
-It is at this location that we see the majority of 
+
+[* 18] taking a more detatiles look into the structure of the proteins
+
+The fucntion of the helix domain is less fien tuned
+[* 20] as witnessed by the fact that it is as variable as the GTP-binding domain (GBD), 
+[* 22] and yet has no known disease mutations - while they are all in  the GDB
+
+
+In GDB
 [* 24] mutations related to MD only phenotype.
 [* 26] deeper within this domain of GNAO1 molecule, mostly surrounding the catalytic pocket we encounter
 the variants related to  E+MD phenotype

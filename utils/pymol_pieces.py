@@ -45,7 +45,6 @@ def interface_outline(reference_selection, interactant, color):
 
 def load_structures(structure_home, structure_filename, structures):
 
-
 	for structure in structures:
 		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), structure)
 		cmd.hide("everything", structure)
@@ -56,7 +55,11 @@ def load_structures(structure_home, structure_filename, structures):
 	if "GPCR" in structures:
 		cmd.remove("resi 343-1200 and GPCR")
 
+	return
 
+def make_GDP(in_name, new_name):
+	cmd.copy(new_name, in_name, zoom=0)
+	cmd.remove("{} and not resn GDP".format(new_name))
 	return
 
 
@@ -66,13 +69,11 @@ def residue_color(main_object, res_id, rgb_color_list):
 	cmd.color(color_name, "{} and resi {}".format(main_object, res_id))
 
 
-def clump_representation(regions, color, name, transparency=0.0, small_molecule=False):
+def clump_representation(regions, color, name, transparency=-1.0, small_molecule=False):
 
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
-	if transparency>0:
-		cmd.set("transparency", transparency, name)
-	else:
+	if transparency<=0:
 		cmd.set("spec_reflect", 0.0)
 
 	if small_molecule:
@@ -93,6 +94,9 @@ def clump_representation(regions, color, name, transparency=0.0, small_molecule=
 		surfname = "surf_{}_{}".format(name, idx)
 		cmd.map_new(mapname, "gaussian", grid_spacing, region, 2)
 		cmd.isosurface(surfname, mapname)
+		if transparency>0:
+			cmd.set("transparency", transparency, surfname)
+
 		cmd.color(color, surfname)
 
 
@@ -119,6 +123,24 @@ def view2quat(view):
 	return quaternion.from_rotation_matrix(matrix)
 
 
+def intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno):
+	# (quat start, quat end, time start, time end, time evaluated)
+	# of example (qstart, qend, 0, number_of_frames, frameno)
+	# (qstart, qend, 0, 1, frameno/number_of_frames) is npt working, even though these
+	# numbers ar esupposed to be floats - some numpy shit I would guess
+	#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
+	qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
+	# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
+	intermediate_view = [x if fabs(x)>0.001 else 0 for x in list(quaternion.as_rotation_matrix(qcur).flatten())]
+
+	for i in range(9, len(view_init)):
+		# pymol is sitll on python2; in python2 3/5 = 0; in python3 it is 0.6
+		update = view_init[i] + (view_last[i] - view_init[i]) * (float(frameno) / number_of_frames)
+		if fabs(update) < 0.001: update = 0
+		intermediate_view.append(update)
+
+	return intermediate_view
+
 
 def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5, frameno_offset=0):
 
@@ -130,20 +152,7 @@ def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5
 
 	last_frame = frameno_offset
 	for frameno in range(1, number_of_frames+1):
-		# (quat start, quat end, time start, time end, time evaluated)
-		# of example (qstart, qend, 0, number_of_frames, frameno)
-		# (qstart, qend, 0, 1, frameno/number_of_frames) is npt working, even though these
-		# numbers ar esupposed to be floats - some numpy shit I would guess
-		#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
-		qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
-		# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
-		intermediate_view = [x if fabs(x)>0.001 else 0 for x in list(quaternion.as_rotation_matrix(qcur).flatten())]
-
-		for i in range(9, len(view_init)):
-			# pymol is sitll on python2; in python2 3/5 = 0; in python3 it is 0.6
-			update = view_init[i] + (view_last[i] - view_init[i]) * (float(frameno) / number_of_frames)
-			if fabs(update) < 0.001: update = 0
-			intermediate_view.append(update)
+		intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
 		cmd.set_view(view2view_string(intermediate_view))
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 		last_frame += 1
@@ -152,31 +161,31 @@ def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5
 
 '''
    Note that when homogenous is zero, the input matrix is NOT a
-    standard homogenous 4x4 transformation matrix.  Instead it is
-    something PyMOL-specific which consists of the following:
+	standard homogenous 4x4 transformation matrix.  Instead it is
+	something PyMOL-specific which consists of the following:
 
-    1) a 3x3 matrix containing the rotation in the upper-left quadrant
+	1) a 3x3 matrix containing the rotation in the upper-left quadrant
 
-    2) a 1x3 translation to be applied *before* rotation in the bottom row
-        (matrix[12],matrix[13],matrix[14]).
+	2) a 1x3 translation to be applied *before* rotation in the bottom row
+		(matrix[12],matrix[13],matrix[14]).
 
-    3) a 3x1 translation to be applied *after* rotation in the right-hand
-        column (matrix[3],matrix[7],matrix[11])
+	3) a 3x1 translation to be applied *after* rotation in the right-hand
+		column (matrix[3],matrix[7],matrix[11])
 
-    In other words, if the matrix is:
+	In other words, if the matrix is:
 
-    [  m0  m1  m2  m3 \\
-       m4  m5  m6  m7 \\
-       m8  m9 m10 m11 \\
-      m12 m13 m14 m15 ] 
+	[  m0  m1  m2  m3 \\
+	   m4  m5  m6  m7 \\
+	   m8  m9 m10 m11 \\
+	  m12 m13 m14 m15 ] 
 
-    Atoms will be transformed as follows
+	Atoms will be transformed as follows
 
-    Y = M X
+	Y = M X
 
-    y0 = m0*(x0+m12) + m1*(x1+m13) +  m2*(x2+m14) + m3 \\
-    y1 = m4*(x0+m12) + m5*(x1+m13) +  m6*(x2+m14) + m7 \\
-    y2 = m8*(x0+m12) + m9*(x1+m13) + m10*(x2+m14) + m11 
+	y0 = m0*(x0+m12) + m1*(x1+m13) +  m2*(x2+m14) + m3 \\
+	y1 = m4*(x0+m12) + m5*(x1+m13) +  m6*(x2+m14) + m7 \\
+	y2 = m8*(x0+m12) + m9*(x1+m13) + m10*(x2+m14) + m11 
 
 '''
 def tfm2quat(tfm):
@@ -199,10 +208,43 @@ def intermediate_tfm(source_tfm, target_tfm, number_of_frames, frameno):
 	return tfm
 
 
-def object_tfm_interpolate(view, object_properties, base_name, number_of_frames=15, frameno_offset=0):
+def object_tfm_interpolate(object_properties, number_of_frames, frameno):
+	tmpnames = []
+
+	for objnm, properties in object_properties.items():
+		[source_tfm, target_tfm, reverse, color, small_molecule] = properties[:5]
+		transparency_range = properties[5] if len(properties>5) else None
+		frame = frameno
+		if reverse: frame = number_of_frames  - frame
+		tfm = intermediate_tfm(source_tfm, target_tfm, number_of_frames, frame)
+		tmpnm = objnm + str(frameno)
+		cmd.copy(tmpnm, objnm, zoom=0)
+		cmd.transform_selection(tmpnm, tfm)
+		transparency = -1
+		if transparency_range:
+			transparency = transparency_range[1] \
+			               + float(frameno)/number_of_frames*(transparency_range[0]-transparency_range[1])
+		clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
+		tmpnames.append(tmpnm)
+	return tmpnames
+
+
+def object_cleanup(tmpnames):
+	for tmpnm in tmpnames:
+		clump_cleanup([tmpnm], tmpnm)
+		cmd.remove(tmpnm)
+
+
+def scene_interpolate(view_init_str, object_properties, base_name, number_of_frames=15, frameno_offset=0, view_last_str=None):
 
 	# I could not find the way to move the surface, if there's one provided
 	# so I'm moving the object and re-creating the mesh
+
+	view_init = view_string2view(view_init_str) if view_last_str else None
+	view_last = view_string2view(view_last_str) if view_last_str else None
+	# get quaternions for interpolation
+	qstart = view2quat(view_init) if view_last_str else None
+	qend   = view2quat(view_last) if view_last_str else None
 
 	for objnm in object_properties.keys():
 		cmd.hide("everything", objnm)
@@ -210,25 +252,35 @@ def object_tfm_interpolate(view, object_properties, base_name, number_of_frames=
 
 	last_frame = frameno_offset
 	for frameno in range(1, number_of_frames+1):
-		tmpnames = []
-		for objnm, [source_tfm, target_tfm, reverse, color, small_molecule] in object_properties.items():
-			frame = frameno
-			if reverse: frame = number_of_frames  - frame
-			tfm = intermediate_tfm(source_tfm, target_tfm, number_of_frames, frame)
-			tmpnm = objnm + str(frameno)
-			cmd.copy(tmpnm, objnm, zoom=0)
-			cmd.transform_selection(tmpnm, tfm)
-			clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule)
-			tmpnames.append(tmpnm)
+		# object position interpolation
+		tmpnames = object_tfm_interpolate(object_properties, number_of_frames, frameno)
+		# view interpolation, if called for
+		if not view_last_str:
+			view = view_init_str
+		else:
+			view  = view2view_string(intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno))
 		# some of the ops above move camera (why the f do you have to move the camera to create a new rep?)
 		cmd.set_view(view)
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
-		for tmpnm in tmpnames:
-			clump_cleanup([tmpnm], tmpnm)
-			cmd.remove(tmpnm)
+		object_cleanup(tmpnames)
 		last_frame += 1
-
-
 
 	return last_frame
 
+
+def morph_movie(morph, view, color, base_name, frameno_offset=0):
+	number_of_states = cmd.count_states(morph)
+	# after this I will have each state available as its own object, called "{morphname}_000x" (padded to length of 4)
+	# x starts with 1
+	cmd.split_states(morph)
+	last_frame = frameno_offset
+	for state_name in [morph + "_" + str(statenum).zfill(4) for statenum in range(1, number_of_states+1)]:
+		clump_representation([state_name], color, state_name),
+		cmd.set_view(view)
+		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		clump_cleanup([state_name], state_name)
+		cmd.remove(state_name)
+		last_frame += 1
+
+
+	return last_frame

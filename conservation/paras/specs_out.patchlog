@@ -1,0 +1,24 @@
+GNAI1, patching with sim cutoff   0.40:
+	 not patched
+GNAI3, patching with sim cutoff   0.40:
+	 not patched
+GNAT3, patching with sim cutoff   0.40:
+	 not patched
+GNAT2, patching with sim cutoff   0.40:
+	 not patched
+GNAT1, patching with sim cutoff   0.40:
+	pos  10 from GNAT2 (aligned length: 349   sim:  0.883   id:  0.831)
+	pos  11 from GNAT2 (aligned length: 349   sim:  0.883   id:  0.831)
+	pos  12 from GNAT2 (aligned length: 349   sim:  0.883   id:  0.831)
+	pos  13 from GNAT2 (aligned length: 349   sim:  0.883   id:  0.831)
+GNA14, patching with sim cutoff   0.40:
+	 not patched
+GNAQ, patching with sim cutoff   0.40:
+	 not patched
+GNA11, patching with sim cutoff   0.40:
+	 not patched
+GNA15, patching with sim cutoff   0.40:
+	 not patched
+GNA12, patching with sim cutoff   0.40:
+	pos 111 from GNA13 (aligned length: 350   sim:  0.780   id:  0.671)
+	pos 114 from GNA13 (aligned length: 350   sim:  0.780   id:  0.671)
