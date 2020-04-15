@@ -11,10 +11,10 @@ The reverse process starts with
 [* 12] RGS docking
 [* 13] ATP breaks down into ADP and phosphate group
 [* 14] the complex at ADCY dissociates, and Gnao re-associates with Gbg
-[* 15] whe GPCR is ready, the G-trimer will dock, open, and the cycle is ready to repeat itself
+[* 15] when the  GPCR is ready, the G-trimer will dock, open, and the cycle is ready to repeat itself
 
 Switching to GNAO-centric view
-[* 16] GNAO1 has two large  lobes or  domains
+[* 16] GNAO1 has two large  lobes or  domains [get transparent while morphing to uncover cartoon structure]
 [* 17] the NBD has the following functions: Gbg binding, GPCR binding,  nucleotide binding/ catalytic site,
 ADCY binding, RGS binding
 The helix domain does not seem to have any kneo interactions

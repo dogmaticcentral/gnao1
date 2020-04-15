@@ -213,7 +213,7 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 
 	for objnm, properties in object_properties.items():
 		[source_tfm, target_tfm, reverse, color, small_molecule] = properties[:5]
-		transparency_range = properties[5] if len(properties>5) else None
+		transparency_range = properties[5] if len(properties)>5 else None
 		frame = frameno
 		if reverse: frame = number_of_frames  - frame
 		tfm = intermediate_tfm(source_tfm, target_tfm, number_of_frames, frame)
@@ -222,8 +222,8 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 		cmd.transform_selection(tmpnm, tfm)
 		transparency = -1
 		if transparency_range:
-			transparency = transparency_range[1] \
-			               + float(frameno)/number_of_frames*(transparency_range[0]-transparency_range[1])
+			transparency = transparency_range[0] \
+			               + float(frameno)/number_of_frames*(transparency_range[1]-transparency_range[0])
 		clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
 		tmpnames.append(tmpnm)
 	return tmpnames
@@ -235,7 +235,42 @@ def object_cleanup(tmpnames):
 		cmd.remove(tmpnm)
 
 
-def scene_interpolate(view_init_str, object_properties, base_name, number_of_frames=15, frameno_offset=0, view_last_str=None):
+
+def morph_movie(morph, view, color, base_name, frameno_offset=0):
+	number_of_states = cmd.count_states(morph)
+	# after this I will have each state available as its own object, called "{morphname}_000x" (padded to length of 4)
+	# x starts with 1 --> not clear - that might depend on the numbering in the input file
+	cmd.split_states(morph)
+	last_frame = frameno_offset
+	for statenum in range(1, number_of_states+1):
+		state_name = morph + "_" + str(statenum).zfill(4)
+		clump_representation([state_name], color, state_name),
+		cmd.set_view(view)
+		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		clump_cleanup([state_name], state_name)
+		cmd.remove(state_name)
+		last_frame += 1
+
+	return last_frame
+
+
+
+def scene_interpolate(view_init_str, object_properties, base_name,
+                      number_of_frames=15, frameno_offset=0,
+                      view_last_str=None, morph_properties=None):
+
+	if morph_properties:
+		morph_lengths = set()
+		for morph_name in morph_properties.keys():
+			morph_lengths.add(cmd.count_states(morph_name))
+			cmd.split_states(morph_name)
+		if len(morph_lengths)>1:
+			print("morphs are all expected to be of the same length; found", morph_lengths)
+			exit()
+		if len(morph_lengths)==0: # can this happen? morph_properties should be False in thate casem shouldn't it
+			morph_properties = None
+		else:
+			number_of_frames = morph_lengths.pop()
 
 	# I could not find the way to move the surface, if there's one provided
 	# so I'm moving the object and re-creating the mesh
@@ -251,7 +286,7 @@ def scene_interpolate(view_init_str, object_properties, base_name, number_of_fra
 		clump_cleanup([objnm], objnm)
 
 	last_frame = frameno_offset
-	for frameno in range(1, number_of_frames+1):
+	for frameno in range(0, number_of_frames+1):
 		# object position interpolation
 		tmpnames = object_tfm_interpolate(object_properties, number_of_frames, frameno)
 		# view interpolation, if called for
@@ -259,28 +294,27 @@ def scene_interpolate(view_init_str, object_properties, base_name, number_of_fra
 			view = view_init_str
 		else:
 			view  = view2view_string(intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno))
+		# morph
+		if morph_properties:
+			tmp_obj_props = {}
+			for morph_name, props in morph_properties.items():
+				[morph_color, morph_reverse, tfm_from, tf_to, tfm_reverse] = props
+				# change shape
+				if morph_reverse:
+					stateno = max(1, cmd.count_states(morph_name) - frameno)
+				else:
+					stateno = min(frameno+1, cmd.count_states(morph_name))
+				morph_state_name = morph_name + "_" + str(stateno).zfill(4)
+				# [identity_tfm, gbg_tfm, tfm_reverse, color, small_molecule rep]
+				tmp_obj_props[morph_state_name] = [tfm_from, tf_to, tfm_reverse, morph_color, False]
+			# reposition all morphs and show them as clumps
+			tmpnames.extend(object_tfm_interpolate(tmp_obj_props, number_of_frames, frameno))
 		# some of the ops above move camera (why the f do you have to move the camera to create a new rep?)
 		cmd.set_view(view)
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 		object_cleanup(tmpnames)
+
 		last_frame += 1
 
 	return last_frame
 
-
-def morph_movie(morph, view, color, base_name, frameno_offset=0):
-	number_of_states = cmd.count_states(morph)
-	# after this I will have each state available as its own object, called "{morphname}_000x" (padded to length of 4)
-	# x starts with 1
-	cmd.split_states(morph)
-	last_frame = frameno_offset
-	for state_name in [morph + "_" + str(statenum).zfill(4) for statenum in range(1, number_of_states+1)]:
-		clump_representation([state_name], color, state_name),
-		cmd.set_view(view)
-		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
-		clump_cleanup([state_name], state_name)
-		cmd.remove(state_name)
-		last_frame += 1
-
-
-	return last_frame
