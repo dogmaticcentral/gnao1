@@ -61,12 +61,10 @@ def sequence():
 	# the initial scene containing the GPCR-bound G-trimer
 	all_structures = ["GPCR", "gnao-gpcr", "gbeta", "ggamma",  "lipid", "substrate", "morph"]
 	load_structures(structure_home, structure_filename, all_structures)
-	cmd.transform_selection("gbeta", Gbg_tfm)
-	cmd.transform_selection("ggamma", Gbg_tfm)
 	cmd.transform_selection("gnao-gpcr", Gnao_tfm)
 	cmd.transform_selection("substrate", Gnao_tfm)
 	# fit he morph (between the open and closed GNAO) onto the current position of gnao
-	cmd.align("morph", "gnao-gpcr")
+	cmd.align("morph", "gnao-gpcr and resid 210-340")
 	# and then all states onto the nucleotide binding domain
 	cmd.intra_fit("morph and resid 210-340", 1)
 
@@ -74,32 +72,17 @@ def sequence():
 
 	if production: # run without gui
 
-		clump_representation(["GPCR"], "orange", "GPCR")
-		clump_representation(["gnao-gpcr"], "lightblue", "gnao-gpcr")
-		clump_representation(["gbeta"], "magenta", "gbeta")
-		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
-		clump_representation(["ggamma"], "palegreen", "ggamma")
-		clump_representation(["substrate"], "pink", "substrate", small_molecule=True)
-
-		style_lipid("lipid")
+		for structure  in ["GPCR"]:
+			clump_representation([structure], mol_color[structure], structure)
+		style_substrate("substrate", mol_color["substrate"])
 
 		frame_offset = 0
-		cmd.set_view(sequence_08_view[0])
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
-		frame_offset += 1
-		# move Gbg out of view
-		object_properties = {"gbeta": [identity_tfm, Gbg_tfm_2, False,  "magenta", False],
-		                     "ggamma": [identity_tfm,  Gbg_tfm_2, False,  "palegreen", False]}
-		frame_offset  = scene_interpolate(sequence_08_view[0], object_properties, frame_basename,
-		                                  number_of_frames=10, frameno_offset=frame_offset)
 		# interpolate to the view zoomed onto Galpha
 		frame_offset = view_interpolate(sequence_08_view[0], sequence_08_view[1], frame_basename,
 		                                number_of_frames=15, frameno_offset=frame_offset)
 
-		clump_cleanup(["GPCR"], "GPCR") # we don' need those any more
-		clump_cleanup(["gbeta"], "gbeta")
-		clump_cleanup(["ggamma"], "ggamma")
-		clump_cleanup(["gnao-gpcr"], "gnao-gpcr")
+		for structure  in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
+			clump_cleanup([structure], structure) # we don' need those any more
 		# frame_offset = 26
 		# morph, view, color, base_name, frameno_offset=0
 		frame_offset = morph_movie("morph", sequence_08_view[1], "lightblue", frame_basename, frame_offset)

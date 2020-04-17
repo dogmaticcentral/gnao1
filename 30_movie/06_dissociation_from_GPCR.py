@@ -7,6 +7,8 @@
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
 # print(tfm) to have ti spit on the commandline in gui
+# that is copy A to B; move B, align A to B, read off the A's tfm
+# print(cmd.get_object_matrix(A))
 
 
 from time import time
@@ -18,10 +20,10 @@ from utils.utils import *
 
 frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
 
-Gbg_tfm = (0.7969592213630676, 0.006222372408956289, 0.6040011048316956,
-           0.6289221365789857, 0.13691268861293793, 0.9720604419708252,
-           -0.19066578149795532, 9.661571614721879, -0.5883119702339172,
-           0.23464825749397278, 0.773840606212616, 67.63218789375144,
+Gbg_tfm = (0.999991774559021, -0.0011599072022363544, 0.0038930452428758144,
+           136.8781244962058, 0.0011575750540941954, 0.9999991655349731,
+           0.0006012554513290524, 22.168860578989253, -0.0038937395438551903,
+           -0.0005967440083622932, 0.9999922513961792, -3.721520004406471,
            0.0, 0.0, 0.0, 1.0)
 
 Gnao_tfm = (0.8056473731994629, -0.4893404245376587, -0.3338835835456848,
@@ -38,7 +40,7 @@ identity_tfm = (1, 0, 0, 0,
 @cmd.extend
 def sequence():
 
-	production = False
+	production = True
 
 	dirname = "06_Gtrimer_dissociation"
 	frame_basename = "seq06frm"
@@ -64,15 +66,11 @@ def sequence():
 
 	if production: # run without gui
 
-		# for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
-		# 	cmd.show_as("cartoon", struct)
-		clump_representation(["GPCR"], "orange", "GPCR")
-		clump_representation(["gnao-gpcr"], "lightblue", "gnao-gpcr")
-		clump_representation(["gbeta"], "magenta", "gbeta")
-		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
-		clump_representation(["ggamma"], "palegreen", "ggamma")
-		clump_representation(["substrate"], "pink", "substrate", small_molecule=True)
 
+		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
+		for structure  in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
+			clump_representation([structure], mol_color[structure], structure)
+		style_substrate("substrate", mol_color["substrate"])
 		style_lipid("lipid")
 
 		frame_offset = 0
@@ -83,33 +81,20 @@ def sequence():
 		frame_offset = view_interpolate(sequence_06_view[0], sequence_06_view[1], frame_basename,
 		                                number_of_frames=15, frameno_offset=frame_offset)
 
-		frame_offset = view_interpolate(sequence_06_view[1], sequence_06_view[2], frame_basename,
-		                                number_of_frames=15, frameno_offset=frame_offset)
-
+		frame_offset =  16
 		# camera is fixed, but the objects are moving to positions specified by their transformations
 		# the first boolean indicates whethter the trajectory should go in reverse
 		# and he decond one whether the object should be visualized using small molecule settings
-		object_properties = {"gbeta":     [identity_tfm, Gbg_tfm, False, "magenta", False],
-		                     "ggamma":    [identity_tfm, Gbg_tfm, False, "palegreen", False]}
-		# this function will make clump represenations and make pngs
-		# after the function returns, the original objects will be hidden
-		frame_offset  = scene_interpolate(sequence_06_view[2], object_properties, frame_basename,
-		                                  number_of_frames=10, frameno_offset=frame_offset)
-
-		cmd.transform_selection("gbeta", Gbg_tfm)
-		cmd.transform_selection("ggamma", Gbg_tfm)
-		clump_representation(["gbeta"], "magenta", "gbeta")
-		clump_representation(["ggamma"], "palegreen", "ggamma")
-
-		object_properties = {"gnao-gpcr": [identity_tfm, Gnao_tfm, False,  "lightblue", False],
-		                     "substrate": [identity_tfm, Gnao_tfm, False,  "pink", True]}
-		frame_offset  = scene_interpolate(sequence_06_view[2], object_properties, frame_basename,
-		                                  number_of_frames=10, frameno_offset=frame_offset)
-
+		object_properties = {"gbeta":     [identity_tfm, Gbg_tfm, False, mol_color["gbeta"], False],
+		                     "ggamma":    [identity_tfm, Gbg_tfm, False, mol_color["ggamma"], False],
+		                     "gnao-gpcr": [identity_tfm, Gnao_tfm, False, mol_color["gnao-gpcr"], False],
+		                     "substrate": [identity_tfm, Gnao_tfm, False, mol_color["substrate"], True]}
+		frame_offset  = scene_interpolate(sequence_06_view[1], object_properties, frame_basename,
+		                                  number_of_frames=35, frameno_offset=frame_offset, view_last_str=sequence_06_view[2])
 
 
 	else: # run from gui
-
+		cmd.viewport(1920, 1080)
 		for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
 			cmd.show_as("cartoon", struct)
 

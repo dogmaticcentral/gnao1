@@ -60,38 +60,40 @@ def sequence():
 	# the initial scene containing the GPCR-bound G-trimer
 	all_structures = ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "lipid", "substrate"]
 	load_structures(structure_home, structure_filename, all_structures)
-	make_GDP("substrate", "substrate_GDP")
+	make_GDP("substrate", "substrate-GDP")
 	# move the GTP out of the cat pocket - we'll return it later
-	# as we are re-creatin the process of activation
+	# as we are re-creating the process of activation
 	# cmd.transform_selection("substrate", GTP_tfm)
 	cmd.bg_color("white")
 
 	if production: # run without gui
 
-		clump_representation(["GPCR"], "orange", "GPCR")
-		clump_representation(["gnao-gpcr"], "lightblue", "gnao-gpcr")
-		clump_representation(["gbeta"], "magenta", "gbeta")
 		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
-		clump_representation(["ggamma"], "palegreen", "ggamma")
-
+		for structure  in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
+			clump_representation([structure], mol_color[structure], structure)
 		style_lipid("lipid")
 
 		# camera is fixed, but the objects are moving to positions specified by their transformations
 		# the first boolean indicates whethter the trajectory should go in reverse
 		# and he decond one whether the object should be visualized using small molecule settings
 
-		object_properties = {"substrate_GDP": [identity_tfm, GDP_tfm, False,  "marine", True],
+		object_properties = {"substrate-GDP": [identity_tfm, GDP_tfm, False,  "marine", True],
 		                     "substrate":     [identity_tfm, GTP_tfm, True, "pink", True]}
 		# this function will make clump represenations and make pngs
 		# after the function returns, the original objects will be hidden
 		frame_offset  = 0
 		frame_offset  = scene_interpolate(sequence_04_view[0], object_properties, frame_basename,
-		                                  number_of_frames=15, frameno_offset=frame_offset)
+		                                  number_of_frames=30, frameno_offset=frame_offset)
 
 	else: # run from gui
+		cmd.viewport(1920, 1080)
+		cmd.transform_selection("substrate-GDP",  GDP_tfm)
+		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
+		for structure  in ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "substrate-GDP"]:
+			clump_representation([structure], mol_color[structure], structure)
+		style_lipid("lipid")
+		cmd.set_view(sequence_04_view[0])
 
-		for struct in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
-			cmd.show_as("cartoon", struct)
 
 
 	print("done in %d secs" %(time()-time0))

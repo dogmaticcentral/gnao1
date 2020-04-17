@@ -19,7 +19,7 @@ sequence_02_view = ["\
 ]
 
 ##########################
-sequence_04_view = [ sequence_02_view[-1] ]
+sequence_04_view = [sequence_02_view[-1]]
 
 ##########################
 sequence_06_view = [ sequence_02_view[-1],

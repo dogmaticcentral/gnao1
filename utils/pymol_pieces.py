@@ -8,12 +8,19 @@ from math import pi, cos
 import numpy as np
 import quaternion  # pip3 install numpy-quaternion and numba
 
-
+#from utils.pymol_constants import * # this is pymol3
+from pymol_constants import *
 
 def style_lipid(lipid_selection_name):
 	cmd.show("sticks",lipid_selection_name)
-	cmd.color("lightblue", lipid_selection_name)
+	cmd.color( mol_color.get(lipid_selection_name, "white"), lipid_selection_name)
 	cmd.set("stick_transparency", 0.7, lipid_selection_name)
+
+
+def style_substrate(substrate_selection_name, color):
+	cmd.show("spheres", substrate_selection_name)
+	cmd.color(color, substrate_selection_name)
+
 
 
 def make_GDP(in_name, new_name):
@@ -46,7 +53,7 @@ def interface_outline(reference_selection, interactant, color):
 def load_structures(structure_home, structure_filename, structures):
 
 	for structure in structures:
-		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), structure)
+		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), object=structure)
 		cmd.hide("everything", structure)
 
 	if "AC" in structures:
@@ -57,9 +64,29 @@ def load_structures(structure_home, structure_filename, structures):
 
 	return
 
-def make_GDP(in_name, new_name):
-	cmd.copy(new_name, in_name, zoom=0)
-	cmd.remove("{} and not resn GDP".format(new_name))
+
+def extract_state_to_object(morph, state, new_object):
+
+	number_of_states = cmd.count_states(morph)
+	if number_of_states<state:
+		print("in extract_state_to_object() requested state " +
+		      "{}  > number of states ({}) available in {}".format(state, number_of_states, morph))
+		exit()
+	if morph==new_object:
+		print("in extract_state_to_object() please picked different " +
+		      "name for extraction (currently bouth '{}') ".format(morph))
+		exit()
+
+	# after this I will have each state available as its own object, called "{morphname}_000x" (padded to length of 4)
+	# x starts with 1 --> not clear - that might depend on the numbering in the input file
+	cmd.split_states(morph)
+	state_name = morph + "_" + str(state).zfill(4)
+	cmd.copy(new_object, state_name)
+	for statenum in range(1, number_of_states+1):
+		state_name = morph + "_" + str(statenum).zfill(4)
+		cmd.delete(state_name)
+	cmd.delete(morph)
+
 	return
 
 
@@ -152,8 +179,8 @@ def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5
 
 	last_frame = frameno_offset
 	for frameno in range(1, number_of_frames+1):
-		intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
-		cmd.set_view(view2view_string(intermediate_view))
+		intrm_view = intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
+		cmd.set_view(view2view_string(intrm_view))
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 		last_frame += 1
 
@@ -224,7 +251,10 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 		if transparency_range:
 			transparency = transparency_range[0] \
 			               + float(frameno)/number_of_frames*(transparency_range[1]-transparency_range[0])
-		clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
+		if small_molecule:
+			style_substrate(tmpnm, mol_color[objnm])
+		else:
+			clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
 		tmpnames.append(tmpnm)
 	return tmpnames
 
@@ -236,13 +266,17 @@ def object_cleanup(tmpnames):
 
 
 
-def morph_movie(morph, view, color, base_name, frameno_offset=0):
+def morph_movie(morph, view, color, base_name, frameno_offset=0, morph_reverse=False):
 	number_of_states = cmd.count_states(morph)
 	# after this I will have each state available as its own object, called "{morphname}_000x" (padded to length of 4)
 	# x starts with 1 --> not clear - that might depend on the numbering in the input file
 	cmd.split_states(morph)
 	last_frame = frameno_offset
-	for statenum in range(1, number_of_states+1):
+	for statenum in range(0, number_of_states+1):
+		if morph_reverse:
+			statenum = max(1, cmd.count_states(morph) - statenum)
+		else:
+			statenum = min(statenum+1, cmd.count_states(morph))
 		state_name = morph + "_" + str(statenum).zfill(4)
 		clump_representation([state_name], color, state_name),
 		cmd.set_view(view)

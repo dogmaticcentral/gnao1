@@ -35,9 +35,11 @@ rgs_tfm = (0.3909817636013031, -0.3318276107311249, 0.8585008382797241,
            0.32289767265319824, 0.4927959740161896, 56.829231724918486,
            0.0, 0.0, 0.0, 1.0)
 
-gbg_tfm = (1.0, -1.236797544379442e-07, -1.1918327658122507e-07, -15.428780372137371,
-           1.2367979707050836e-07, 1.0, 2.722941871979856e-07, -84.23362609006627,
-           1.1918324105408828e-07, -2.722941871979856e-07, 1.0, 11.513637884944458,
+
+gbg_tfm = (0.999991774559021, -0.0011599072022363544, 0.0038930452428758144,
+           136.8781244962058, 0.0011575750540941954, 0.9999991655349731,
+           0.0006012554513290524, 22.168860578989253, -0.0038937395438551903,
+           -0.0005967440083622932, 0.9999922513961792, -3.721520004406471,
            0.0, 0.0, 0.0, 1.0)
 
 
@@ -64,16 +66,19 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["gnao",  "lipid",  "AC", "RGS", "substrate", "GPCR", "gbeta", "ggamma", "gnao-gpcr"]
+	all_structures = ["morph", "lipid",  "AC", "RGS", "substrate", "GPCR", "gbeta", "ggamma", "gnao-gpcr"]
 	load_structures(structure_home, structure_filename, all_structures)
+	# morph has this bugger of N-term helix
+	extract_state_to_object("morph", 24, "gnao")
 	cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
 	make_GDP("substrate", "substrate_GDP")
+
 	cmd.transform_selection("AC", ac_tfm)
 	cmd.transform_selection("RGS", ac_tfm)
-	cmd.transform_selection("substrate_GDP", ac_tfm)
-	cmd.transform_selection("gnao", ac_tfm)
+	# cmd.transform_selection("substrate_GDP", ac_tfm)
+	# cmd.transform_selection("gnao", ac_tfm)
 
-
+	#
 	cmd.bg_color("white")
 
 	if production: # run without gui
@@ -87,24 +92,24 @@ def sequence():
 		cmd.set_view(sequence_14_view[0])
 
 		frame_offset = 0
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
-		frame_offset = 1
-		transparency_range = [0.7, 0.0]
-		object_properties = {"gnao": [identity_tfm, gnao_tfm, False, "lightblue", False, transparency_range],
-		                     "substrate_GDP": [identity_tfm, gnao_tfm, False, "marine", False],
+		transparency_range = [0.5, 0.0]
+		object_properties = {"gnao": [identity_tfm, ac_tfm, True, "lightblue", False, transparency_range],
+		                     "substrate_GDP": [identity_tfm, ac_tfm, True, "marine", False],
+
 		                     "RGS":[identity_tfm, rgs_tfm, False, "salmon", False],
-		                     "gbeta": [identity_tfm, gbg_tfm, False, "magenta", False],
-		                     "ggamma": [identity_tfm, gbg_tfm, False, "palegreen", False]}
+
+		                     "gbeta": [identity_tfm, gbg_tfm, True, "magenta", False],
+		                     "ggamma": [identity_tfm, gbg_tfm, True, "palegreen", False]}
+
 		scene_interpolate(sequence_14_view[0], object_properties, frame_basename,
-		                  number_of_frames=15, frameno_offset=frame_offset, view_last_str=sequence_14_view[1])
+		                  number_of_frames=50, frameno_offset=frame_offset, view_last_str=sequence_14_view[1])
 
 	else:
 		cmd.viewport(1920, 1080)
-		for struct in ["GPCR", "gnao",  "lipid",  "AC", "RGS", "gbeta", "ggamma", "gnao-gpcr"]:
+		for struct in ["gnao", "GPCR",  "lipid",  "AC", "RGS", "gbeta", "ggamma", "gnao-gpcr"]:
 			cmd.show_as("cartoon", struct)
 		style_lipid("lipid")
-		cmd.color("red", "gnao-gpcr")
-
+		cmd.color("red", "gnao")
 		cmd.set_view(sequence_14_view[0])
 
 

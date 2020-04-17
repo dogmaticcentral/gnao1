@@ -12,8 +12,9 @@ Camera moves down to focus on G-tetramer.
 
 from time import time
 
-from utils.pymol_pieces import *
 from utils.pymol_constants import *
+
+from utils.pymol_pieces import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
@@ -41,7 +42,7 @@ def sequence():
 	# the initial scene containing the GPCR-bound G-trimer
 	all_structures = ["GPCR", "gnao-gpcr", "gbeta", "ggamma", "lipid", "substrate"]
 	load_structures(structure_home, structure_filename, all_structures)
-	make_GDP("substrate", "substrate_GDP")
+	make_GDP("substrate", "substrate-GDP")
 	# move the GTP out of the cat pocket - we'll return it later
 	# as we are re-creatin the process of activation
 	# cmd.transform_selection("substrate", GTP_tfm)
@@ -49,13 +50,10 @@ def sequence():
 
 	if production: # run without gui
 
-		clump_representation(["GPCR"], "orange", "GPCR")
-		clump_representation(["gnao-gpcr"], "lightblue", "gnao-gpcr")
-		clump_representation(["gbeta"], "magenta", "gbeta")
 		cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
-		clump_representation(["ggamma"], "palegreen", "ggamma")
-		clump_representation(["substrate_GDP"], "marine", "substrate_GDP", small_molecule=True)
-
+		for structure  in ["GPCR", "gnao-gpcr", "gbeta", "ggamma"]:
+			clump_representation([structure], mol_color[structure], structure)
+		style_substrate("substrate-GDP", mol_color["substrate-GDP"])
 		style_lipid("lipid")
 
 		frame_offset = 0
@@ -64,7 +62,7 @@ def sequence():
 		# interpolate to the view from below - makes pngs
 		frame_offset += 1
 		frame_offset = view_interpolate(sequence_02_view[0], sequence_02_view[1], frame_basename,
-		                                number_of_frames=15, frameno_offset=frame_offset)
+		                                number_of_frames=30, frameno_offset=frame_offset)
 
 
 	else: # run from gui

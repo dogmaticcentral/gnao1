@@ -10,7 +10,21 @@ structure_filename = {
     "gbeta": "3sn6B.Gbeta.pdb",
     "ggamma": "3sn6G.Ggamma.pdb",
     "lipid": "lipid_to_3sn6.pdb",
-	"morph": "morph.pdb"
+	"morph": "morph_w_fixed_nterm_helix.pdb",
+}
+
+mol_color = {
+    "gnao":"lightblue",
+    "substrate":"pink",
+	"substrate-GDP":"marine",
+    "AC": "raspberry",
+    "RGS": "salmon",
+    "GPCR": "orange",
+    "gnao-gpcr": "lightblue",
+    "gbeta": "magenta",
+    "ggamma": "palegreen",
+    "lipid": "lightblue",
+	"morph": "lightblue"
 }
 
 # use for example 26_pymol_vis.py to get this
