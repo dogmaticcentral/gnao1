@@ -18,7 +18,7 @@ from utils.pymol_pieces import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 
 @cmd.extend

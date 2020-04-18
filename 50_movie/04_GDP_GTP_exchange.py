@@ -15,7 +15,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 GDP_tfm =( 0.655153214931488, 0.6992514729499817, -0.28604474663734436,
            1.4341086765617277, -0.5195330381393433, 0.6918748021125793,

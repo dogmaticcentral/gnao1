@@ -10,11 +10,14 @@ import quaternion  # pip3 install numpy-quaternion and numba
 
 #from utils.pymol_constants import * # this is pymol3
 from pymol_constants import *
+from random import random
 
-def style_lipid(lipid_selection_name):
+def style_lipid(lipid_selection_name, transparency=0.7):
+	if transparency<0: transparency=0.7
+	print(">>>>  lipid transp", transparency)
+	cmd.set("stick_transparency", transparency, lipid_selection_name)
+	cmd.color(mol_color.get("lipid", "white"), lipid_selection_name)
 	cmd.show("sticks",lipid_selection_name)
-	cmd.color( mol_color.get(lipid_selection_name, "white"), lipid_selection_name)
-	cmd.set("stick_transparency", 0.7, lipid_selection_name)
 
 
 def style_substrate(substrate_selection_name, color):
@@ -40,13 +43,14 @@ def ghost_rep(selection):
 	cmd.show("surface", selection)
 
 
-def interface_outline(reference_selection, interactant, color):
+def interface_outline(reference_selection, interactant, color, depth=3, transparency=0.7):
 	cmd.hide("everything", interactant)
 	name = "{}_if".format(interactant.replace("(","").replace(")","").replace(" ",""))
+	name = "{}_{}".format(reference_selection.replace("(","").replace(")","").replace(" ",""), name)
 	# move selection to its own object
-	cmd.create(name, "byres {} within 3 of {}".format(interactant, reference_selection))
+	cmd.create(name, "byres {} within {} of {}".format(interactant, depth, reference_selection))
 	cmd.color(color, name)
-	cmd.set("transparency", 0.7, name)
+	cmd.set("transparency",transparency, name)
 	cmd.show("surface", name)
 
 
@@ -100,8 +104,8 @@ def clump_representation(regions, color, name, transparency=-1.0, small_molecule
 
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
-	if transparency<=0:
-		cmd.set("spec_reflect", 0.0)
+	#if transparency<=0:
+	cmd.set("spec_reflect", 0.0)
 
 	if small_molecule:
 		cmd.alter("all", "b=20")
@@ -235,6 +239,22 @@ def intermediate_tfm(source_tfm, target_tfm, number_of_frames, frameno):
 	return tfm
 
 
+# hack to get rid of lipid residues instead of fading away
+lipid_resnums = set()
+
+def lipid_decimate(number_of_frames, frame):
+	global lipid_resnums
+	if len(lipid_resnums)==0: return
+	deleted = set()
+	fraction = 0.2
+	print(" **** lips remaining %d, fraction: %.2f" % (len(lipid_resnums), fraction))
+	for resi in lipid_resnums:
+		if frame==number_of_frames or random()<fraction:
+			deleted.add(resi)
+			cmd.remove("lipid and resi {}".format(resi))
+	lipid_resnums =	lipid_resnums.difference(deleted)
+
+
 def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 	tmpnames = []
 
@@ -244,6 +264,7 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 		frame = frameno
 		if reverse: frame = number_of_frames  - frame
 		tfm = intermediate_tfm(source_tfm, target_tfm, number_of_frames, frame)
+		if objnm=="lipid": lipid_decimate(number_of_frames, frameno)
 		tmpnm = objnm + str(frameno)
 		cmd.copy(tmpnm, objnm, zoom=0)
 		cmd.transform_selection(tmpnm, tfm)
@@ -251,8 +272,12 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 		if transparency_range:
 			transparency = transparency_range[0] \
 			               + float(frameno)/number_of_frames*(transparency_range[1]-transparency_range[0])
+
 		if small_molecule:
-			style_substrate(tmpnm, mol_color[objnm])
+			if objnm=="lipid":
+				style_lipid(tmpnm)
+			else:
+				style_substrate(tmpnm, mol_color[objnm])
 		else:
 			clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
 		tmpnames.append(tmpnm)
@@ -288,10 +313,24 @@ def morph_movie(morph, view, color, base_name, frameno_offset=0, morph_reverse=F
 	return last_frame
 
 
-
 def scene_interpolate(view_init_str, object_properties, base_name,
                       number_of_frames=15, frameno_offset=0,
                       view_last_str=None, morph_properties=None):
+
+	# the hope is to get rid of this some day
+	# though it does not seem that it will happen before we move to blender
+	global lipid_resnums
+	if "lipid" in object_properties.keys():
+		style_lipid("lipid")
+		props = object_properties["lipid"]
+		# the fifth argument is transparency - so the attempt was made to fiddle with lipd transparency
+		if len(props)>5:
+			# lipid is a special problem because I chose to represent it with sticks and transparency
+			# does not work for raytraced sticks (duh)
+			with open("{}/{}".format(structure_home, structure_filename["lipid"])) as inf:
+				for line in inf:
+					if line[:4]!="ATOM": continue
+					lipid_resnums.add(line.split()[4])
 
 	if morph_properties:
 		morph_lengths = set()
@@ -332,7 +371,7 @@ def scene_interpolate(view_init_str, object_properties, base_name,
 		if morph_properties:
 			tmp_obj_props = {}
 			for morph_name, props in morph_properties.items():
-				[morph_color, morph_reverse, tfm_from, tf_to, tfm_reverse] = props
+				[morph_color, morph_reverse, tfm_from, tf_to, tfm_reverse, transparency] = props
 				# change shape
 				if morph_reverse:
 					stateno = max(1, cmd.count_states(morph_name) - frameno)
@@ -340,7 +379,7 @@ def scene_interpolate(view_init_str, object_properties, base_name,
 					stateno = min(frameno+1, cmd.count_states(morph_name))
 				morph_state_name = morph_name + "_" + str(stateno).zfill(4)
 				# [identity_tfm, gbg_tfm, tfm_reverse, color, small_molecule rep]
-				tmp_obj_props[morph_state_name] = [tfm_from, tf_to, tfm_reverse, morph_color, False]
+				tmp_obj_props[morph_state_name] = [tfm_from, tf_to, tfm_reverse, morph_color, False, transparency]
 			# reposition all morphs and show them as clumps
 			tmpnames.extend(object_tfm_interpolate(tmp_obj_props, number_of_frames, frameno))
 		# some of the ops above move camera (why the f do you have to move the camera to create a new rep?)

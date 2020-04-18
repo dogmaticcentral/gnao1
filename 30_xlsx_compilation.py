@@ -1,7 +1,8 @@
 #!/usr/bin/python3 -u
 import math
 import re
-from utils.mysql import *
+
+from utils.utils import *
 import numpy as np
 import xlsxwriter
 
@@ -36,20 +37,6 @@ ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "imm
 main_families = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", "MTNR", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER"]
 
-
-#########################################
-def gnao1_connect():
-
-	db = connect_to_mysql("/home/ivana/.tcga_conf")
-	cursor = db.cursor()
-	search_db(cursor, "set autocommit=1")
-	db.set_character_set('utf8mb4')
-	cursor.execute('SET NAMES utf8mb4')
-	cursor.execute('SET CHARACTER SET utf8mb4')
-	cursor.execute('SET character_set_connection=utf8mb4')
-	switch_to_db(cursor, "gnao1")
-
-	return db, cursor
 
 
 ##########################################
@@ -485,7 +472,7 @@ def table_creator(cursor, targets_compact):
 
 	pattern = re.compile(r'\w(\d+)')
 	variants = {} # well sort them per position
-	for [variant] in  hard_landing_search(cursor, "select distinct(protein) from cases"):
+	for [variant] in hard_landing_search(cursor, "select distinct(protein) from cases"):
 		position = int(pattern.search(variant).group(1))
 		if not position in variants: variants[position] = []
 		variants[position].append(variant)

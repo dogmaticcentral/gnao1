@@ -2,6 +2,9 @@
 from PIL import Image
 import os, shutil
 
+
+#########################################
+
 def convert_to_jpg(fnm):
 	# note e includes "."
 	f, e = os.path.splitext(fnm)

@@ -15,7 +15,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 ac_tfm = (-0.9616358280181885, -0.07019875943660736, 0.2651955783367157,
           -74.41816751414048, -0.013318713754415512, -0.9536183476448059,
@@ -71,7 +71,7 @@ def sequence():
 	# morph has this bugger of N-term helix
 	extract_state_to_object("morph", 24, "gnao")
 	cmd.remove("ggamma and resi 52-62") # disordered tail creates a hole in rendered surface
-	make_GDP("substrate", "substrate_GDP")
+	make_GDP("substrate", "substrate-GDP")
 
 	cmd.transform_selection("AC", ac_tfm)
 	cmd.transform_selection("RGS", ac_tfm)
@@ -83,23 +83,21 @@ def sequence():
 
 	if production: # run without gui
 
-		clump_representation(["substrate_GDP"], "marine", "substrate_GDP")
-		clump_representation(["gnao"], "lightblue", "gnao", transparency=0.5)
-		clump_representation(["AC"], "raspberry", "AC")
-		clump_representation(["RGS"], "salmon", "RGS")
-		clump_representation(["GPCR"], "orange", "GPCR")
+		for structure  in ["GPCR",  "AC"]:
+			clump_representation([structure], mol_color[structure], structure)
 		style_lipid("lipid")
+
 		cmd.set_view(sequence_14_view[0])
 
 		frame_offset = 0
 		transparency_range = [0.5, 0.0]
-		object_properties = {"gnao": [identity_tfm, ac_tfm, True, "lightblue", False, transparency_range],
-		                     "substrate_GDP": [identity_tfm, ac_tfm, True, "marine", False],
+		object_properties = {"gnao": [identity_tfm, ac_tfm, True, mol_color["gnao"], False, transparency_range],
+		                     "substrate-GDP": [identity_tfm, ac_tfm, True, mol_color["substrate-GDP"], True],
 
-		                     "RGS":[identity_tfm, rgs_tfm, False, "salmon", False],
+		                     "RGS":[identity_tfm, rgs_tfm, False, mol_color["RGS"], False],
 
-		                     "gbeta": [identity_tfm, gbg_tfm, True, "magenta", False],
-		                     "ggamma": [identity_tfm, gbg_tfm, True, "palegreen", False]}
+		                     "gbeta": [identity_tfm, gbg_tfm, True, mol_color["gbeta"], False],
+		                     "ggamma": [identity_tfm, gbg_tfm, True, mol_color["ggamma"], False]}
 
 		scene_interpolate(sequence_14_view[0], object_properties, frame_basename,
 		                  number_of_frames=50, frameno_offset=frame_offset, view_last_str=sequence_14_view[1])

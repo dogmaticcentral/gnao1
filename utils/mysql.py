@@ -2,6 +2,21 @@ import MySQLdb, sys, warnings
 
 
 #########################################
+def gnao1_connect():
+
+	db = connect_to_mysql("/home/ivana/.tcga_conf")
+	cursor = db.cursor()
+	search_db(cursor, "set autocommit=1")
+	db.set_character_set('utf8mb4')
+	cursor.execute('SET NAMES utf8mb4')
+	cursor.execute('SET CHARACTER SET utf8mb4')
+	cursor.execute('SET character_set_connection=utf8mb4')
+	switch_to_db(cursor, "gnao1")
+
+	return db, cursor
+
+
+#########################################
 def error_intolerant_search(cursor, qry):
 	ret =  search_db(cursor, qry)
 	if not ret: return ret

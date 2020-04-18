@@ -17,10 +17,10 @@ Switching to GNAO-centric view
 [* 16] GNAO1 has two large  lobes or  domains [get transparent while morphing to uncover cartoon structure]
 [* 17] the NBD has the following functions: Gbg binding, GPCR binding,  nucleotide binding/ catalytic site,
 ADCY binding, RGS binding
-The helix domain does not seem to have any kneo interactions
+[* 18] The helix domain does not seem to have any known interactions
 
 
-[* 18] taking a more detatiles look into the structure of the proteins
+[* 19] taking a more detatiled look into the structure of the proteins
 
 The fucntion of the helix domain is less fien tuned
 [* 20] as witnessed by the fact that it is as variable as the GTP-binding domain (GBD), 

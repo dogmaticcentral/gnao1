@@ -15,7 +15,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 ac_tfm = (-0.9616358280181885, -0.07019875943660736, 0.2651955783367157,
           -74.41816751414048, -0.013318713754415512, -0.9536183476448059,
@@ -37,7 +37,7 @@ identity_tfm = (1, 0, 0, 0,
 @cmd.extend
 def sequence():
 
-	production = False
+	production = True
 
 	dirname = "10_docking_to_adcy"
 	frame_basename = "seq10frm"
@@ -53,45 +53,50 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["gnao", "gnao-gpcr", "lipid",  "AC", "GPCR"]
+	all_structures = ["morph", "gnao-gpcr", "lipid",  "AC", "GPCR"]
 	load_structures(structure_home, structure_filename, all_structures)
+
+	# morph has this bugger of N-term helix
+	extract_state_to_object("morph", 24, "gnao")
+
 	cmd.transform_selection("gnao-gpcr", Gnao_tfm)
 	cmd.transform_selection("AC", ac_tfm)
+
 	# gnao coords are originally  docked to ADCY (or the other way round,; anyway they travel together)
 	cmd.transform_selection("gnao", ac_tfm)
 	cmd.copy("gnao-docked", "gnao")
 	cmd.align("gnao", "gnao-gpcr and resi 210-340")
 	# get the tfm - we will use it to reverse-dock gnao
 	docking_tfm = cmd.get_object_matrix("gnao")
-	# get rid of gnao gpcr
+
+
+	# get rid of all aux structures
 	cmd.remove("gnao-gpcr")
 	cmd.hide("everything","gnao-docked")
+
+
 	cmd.bg_color("white")
 
 	if production: # run without gui
 
-		clump_representation(["gnao"], "lightblue", "gnao")
-		clump_representation(["AC"], "raspberry", "AC")
-		clump_representation(["GPCR"], "orange", "GPCR")
+		for structure  in ["GPCR", "gnao", "AC"]:
+			clump_representation([structure], mol_color[structure], structure)
 		style_lipid("lipid")
 
-		frame_offset = 0
-		cmd.set_view(sequence_10_view[0])
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
-		frame_offset += 1
-		frame_offset = view_interpolate(sequence_10_view[0], sequence_10_view[1], frame_basename,
-		                                number_of_frames=15, frameno_offset=frame_offset)
+		# frame_offset = 0
+		# cmd.set_view(sequence_10_view[0])
+		# cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
+		# frame_offset += 1
+		# frame_offset = view_interpolate(sequence_10_view[0], sequence_10_view[1], frame_basename,
+		#                                 number_of_frames=15, frameno_offset=frame_offset)
 
 		# the first boolean indicates whethter the trajectory should go in reverse
 		# and he decond one whether the object should be visualized using small molecule settings
-		clump_cleanup(["gnao"],  "gnao")
-		#frame_offset = 16
+		clump_cleanup(["gnao"],"gnao")
+		frame_offset = 16
 		object_properties = {"gnao-docked": [identity_tfm, docking_tfm, True, "lightblue", False]}
 		frame_offset  = scene_interpolate(sequence_10_view[1], object_properties, frame_basename,
-		                                  number_of_frames=10, frameno_offset=frame_offset)
-		# # interpolate to the view zoomed onto Galpha
-		# frame_offset = view_interpolate(sequence_08_view[0], sequence_08_view[1], frame_basename,
-		#                                 number_of_frames=15, frameno_offset=frame_offset)
+		                                  number_of_frames=25, frameno_offset=frame_offset)
 
 
 	else: # run from gui

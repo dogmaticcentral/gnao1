@@ -12,7 +12,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 
 # pheno is defined in pymol_constants

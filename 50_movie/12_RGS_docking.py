@@ -1,6 +1,6 @@
 #!  /usr/local/bin/pymol -qc
 '''
-[* 13] ATP breakdown - this we will olve as two static images to be morphed in post-production
+[* 12] RGS docking
 '''
 # to tfm in pymol https://pymolwiki.org/index.php/Transform_selection
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
@@ -15,7 +15,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 ac_tfm = (-0.9616358280181885, -0.07019875943660736, 0.2651955783367157,
           -74.41816751414048, -0.013318713754415512, -0.9536183476448059,
@@ -39,8 +39,10 @@ def sequence():
 
 	production = True
 
-	dirname = "13_ATP_breakdown"
-	frame_basename = "seq13frm"
+	dirname = "12_RGS_docking"
+	frame_basename = "seq12frm"
+
+	time0 = time()
 
 	for dep in [structure_home, frames_home]:
 		if not os.path.exists(dep):
@@ -51,37 +53,52 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["gnao",  "lipid",  "AC", "RGS", "substrate"]
+	all_structures = ["gnao",  "lipid",  "AC", "GPCR", "RGS"]
 	load_structures(structure_home, structure_filename, all_structures)
-	make_GDP("substrate", "substrate_GDP")
 	cmd.transform_selection("AC", ac_tfm)
 	cmd.transform_selection("RGS", ac_tfm)
+	cmd.copy("RGS_docked", "RGS")
 	cmd.transform_selection("gnao", ac_tfm)
-	cmd.transform_selection("substrate", ac_tfm)
-	cmd.transform_selection("substrate_GDP", ac_tfm)
 
 	cmd.bg_color("white")
 
-	clump_representation(["substrate"], "pink", "substrate")
-	clump_representation(["gnao"], "lightblue", "gnao", transparency=0.5)
-	clump_representation(["AC"], "raspberry", "AC")
-	clump_representation(["RGS"], "salmon", "RGS")
-	style_lipid("lipid")
-	cmd.set_view(sequence_13_view[0])
-
 	if production: # run without gui
-		frame_offset = 0
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
 
-		clump_cleanup(["substrate"],"substrate")
-		clump_representation(["substrate_GDP"], "marine", "substrate_GDP")
-		cmd.set_view(sequence_13_view[0])
-		frame_offset = 1
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
+		clump_representation(["gnao"], "lightblue", "gnao")
+		clump_representation(["AC"], "raspberry", "AC")
+		clump_representation(["GPCR"], "orange", "GPCR")
+		style_lipid("lipid")
+
+		# frame_offset = 0
+		# cmd.set_view(sequence_12_view[0])
+		# cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
+		# frame_offset += 1
+		# frame_offset = view_interpolate(sequence_12_view[0], sequence_12_view[1], frame_basename,
+		#                                 number_of_frames=10, frameno_offset=frame_offset)
+		#
+		# the first boolean indicates whethter the trajectory should go in reverse
+		# and he decond one whether the object should be visualized using small molecule settings
+		clump_cleanup(["GPCR"],  "GPCR")
+		frame_offset = 11
+		object_properties = {"RGS_docked": [identity_tfm, rgs_tfm, True, "salmon", False]}
+		frame_offset  = scene_interpolate(sequence_12_view[1], object_properties, frame_basename,
+		                                  number_of_frames=12, frameno_offset=frame_offset)
+		# # interpolate to the view zoomed onto Galpha
+		# frame_offset = view_interpolate(sequence_08_view[0], sequence_08_view[1], frame_basename,
+		#                                 number_of_frames=15, frameno_offset=frame_offset)
 
 
+	else: # run from gui
+		cmd.viewport(1920, 1080)
+		style_lipid("lipid")
+		for struct in ["GPCR", "gnao", "AC", "RGS"]:
+			cmd.show_as("cartoon", struct)
 
 
+		cmd.set_view(sequence_12_view[0])
+
+
+	print("done in %d secs" %(time()-time0))
 
 	return
 

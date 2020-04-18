@@ -21,7 +21,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 identity_tfm = (1, 0, 0, 0,
                 0, 1, 0, 0,
@@ -62,11 +62,9 @@ def sequence():
 
 	if production: # run without gui
 
-		clump_representation(["GPCR"], "orange", "GPCR")
-		clump_representation(["AC"], "raspberry", "AC")
-		clump_representation(["substrate-GDP"], "marine", "substrate-GDP")
-		clump_representation(["gbeta"], "magenta", "gbeta")
-		clump_representation(["ggamma"], "palegreen", "ggamma")
+		for structure  in ["GPCR", "AC","gbeta", "ggamma"]:
+			clump_representation([structure], mol_color[structure], structure)
+		style_substrate("substrate-GDP", mol_color["substrate-GDP"])
 		style_lipid("lipid")
 
 		morph_movie("morph", sequence_15_view[0], "lightblue", frame_basename, frameno_offset=0, morph_reverse=True)

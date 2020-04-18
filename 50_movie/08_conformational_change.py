@@ -15,7 +15,7 @@ from utils.pymol_constants import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 
-frames_home = "/home/ivana/projects/gnao1db/30_movie/movie"
+frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 Gbg_tfm = (0.7969592213630676, 0.006222372408956289, 0.6040011048316956,
            0.6289221365789857, 0.13691268861293793, 0.9720604419708252,
@@ -72,7 +72,7 @@ def sequence():
 
 	if production: # run without gui
 
-		for structure  in ["GPCR"]:
+		for structure  in ["GPCR", "gnao-gpcr"]:
 			clump_representation([structure], mol_color[structure], structure)
 		style_substrate("substrate", mol_color["substrate"])
 
