@@ -43,23 +43,21 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["GPCR", "gbeta", "gnao-gpcr",  "RGS", "substrate"]
+	all_structures = ["AC",  "RGS", "substrate", "gnao"]
 	load_structures(structure_home, structure_filename, all_structures)
-	make_GDP("substrate", "substrate-GDP")
-
 
 	cmd.bg_color("white")
 
 	if production: # run without gui
 
-		style_substrate("substrate-GDP",  mol_color["substrate-GDP"])
-		for structure in ["GPCR","gbeta", "RGS"]:
-			clump_representation([structure], mol_color[structure], structure, 0.5)
-		cmd.copy("gnao-cartoon", "gnao-gpcr")
+		style_substrate("substrate",  mol_color["substrate"])
+		for structure in ["AC", "RGS"]:
+			clump_representation([structure], mol_color[structure], structure)
+		cmd.copy("gnao-cartoon", "gnao")
 		cmd.show("cartoon", "gnao-cartoon")
 		cmd.color("white", "gnao-cartoon")
 		cmd.set("ray_shadows", "off")
-		structure = "gnao-gpcr"
+		structure = "gnao"
 		clump_representation([structure], mol_color[structure], structure, 0.7)
 
 		frame_offset = 0

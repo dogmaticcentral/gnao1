@@ -3,18 +3,18 @@
 # To run from pymol itself, open pymol and find conservation_on_the_structure.pml
 # in the 'File'->'Run Script ...' dropdown menu.
 
-# If you do not have pymol installed, check 
+# If you do not have pymol installed, check
 # https://pymolwiki.org/index.php/Windows_Install
-# or the links for other platforms at the bottom of that page. 
+# or the links for other platforms at the bottom of that page.
 
-load gnao1.pdb, the_whole_thing
+load gnao1A.pdb, the_whole_thing
 zoom complete=1
 bg_color white
 hide everything
-select chainA, the_whole_thing and chain A and polymer 
-color white,  chainA 
-show cartoon, chainA 
-show spheres, chainA 
+select chainA, the_whole_thing and chain A and polymer
+color white,  chainA
+show cartoon, chainA
+show spheres, chainA
 set_color c0 = [1, 0.83, 0.17]
 set_color c1 = [1, 0, 0]
 set_color c2 = [0.73, 0, 0]
@@ -351,18 +351,18 @@ color c19, resid 165 and chain A
 color c15, resid 172 and chain A
 color c15, resid 195 and chain A
 color c14, resid 130 and chain A
-select heteroatoms,  hetatm and not solvent 
-select other_chains, not chain A 
-select struct_water, solvent and chain A 
+select heteroatoms,  hetatm and not solvent
+select other_chains, not chain A
+select struct_water, solvent and chain A
 select metals, symbol  mg+ca+fe+zn+na+k+mn+cu+ni+cd+i
-cartoon putty 
-show  cartoon,  other_chains 
-hide  spheres,   heteroatoms 
-show  sticks,   heteroatoms 
-show  spheres,  struct_water 
-show  spheres,  metals 
-color palecyan, struct_water 
-color lightteal, other_chains or heteroatoms 
+cartoon putty
+show  cartoon,  other_chains
+hide  spheres,   heteroatoms
+show  sticks,   heteroatoms
+show  spheres,  struct_water
+show  spheres,  metals
+color palecyan, struct_water
+color lightteal, other_chains or heteroatoms
 color magenta, metals
 zoom  chain A
 select poorly_scoring, resid 160+135+65+112+114+238+119+128+66+150+105
@@ -380,4 +380,4 @@ select poorly_scoring, poorly_scoring or resid 248+104+102+82+145+78+127+115+318
 select poorly_scoring, poorly_scoring or resid 218+307+109+311+258+313+285+100+63+116+188
 select poorly_scoring, poorly_scoring or resid 241+298+165+172+195+130
 select poorly_scoring, poorly_scoring and chainA
-deselect 
+deselect

@@ -12,6 +12,15 @@ import quaternion  # pip3 install numpy-quaternion and numba
 from pymol_constants import *
 from random import random
 
+
+# pheno is defined in pymol_constants
+def pheno_residues():
+	for resi, counts in pheno.items():
+		norm = sqrt(sum([ct**2 for ct in counts.values()]))
+		residue_color("gnao", resi, [counts["mov"]/norm, counts["both"]/norm, counts["epi"]/norm])
+		cmd.show("spheres", "{} and resi {}".format("gnao", resi))
+
+
 def style_lipid(lipid_selection_name, transparency=0.7):
 	if transparency<0: transparency=0.7
 	print(">>>>  lipid transp", transparency)
@@ -20,9 +29,11 @@ def style_lipid(lipid_selection_name, transparency=0.7):
 	cmd.show("sticks",lipid_selection_name)
 
 
-def style_substrate(substrate_selection_name, color):
+def style_substrate(substrate_selection_name, color, transparency=None):
 	cmd.show("spheres", substrate_selection_name)
 	cmd.color(color, substrate_selection_name)
+	if transparency:
+		cmd.set("sphere_transparency", transparency, substrate_selection_name)
 
 
 
@@ -43,7 +54,7 @@ def ghost_rep(selection):
 	cmd.show("surface", selection)
 
 
-def interface_outline(reference_selection, interactant, color, depth=3, transparency=0.7):
+def interface_outline(reference_selection, interactant, color, depth=5, transparency=0.7):
 	cmd.hide("everything", interactant)
 	name = "{}_if".format(interactant.replace("(","").replace(")","").replace(" ",""))
 	name = "{}_{}".format(reference_selection.replace("(","").replace(")","").replace(" ",""), name)
@@ -52,21 +63,6 @@ def interface_outline(reference_selection, interactant, color, depth=3, transpar
 	cmd.color(color, name)
 	cmd.set("transparency",transparency, name)
 	cmd.show("surface", name)
-
-
-def load_structures(structure_home, structure_filename, structures):
-
-	for structure in structures:
-		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), object=structure)
-		cmd.hide("everything", structure)
-
-	if "AC" in structures:
-		cmd.remove("AC and chain B")
-
-	if "GPCR" in structures:
-		cmd.remove("resi 343-1200 and GPCR")
-
-	return
 
 
 def extract_state_to_object(morph, state, new_object):
@@ -104,7 +100,6 @@ def clump_representation(regions, color, name, transparency=-1.0, small_molecule
 
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
-	#if transparency<=0:
 	cmd.set("spec_reflect", 0.0)
 
 	if small_molecule:
@@ -138,6 +133,37 @@ def clump_cleanup(regions, name):
 		cmd.delete(surfname)
 		cmd.delete(mapname)
 
+
+def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7):
+	cmd.hide("everything", interactant)
+	name = "{}_if".format(interactant.replace("(","").replace(")","").replace(" ",""))
+	name = "{}_{}".format(reference_selection.replace("(","").replace(")","").replace(" ",""), name)
+	# move selection to its own object
+	cmd.create(name, "byres {} within {} of {}".format(interactant, depth, reference_selection))
+	clump_representation([name], color, name, transparency=transparency)
+
+def residue_cluster_clump(parent_selection, res_list, name, color, transparency=0.7):
+	cmd.create(name, "{} and resi  {} ".format(parent_selection, "+".join([str(r) for r in res_list])))
+	clump_representation([name], color, name, transparency=transparency)
+
+
+def load_structures(structure_home, structure_filename, structures):
+
+	for structure in structures:
+		cmd.load("{}/{}".format(structure_home, structure_filename[structure]), object=structure)
+		cmd.hide("everything", structure)
+
+	if "AC" in structures:
+		cmd.remove("AC and chain B")
+
+	if "GPCR" in structures:
+		cmd.remove("resi 343-1200 and GPCR")
+
+	return
+
+
+######################################################################
+######################################################################
 
 def view_string2view(view_string):
 	return [float(f) for f in view_string.split(",")]
@@ -277,7 +303,7 @@ def object_tfm_interpolate(object_properties, number_of_frames, frameno):
 			if objnm=="lipid":
 				style_lipid(tmpnm)
 			else:
-				style_substrate(tmpnm, mol_color[objnm])
+				style_substrate(tmpnm, mol_color[objnm], transparency)
 		else:
 			clump_representation([tmpnm], color, tmpnm, small_molecule=small_molecule, transparency=transparency)
 		tmpnames.append(tmpnm)

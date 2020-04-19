@@ -43,28 +43,29 @@ def sequence():
 	pymol_chdir("{}/{}".format(frames_home, dirname))
 
 	# the initial scene containing the GPCR-bound G-trimer
-	all_structures = ["GPCR", "gbeta", "gnao-gpcr", "morph", "RGS", "substrate"]
+	all_structures = ["AC",  "gnao", "morph", "RGS", "substrate"]
 	load_structures(structure_home, structure_filename, all_structures)
-	make_GDP("substrate", "substrate-GDP")
 
 
 	cmd.bg_color("white")
 
 	if production: # run without gui
 
-		style_substrate("substrate-GDP",  mol_color["substrate-GDP"])
-		for structure in ["GPCR","gbeta", "RGS"]:
+		style_substrate("substrate", mol_color["substrate"])
+		for structure in ["AC", "RGS"]:
 			clump_representation([structure], mol_color[structure], structure)
 
 		frame_offset = 0
+		object_props = {}
 		# props = [morph_color, morph_reverse, tfm_from, tf_to, tfm_reverse, transparency range]
 		morph_props = {"morph":[mol_color["morph"], False, identity_tfm, identity_tfm, False, [0.3, 0.3]]}
-		frame_offset = scene_interpolate(sequence_18_view[0], {}, frame_basename,number_of_frames=10, frameno_offset=frame_offset,
+		frame_offset = scene_interpolate(sequence_18_view[0], object_props, frame_basename, number_of_frames=10,
+		                                 frameno_offset=frame_offset,
 		                  view_last_str=sequence_18_view[1], morph_properties=morph_props)
-		# frame_offset = 25
-		morph_props = {"morph":[mol_color["morph"], True, identity_tfm, identity_tfm, False, [0.3, 0.3]]}
-		frame_offset = scene_interpolate(sequence_18_view[1], {}, frame_basename,number_of_frames=10, frameno_offset=frame_offset,
-		                  view_last_str=sequence_18_view[1], morph_properties=morph_props)
+		# # frame_offset = 25
+		# morph_props = {"morph":[mol_color["morph"], True, identity_tfm, identity_tfm, False, [0.3, 0.3]]}
+		# frame_offset = scene_interpolate(sequence_18_view[1], {}, frame_basename,number_of_frames=10, frameno_offset=frame_offset,
+		#                   view_last_str=sequence_18_view[1], morph_properties=morph_props)
 
 
 
@@ -72,10 +73,10 @@ def sequence():
 	else:
 		# cmd.viewport(1920, 1080)
 
-		clump_representation(["gnao-gpcr"],  mol_color["gnao-gpcr"], "gnao-gpcr", transparency=0.3)
+		clump_representation(["gnao"],  mol_color["gnao"], "gnao", transparency=0.3)
 		style_substrate("substrate-GDP",  mol_color["substrate-GDP"])
 
-		for structure in ["GPCR","gbeta", "RGS"]:
+		for structure in ["AC", "RGS"]:
 			clump_representation([structure], mol_color[structure], structure)
 
 

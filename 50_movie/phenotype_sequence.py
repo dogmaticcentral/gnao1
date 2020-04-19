@@ -15,13 +15,6 @@ from utils.utils import *
 frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 
-# pheno is defined in pymol_constants
-def pheno_residues():
-	for resi, counts in pheno.items():
-		norm = sqrt(sum([ct**2 for ct in counts.values()]))
-		residue_color("gnao", resi, [counts["mov"]/norm, counts["both"]/norm, counts["epi"]/norm])
-		cmd.show("spheres", "{} and resi {}".format("gnao", resi))
-
 
 def make_stills(view):
 	epi_only = []
