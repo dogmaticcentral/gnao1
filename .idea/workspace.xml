@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/30_pdbs_w_galpha.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/31_pdbs_download.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/32_find_interacting_chains.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/33_pdbs_match.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/34_interface_w_epilepsy_piece.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/pdb_constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/pdb_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/restfuls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/28_schematics_for_xls.py" beforeDir="false" afterPath="$PROJECT_DIR$/36_schematics_for_xls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,72 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="21_GBD_only.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/21_GBD_only.py">
+      <file leaf-file-name="34_interface_w_epilepsy_piece.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/34_interface_w_epilepsy_piece.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="22_GBD_active_interfaces.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pymol_constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pheno_scene_views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/pheno_scene_views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#1#39#0" expanded="true" />
-                <element signature="e#4160#4327#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phenotype_sequence.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/phenotype_sequence.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#213#222#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="287">
+              <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -94,7 +45,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hydroaltesone</find>
       <find>variant</find>
       <find>xion</find>
       <find>phenome2014novo</find>
@@ -124,6 +74,7 @@
       <find>re.</find>
       <find>&quot;gnao&quot;</find>
       <find>+</find>
+      <find>in descr or</find>
     </findStrings>
     <replaceStrings>
       <replace>depth</replace>
@@ -161,14 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/12_drug_action_fix.py" />
-        <option value="$PROJECT_DIR$/07_load_guidetopharm.py" />
-        <option value="$PROJECT_DIR$/01_gnao1_schema.sql" />
-        <option value="$PROJECT_DIR$/11_load_guidetopharm.py" />
-        <option value="$PROJECT_DIR$/12_drug_mode_of_action_fix.py" />
-        <option value="$PROJECT_DIR$/utils/pymol.py" />
-        <option value="$PROJECT_DIR$/utils/visualization_utils.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/30_movie.py" />
         <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
         <option value="$PROJECT_DIR$/28_xlsx_compilation.py" />
@@ -212,14 +155,22 @@
         <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
         <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/utils/pdb_tools.py" />
+        <option value="$PROJECT_DIR$/30_pdbs_for_a_sequence.py" />
+        <option value="$PROJECT_DIR$/33_pdbs_match.py" />
+        <option value="$PROJECT_DIR$/utils/restfuls.py" />
+        <option value="$PROJECT_DIR$/31_pdbs_download.py" />
+        <option value="$PROJECT_DIR$/30_pdbs_w_galpha.py" />
+        <option value="$PROJECT_DIR$/32_find_interacting_chains.py" />
+        <option value="$PROJECT_DIR$/34_interface_w_epilepsy_piece.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2004" />
-    <option name="y" value="32" />
-    <option name="width" value="1730" />
-    <option name="height" value="1009" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2021" />
+    <option name="y" value="27" />
+    <option name="width" value="1717" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -239,17 +190,6 @@
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="50_movie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="50_movie" type="462c0819:PsiDirectoryNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -265,16 +205,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/50_movie" />
-      <recent name="$PROJECT_DIR$/30_movie" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/30_movie/tools" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/07_first_pass" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/50_movie" />
+      <recent name="$PROJECT_DIR$/30_movie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -303,10 +243,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="2021" y="27" width="1717" height="1001" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766473" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21015349" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -363,54 +303,10 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/12_drug_mode_of_action_fix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymol2/cmd2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4860" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/internal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="630" column="28" selection-start-line="630" selection-start-column="22" selection-end-line="630" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/visualization_utils.py" />
-    <entry file="file://$PROJECT_DIR$/06_load_pubmed_from_hgmd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="66" selection-start-line="63" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/dist-packages/pyquaternion/quaternion.py" />
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/viewing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="772" column="8" selection-start-line="772" selection-start-column="8" selection-end-line="772" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/30_movie.py" />
     <entry file="file://$PROJECT_DIR$/50_movie/utils/utils.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -428,7 +324,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/28_schematics_for_xls.py">
+    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
@@ -580,10 +476,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/30_xlsx_compilation.py">
+    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="964">
           <caret line="478" lean-forward="true" selection-start-line="478" selection-end-line="478" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -673,7 +572,7 @@
     <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="20" />
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#1#39#0" expanded="true" />
             <element signature="e#4160#4327#0" />
@@ -690,8 +589,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="342">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/bs4/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/lib/python3.7/urllib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pdb_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#1#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pdb_constants.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/restfuls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="42" column="84" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="84" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/31_pdbs_download.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30_pdbs_w_galpha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="69" lean-forward="true" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
+          <folding>
+            <element signature="e#26#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/32_find_interacting_chains.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/33_pdbs_match.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#26#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/34_interface_w_epilepsy_piece.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
     </entry>
