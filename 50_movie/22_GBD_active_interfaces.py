@@ -28,8 +28,7 @@ from random import sample
 @cmd.extend
 def sequence():
 
-	production = False
-
+	production = True
 
 	dirname = "22_interfaces"
 	frame_basename = "seq22frm"
@@ -57,42 +56,106 @@ def sequence():
 	if production: # run without gui
 
 		cmd.remove("gnao-cartoon and resi 58-170")
+		cmd.remove("gnao-cartoon and resi 347-350") # see below
 		cmd.remove("gnao and resi 58-170")
+		cmd.remove("gnao and resi 347-350") # the isosurface at the GPCR interface won't close otherwise
 		# structure = "gnao"
 		# clump_representation([structure], mol_color[structure], structure, 0.7)
 
 		cmd.color("white", "gnao-cartoon")
 
-		cmd.hide("everything","substrate")
-		# cmd.set("spec_reflect", 0.0)
-		for structure in ["AC",  "RGS", "GPCR", "substrate"]:
-			interface_outline(structure, "gnao", mol_color[structure], depth=5, transparency=0.3)
 
-		fo = 0
-		fo = view_interpolate(sequence_22_view[0], sequence_22_view[1], frame_basename, number_of_frames=5, frameno_offset=fo)
-		fo = view_interpolate(sequence_22_view[1], sequence_22_view[2], frame_basename, number_of_frames=5, frameno_offset=fo)
+		# substrate
+		style_substrate("substrate", mol_color["substrate"])
+		interface_clump("substrate", "gnao", mol_color["substrate"], depth=5, transparency=0.3)
+		cmd.set_view(sequence_22_view[0])
+		cmd.center("gnao-cartoon")
+		centered_view = view2view_string(cmd.get_view())
+		# frame_offset = 0
+		# frame_offset = view_interpolate(sequence_22_view[0], centered_view, frame_basename,
+		#                                 number_of_frames=10, frameno_offset=frame_offset)
+		# frame_offset = view_rotate(360, "y",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+		#
+
+		############################
+		frame_offset = 36
+		cmd.remove("AC and (resi 1-1065 or resi 1175-1500)")
+		cmd.color(mol_color["AC"], "AC")
+		interface_clump("AC", "gnao", mol_color["AC"], depth=5, transparency=0.3)
+
+		cmd.set_view(sequence_22_view[0])
+		cmd.center("gnao-cartoon")
+		cmd.show_as("cartoon", "AC")
+		cmd.color(mol_color["AC"], "AC")
+		#frame_offset = view_rotate(-360, "y",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+
+
+		#############################
+		frame_offset = 62
+		cmd.hide("cartoon", "AC")
+		cmd.show_as("cartoon", "GPCR")
+		cmd.color(mol_color["GPCR"], "GPCR")
+		interface_clump("GPCR", "gnao", mol_color["GPCR"], depth=5, transparency=0.3)
+
+		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
+		cmd.center("gnao-cartoon")
+		# frame_offset = view_rotate(360, "y",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+
+
+		#############################
+		frame_offset = 88
+		cmd.hide("cartoon", "GPCR")
+		cmd.show_as("cartoon", "RGS")
+		cmd.color(mol_color["RGS"], "RGS")
+		interface_clump("RGS", "gnao", mol_color["RGS"], depth=5, transparency=0.3, grid_spacing=0.7)
+
+		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
+		cmd.center("gnao-cartoon")
+		#frame_offset = view_rotate(360, "y",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+
+		#############################
+		#frame_offset = 114
+		cmd.hide("cartoon", "RGS")
+		#frame_offset = view_rotate(360, "x",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+
+
+		#############################
+		# frame_offset = 140
+		residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.3)
+		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
+		cmd.center("gnao-cartoon")
+		#frame_offset = view_rotate(360, "x",  frame_basename, number_of_frames=25, frameno_offset=frame_offset)
+
+
+		#############################
+		frame_offset = 166
+		frame_offset = view_interpolate(centered_view, sequence_22_view[0], frame_basename,
+		                                number_of_frames=10, frameno_offset=frame_offset)
+
 
 	else:
 		cmd.viewport(1920, 1080)
 
-		#cmd.remove("gnao-cartoon and resi 58-170")
+		cmd.remove("gnao-cartoon and resi 58-170")
+		cmd.remove("gnao-cartoon and resi 347-350") # see below
 		cmd.remove("gnao and resi 58-170")
+		cmd.remove("gnao and resi 347-350") # the isosurface at the GPCR interface won't close otherwise
 		# structure = "gnao"
 		# clump_representation([structure], mol_color[structure], structure, 0.7)
 
 		cmd.color("white", "gnao-cartoon")
 
-		cmd.hide("everything","substrate")
-		# cmd.set("spec_reflect", 0.0)
-		for structure in ["AC",  "RGS", "GPCR", "substrate"]:
-			#interface_outline(structure, "gnao", mol_color[structure], depth=5, transparency=0.3)
-			interface_clump(structure, "gnao", mol_color[structure], depth=5, transparency=0.3)
+		cmd.show_as("cartoon", "RGS")
+		cmd.color(mol_color["RGS"], "RGS")
+		# i get a nice big hole with the default spacing
+		interface_clump("RGS", "gnao", mol_color["RGS"], depth=5, transparency=0.3, grid_spacing=0.7)
+		cmd.set_view(sequence_22_view[0])
+		cmd.center("gnao-cartoon")
 
-		residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.3)
 
-		pheno_residues()
+		#residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.3)
+		#pheno_residues()
 
-		cmd.set_view(sequence_22_view[1])
 
 
 

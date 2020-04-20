@@ -96,7 +96,7 @@ def residue_color(main_object, res_id, rgb_color_list):
 	cmd.color(color_name, "{} and resi {}".format(main_object, res_id))
 
 
-def clump_representation(regions, color, name, transparency=-1.0, small_molecule=False):
+def clump_representation(regions, color, name, transparency=-1.0, small_molecule=False, grid_spacing=1.5):
 
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
@@ -106,19 +106,19 @@ def clump_representation(regions, color, name, transparency=-1.0, small_molecule
 		cmd.alter("all", "b=20")
 		cmd.alter("all", "q=1")
 		cmd.set("gaussian_resolution", 7)
-		grid_spacing = 0.2
+		gsp = 0.2
 	else:
 		cmd.alter("all", "b=50")
 		cmd.alter("all", "q=1")
 		cmd.set("gaussian_resolution", 7)
-		grid_spacing = 1.5
+		gsp = grid_spacing
 
 	idx = 0
 	for region in regions:
 		idx += 1
 		mapname  = "map_{}_{}".format(name, idx)
 		surfname = "surf_{}_{}".format(name, idx)
-		cmd.map_new(mapname, "gaussian", grid_spacing, region, 2)
+		cmd.map_new(mapname, "gaussian", gsp, region, 2)
 		cmd.isosurface(surfname, mapname)
 		if transparency>0:
 			cmd.set("transparency", transparency, surfname)
@@ -134,17 +134,28 @@ def clump_cleanup(regions, name):
 		cmd.delete(mapname)
 
 
-def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7):
-	cmd.hide("everything", interactant)
+def if_clump_name(reference_selection, interactant):
 	name = "{}_if".format(interactant.replace("(","").replace(")","").replace(" ",""))
 	name = "{}_{}".format(reference_selection.replace("(","").replace(")","").replace(" ",""), name)
+	return name
+
+
+def interface_clump_cleanup(reference_selection, interactant):
+	name = if_clump_name(reference_selection, interactant)
+	clump_cleanup([name], name)
+
+
+def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7, grid_spacing=1.5):
+	cmd.hide("everything", interactant)
+	name = if_clump_name(reference_selection, interactant)
 	# move selection to its own object
 	cmd.create(name, "byres {} within {} of {}".format(interactant, depth, reference_selection))
-	clump_representation([name], color, name, transparency=transparency)
+	clump_representation([name], color, name, transparency=transparency, grid_spacing=grid_spacing)
+
 
 def residue_cluster_clump(parent_selection, res_list, name, color, transparency=0.7):
 	cmd.create(name, "{} and resi  {} ".format(parent_selection, "+".join([str(r) for r in res_list])))
-	clump_representation([name], color, name, transparency=transparency)
+	clump_representation([name], color, name, transparency=transparency, grid_spacing=1.5)
 
 
 def load_structures(structure_home, structure_filename, structures):
@@ -164,6 +175,18 @@ def load_structures(structure_home, structure_filename, structures):
 
 ######################################################################
 ######################################################################
+def view_rotate(angle_in_deg, axis,  base_name, number_of_frames=25, frameno_offset=0):
+	angle_chunk = angle_in_deg/number_of_frames
+	# no rotation ib the first frame
+	last_frame = frameno_offset
+	cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+	last_frame += 1
+	for frameno in range(number_of_frames):
+		cmd.turn(axis, angle_chunk) # turn turns the camera rather than the object
+		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		last_frame += 1
+	return last_frame
+
 
 def view_string2view(view_string):
 	return [float(f) for f in view_string.split(",")]
