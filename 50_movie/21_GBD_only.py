@@ -6,8 +6,7 @@
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
 # print(tfm) to have ti spit on the commandline in gui
-
-
+import sys
 from time import time
 
 from utils.pymol_pieces import *
@@ -28,7 +27,8 @@ from random import sample
 @cmd.extend
 def sequence():
 
-	production = False
+	production = (sys.argv[1] == '-qc')
+
 
 	diff = set(conserved).difference(set(gnomad_pos))
 	print(len(conserved), len(diff))

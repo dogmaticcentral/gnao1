@@ -6,7 +6,7 @@
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
 # print(tfm) to have ti spit on the commandline in gui
-
+import sys
 
 ac_tfm = (-0.9616358280181885, -0.07019875943660736, 0.2651955783367157,
           -74.41816751414048, -0.013318713754415512, -0.9536183476448059,
@@ -31,8 +31,7 @@ identity_tfm = (1, 0, 0, 0,
 @cmd.extend
 def sequence():
 
-	production = True
-
+	production = (sys.argv[1] == '-qc')
 
 	dirname = "15_GPCR_redock"
 	frame_basename = "seq15frm"

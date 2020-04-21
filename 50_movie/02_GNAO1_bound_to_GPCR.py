@@ -8,8 +8,7 @@ Camera moves down to focus on G-tetramer.
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
 # print(tfm) to have ti spit on the commandline in gui
-
-
+import sys
 from time import time
 
 from utils.pymol_constants import *
@@ -24,7 +23,8 @@ frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 @cmd.extend
 def sequence():
 
-	production = True
+	# carefule: starting production mode with gui can freeze teh desktop
+	production = (sys.argv[1] == '-qc')
 
 	dirname = "02_gpcr"
 	frame_basename = "seq02frm"

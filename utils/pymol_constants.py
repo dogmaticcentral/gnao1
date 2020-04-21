@@ -11,6 +11,12 @@ structure_filename = {
     "ggamma": "3sn6G.Ggamma.pdb",
     "lipid": "lipid_to_3sn6.pdb",
 	"morph": "morph_w_fixed_nterm_helix.pdb",
+    "rhogef" : "potential_interactants/1shzF.RhoGef1.pdb",
+    "GRK2" : "potential_interactants/2bcjA.GRK2.pdb",
+    "synembryn" : "potential_interactants/6tylF.synembryn.pdb",
+	"PLCB3" : "potential_interactants/3ohmB.phocpholipaseCb3.pdb",
+	"gnao_partner": "pseudoarray/partner.pdb",
+	"adcy_pseudosym": "pseudoarray/adcy_partner_pseudo_symmetric.pdb"
 }
 
 mol_color = {
@@ -24,7 +30,12 @@ mol_color = {
     "gbeta": "magenta",
     "ggamma": "palegreen",
     "lipid": "lightblue",
-	"morph": "lightblue"
+	"morph": "lightblue",
+    "rhogef" : "smudge",
+    "GRK2" : "chocolate",
+    "synembryn" : "deepsalmon",
+	"PLCB3" : "olive"
+
 }
 
 gnomad_pos= [11,34,63,66,72,86,92,96,97,104,106,107,108,123,128,129,130,133,134,138,142,

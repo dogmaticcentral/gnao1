@@ -14,11 +14,11 @@ from random import random
 
 
 # pheno is defined in pymol_constants
-def pheno_residues():
+def pheno_residues(gnao_structure="gnao"):
 	for resi, counts in pheno.items():
 		norm = sqrt(sum([ct**2 for ct in counts.values()]))
-		residue_color("gnao", resi, [counts["mov"]/norm, counts["both"]/norm, counts["epi"]/norm])
-		cmd.show("spheres", "{} and resi {}".format("gnao", resi))
+		residue_color(gnao_structure, resi, [counts["mov"]/norm, counts["both"]/norm, counts["epi"]/norm])
+		cmd.show("spheres", "{} and resi {}".format(gnao_structure, resi))
 
 
 def style_lipid(lipid_selection_name, transparency=0.7):

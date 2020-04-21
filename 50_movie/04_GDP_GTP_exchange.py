@@ -6,8 +6,7 @@
 # to get the tfm needed: copy object by hand, than follow this to get the tfm
 # see here https://pymolwiki.org/index.php/Get_object_matrix
 # print(tfm) to have ti spit on the commandline in gui
-
-
+import sys
 from time import time
 
 from utils.pymol_pieces import *
@@ -42,7 +41,7 @@ def style_lipid(lipid_selection_name):
 @cmd.extend
 def sequence():
 
-	production = True
+	production = (sys.argv[1] == '-qc')
 
 	dirname = "04_exchange"
 	frame_basename = "seq04frm"

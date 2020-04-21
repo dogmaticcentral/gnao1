@@ -2,7 +2,7 @@
 '''
 [* 17] two static images of open gnao and gnao interacting with AC and RGS - for morphing
 '''
-
+import sys
 from time import time
 
 from utils.pymol_pieces import *
@@ -18,8 +18,7 @@ frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 @cmd.extend
 def sequence():
 
-	production = True
-
+	production = (sys.argv[1] == '-qc')
 
 	dirname = "17_GBD_w_AC"
 	frame_basename = "seq17frm"

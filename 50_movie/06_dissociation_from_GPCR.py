@@ -9,8 +9,7 @@
 # print(tfm) to have ti spit on the commandline in gui
 # that is copy A to B; move B, align A to B, read off the A's tfm
 # print(cmd.get_object_matrix(A))
-
-
+import sys
 from time import time
 
 from utils.pymol_pieces import *
@@ -40,7 +39,7 @@ identity_tfm = (1, 0, 0, 0,
 @cmd.extend
 def sequence():
 
-	production = True
+	production = (sys.argv[1] == '-qc')
 
 	dirname = "06_Gtrimer_dissociation"
 	frame_basename = "seq06frm"
