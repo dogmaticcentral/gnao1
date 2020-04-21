@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/50_movie/25_therapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/04_GDP_GTP_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/04_GDP_GTP_exchange.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/06_dissociation_from_GPCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/06_dissociation_from_GPCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/08_conformational_change.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/08_conformational_change.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/10_docking_to_adcy.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/10_docking_to_adcy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/12_RGS_docking.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/12_RGS_docking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/13_GTP_breakdown.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/13_GTP_breakdown.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/14_ac_cplx_dissoc_and_GPCR_redock.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/14_ac_cplx_dissoc_and_GPCR_redock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/15_gnao_reopens.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/15_gnao_reopens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/16_zoom_into_GBD.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/16_zoom_into_GBD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/17_GBD_interaction_with_AC_and_RGS.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/17_GBD_interaction_with_AC_and_RGS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/18_it_moves.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/18_it_moves.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/19_gnao_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/19_gnao_structure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/20_var_positions.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/20_var_positions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/21_GBD_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/21_GBD_only.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conservation/paras/blah" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pheno_scene_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pheno_scene_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pymol_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,59 +14,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="25_therapy.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="22_GBD_active_interfaces.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1206">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
+              <folding>
+                <element signature="e#349#359#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="00_overview.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="25_therapy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/50_movie/25_therapy.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
-              <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="17_GBD_interaction_with_AC_and_RGS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/17_GBD_interaction_with_AC_and_RGS.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="22" selection-start-line="20" selection-end-line="22" />
-              <folding>
-                <element signature="e#127#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="19_gnao_structure.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/19_gnao_structure.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="31" selection-start-line="29" selection-end-line="31" />
-              <folding>
-                <element signature="e#335#345#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20_var_positions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/20_var_positions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="31" selection-start-line="29" selection-end-line="31" />
-              <folding>
-                <element signature="e#359#369#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="21_GBD_only.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/21_GBD_only.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-936">
-              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-              <folding>
-                <element signature="e#344#354#0" expanded="true" />
-              </folding>
+              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -201,7 +151,6 @@
         <option value="$PROJECT_DIR$/30_pdbs_w_galpha.py" />
         <option value="$PROJECT_DIR$/32_find_interacting_chains.py" />
         <option value="$PROJECT_DIR$/34_interface_w_epilepsy_piece.py" />
-        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
         <option value="$PROJECT_DIR$/50_movie/04_GDP_GTP_exchange.py" />
         <option value="$PROJECT_DIR$/50_movie/06_dissociation_from_GPCR.py" />
@@ -223,12 +172,13 @@
         <option value="$PROJECT_DIR$/50_movie/20_var_positions.py" />
         <option value="$PROJECT_DIR$/50_movie/21_GBD_only.py" />
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
+        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2040" />
-    <option name="y" value="37" />
+    <option name="x" value="2051" />
+    <option name="y" value="79" />
     <option name="width" value="1717" />
     <option name="height" value="1001" />
   </component>
@@ -308,7 +258,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2040" y="37" width="1717" height="1001" extended-state="0" />
+    <frame x="2051" y="79" width="1717" height="1001" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21015349" />
@@ -433,13 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/27_gnomad_vs_disease.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="691">
@@ -472,13 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -544,16 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1180">
           <caret line="667" column="8" selection-start-line="667" selection-start-column="8" selection-end-line="667" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#349#359#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -745,10 +671,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/25_therapy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
-          <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#349#359#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
