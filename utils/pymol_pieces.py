@@ -13,6 +13,11 @@ from pymol_constants import *
 from random import random
 
 
+
+
+########################################################################
+########################################################################
+
 # pheno is defined in pymol_constants
 def pheno_residues(gnao_structure="gnao"):
 	for resi, counts in pheno.items():
@@ -440,3 +445,50 @@ def scene_interpolate(view_init_str, object_properties, base_name,
 
 	return last_frame
 
+########################################################################
+########################################################################
+
+def phenotype_scene(gnao_cartoon=True): # shared between movie and xlsx
+	all_structures = ["AC",  "RGS", "GPCR", "substrate", "gnao"]
+	load_structures(structure_home, structure_filename, all_structures)
+
+	cmd.bg_color("white")
+
+	#style_substrate("substrate",  mol_color["substrate"])
+	if gnao_cartoon:
+		cmd.copy("gnao-cartoon", "gnao")
+		cmd.show("cartoon", "gnao-cartoon")
+		cmd.color("white", "gnao-cartoon")
+	cmd.set("ray_shadows", "off")
+
+	if gnao_cartoon:
+		cmd.remove("gnao-cartoon and resi 58-170")
+		cmd.remove("gnao-cartoon and resi 347-350") # see below
+	cmd.remove("gnao and resi 58-170")
+	cmd.remove("gnao and resi 347-350") # the isosurface at the GPCR interface won't close otherwise
+
+	# substrate
+	interface_clump("substrate", "gnao", mol_color["substrate"], depth=5, transparency=0.5)
+	#clump_representation(["substrate"], mol_color["substrate"], "substrate", transparency=0.2)
+	cmd.set("stick_radius", 0.5,  "substrate")
+	cmd.show_as("sticks", "substrate")
+	cmd.show_as("spheres", "substrate and name MG")
+	cmd.color( mol_color["substrate"], "substrate")
+
+
+	cmd.remove("AC and (resi 1-1065 or resi 1175-1500)")
+	interface_clump("AC", "gnao", mol_color["AC"], depth=5, transparency=0.6)
+
+	if gnao_cartoon:
+		interface_clump("GPCR", "gnao", mol_color["GPCR"], depth=5, transparency=0.6)
+	else: # I get a hole in the mesh here
+		interface_clump("GPCR", "gnao", mol_color["GPCR"], depth=5, transparency=0.6, grid_spacing=0.8)
+
+	interface_clump("RGS", "gnao", mol_color["RGS"], depth=5, transparency=0.6, grid_spacing=0.7)
+
+	residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.6)
+
+	#############################
+	residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.6)
+	pheno_residues()
+	return

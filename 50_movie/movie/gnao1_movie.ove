@@ -204,12 +204,21 @@
         <footage id="68" folder="0" name="seq22_8_frm166.png" url="22_interfaces/seq22_8_frm166.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
+        <footage id="69" folder="0" name="seq25_2_015.png" url="25_therapy/seq25_2_015.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="70" folder="0" name="seq25_3_030.png" url="25_therapy/seq25_3_030.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="71" folder="0" name="seq25_3_044.png" url="25_therapy/seq25_3_044.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
     </media>
     <sequences>
         <sequence id="1" folder="0" name="Sequence 01" width="1920" height="1080" framerate="25.0000000000" afreq="48000" alayout="3" open="1" workarea="0" workareaIn="0" workareaOut="0">
-            <clip id="0" enabled="1" name="Solid Color" clipin="0" in="0" out="3375" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="0" enabled="1" name="Solid Color" clipin="0" in="0" out="3610" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
-                <closing length="34" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="960"/>
@@ -1018,7 +1027,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="28" enabled="1" name="seq18frm000.png" clipin="0" in="1380" out="1419" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="27" stream="0">
+            <clip id="27" enabled="1" name="seq18frm000.png" clipin="0" in="1380" out="1419" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="27" stream="0">
                 <linked/>
                 <opening length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -1048,7 +1057,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="29" enabled="1" name="seq19frm000.png" clipin="0" in="1474" out="1485" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="30" stream="0">
+            <clip id="28" enabled="1" name="seq19frm000.png" clipin="0" in="1474" out="1485" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="30" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1077,7 +1086,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="30" enabled="1" name="seq19frm000.png" clipin="0" in="1465" out="1474" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="31" stream="0">
+            <clip id="29" enabled="1" name="seq19frm000.png" clipin="0" in="1465" out="1474" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="31" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1106,7 +1115,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="31" enabled="1" name="seq18frm024.png" clipin="0" in="1444" out="1474" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="32" stream="0">
+            <clip id="30" enabled="1" name="seq18frm024.png" clipin="0" in="1444" out="1474" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="32" stream="0">
                 <linked/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -1136,7 +1145,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="32" enabled="1" name="seq19frm010.png" clipin="0" in="1485" out="1500" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="33" stream="0">
+            <clip id="31" enabled="1" name="seq19frm010.png" clipin="0" in="1485" out="1500" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="33" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1165,7 +1174,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="33" enabled="1" name="seq20frm001.png" clipin="0" in="1500" out="1523" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="34" stream="0">
+            <clip id="32" enabled="1" name="seq20frm001.png" clipin="0" in="1500" out="1523" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="34" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1194,7 +1203,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="34" enabled="1" name="seq20frm023.png" clipin="0" in="1523" out="1560" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="35" stream="0">
+            <clip id="33" enabled="1" name="seq20frm023.png" clipin="0" in="1523" out="1560" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="35" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1223,7 +1232,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="35" enabled="1" name="seq21frm001.png" clipin="0" in="1560" out="1623" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="36" stream="0">
+            <clip id="34" enabled="1" name="seq21frm001.png" clipin="0" in="1560" out="1623" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="36" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1252,7 +1261,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="36" enabled="1" name="seq21frm002.png" clipin="0" in="1623" out="1693" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="37" stream="0">
+            <clip id="35" enabled="1" name="seq21frm002.png" clipin="0" in="1623" out="1693" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="37" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1281,7 +1290,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="37" enabled="1" name="seq21frm003.png" clipin="0" in="1693" out="1793" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="38" stream="0">
+            <clip id="36" enabled="1" name="seq21frm003.png" clipin="0" in="1693" out="1793" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="38" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1310,7 +1319,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="42" enabled="1" name="seq23_1_frm000.png" clipin="0" in="2217" out="2317" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="41" stream="0">
+            <clip id="37" enabled="1" name="seq23_1_frm000.png" clipin="0" in="2217" out="2317" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="41" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1339,7 +1348,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="43" enabled="1" name="seq23_2_frm001.png" clipin="0" in="2317" out="2417" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
+            <clip id="38" enabled="1" name="seq23_2_frm001.png" clipin="0" in="2317" out="2417" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1368,7 +1377,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="44" enabled="1" name="seq23_3_frm002.png" clipin="0" in="2433" out="2443" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
+            <clip id="39" enabled="1" name="seq23_3_frm002.png" clipin="0" in="2417" out="2427" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1397,7 +1406,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="45" enabled="1" name="seq23_4_frm012.png" clipin="0" in="2443" out="2458" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="44" stream="0">
+            <clip id="40" enabled="1" name="seq23_4_frm012.png" clipin="0" in="2427" out="2442" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="44" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1426,7 +1435,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="46" enabled="1" name="seq23_5_frm027.png" clipin="0" in="2458" out="2473" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="45" stream="0">
+            <clip id="41" enabled="1" name="seq23_5_frm027.png" clipin="0" in="2442" out="2457" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="45" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1455,7 +1464,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="47" enabled="1" name="seq23_6_frm042.png" clipin="0" in="2473" out="2488" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="46" stream="0">
+            <clip id="42" enabled="1" name="seq23_6_frm042.png" clipin="0" in="2457" out="2472" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="46" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1484,7 +1493,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="48" enabled="1" name="seq23_7_frm057.png" clipin="0" in="2488" out="2503" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
+            <clip id="43" enabled="1" name="seq23_7_frm057.png" clipin="0" in="2472" out="2487" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1513,7 +1522,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="49" enabled="1" name="seq23_8_frm072.png" clipin="0" in="2503" out="2518" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
+            <clip id="44" enabled="1" name="seq23_8_frm072.png" clipin="0" in="2487" out="2502" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1542,7 +1551,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="50" enabled="1" name="seq24_1_000.png" clipin="0" in="2518" out="2548" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
+            <clip id="45" enabled="1" name="seq24_1_000.png" clipin="0" in="2502" out="2532" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1571,7 +1580,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="51" enabled="1" name="seq24_2_frm030.png" clipin="0" in="2793" out="2893" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
+            <clip id="46" enabled="1" name="seq24_2_frm030.png" clipin="0" in="2777" out="2877" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1600,7 +1609,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="52" enabled="1" name="seq24_3_frm031.png" clipin="0" in="2893" out="2993" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
+            <clip id="47" enabled="1" name="seq24_3_frm031.png" clipin="0" in="2877" out="2977" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1629,7 +1638,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="53" enabled="1" name="seq24_4_frm032.png" clipin="0" in="2993" out="3093" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
+            <clip id="48" enabled="1" name="seq24_4_frm032.png" clipin="0" in="2977" out="3077" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1658,7 +1667,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="54" enabled="1" name="seq24_5_frm033.png" clipin="0" in="3093" out="3193" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
+            <clip id="49" enabled="1" name="seq24_5_frm033.png" clipin="0" in="3077" out="3177" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1687,7 +1696,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="55" enabled="1" name="seq24_1_029.png" clipin="0" in="3193" out="3293" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
+            <clip id="50" enabled="1" name="seq24_1_029.png" clipin="0" in="3177" out="3277" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1716,7 +1725,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="56" enabled="1" name="seq25_1_000.png" clipin="0" in="3293" out="3308" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
+            <clip id="51" enabled="1" name="seq25_1_000.png" clipin="0" in="3277" out="3292" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1745,7 +1754,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="57" enabled="1" name="seq25_2_015.png" clipin="0" in="3308" out="3323" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
+            <clip id="52" enabled="1" name="seq25_2_015.png" clipin="0" in="3371" out="3385" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1774,7 +1783,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="58" enabled="1" name="seq25_3_030.png" clipin="0" in="3323" out="3338" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
+            <clip id="53" enabled="1" name="seq25_3_030.png" clipin="0" in="3448" out="3463" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1803,7 +1812,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="59" enabled="1" name="seq18frm000.png" clipin="0" in="1419" out="1444" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="26" stream="0">
+            <clip id="54" enabled="1" name="seq18frm000.png" clipin="0" in="1419" out="1444" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="26" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1832,7 +1841,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="60" enabled="1" name="seq22_1_frm000.png" clipin="0" in="1793" out="1803" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="58" stream="0">
+            <clip id="55" enabled="1" name="seq22_1_frm000.png" clipin="0" in="1793" out="1803" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="58" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1861,7 +1870,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="61" enabled="1" name="seq22_2_frm010.png" clipin="0" in="1803" out="1829" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="59" stream="0">
+            <clip id="56" enabled="1" name="seq22_2_frm010.png" clipin="0" in="1803" out="1829" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="59" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1890,7 +1899,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="62" enabled="1" name="seq22_3_frm036.png" clipin="0" in="1829" out="1855" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="60" stream="0">
+            <clip id="57" enabled="1" name="seq22_3_frm036.png" clipin="0" in="1829" out="1855" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="60" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1919,7 +1928,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="63" enabled="1" name="seq22_4_frm062.png" clipin="0" in="1855" out="1881" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="61" stream="0">
+            <clip id="58" enabled="1" name="seq22_4_frm062.png" clipin="0" in="1855" out="1881" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="61" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1948,7 +1957,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="64" enabled="1" name="seq22_5_frm088.png" clipin="0" in="1881" out="1907" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="62" stream="0">
+            <clip id="59" enabled="1" name="seq22_5_frm088.png" clipin="0" in="1881" out="1907" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="62" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1977,7 +1986,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="65" enabled="1" name="seq22_6_frm114.png" clipin="0" in="1907" out="1933" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="63" stream="0">
+            <clip id="60" enabled="1" name="seq22_6_frm114.png" clipin="0" in="1907" out="1933" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="63" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2006,7 +2015,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="66" enabled="1" name="seq22_7_frm140.png" clipin="0" in="2125" out="2151" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="64" stream="0">
+            <clip id="61" enabled="1" name="seq22_7_frm140.png" clipin="0" in="2125" out="2151" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="64" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2035,7 +2044,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="67" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2207" out="2217" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
+            <clip id="62" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2207" out="2217" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2064,7 +2073,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="68" enabled="1" name="seq22_7_frm140.png" clipin="0" in="1933" out="2125" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="66" stream="0">
+            <clip id="63" enabled="1" name="seq22_7_frm140.png" clipin="0" in="1933" out="2125" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="66" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2093,7 +2102,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="69" enabled="1" name="afaparas.mp4" clipin="0" in="1981" out="2170" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="67" stream="0">
+            <clip id="64" enabled="1" name="afaparas.mp4" clipin="0" in="1981" out="2170" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="67" stream="0">
                 <linked/>
                 <closing length="14" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -2123,7 +2132,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="70" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2151" out="2207" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
+            <clip id="65" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2151" out="2207" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2152,7 +2161,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="71" enabled="1" name="seq24_1_029.png" clipin="0" in="2548" out="2793" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
+            <clip id="66" enabled="1" name="seq24_1_029.png" clipin="0" in="2532" out="2777" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2181,7 +2190,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="72" enabled="1" name="afatest.mp4" clipin="0" in="2573" out="2760" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="40" stream="0">
+            <clip id="67" enabled="1" name="afatest.mp4" clipin="0" in="2557" out="2744" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="40" stream="0">
                 <linked/>
                 <opening length="20" name="/Cross Dissolve" enabled="1"/>
                 <closing length="28" name="/Cross Dissolve" enabled="1"/>
@@ -2189,6 +2198,93 @@
                     <row>
                         <field id="posx" value="901"/>
                         <field id="posy" value="860"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="68" enabled="1" name="seq25_2_015.png" clipin="0" in="3292" out="3371" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="69" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="69" enabled="1" name="seq25_3_030.png" clipin="0" in="3385" out="3448" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="70" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="70" enabled="1" name="seq25_3_044.png" clipin="0" in="3463" out="3563" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="71" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
                     </row>
                     <row>
                         <field id="scalex" value="100"/>

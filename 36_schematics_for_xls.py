@@ -5,6 +5,7 @@
 # (thus, run from pymol GUI; then )
 # note that pymol pieces imports pymol.py
 import os
+import sys
 from time import time
 
 from utils.pymol_pieces import *
@@ -15,7 +16,7 @@ from utils.utils import *
 frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 
 
-def make_schematics(view):
+def make_schematics(view, production= True):
 	residues = {"epi":[], "mov":[], "both":[]}
 
 	for resi, counts in pheno.items():
@@ -30,7 +31,6 @@ def make_schematics(view):
 		else:
 			residues["both"].append(str(resi))
 
-	cmd.set_view(view)
 	cmd.set("depth_cue", 0)  # turn off depth cueing
 
 	for phenotype, res_list in residues.items():
@@ -45,43 +45,45 @@ def make_schematics(view):
 		for resi in res_list:
 			cmd.set("sphere_transparency", 0.65, phenotype)
 			cmd.set("sphere_transparency", 0.0, "{} and resi {}".format("gnao", resi))
-			cmd.png("schematic_{}".format(resi), width=384, height=216, ray=True)
+			cmd.set_view(view)
+			if production: cmd.png("schematic_{}".format(resi), width=384, height=216, ray=True)
+		if not production: return
+
+
 
 ###################################
 # uncomment to run from pymol
 # @cmd.extend
 def gnao():
 
-	time0 = time()
+	# careful: starting production mode with gui can freeze teh desktop
+	production = (sys.argv[1] == '-qc')
+
 
 	for dep in [structure_home, frames_home]:
 		if not os.path.exists(dep):
 			print(dep, "not found")
 			return
 
-	cmd.bg_color("white")
-
-	load_structures(structure_home, ["gnao", "substrate"])
-	# tweak_orientation()
-	clump_representation(["substrate"], "pink", "substr", transparency=0.0)
-	cmd.show("spheres", "substrate and name MG")
-	cmd.color("pink", "substrate and name MG")
-
-	# AC = andenylate cyclase
-	load_structures(structure_home, ["AC", "RGS", "GPCR"])
-	interface_outline("gnao", "(AC or RGS)", "salmon")
-	# interface_outline("gnao", "RGS", "teal")
-	# GPCR isn't really helping because it appears to be in contact with epi residues
-	# interface_outline("gnao", "GPCR", "orange")
-
-	subdir_prep(".", "schematics")
-	pymol_chdir("schematics")
-
-	# fish out the frame that I need
-	make_schematics(pheno_view[8])
+	phenotype_scene(gnao_cartoon=False)
 
 
-	print("done in %d secs" %(time()-time0))
+	if production:
+		time0 = time()
+		subdir_prep(".", "schematics")
+		pymol_chdir("schematics")
+
+		# fish out the frame that I need
+		make_schematics(sequence_25_view[2])
+		print("done in %d secs" %(time()-time0))
+
+
+	else:
+
+		cmd.viewport(1920, 1080)
+		make_schematics(sequence_25_view[2], production=False)
+
+
 
 	#cmd.quit()
 

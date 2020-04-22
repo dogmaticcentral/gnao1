@@ -2,7 +2,7 @@
 import math
 import re
 
-from utils.utils import *
+from utils.mysql import *
 import numpy as np
 import xlsxwriter
 
@@ -332,7 +332,7 @@ def prettyprint(targets):
 	outgoing = []
 	for target in targets:
 		# target is assumed to have format [target_namr, direction, activity]
-		outgoing.append("{}{}{}".format(target[0], direction_symbol[target[1]], human_readable_activity(target[2])))
+		outgoing.append("{}({}{})".format(target[0], direction_symbol[target[1]], human_readable_activity(target[2])))
 	return ",".join(outgoing)
 
 
@@ -433,7 +433,7 @@ def set_column_widths(worksheet, header, wwrap_format):
 	idx = header.index("protein modification")
 	worksheet.set_column(column_string(idx), len("modification"))
 
-	for title in ["location schematic", "drugs"]:
+	for title in ["location schematic", "drugs (direction, activity[uM])"]:
 		idx = header.index(title)
 		worksheet.set_column(column_string(idx), 50, wwrap_format)
 
@@ -465,7 +465,7 @@ def table_creator(cursor, targets_compact):
 	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
 	worksheet.set_default_row(40)
 	header = ["protein position", "location schematic", "protein modification", "phenotype",
-	          "symptom", "effectiveness", "drugs", "gender", "pubmed"]
+	          "symptom", "effectiveness", "drugs (direction, activity[uM])", "gender", "pubmed"]
 	set_column_widths(worksheet, header, xlsx_format["wordwrap"])
 	write_header(worksheet, header, xlsx_format["header"])
 

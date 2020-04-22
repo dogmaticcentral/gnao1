@@ -23,7 +23,7 @@ frames_home = "/home/ivana/projects/gnao1db/50_movie/movie"
 @cmd.extend
 def sequence():
 
-	# carefule: starting production mode with gui can freeze teh desktop
+	# careful: starting production mode with gui can freeze teh desktop
 	production = (sys.argv[1] == '-qc')
 
 	dirname = "02_gpcr"
