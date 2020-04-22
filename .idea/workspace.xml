@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/36_schematics_for_xls.py" beforeDir="false" afterPath="$PROJECT_DIR$/36_schematics_for_xls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/38_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/25_therapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/25_therapy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.gnao1_therapy.xlsx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="403" column="56" lean-forward="true" selection-start-line="403" selection-start-column="56" selection-end-line="403" selection-end-column="56" />
+            <state relative-caret-position="368">
+              <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
               <folding>
                 <element signature="e#109#140#0" />
                 <element signature="e#1678#1870#0" />
@@ -79,19 +73,24 @@
                 <element signature="e#10823#11022#0" />
                 <element signature="e#11087#11229#0" />
                 <element signature="e#11339#11425#0" />
-                <element signature="e#11455#11702#0" />
-                <element signature="e#11495#11675#0" />
                 <element signature="e#12376#12516#0" />
                 <element signature="e#13453#13576#0" />
                 <element signature="e#15385#15434#0" />
-                <element signature="e#15494#16376#0" />
                 <element signature="e#15494#15567#0" />
-                <element signature="e#16013#16099#0" />
                 <element signature="e#16153#16249#0" />
                 <element signature="e#16296#16376#0" />
                 <element signature="e#16824#17129#0" />
                 <element signature="e#18097#18539#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="24_mysterious_epi_cluster.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="88" selection-start-line="82" selection-end-line="88" />
             </state>
           </provider>
         </entry>
@@ -228,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1932" />
     <option name="y" value="11" />
     <option name="width" value="1717" />
@@ -316,7 +315,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766473" />
@@ -561,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="88" selection-start-line="82" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/10_docking_to_adcy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -719,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="403" column="56" lean-forward="true" selection-start-line="403" selection-start-column="56" selection-end-line="403" selection-end-column="56" />
+        <state relative-caret-position="368">
+          <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
           <folding>
             <element signature="e#109#140#0" />
             <element signature="e#1678#1870#0" />
@@ -775,19 +767,22 @@
             <element signature="e#10823#11022#0" />
             <element signature="e#11087#11229#0" />
             <element signature="e#11339#11425#0" />
-            <element signature="e#11455#11702#0" />
-            <element signature="e#11495#11675#0" />
             <element signature="e#12376#12516#0" />
             <element signature="e#13453#13576#0" />
             <element signature="e#15385#15434#0" />
-            <element signature="e#15494#16376#0" />
             <element signature="e#15494#15567#0" />
-            <element signature="e#16013#16099#0" />
             <element signature="e#16153#16249#0" />
             <element signature="e#16296#16376#0" />
             <element signature="e#16824#17129#0" />
             <element signature="e#18097#18539#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="88" selection-start-line="82" selection-end-line="88" />
         </state>
       </provider>
     </entry>

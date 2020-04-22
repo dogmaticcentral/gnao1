@@ -219,12 +219,21 @@
         <footage id="73" folder="0" name="seq22_8_frm175.png" url="22_interfaces/seq22_8_frm175.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
+        <footage id="74" folder="0" name="seq23_4_frm026.png" url="23_disease_muts/seq23_4_frm026.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="75" folder="0" name="seq23_6_frm056.png" url="23_disease_muts/seq23_6_frm056.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="76" folder="0" name="seq23_8_frm086.png" url="23_disease_muts/seq23_8_frm086.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
     </media>
     <sequences>
         <sequence id="1" folder="0" name="Sequence 01" width="1920" height="1080" framerate="25.0000000000" afreq="48000" alayout="3" open="1" workarea="0" workareaIn="0" workareaOut="0">
-            <clip id="0" enabled="1" name="Solid Color" clipin="0" in="0" out="3980" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="0" enabled="1" name="Solid Color" clipin="0" in="0" out="4921" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
-                <closing length="19" name="/Cross Dissolve" enabled="1"/>
+                <closing length="33" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="960"/>
@@ -1325,7 +1334,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="38" enabled="1" name="seq23_2_frm001.png" clipin="0" in="2677" out="2777" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
+            <clip id="38" enabled="1" name="seq23_2_frm001.png" clipin="0" in="2677" out="2923" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1354,7 +1363,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="39" enabled="1" name="seq23_3_frm002.png" clipin="0" in="2777" out="2787" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
+            <clip id="39" enabled="1" name="seq23_3_frm002.png" clipin="0" in="2938" out="2948" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1383,7 +1392,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="40" enabled="1" name="seq23_4_frm012.png" clipin="0" in="2787" out="2802" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="44" stream="0">
+            <clip id="40" enabled="1" name="seq23_4_frm012.png" clipin="0" in="2948" out="2963" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="44" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1412,7 +1421,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="41" enabled="1" name="seq23_5_frm027.png" clipin="0" in="2802" out="2817" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="45" stream="0">
+            <clip id="41" enabled="1" name="seq23_5_frm027.png" clipin="0" in="3074" out="3089" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="45" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1441,7 +1450,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="42" enabled="1" name="seq23_6_frm042.png" clipin="0" in="2817" out="2832" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="46" stream="0">
+            <clip id="42" enabled="1" name="seq23_6_frm042.png" clipin="0" in="3089" out="3104" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="46" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1470,7 +1479,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="43" enabled="1" name="seq23_7_frm057.png" clipin="0" in="2832" out="2847" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
+            <clip id="43" enabled="1" name="seq23_7_frm057.png" clipin="0" in="3233" out="3248" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1499,7 +1508,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="44" enabled="1" name="seq23_8_frm072.png" clipin="0" in="2847" out="2862" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
+            <clip id="44" enabled="1" name="seq23_8_frm072.png" clipin="0" in="3248" out="3263" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1528,7 +1537,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="45" enabled="1" name="seq24_1_000.png" clipin="0" in="2862" out="2892" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
+            <clip id="45" enabled="1" name="seq24_1_000.png" clipin="0" in="3644" out="3674" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1557,7 +1566,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="46" enabled="1" name="seq24_2_frm030.png" clipin="0" in="3137" out="3237" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
+            <clip id="46" enabled="1" name="seq24_2_frm030.png" clipin="0" in="4013" out="4113" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1586,7 +1595,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="47" enabled="1" name="seq24_3_frm031.png" clipin="0" in="3237" out="3337" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
+            <clip id="47" enabled="1" name="seq24_3_frm031.png" clipin="0" in="4113" out="4213" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1615,7 +1624,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="48" enabled="1" name="seq24_4_frm032.png" clipin="0" in="3337" out="3437" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
+            <clip id="48" enabled="1" name="seq24_4_frm032.png" clipin="0" in="4213" out="4313" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1644,7 +1653,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="49" enabled="1" name="seq24_5_frm033.png" clipin="0" in="3437" out="3537" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
+            <clip id="49" enabled="1" name="seq24_5_frm033.png" clipin="0" in="4313" out="4413" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1673,7 +1682,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="50" enabled="1" name="seq24_1_029.png" clipin="0" in="3537" out="3637" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
+            <clip id="50" enabled="1" name="seq24_1_029.png" clipin="0" in="4413" out="4513" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1702,7 +1711,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="51" enabled="1" name="seq25_1_000.png" clipin="0" in="3637" out="3652" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
+            <clip id="51" enabled="1" name="seq25_1_000.png" clipin="0" in="4513" out="4528" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1731,7 +1740,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="52" enabled="1" name="seq25_2_015.png" clipin="0" in="3731" out="3745" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
+            <clip id="52" enabled="1" name="seq25_2_015.png" clipin="0" in="4607" out="4621" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1760,7 +1769,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="53" enabled="1" name="seq25_3_030.png" clipin="0" in="3808" out="3823" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
+            <clip id="53" enabled="1" name="seq25_3_030.png" clipin="0" in="4696" out="4711" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2021,7 +2030,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="62" enabled="1" name="seq22_8_frm166.png" clipin="2" in="2296" out="2304" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
+            <clip id="62" enabled="1" name="seq22_8_frm166.png" clipin="2" in="2333" out="2341" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2109,7 +2118,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="65" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2240" out="2296" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
+            <clip id="65" enabled="1" name="seq22_8_frm166.png" clipin="0" in="2240" out="2333" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2138,7 +2147,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="66" enabled="1" name="seq24_1_029.png" clipin="0" in="2892" out="3137" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
+            <clip id="66" enabled="1" name="seq24_1_029.png" clipin="0" in="3674" out="4013" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2167,7 +2176,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="67" enabled="1" name="afatest.mp4" clipin="0" in="2917" out="3104" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="40" stream="0">
+            <clip id="67" enabled="1" name="afatest.mp4" clipin="0" in="3732" out="3919" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="40" stream="0">
                 <linked/>
                 <opening length="20" name="/Cross Dissolve" enabled="1"/>
                 <closing length="28" name="/Cross Dissolve" enabled="1"/>
@@ -2198,7 +2207,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="68" enabled="1" name="seq25_2_015.png" clipin="0" in="3652" out="3731" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="69" stream="0">
+            <clip id="68" enabled="1" name="seq25_2_015.png" clipin="0" in="4528" out="4607" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="69" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2227,7 +2236,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="69" enabled="1" name="seq25_3_030.png" clipin="0" in="3745" out="3808" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="70" stream="0">
+            <clip id="69" enabled="1" name="seq25_3_030.png" clipin="0" in="4621" out="4691" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="70" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2256,7 +2265,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="70" enabled="1" name="seq25_3_044.png" clipin="0" in="3823" out="3923" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="71" stream="0">
+            <clip id="70" enabled="1" name="seq25_3_044.png" clipin="0" in="4711" out="4888" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="71" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2399,7 +2408,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="buring the GDP deep inside the protein structure."/>
+                        <field id="text" value="burying the GDP deep inside the protein structure."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -2621,7 +2630,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="84" enabled="1" name="Title" clipin="0" in="237" out="261" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="84" enabled="1" name="Title" clipin="0" in="237" out="288" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2705,7 +2714,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="85" enabled="1" name="Title" clipin="0" in="261" out="329" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="85" enabled="1" name="Title" clipin="0" in="288" out="356" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2957,7 +2966,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="88" enabled="1" name="Title" clipin="-17" in="554" out="605" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="88" enabled="1" name="Title" clipin="-17" in="550" out="601" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3154,7 +3163,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="91" enabled="1" name="Title" clipin="-17" in="607" out="658" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="91" enabled="1" name="Title" clipin="-19" in="601" out="661" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3238,7 +3247,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="92" enabled="1" name="Title" clipin="-17" in="776" out="816" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="92" enabled="1" name="Title" clipin="-23" in="770" out="798" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3322,7 +3331,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="93" enabled="1" name="Title" clipin="-17" in="798" out="816" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="93" enabled="1" name="Title" clipin="-17" in="798" out="816" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3406,7 +3415,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="94" enabled="1" name="Title" clipin="-17" in="821" out="839" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="94" enabled="1" name="Title" clipin="-22" in="816" out="839" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3574,7 +3583,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="96" enabled="1" name="Title" clipin="-17" in="843" out="861" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="96" enabled="1" name="Title" clipin="-21" in="839" out="868" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -3772,7 +3781,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="let us first not the major interactions at play:"/>
+                        <field id="text" value="let us first note the major interactions at play:"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -5619,7 +5628,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="121" enabled="1" name="Title" clipin="12" in="1969" out="2023" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="121" enabled="1" name="Title" clipin="12" in="1969" out="2039" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -5703,7 +5712,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="122" enabled="1" name="Title" clipin="12" in="2113" out="2211" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="122" enabled="1" name="Title" clipin="-62" in="2039" out="2211" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -5787,7 +5796,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="123" enabled="1" name="Title" clipin="1" in="2146" out="2211" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="123" enabled="1" name="Title" clipin="-74" in="2071" out="2211" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -5871,7 +5880,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="124" enabled="1" name="Title" clipin="4" in="2165" out="2211" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="124" enabled="1" name="Title" clipin="-61" in="2100" out="2211" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -5955,7 +5964,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="126" enabled="1" name="Title" clipin="4" in="2214" out="2281" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="126" enabled="1" name="Title" clipin="4" in="2214" out="2333" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -6039,7 +6048,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="127" enabled="1" name="Title" clipin="7" in="2226" out="2281" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="127" enabled="1" name="Title" clipin="21" in="2240" out="2333" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -6123,7 +6132,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="128" enabled="1" name="Title" clipin="13" in="2236" out="2281" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="128" enabled="1" name="Title" clipin="43" in="2266" out="2333" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -6207,7 +6216,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="129" enabled="1" name="Title" clipin="30" in="2260" out="2281" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="129" enabled="1" name="Title" clipin="59" in="2289" out="2333" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -6464,6 +6473,2949 @@
                 <effect name="Render/Text" enabled="1">
                     <row>
                         <field id="text" value="the relative position of the variants in this framework."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="135" enabled="1" name="seq23_4_frm026.png" clipin="0" in="2963" out="3063" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="74" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="136" enabled="1" name="Title" clipin="-16" in="2963" out="3063" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The movement disorder variants in GNAO1"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="137" enabled="1" name="Title" clipin="-9" in="2985" out="3063" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="832"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="overlap largely with the interfaces "/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="138" enabled="1" name="Title" clipin="16" in="3010" out="3063" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1936"/>
+                        <field id="posy" value="834"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="with the effector and with the RGS."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="139" enabled="1" name="seq23_6_frm056.png" clipin="0" in="3104" out="3204" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="75" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="140" enabled="1" name="Title" clipin="-16" in="3102" out="3202" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The folding core and the catalytic pocket"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="141" enabled="1" name="Title" clipin="-9" in="3124" out="3202" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="832"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="harbor  variants resulting in exclusve epilepsy"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="142" enabled="1" name="Title" clipin="16" in="3149" out="3202" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="2051"/>
+                        <field id="posy" value="943"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="or cobined pheotypes."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="143" enabled="1" name="seq23_8_frm086.png" clipin="34" in="3263" out="3528" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="76" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="144" enabled="1" name="Title" clipin="-16" in="3259" out="3491" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="A relatively small number of variants"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="145" enabled="1" name="Title" clipin="-9" in="3281" out="3491" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="669"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="has been reported at the interface with the GPCR."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="146" enabled="1" name="Title" clipin="16" in="3306" out="3491" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1034"/>
+                        <field id="posy" value="930"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Their phenotypes always include movement disorders."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="147" enabled="1" name="Title" clipin="-16" in="3674" out="3769" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="A notable cluster of epilepsy related variants"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="148" enabled="1" name="Title" clipin="-9" in="3696" out="3769" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="669"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="remains unaccounted for."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="149" enabled="1" name="Title" clipin="16" in="3721" out="3769" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1034"/>
+                        <field id="posy" value="930"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The sequences of GNAO1 counterparts in other species are almost completely identical to the human ..."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="150" enabled="1" name="Title" clipin="-16" in="3783" out="3878" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="...indicating that this region (as much as any other)"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="151" enabled="1" name="Title" clipin="13" in="3812" out="3878" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="376"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="has an important function in GNAO1."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="153" enabled="1" name="Title" clipin="-16" in="3905" out="4392" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="89"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Its nature remain elusive, though,"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="154" enabled="1" name="Title" clipin="13" in="3934" out="4392" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="165"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="because all currently known interacting partners of Ga proteins"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="155" enabled="1" name="Title" clipin="13" in="3934" out="4392" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1027"/>
+                        <field id="posy" value="246"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="appear to use  roughly the same interface as the andelyl cyclase:"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="156" enabled="1" name="Title" clipin="13" in="4047" out="4113" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="2394"/>
+                        <field id="posy" value="588"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="phosphlypase C"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="157" enabled="1" name="Title" clipin="13" in="4147" out="4213" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="2394"/>
+                        <field id="posy" value="588"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="GRK2"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="158" enabled="1" name="Title" clipin="13" in="4213" out="4279" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="2394"/>
+                        <field id="posy" value="588"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="synembryn"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="159" enabled="1" name="Title" clipin="13" in="4313" out="4392" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="2394"/>
+                        <field id="posy" value="588"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="phosphlypase C"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="160" enabled="1" name="Title" clipin="13" in="4434" out="4513" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="144"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="For some reason, the therapy used in  these variants has not been reported in the literature."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="161" enabled="1" name="Title" clipin="13" in="4528" out="4607" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="985"/>
+                        <field id="posy" value="83"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The variants in the effector binding region "/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="162" enabled="1" name="Title" clipin="33" in="4548" out="4607" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="976"/>
+                        <field id="posy" value="168"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="have the  unfortunate distinction "/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="163" enabled="1" name="Title" clipin="50" in="4565" out="4607" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="985"/>
+                        <field id="posy" value="938"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="of not being reponsive to  either dopamine"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="164" enabled="1" name="Title" clipin="50" in="4565" out="4607" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1908"/>
+                        <field id="posy" value="1017"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="or GABA receptor manipulation."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="165" enabled="1" name="Title" clipin="13" in="4607" out="4685" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="985"/>
+                        <field id="posy" value="83"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The variants close to the catalytic pocket "/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="169" enabled="1" name="Title" clipin="28" in="4621" out="4685" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="996"/>
+                        <field id="posy" value="767"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="largely respond to GABA receptor enhancement,"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="172" enabled="1" name="Title" clipin="42" in="4635" out="4685" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="869"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="to dopamine receptor regulation in either direction"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="173" enabled="1" name="Title" clipin="56" in="4649" out="4685" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="869"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="as well as to general reduction of neuronal excitabilty."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="174" enabled="1" name="Title" clipin="56" in="4711" out="4788" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="93"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The variants in the GPCR docking region"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="175" enabled="1" name="Title" clipin="56" in="4720" out="4788" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="197"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="appear to have a milder phenotype"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="176" enabled="1" name="Title" clipin="56" in="4736" out="4788" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="304"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="responsive to dopamine manipulation."/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="48"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="1"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#204a87"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="177" enabled="1" name="Title" clipin="56" in="4802" out="4879" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="995"/>
+                        <field id="posy" value="891"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="The paper discusses the ways of rationalizing these observations."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
