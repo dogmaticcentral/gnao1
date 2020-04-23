@@ -236,7 +236,7 @@ def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5
 	qend   = view2quat(view_last)
 
 	last_frame = frameno_offset
-	for frameno in range(1, number_of_frames+1):
+	for frameno in range(0, number_of_frames+1):
 		intrm_view = intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
 		cmd.set_view(view2view_string(intrm_view))
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)

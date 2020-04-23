@@ -81,8 +81,8 @@ def sequence():
 
 	if production: # run without gui
 
-		cmd.set_view(sequence_23_view[0])
 		last_frame = 0
+		cmd.set_view(sequence_23_view[0])
 		cmd.png(frame_basename + "_1_frm" + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 
 		for structure in ["substrate", "AC", "GPCR", "RGS"]:
@@ -91,6 +91,7 @@ def sequence():
 		cmd.disable("surf_gnao-conserved")
 
 		last_frame += 1
+		cmd.set_view(sequence_23_view[0])
 		cmd.png(frame_basename + "_2_frm" + str(last_frame).zfill(3) , width=1920, height=1080, ray=True)
 
 		##########################################################
@@ -136,32 +137,32 @@ def sequence():
 			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabledeven without it
 			cmd.enable("surf_{}".format(if_clump_name(structure, "gnao")))
 
-		last_frame = view_interpolate(sequence_23_view[5], sequence_23_view[6],  frame_basename+ "_8_frm",
+		last_frame = view_interpolate(sequence_23_view[5], sequence_23_view[6],  frame_basename + "_8_frm",
 				                              number_of_frames=15, frameno_offset=last_frame)
 
 
 		##########################################################
 		# back to init
-		# last_frame = 87
+		# eog last_frame = 87
 		cmd.enable("surf_gnao-conserved")
 		for structure in [ "AC",  "RGS", "substrate",  "GPCR",]:
 			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabledeven without it
 			cmd.enable("surf_{}".format(if_clump_name(structure, "gnao")))
 
 		last_frame = view_interpolate(sequence_23_view[6], sequence_23_view[0],
-		                              frame_basename, number_of_frames=15, frameno_offset=last_frame)
+		                              frame_basename + "_9_frm", number_of_frames=15, frameno_offset=last_frame)
 
 	else:
 
 		cmd.viewport(1920, 1080)
 		for structure in ["AC",  "RGS", "substrate"]:
-			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabledeven without it
+			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabled even without it
 			cmd.disable("surf_{}".format(if_clump_name(structure, "gnao")))
 
 		cmd.disable("surf_gnao-conserved")
 
 		for structure in ["GPCR"]:
-			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabledeven without it
+			# this must be some bug in pymol - the surface should carry an index, but it gets en/disabled even without it
 			cmd.enable("surf_{}".format(if_clump_name(structure, "gnao")))
 
 		cmd.set_view(sequence_23_view[5])

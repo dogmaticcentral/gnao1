@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.~lock.gnao1_therapy.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,83 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+      <file leaf-file-name="22_GBD_active_interfaces.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
-              <folding>
-                <element signature="e#109#140#0" />
-                <element signature="e#1678#1870#0" />
-                <element signature="e#1888#2096#0" />
-                <element signature="e#2179#3407#0" />
-                <element signature="e#2484#3334#0" />
-                <element signature="e#2665#2774#0" />
-                <element signature="e#2852#3056#0" />
-                <element signature="e#2927#3012#0" />
-                <element signature="e#3126#3334#0" />
-                <element signature="e#3203#3288#0" />
-                <element signature="e#3474#3775#0" />
-                <element signature="e#3616#3753#0" />
-                <element signature="e#3651#3753#0" />
-                <element signature="e#3826#4405#0" />
-                <element signature="e#3977#4155#0" />
-                <element signature="e#4282#4371#0" />
-                <element signature="e#4522#5980#0" />
-                <element signature="e#4703#4935#0" />
-                <element signature="e#4703#4780#0" />
-                <element signature="e#4952#5173#0" />
-                <element signature="e#5010#5173#0" />
-                <element signature="e#5190#5228#0" />
-                <element signature="e#5351#5906#0" />
-                <element signature="e#5373#5424#0" />
-                <element signature="e#5505#5591#0" />
-                <element signature="e#5813#5906#0" />
-                <element signature="e#6037#6298#0" />
-                <element signature="e#6110#6251#0" />
-                <element signature="e#6197#6251#0" />
-                <element signature="e#6373#6709#0" />
-                <element signature="e#6834#8560#0" />
-                <element signature="e#6912#8483#0" />
-                <element signature="e#7089#8469#0" />
-                <element signature="e#7175#7250#0" />
-                <element signature="e#7401#7584#0" />
-                <element signature="e#7685#8445#0" />
-                <element signature="e#7852#8445#0" />
-                <element signature="e#7913#8445#0" />
-                <element signature="e#8150#8401#0" />
-                <element signature="e#8640#8989#0" />
-                <element signature="e#8867#8942#0" />
-                <element signature="e#9068#10138#0" />
-                <element signature="e#9138#9577#0" />
-                <element signature="e#9193#9480#0" />
-                <element signature="e#9275#9480#0" />
-                <element signature="e#9756#10122#0" />
-                <element signature="e#10165#11039#0" />
-                <element signature="e#10235#10455#0" />
-                <element signature="e#10312#10455#0" />
-                <element signature="e#10692#11022#0" />
-                <element signature="e#10823#11022#0" />
-                <element signature="e#11087#11229#0" />
-                <element signature="e#11339#11425#0" />
-                <element signature="e#12376#12516#0" />
-                <element signature="e#13453#13576#0" />
-                <element signature="e#15385#15434#0" />
-                <element signature="e#15494#15567#0" />
-                <element signature="e#16153#16249#0" />
-                <element signature="e#16296#16376#0" />
-                <element signature="e#16824#17129#0" />
-                <element signature="e#18097#18539#0" />
-              </folding>
+            <state relative-caret-position="1115">
+              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="24_mysterious_epi_cluster.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
+      <file leaf-file-name="23_disease_mutations.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="88" selection-start-line="82" selection-end-line="88" />
+            <state relative-caret-position="744">
+              <caret line="145" column="14" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -203,7 +142,6 @@
         <option value="$PROJECT_DIR$/50_movie/04_GDP_GTP_exchange.py" />
         <option value="$PROJECT_DIR$/50_movie/06_dissociation_from_GPCR.py" />
         <option value="$PROJECT_DIR$/50_movie/08_conformational_change.py" />
-        <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
         <option value="$PROJECT_DIR$/utils/pymol_constants.py" />
         <option value="$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py" />
         <option value="$PROJECT_DIR$/utils/pheno_scene_views.py" />
@@ -218,16 +156,17 @@
         <option value="$PROJECT_DIR$/50_movie/19_gnao_structure.py" />
         <option value="$PROJECT_DIR$/50_movie/20_var_positions.py" />
         <option value="$PROJECT_DIR$/50_movie/21_GBD_only.py" />
-        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
         <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
         <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
         <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
+        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
+        <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1932" />
     <option name="y" value="11" />
     <option name="width" value="1717" />
@@ -315,7 +254,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="7" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766473" />
@@ -349,15 +288,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="DB Browser" order="2" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49881935" weight="0.0" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.24231242" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49945414" weight="0.32963374" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50118065" side_tool="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.24231242" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49881935" weight="0.0" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -546,13 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="158" column="37" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/pheno_scene_views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -651,20 +583,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="130" column="102" lean-forward="true" selection-start-line="130" selection-start-column="102" selection-end-line="130" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" selection-start-line="25" selection-end-line="27" />
-          <folding>
-            <element signature="e#435#445#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,9 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#310#320#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,15 +622,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="483" column="41" selection-start-line="483" selection-start-column="41" selection-end-line="483" selection-end-column="41" />
-          <folding>
-            <element signature="e#1#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="1134">
           <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
           <folding>
             <element signature="e#109#140#0" />
@@ -767,22 +683,28 @@
             <element signature="e#10823#11022#0" />
             <element signature="e#11087#11229#0" />
             <element signature="e#11339#11425#0" />
-            <element signature="e#12376#12516#0" />
-            <element signature="e#13453#13576#0" />
-            <element signature="e#15385#15434#0" />
-            <element signature="e#15494#15567#0" />
-            <element signature="e#16153#16249#0" />
-            <element signature="e#16296#16376#0" />
-            <element signature="e#16824#17129#0" />
-            <element signature="e#18097#18539#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="88" selection-start-line="82" selection-end-line="88" />
+        <state relative-caret-position="242">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1115">
+          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="145" column="14" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
         </state>
       </provider>
     </entry>
