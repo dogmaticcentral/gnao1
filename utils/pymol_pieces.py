@@ -182,7 +182,7 @@ def load_structures(structure_home, structure_filename, structures):
 ######################################################################
 def view_rotate(angle_in_deg, axis,  base_name, number_of_frames=25, frameno_offset=0):
 	angle_chunk = angle_in_deg/number_of_frames
-	# no rotation ib the first frame
+	# no rotation in the first frame
 	last_frame = frameno_offset
 	cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 	last_frame += 1

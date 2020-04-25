@@ -75,7 +75,7 @@ def sequence():
 		frame_offset = view_interpolate(sequence_22_view[0], centered_view, frame_basename + "_1_frm",
 		                                number_of_frames=10, frameno_offset=frame_offset)
 		frame_offset = view_rotate(360, "y",  frame_basename + "_2_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 
 		############################
@@ -89,7 +89,7 @@ def sequence():
 		cmd.show_as("cartoon", "AC")
 		cmd.color(mol_color["AC"], "AC")
 		frame_offset = view_rotate(-360, "y",  frame_basename + "_3_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 		#############################
 		# GPCR
@@ -101,7 +101,7 @@ def sequence():
 		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
 		cmd.center("gnao-cartoon")
 		frame_offset = view_rotate(360, "y",  frame_basename + "_4_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 		#############################
 		# RGS
@@ -113,13 +113,13 @@ def sequence():
 		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
 		cmd.center("gnao-cartoon")
 		frame_offset = view_rotate(360, "y",  frame_basename + "_5_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 		#############################
 		# all
 		cmd.hide("cartoon", "RGS")
 		frame_offset = view_rotate(360, "x",  frame_basename + "_6_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 
 		#############################
@@ -128,7 +128,7 @@ def sequence():
 		cmd.set_view(sequence_22_view[0]) # any time we calculate the surface the imbecile thing changes the view
 		cmd.center("gnao-cartoon")
 		frame_offset = view_rotate(360, "x",  frame_basename + "_7_frm",
-		                           number_of_frames=38, frameno_offset=frame_offset)
+		                           number_of_frames=36, frameno_offset=frame_offset)
 
 
 		#############################
