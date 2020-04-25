@@ -3,6 +3,9 @@ import math
 import re
 from utils.mysql import *
 import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 # from termcolor import colored
 # example:
 # colored(effectiveness, 'green')
@@ -32,8 +35,11 @@ ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "imm
 		   "valproic acid", "valproate", "acth", "corticotropin", "botox", "botulinum toxin type a"}
 
 main_families = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", "MTNR", "OPR", "PPAR", "PCC", "MCC",
-				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER"]
+				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER","CYP"]
 
+# weak targets - small large uM
+weak_targets = ["AVPR1B", "CACNA", "KDM4E", 'TMEM97', "GLUTAMATE KAINATE", 'CHRN', 'H1-0', 'GRI', 'NISCH',
+                'SIGMAR1', "NQO2", 'TAAR1', 'SV2A', 'GABBR', 'CYP', 'ABAT', 'SCN']
 
 #########################################
 def gnao1_connect():
@@ -185,6 +191,7 @@ def get_direction(action):
 
 ##################
 def get_activities(cursor, drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False):
+
 	not_found = 0
 	found = 0
 	target_activity = {}
@@ -228,7 +235,7 @@ def get_activities(cursor, drugs, generic_names, drugbank_id, targets, active_mo
 							if ki and (not target_activity[drug][hgnc_id][1] or target_activity[drug][hgnc_id][1] > ki):
 								target_activity[drug][hgnc_id][1] = ki
 
-						if verbose: print("\t", hgnc_id, ki)
+						if verbose: print("\t", hgnc_id, ki, mode_of_action)
 
 			if verbose: print()
 
@@ -328,6 +335,13 @@ def make_compact_profiles(target_activity):
 	return compact_profile
 
 
+def target_representative(target):
+	for mf in main_families:
+		if not mf in target: continue
+		return mf
+	return target
+
+
 #########################################
 def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight):
 	# effecitveness shoud be "eff" or "ineff"; perhaps I should have a way to enforce is
@@ -337,19 +351,22 @@ def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight
 	# [['ADRA', 'up', 1], ['NISCH', 'unk', 50]]
 	for descriptor in targets_compact:
 		target, direction, ki = descriptor
-
+		# group targets:
+		target = target_representative(target)
 		if target not in weight[variant]:
 			weight[variant][target] = {"eff_up": 0, "ineff_up": 0, "eff_down": 0, "ineff_down": 0,
 										"eff_unk": 0, "ineff_unk":0}
 
 		#if direction == "unk" or direction == "conflicting": continue
 		eff_dir = "{}_{}".format(effectiveness, direction)
-		weight[variant][target][eff_dir] += 1.0 / math.log(2 + ki)
-	# weight[variant][target][eff_dir] += 1.0/(1+ki)
+		# +6 for micro in micromolar
+		weight[variant][target][eff_dir] += -math.log(ki)+6
+		#weight[variant][target][eff_dir] += 1.0 / float(1.0 + ki)
 
 
 #################
-def drug_effectivness_matrix(cursor, targets_compact, verbose=False):
+
+def drug_effectivness_matrix(cursor, targets_compact):
 
 	pattern = re.compile(r'\w(\d+)')
 	weight_per_position = {}
@@ -378,23 +395,38 @@ def drug_effectivness_matrix(cursor, targets_compact, verbose=False):
 
 	positions_sorted = sorted(weight_per_position.keys(), key=lambda v: v)
 
+	twoD_matrix = {}
+	all_targets = []
+
 	for position in positions_sorted:
+		twoD_matrix[position] = {}
 		weights = weight_per_position[position]
 		if norm[position] == 0: continue
 		print("***********************************")
 		print(position)
-		# print("\n".join(per_patient_descriptors[position]))
+		#print("\n".join(per_patient_descriptors[position]))
 		targets_sorted = sorted(weights.keys(), key=lambda k: max(weights[k].values()), reverse=True)
+
 		for target in targets_sorted:
+
 			# for target, eff_vals in weights.items():
 			eff_vals = weights[target]
 			outstr = ""
+			display_val = 0
 			for eff, val in eff_vals.items():
-				if val >= 0.01: outstr += "\t\t %s  %.2f\n" % (eff, val / norm[position])
+				val /=  norm[position]
+				outstr += "\t\t %s  %.2f\n" % (eff, val)
+				if eff in ["eff_up", "ineff_down" "eff_unk"]:
+					display_val += val
+				elif eff in ["eff_down", "ineff_up", "ineff_unk"]:
+					display_val -= val
+			twoD_matrix[position][target] = display_val
+			if not target in all_targets: all_targets.append(target)
 			if outstr:
 				print("\t", target)
 				print(outstr)
-	return
+
+	return twoD_matrix, positions_sorted, sorted(all_targets)
 
 
 #########################################
@@ -405,13 +437,50 @@ def main():
 	all_drugs, active_moiety = drugs_in_fabula(cursor)
 
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
-	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
+
+	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety)
+
 	targets_compact = make_compact_profiles(target_activity)
-	drug_effectivness_matrix(cursor, targets_compact, verbose=True)
+	[twoD_matrix, positions, targets] = drug_effectivness_matrix(cursor, targets_compact)
 
 	cursor.close()
 	db.close()
 
+	print(len(positions), len(targets))
+
+	print("%12s"%"", end="")
+	for position in positions:
+		print("%7d"%position, end="")
+	print()
+	for target in targets:
+
+		print("%12s"%target[:10], end="")
+		for position in positions:
+			print("%7.2f"%twoD_matrix[position].get(target,0), end="")
+		print()
+
+	positions = list(filter(lambda position: len(twoD_matrix[position])>0
+	                                    and max([abs(d) for d in twoD_matrix[position].values()])>0.01, positions))
+	data = {}
+	for target in targets:
+		# if target in weak_targets: continue
+		auxlist = []
+		for position in positions:
+			auxlist.append(twoD_matrix[position].get(target,0))
+		if len(auxlist) == 0: continue
+		if max([abs(d) for d in auxlist])<0.1: continue
+		data[target] = auxlist
+	# https://note.nkmk.me/en/python-pandas-dataframe-rename
+	pandas_data_frame = pd.DataFrame(data, index=positions)
+	# matplotlib colormaps: https://matplotlib.org/tutorials/colors/colormaps.html
+	# cbar turns off the colorbar
+	#ax = sns.heatmap(pandas_data_frame, center = 0, cmap="seismic", cbar=False)
+	sns.set(font_scale=1.5)
+	ax = sns.clustermap(pandas_data_frame, center = 0, cmap="seismic")
+	plt.setp(ax.ax_heatmap.yaxis.get_majorticklabels(), rotation=0) # ylabels rotatesd otherwise
+
+	plt.show() # beats me how this knows what to plot, but id does
+	#plt.savefig("test.svg")
 
 #########################################
 if __name__ == '__main__':

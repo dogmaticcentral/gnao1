@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/23_disease_mutations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +14,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="22_GBD_active_interfaces.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
+      <file leaf-file-name="16_drug_mechanism_per_variant.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1115">
-              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+            <state relative-caret-position="328">
+              <caret line="463" selection-start-line="461" selection-end-line="463" />
+              <folding>
+                <element signature="e#89#120#0" />
+                <element signature="e#1658#1850#0" />
+                <element signature="e#1868#2079#0" />
+                <element signature="e#2144#2474#0" />
+                <element signature="e#2556#3785#0" />
+                <element signature="e#2862#3712#0" />
+                <element signature="e#3043#3152#0" />
+                <element signature="e#3230#3434#0" />
+                <element signature="e#3305#3390#0" />
+                <element signature="e#3504#3712#0" />
+                <element signature="e#3581#3666#0" />
+                <element signature="e#3852#4153#0" />
+                <element signature="e#3994#4131#0" />
+                <element signature="e#4029#4131#0" />
+                <element signature="e#4204#4783#0" />
+                <element signature="e#4355#4533#0" />
+                <element signature="e#4660#4749#0" />
+                <element signature="e#4900#6358#0" />
+                <element signature="e#5081#5313#0" />
+                <element signature="e#5081#5158#0" />
+                <element signature="e#5330#5551#0" />
+                <element signature="e#5388#5551#0" />
+                <element signature="e#5568#5606#0" />
+                <element signature="e#5729#6284#0" />
+                <element signature="e#5751#5802#0" />
+                <element signature="e#5883#5969#0" />
+                <element signature="e#6191#6284#0" />
+                <element signature="e#7553#7628#0" />
+                <element signature="e#9018#9367#0" />
+                <element signature="e#9245#9320#0" />
+                <element signature="e#9446#10516#0" />
+                <element signature="e#9516#9955#0" />
+                <element signature="e#9571#9858#0" />
+                <element signature="e#9653#9858#0" />
+                <element signature="e#10134#10500#0" />
+                <element signature="e#10543#11418#0" />
+                <element signature="e#10613#10833#0" />
+                <element signature="e#10690#10833#0" />
+                <element signature="e#11071#11401#0" />
+                <element signature="e#11202#11401#0" />
+                <element signature="e#11865#11914#0" />
+                <element signature="e#13695#13833#0" />
+                <element signature="e#13762#13833#0" />
+                <element signature="e#16352#16430#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="23_disease_mutations.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
+      <file leaf-file-name="pymol_constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="145" column="14" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
+            <state relative-caret-position="108">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="12_drug_mode_of_action_fix.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/12_drug_mode_of_action_fix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyplot.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.7/dist-packages/matplotlib/pyplot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-47">
+              <caret line="2962" column="21" lean-forward="true" selection-start-line="2962" selection-start-column="17" selection-end-line="2962" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -45,7 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>xion</find>
       <find>phenome2014novo</find>
       <find>schi</find>
       <find>print</find>
@@ -75,6 +136,7 @@
       <find>+</find>
       <find>in descr or</find>
       <find>alse</find>
+      <find>log</find>
     </findStrings>
     <replaceStrings>
       <replace>depth</replace>
@@ -112,7 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/30_movie/04_GDP_GTP_exchange.py" />
         <option value="$PROJECT_DIR$/30_movie/06_dissociation_from_GPCR.py" />
         <option value="$PROJECT_DIR$/30_movie/08_conformational_change.py" />
         <option value="$PROJECT_DIR$/30_movie/10_docking_to_adcy.py" />
@@ -159,10 +220,11 @@
         <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
         <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
-        <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
         <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
         <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
+        <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
+        <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
       </list>
     </option>
   </component>
@@ -187,17 +249,6 @@
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="50_movie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="50_movie" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
@@ -257,7 +308,6 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766473" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -265,8 +315,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49881935" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18819188" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.11702128" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -275,7 +327,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.24165708" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
@@ -311,38 +362,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/quaternion_time_series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="51" selection-start-column="51" selection-end-column="51" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/creating.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/30_movie/tools/00_morph_helix_hack.pl.py" />
     <entry file="file:///usr/lib/python3/dist-packages/pymol/importing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
@@ -520,13 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/14_ac_cplx_dissoc_and_GPCR_redock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="54" lean-forward="true" selection-start-line="52" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/16_zoom_into_GBD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -597,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -615,13 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="483" column="41" selection-start-line="483" selection-start-column="41" selection-end-line="483" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -694,17 +692,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="99" column="35" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="238" column="26" selection-start-line="238" selection-start-column="26" selection-end-line="238" selection-end-column="26" />
+          <folding>
+            <element signature="e#1#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/14_ac_cplx_dissoc_and_GPCR_redock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret column="28" lean-forward="true" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
+        <state relative-caret-position="2087">
           <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/23_disease_mutations.py">
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/seaborn/matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="145" column="14" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
+        <state relative-caret-position="404">
+          <caret line="269" column="8" selection-start-line="269" selection-start-column="8" selection-end-line="269" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-776">
+          <caret line="1124" column="8" selection-start-line="1124" selection-start-column="8" selection-end-line="1124" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_drug_mode_of_action_fix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="2962" column="21" lean-forward="true" selection-start-line="2962" selection-start-column="17" selection-end-line="2962" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="463" selection-start-line="461" selection-end-line="463" />
+          <folding>
+            <element signature="e#89#120#0" />
+            <element signature="e#1658#1850#0" />
+            <element signature="e#1868#2079#0" />
+            <element signature="e#2144#2474#0" />
+            <element signature="e#2556#3785#0" />
+            <element signature="e#2862#3712#0" />
+            <element signature="e#3043#3152#0" />
+            <element signature="e#3230#3434#0" />
+            <element signature="e#3305#3390#0" />
+            <element signature="e#3504#3712#0" />
+            <element signature="e#3581#3666#0" />
+            <element signature="e#3852#4153#0" />
+            <element signature="e#3994#4131#0" />
+            <element signature="e#4029#4131#0" />
+            <element signature="e#4204#4783#0" />
+            <element signature="e#4355#4533#0" />
+            <element signature="e#4660#4749#0" />
+            <element signature="e#4900#6358#0" />
+            <element signature="e#5081#5313#0" />
+            <element signature="e#5081#5158#0" />
+            <element signature="e#5330#5551#0" />
+            <element signature="e#5388#5551#0" />
+            <element signature="e#5568#5606#0" />
+            <element signature="e#5729#6284#0" />
+            <element signature="e#5751#5802#0" />
+            <element signature="e#5883#5969#0" />
+            <element signature="e#6191#6284#0" />
+            <element signature="e#7553#7628#0" />
+            <element signature="e#9018#9367#0" />
+            <element signature="e#9245#9320#0" />
+            <element signature="e#9446#10516#0" />
+            <element signature="e#9516#9955#0" />
+            <element signature="e#9571#9858#0" />
+            <element signature="e#9653#9858#0" />
+            <element signature="e#10134#10500#0" />
+            <element signature="e#10543#11418#0" />
+            <element signature="e#10613#10833#0" />
+            <element signature="e#10690#10833#0" />
+            <element signature="e#11071#11401#0" />
+            <element signature="e#11202#11401#0" />
+            <element signature="e#11865#11914#0" />
+            <element signature="e#13695#13833#0" />
+            <element signature="e#13762#13833#0" />
+            <element signature="e#16352#16430#0" />
+          </folding>
         </state>
       </provider>
     </entry>
