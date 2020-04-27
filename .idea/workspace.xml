@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
     </list>
@@ -15,23 +16,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="22_GBD_active_interfaces.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
+      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="34" />
+            <state relative-caret-position="378">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
+              <folding>
+                <element signature="e#1#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <file leaf-file-name="24_mysterious_epi_cluster.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+            <state relative-caret-position="-196">
+              <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pymol_constants.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="00_overview.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02_GNAO1_bound_to_GPCR.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quaternion_time_series.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/quaternion_time_series.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-780">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
               <folding>
-                <element signature="e#1#39#0" expanded="true" />
+                <element signature="n#!!doc" />
+                <element signature="e#127#191#0" expanded="true" />
+                <element signature="e#312#985#1" />
+                <element signature="e#2560#2616#0" />
+                <element signature="e#2898#2957#0" />
+                <element signature="e#3898#4014#0" />
+                <element signature="e#4739#4801#0" />
+                <element signature="e#5388#5501#0" />
+                <element signature="e#6192#6209#0" />
+                <element signature="e#7027#7087#0" />
+                <element signature="e#7771#8704#0" />
+                <element signature="e#8742#9515#0" />
+                <element signature="e#8813#9241#0" />
+                <element signature="e#8999#9241#0" />
+                <element signature="e#9278#9446#0" />
+                <element signature="e#9487#9515#0" />
+                <element signature="e#9595#12615#0" />
+                <element signature="e#9595#10523#1" />
+                <element signature="e#10678#11105#0" />
+                <element signature="e#11001#11044#0" />
+                <element signature="e#11150#11369#0" />
+                <element signature="e#11184#11202#0" />
+                <element signature="e#11285#11369#0" />
+                <element signature="e#11323#11338#0" />
+                <element signature="e#11398#11511#0" />
+                <element signature="e#11572#11834#0" />
+                <element signature="e#11853#12598#0" />
+                <element signature="e#12338#12507#0" />
+                <element signature="e#12420#12507#0" />
+                <element signature="e#12664#14301#0" />
+                <element signature="e#12664#13695#1" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_multiarray_umath.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-2066100795/numpy/core/_multiarray_umath.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="4735" column="4" selection-start-line="4735" selection-start-column="4" selection-end-line="4735" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -47,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>phenome2014novo</find>
       <find>schi</find>
       <find>print</find>
       <find>Attribute</find>
@@ -77,6 +155,7 @@
       <find>in descr or</find>
       <find>alse</find>
       <find>log</find>
+      <find>scipy</find>
     </findStrings>
     <replaceStrings>
       <replace>depth</replace>
@@ -157,22 +236,22 @@
         <option value="$PROJECT_DIR$/50_movie/19_gnao_structure.py" />
         <option value="$PROJECT_DIR$/50_movie/20_var_positions.py" />
         <option value="$PROJECT_DIR$/50_movie/21_GBD_only.py" />
-        <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
         <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
         <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
-        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
         <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
+        <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
+        <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1932" />
-    <option name="y" value="11" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1945" />
+    <option name="y" value="7" />
     <option name="width" value="1717" />
-    <option name="height" value="1014" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -250,10 +329,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="1945" y="7" width="1717" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18819188" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -261,8 +339,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49881935" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2107438" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.34988713" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -271,7 +351,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.11702128" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
@@ -284,15 +363,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="DB Browser" order="2" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49881935" weight="0.0" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.24231242" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49945414" weight="0.32963374" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50118065" side_tool="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.24231242" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49881935" weight="0.0" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -307,27 +386,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/importing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-82">
-          <caret line="629" column="8" selection-start-line="629" selection-start-column="8" selection-end-line="629" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymol/editing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="390" column="8" selection-start-line="390" selection-start-column="8" selection-end-line="390" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pymol/editing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2458">
-          <caret line="1414" column="8" selection-start-line="1414" selection-start-column="8" selection-end-line="1414" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/utils/pymol_constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -533,20 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" selection-start-line="25" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -572,13 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
@@ -617,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/dist-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52434">
@@ -638,20 +668,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
-          <folding>
-            <element signature="e#1#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="147">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="34" />
+        <state relative-caret-position="488">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-2066100795/numpy/core/_multiarray_umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="4735" column="4" selection-start-line="4735" selection-start-column="4" selection-end-line="4735" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/quaternion_time_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#127#191#0" expanded="true" />
+            <element signature="e#312#985#1" />
+            <element signature="e#2560#2616#0" />
+            <element signature="e#2898#2957#0" />
+            <element signature="e#3898#4014#0" />
+            <element signature="e#4739#4801#0" />
+            <element signature="e#5388#5501#0" />
+            <element signature="e#6192#6209#0" />
+            <element signature="e#7027#7087#0" />
+            <element signature="e#7771#8704#0" />
+            <element signature="e#8742#9515#0" />
+            <element signature="e#8813#9241#0" />
+            <element signature="e#8999#9241#0" />
+            <element signature="e#9278#9446#0" />
+            <element signature="e#9487#9515#0" />
+            <element signature="e#9595#12615#0" />
+            <element signature="e#9595#10523#1" />
+            <element signature="e#10678#11105#0" />
+            <element signature="e#11001#11044#0" />
+            <element signature="e#11150#11369#0" />
+            <element signature="e#11184#11202#0" />
+            <element signature="e#11285#11369#0" />
+            <element signature="e#11323#11338#0" />
+            <element signature="e#11398#11511#0" />
+            <element signature="e#11572#11834#0" />
+            <element signature="e#11853#12598#0" />
+            <element signature="e#12338#12507#0" />
+            <element signature="e#12420#12507#0" />
+            <element signature="e#12664#14301#0" />
+            <element signature="e#12664#13695#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+          <folding>
+            <element signature="e#1#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-196">
+          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>

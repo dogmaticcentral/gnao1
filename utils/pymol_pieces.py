@@ -1,5 +1,5 @@
 
-from math import acos, sqrt, fabs, sin
+from math import acos, sqrt, fabs, sin, exp, pi
 
 from pymol import cmd
 from math import pi, cos
@@ -12,12 +12,8 @@ import quaternion  # pip3 install numpy-quaternion and numba
 from pymol_constants import *
 from random import random
 
-
-
-
 ########################################################################
 ########################################################################
-
 # pheno is defined in pymol_constants
 def pheno_residues(gnao_structure="gnao"):
 	for resi, counts in pheno.items():
@@ -208,26 +204,45 @@ def view2quat(view):
 	return quaternion.from_rotation_matrix(matrix)
 
 
-def intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno):
-	# (quat start, quat end, time start, time end, time evaluated)
-	# of example (qstart, qend, 0, number_of_frames, frameno)
-	# (qstart, qend, 0, 1, frameno/number_of_frames) is npt working, even though these
-	# numbers ar esupposed to be floats - some numpy shit I would guess
-	#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
-	qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
+def intermediate_view(view_init, view_last, qcur, time_fraction):
 	# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
 	intermediate_view = [x if fabs(x)>0.001 else 0 for x in list(quaternion.as_rotation_matrix(qcur).flatten())]
 
 	for i in range(9, len(view_init)):
 		# pymol is sitll on python2; in python2 3/5 = 0; in python3 it is 0.6
-		update = view_init[i] + (view_last[i] - view_init[i]) * (float(frameno) / number_of_frames)
+		update = view_init[i] + (view_last[i] - view_init[i]) * time_fraction
 		if fabs(update) < 0.001: update = 0
 		intermediate_view.append(update)
-
 	return intermediate_view
 
 
-def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5, frameno_offset=0):
+def logistic(x):
+	return 1.0/(1.0 + exp(-x))
+
+
+def easing(number_of_frames, easing_type):
+
+	(shape, interval_bound_behavior) = easing_type
+
+	if shape not in ["sine", "logistic"]: shape="sine" # perhaps I should warn here
+	if interval_bound_behavior not in ["in", "out", "inout"]: interval_bound_behavior= "inout"
+	time_series = []
+
+	if shape=="sine":
+		if interval_bound_behavior=="inout":
+			time_series = [(1+sin(-pi/2+i*pi/(number_of_frames-1)))/2 for i in range(1,number_of_frames-1)]
+		elif interval_bound_behavior=="in":
+			time_series = [1+sin(-pi/2+i*pi/2/(number_of_frames-1)) for i in range(1,number_of_frames-1)]
+		elif interval_bound_behavior=="out":
+			time_series = [sin(i*pi/2/(number_of_frames-1)) for i in range(1,number_of_frames-1)]
+
+	elif shape=="logistic":
+		time_series = [logistic(-6 + i*12.0/(number_of_frames-1)) for i in range(1,number_of_frames-1)]
+
+	return time_series
+
+# noinspection PyTypeChecker
+def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5, frameno_offset=0, easing_type=("sine", "inout")):
 
 	view_init = view_string2view(view_init_str)
 	view_last = view_string2view(view_last_str)
@@ -235,14 +250,30 @@ def view_interpolate(view_init_str, view_last_str, base_name, number_of_frames=5
 	qstart = view2quat(view_init)
 	qend   = view2quat(view_last)
 
+	# logistic is a nice sigmoid https://en.wikipedia.org/wiki/Sigmoid_function
+	# but it mayllok jumpy
+	time_series = easing(32, easing_type)
+
+	# cubic spline interpolation for quaternion
+	interm_quat = quaternion.squad(np.array([qstart, qend]), np.array([0, 1]), np.array(time_series))
+
 	last_frame = frameno_offset
-	for frameno in range(0, number_of_frames+1):
-		intrm_view = intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
+	cmd.set_view(view_init_str)
+	cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+	last_frame += 1
+
+	for frameno in range(1, number_of_frames-1):
+		intrm_view = intermediate_view(view_init, view_last, interm_quat[frameno-1], time_series[frameno-1])
 		cmd.set_view(view2view_string(intrm_view))
 		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
 		last_frame += 1
 
+	cmd.set_view(view_last_str)
+	cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+	last_frame += 1
+
 	return last_frame
+
 
 '''
    Note that when homogenous is zero, the input matrix is NOT a
@@ -492,3 +523,42 @@ def phenotype_scene(gnao_cartoon=True): # shared between movie and xlsx
 	residue_cluster_clump("gnao",  conserved, "gnao-conserved", "aquamarine", transparency=0.6)
 	pheno_residues()
 	return
+
+
+##################################################################################
+##################################################################################
+def intermediate_view_linear(view_init, view_last, qstart, qend, number_of_frames, frameno):
+	# we don't want slerp - the l there means "linear"
+	# (quat start, quat end, time start, time end, time evaluated)
+	# of example (qstart, qend, 0, number_of_frames, frameno)
+	# (qstart, qend, 0, 1, frameno/number_of_frames) is npt working, even though these
+	# numbers ar esupposed to be floats - some numpy shit I would guess
+	#  easing: (qstart, qend, 0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2
+	qcur   = quaternion.slerp(qstart, qend,  0, number_of_frames, number_of_frames*(1-cos(pi*frameno/number_of_frames))/2)
+	# some funny results can be obtained with tiny numbers  (2D proteins and such) not sure where that comes from
+	intermediate_view = [x if fabs(x)>0.001 else 0 for x in list(quaternion.as_rotation_matrix(qcur).flatten())]
+
+	for i in range(9, len(view_init)):
+		# pymol is sitll on python2; in python2 3/5 = 0; in python3 it is 0.6
+		update = view_init[i] + (view_last[i] - view_init[i]) * (float(frameno) / number_of_frames)
+		if fabs(update) < 0.001: update = 0
+		intermediate_view.append(update)
+
+	return intermediate_view
+
+def view_interpolate_linear(view_init_str, view_last_str, base_name, number_of_frames=5, frameno_offset=0):
+
+	view_init = view_string2view(view_init_str)
+	view_last = view_string2view(view_last_str)
+	# get quaternions for interpolation
+	qstart = view2quat(view_init)
+	qend   = view2quat(view_last)
+
+	last_frame = frameno_offset
+	for frameno in range(0, number_of_frames+1):
+		intrm_view = intermediate_view(view_init, view_last, qstart, qend, number_of_frames, frameno)
+		cmd.set_view(view2view_string(intrm_view))
+		cmd.png(base_name + str(last_frame).zfill(3), width=1920, height=1080, ray=True)
+		last_frame += 1
+
+	return last_frame

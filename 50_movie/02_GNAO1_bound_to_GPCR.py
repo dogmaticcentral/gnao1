@@ -56,13 +56,10 @@ def sequence():
 		style_substrate("substrate-GDP", mol_color["substrate-GDP"])
 		style_lipid("lipid")
 
-		frame_offset = 0
-		cmd.set_view(sequence_02_view[0])
-		cmd.png(frame_basename + str(frame_offset).zfill(3), width=1920, height=1080, ray=True)
 		# interpolate to the view from below - makes pngs
-		frame_offset += 1
+		frame_offset = 1
 		frame_offset = view_interpolate(sequence_02_view[0], sequence_02_view[1], frame_basename,
-		                                number_of_frames=30, frameno_offset=frame_offset)
+		                                number_of_frames=32, frameno_offset=frame_offset, easing_type=("sine", "inout"))
 
 
 	else: # run from gui
