@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <version>190219</version>
-    <url>gnao1_movie.ove</url>
+    <url>/home/ivana/projects/gnao1db/50_movie/movie/gnao1_movie.ove</url>
     <folders/>
     <media>
         <footage id="1" folder="0" name="seq02frm000.png" url="02_gpcr/seq02frm000.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
@@ -145,147 +145,147 @@
         <footage id="47" folder="0" name="seq24_1_029.png" url="24_mystery/seq24_1_029.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="48" folder="0" name="seq25_1_000.png" url="25_therapy/seq25_1_%3d.png" duration="600000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="48" folder="0" name="seq25_1_000.png" url="25_therapy/seq25_1_%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="49" folder="0" name="seq25_2_015.png" url="25_therapy/seq25_2_%3d.png" duration="600000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="15" proxy="0" proxypath="">
-            <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
-        </footage>
-        <footage id="50" folder="0" name="seq25_3_030.png" url="25_therapy/seq25_3_%3d.png" duration="600000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="30" proxy="0" proxypath="">
-            <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
-        </footage>
-        <footage id="51" folder="0" name="afaparas.mp4" url="../../../../scratch/afaparas.mp4" duration="7567000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="49" folder="0" name="afaparas.mp4" url="../../../../scratch/afaparas.mp4" duration="7567000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1616" height="464" framerate="30.0000000000" infinite="0"/>
         </footage>
-        <footage id="52" folder="0" name="seq25_2_015.png" url="25_therapy/seq25_2_015.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
-            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
-        </footage>
-        <footage id="53" folder="0" name="seq25_3_030.png" url="25_therapy/seq25_3_030.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
-            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
-        </footage>
-        <footage id="54" folder="0" name="seq25_3_044.png" url="25_therapy/seq25_3_044.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
-            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
-        </footage>
-        <footage id="55" folder="0" name="EMD_axes.png" url="EMD_axes.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="50" folder="0" name="EMD_axes.png" url="EMD_axes.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="712" height="523" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="56" folder="0" name="curved_arrow.png" url="curved_arrow.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="51" folder="0" name="curved_arrow.png" url="curved_arrow.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="340" height="462" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="57" folder="0" name="seq23_3_frm012.png" url="23_disease_muts/seq23_3_frm012.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="52" folder="0" name="seq23_3_frm012.png" url="23_disease_muts/seq23_3_frm012.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="58" folder="0" name="seq23_4_frm013.png" url="23_disease_muts/seq23_4_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="13" proxy="0" proxypath="">
+        <footage id="53" folder="0" name="seq23_4_frm013.png" url="23_disease_muts/seq23_4_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="13" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="59" folder="0" name="seq23_4_frm013.png" url="23_disease_muts/seq23_4_frm013.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="54" folder="0" name="seq23_4_frm013.png" url="23_disease_muts/seq23_4_frm013.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="60" folder="0" name="seq23_4_frm028.png" url="23_disease_muts/seq23_4_frm028.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="55" folder="0" name="seq23_4_frm028.png" url="23_disease_muts/seq23_4_frm028.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="61" folder="0" name="seq23_5_frm029.png" url="23_disease_muts/seq23_5_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="29" proxy="0" proxypath="">
+        <footage id="56" folder="0" name="seq23_5_frm029.png" url="23_disease_muts/seq23_5_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="29" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="62" folder="0" name="seq23_6_frm045.png" url="23_disease_muts/seq23_6_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="45" proxy="0" proxypath="">
+        <footage id="57" folder="0" name="seq23_6_frm045.png" url="23_disease_muts/seq23_6_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="45" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="63" folder="0" name="seq23_5_frm044.png" url="23_disease_muts/seq23_5_frm044.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="58" folder="0" name="seq23_5_frm044.png" url="23_disease_muts/seq23_5_frm044.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="64" folder="0" name="seq23_6_frm045.png" url="23_disease_muts/seq23_6_frm045.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="59" folder="0" name="seq23_6_frm045.png" url="23_disease_muts/seq23_6_frm045.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="65" folder="0" name="seq23_7_frm061.png" url="23_disease_muts/seq23_7_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="61" proxy="0" proxypath="">
+        <footage id="60" folder="0" name="seq23_7_frm061.png" url="23_disease_muts/seq23_7_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="61" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="66" folder="0" name="seq23_7_frm076.png" url="23_disease_muts/seq23_7_frm076.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="61" folder="0" name="seq23_7_frm076.png" url="23_disease_muts/seq23_7_frm076.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="67" folder="0" name="seq23_8_frm077.png" url="23_disease_muts/seq23_8_frm077.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="62" folder="0" name="seq23_8_frm077.png" url="23_disease_muts/seq23_8_frm077.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="68" folder="0" name="seq23_8_frm077.png" url="23_disease_muts/seq23_8_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="77" proxy="0" proxypath="">
+        <footage id="63" folder="0" name="seq23_8_frm077.png" url="23_disease_muts/seq23_8_frm%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="77" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="69" folder="0" name="seq23_8_frm091.png" url="23_disease_muts/seq23_8_frm091.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="64" folder="0" name="seq23_8_frm091.png" url="23_disease_muts/seq23_8_frm091.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="70" folder="0" name="red_circle.png" url="red_circle.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="65" folder="0" name="red_circle.png" url="red_circle.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="500" height="500" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="71" folder="0" name="seq22_1_frm000.png" url="22_interfaces/seq22_1_frm%3d.png" duration="440000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="66" folder="0" name="seq22_1_frm000.png" url="22_interfaces/seq22_1_frm%3d.png" duration="440000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="72" folder="0" name="seq22_2_frm011.png" url="22_interfaces/seq22_2_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="11" proxy="0" proxypath="">
+        <footage id="67" folder="0" name="seq22_2_frm011.png" url="22_interfaces/seq22_2_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="11" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="73" folder="0" name="seq22_2_frm011.png" url="22_interfaces/seq22_2_frm011.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="68" folder="0" name="seq22_2_frm011.png" url="22_interfaces/seq22_2_frm011.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="74" folder="0" name="seq22_2_frm047.png" url="22_interfaces/seq22_2_frm047.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="69" folder="0" name="seq22_2_frm047.png" url="22_interfaces/seq22_2_frm047.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="75" folder="0" name="seq22_3_frm048.png" url="22_interfaces/seq22_3_frm048.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="70" folder="0" name="seq22_3_frm048.png" url="22_interfaces/seq22_3_frm048.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="76" folder="0" name="seq22_3_frm048.png" url="22_interfaces/seq22_3_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="48" proxy="0" proxypath="">
+        <footage id="71" folder="0" name="seq22_3_frm048.png" url="22_interfaces/seq22_3_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="48" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="77" folder="0" name="seq22_3_frm084.png" url="22_interfaces/seq22_3_frm084.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="72" folder="0" name="seq22_3_frm084.png" url="22_interfaces/seq22_3_frm084.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="78" folder="0" name="seq22_4_frm085.png" url="22_interfaces/seq22_4_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="85" proxy="0" proxypath="">
+        <footage id="73" folder="0" name="seq22_4_frm085.png" url="22_interfaces/seq22_4_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="85" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="79" folder="0" name="seq22_4_frm085.png" url="22_interfaces/seq22_4_frm085.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="74" folder="0" name="seq22_4_frm085.png" url="22_interfaces/seq22_4_frm085.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="80" folder="0" name="seq22_4_frm121.png" url="22_interfaces/seq22_4_frm121.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="75" folder="0" name="seq22_4_frm121.png" url="22_interfaces/seq22_4_frm121.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="81" folder="0" name="seq22_5_frm122.png" url="22_interfaces/seq22_5_frm122.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="76" folder="0" name="seq22_5_frm122.png" url="22_interfaces/seq22_5_frm122.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="82" folder="0" name="seq22_5_frm122.png" url="22_interfaces/seq22_5_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="122" proxy="0" proxypath="">
+        <footage id="77" folder="0" name="seq22_5_frm122.png" url="22_interfaces/seq22_5_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="122" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="83" folder="0" name="seq22_5_frm158.png" url="22_interfaces/seq22_5_frm158.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="78" folder="0" name="seq22_5_frm158.png" url="22_interfaces/seq22_5_frm158.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="84" folder="0" name="seq22_6_frm159.png" url="22_interfaces/seq22_6_frm159.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="79" folder="0" name="seq22_6_frm159.png" url="22_interfaces/seq22_6_frm159.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="85" folder="0" name="seq22_6_frm159.png" url="22_interfaces/seq22_6_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="159" proxy="0" proxypath="">
+        <footage id="80" folder="0" name="seq22_6_frm159.png" url="22_interfaces/seq22_6_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="159" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="86" folder="0" name="seq22_6_frm195.png" url="22_interfaces/seq22_6_frm195.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="81" folder="0" name="seq22_6_frm195.png" url="22_interfaces/seq22_6_frm195.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="87" folder="0" name="seq22_7_frm196.png" url="22_interfaces/seq22_7_frm196.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="82" folder="0" name="seq22_7_frm196.png" url="22_interfaces/seq22_7_frm196.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="88" folder="0" name="seq22_7_frm196.png" url="22_interfaces/seq22_7_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="196" proxy="0" proxypath="">
+        <footage id="83" folder="0" name="seq22_7_frm196.png" url="22_interfaces/seq22_7_frm%3d.png" duration="1480000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="196" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="89" folder="0" name="seq22_7_frm232.png" url="22_interfaces/seq22_7_frm232.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="84" folder="0" name="seq22_7_frm232.png" url="22_interfaces/seq22_7_frm232.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="90" folder="0" name="seq22_8_frm233.png" url="22_interfaces/seq22_8_frm233.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="85" folder="0" name="seq22_8_frm233.png" url="22_interfaces/seq22_8_frm233.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
-        <footage id="91" folder="0" name="seq22_8_frm233.png" url="22_interfaces/seq22_8_frm%3d.png" duration="440000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="233" proxy="0" proxypath="">
+        <footage id="86" folder="0" name="seq22_8_frm233.png" url="22_interfaces/seq22_8_frm%3d.png" duration="440000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="233" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
         </footage>
-        <footage id="92" folder="0" name="seq22_8_frm243.png" url="22_interfaces/seq22_8_frm243.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+        <footage id="87" folder="0" name="seq22_8_frm243.png" url="22_interfaces/seq22_8_frm243.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="88" folder="0" name="seq25_2_016.png" url="25_therapy/seq25_2_016.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="89" folder="0" name="seq25_2_016.png" url="25_therapy/seq25_2_%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="16" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
+        </footage>
+        <footage id="90" folder="0" name="seq25_2_031.png" url="25_therapy/seq25_2_031.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
+        </footage>
+        <footage id="91" folder="0" name="seq25_3_032.png" url="25_therapy/seq25_3_%3d.png" duration="640000" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="32" proxy="0" proxypath="">
+            <video id="0" width="1920" height="1080" framerate="25.0000000000" infinite="0"/>
+        </footage>
+        <footage id="92" folder="0" name="seq25_3_047.png" url="25_therapy/seq25_3_047.png" duration="0" using_inout="0" in="0" out="0" speed="1" alphapremul="0" startnumber="0" proxy="0" proxypath="">
             <video id="0" width="1920" height="1080" framerate="0.0000000000" infinite="1"/>
         </footage>
     </media>
     <sequences>
         <sequence id="1" folder="0" name="Sequence 01" width="1920" height="1080" framerate="25.0000000000" afreq="48000" alayout="3" open="1" workarea="0" workareaIn="0" workareaOut="0">
-            <clip id="0" enabled="1" name="Solid Color" clipin="-539" in="0" out="9498" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="0" enabled="1" name="Solid Color" clipin="-1129" in="0" out="8759" track="-1" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
-                <closing length="189" name="/Cross Dissolve" enabled="1"/>
+                <closing length="58" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="960"/>
@@ -1423,7 +1423,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="38" enabled="1" name="seq24_2_frm030.png" clipin="0" in="6626" out="6726" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
+            <clip id="38" enabled="1" name="seq24_2_frm030.png" clipin="-13" in="6613" out="6726" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="43" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1568,7 +1568,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="43" enabled="1" name="seq25_1_000.png" clipin="0" in="7188" out="7203" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
+            <clip id="43" enabled="1" name="seq25_1_000.png" clipin="0" in="7188" out="7201" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="48" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1597,7 +1597,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="44" enabled="1" name="seq25_2_015.png" clipin="0" in="7582" out="7596" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
+            <clip id="44" enabled="1" name="seq18frm000.png" clipin="0" in="1422" out="1447" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="26" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1626,65 +1626,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="45" enabled="1" name="seq25_3_030.png" clipin="0" in="8012" out="8027" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
-                <linked/>
-                <effect name="Distort/Transform" enabled="1">
-                    <row>
-                        <field id="posx" value="960"/>
-                        <field id="posy" value="540"/>
-                    </row>
-                    <row>
-                        <field id="scalex" value="100"/>
-                        <field id="scaley" value="100"/>
-                    </row>
-                    <row>
-                        <field id="uniformscale" value="1"/>
-                    </row>
-                    <row>
-                        <field id="rotation" value="0"/>
-                    </row>
-                    <row>
-                        <field id="anchorx" value="0"/>
-                        <field id="anchory" value="0"/>
-                    </row>
-                    <row>
-                        <field id="opacity" value="100"/>
-                    </row>
-                    <row>
-                        <field id="blendmode" value=""/>
-                    </row>
-                </effect>
-            </clip>
-            <clip id="46" enabled="1" name="seq18frm000.png" clipin="0" in="1422" out="1447" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="26" stream="0">
-                <linked/>
-                <effect name="Distort/Transform" enabled="1">
-                    <row>
-                        <field id="posx" value="960"/>
-                        <field id="posy" value="540"/>
-                    </row>
-                    <row>
-                        <field id="scalex" value="100"/>
-                        <field id="scaley" value="100"/>
-                    </row>
-                    <row>
-                        <field id="uniformscale" value="1"/>
-                    </row>
-                    <row>
-                        <field id="rotation" value="0"/>
-                    </row>
-                    <row>
-                        <field id="anchorx" value="0"/>
-                        <field id="anchory" value="0"/>
-                    </row>
-                    <row>
-                        <field id="opacity" value="100"/>
-                    </row>
-                    <row>
-                        <field id="blendmode" value=""/>
-                    </row>
-                </effect>
-            </clip>
-            <clip id="47" enabled="1" name="afaparas.mp4" clipin="0" in="3892" out="4081" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
+            <clip id="45" enabled="1" name="afaparas.mp4" clipin="0" in="3892" out="4081" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="49" stream="0">
                 <linked/>
                 <closing length="14" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -1714,7 +1656,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="48" enabled="1" name="seq24_1_029.png" clipin="0" in="6167" out="6613" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
+            <clip id="46" enabled="1" name="seq24_1_029.png" clipin="0" in="6167" out="6613" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="47" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -1743,7 +1685,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="49" enabled="1" name="afatest.mp4" clipin="0" in="6284" out="6471" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="38" stream="0">
+            <clip id="47" enabled="1" name="afatest.mp4" clipin="0" in="6284" out="6471" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="38" stream="0">
                 <linked/>
                 <opening length="20" name="/Cross Dissolve" enabled="1"/>
                 <closing length="28" name="/Cross Dissolve" enabled="1"/>
@@ -1774,94 +1716,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="50" enabled="1" name="seq25_2_015.png" clipin="0" in="7203" out="7582" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
-                <linked/>
-                <effect name="Distort/Transform" enabled="1">
-                    <row>
-                        <field id="posx" value="960"/>
-                        <field id="posy" value="540"/>
-                    </row>
-                    <row>
-                        <field id="scalex" value="100"/>
-                        <field id="scaley" value="100"/>
-                    </row>
-                    <row>
-                        <field id="uniformscale" value="1"/>
-                    </row>
-                    <row>
-                        <field id="rotation" value="0"/>
-                    </row>
-                    <row>
-                        <field id="anchorx" value="0"/>
-                        <field id="anchory" value="0"/>
-                    </row>
-                    <row>
-                        <field id="opacity" value="100"/>
-                    </row>
-                    <row>
-                        <field id="blendmode" value=""/>
-                    </row>
-                </effect>
-            </clip>
-            <clip id="51" enabled="1" name="seq25_3_030.png" clipin="0" in="7596" out="8012" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
-                <linked/>
-                <effect name="Distort/Transform" enabled="1">
-                    <row>
-                        <field id="posx" value="960"/>
-                        <field id="posy" value="540"/>
-                    </row>
-                    <row>
-                        <field id="scalex" value="100"/>
-                        <field id="scaley" value="100"/>
-                    </row>
-                    <row>
-                        <field id="uniformscale" value="1"/>
-                    </row>
-                    <row>
-                        <field id="rotation" value="0"/>
-                    </row>
-                    <row>
-                        <field id="anchorx" value="0"/>
-                        <field id="anchory" value="0"/>
-                    </row>
-                    <row>
-                        <field id="opacity" value="100"/>
-                    </row>
-                    <row>
-                        <field id="blendmode" value=""/>
-                    </row>
-                </effect>
-            </clip>
-            <clip id="52" enabled="1" name="seq25_3_044.png" clipin="0" in="8027" out="8854" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
-                <linked/>
-                <effect name="Distort/Transform" enabled="1">
-                    <row>
-                        <field id="posx" value="960"/>
-                        <field id="posy" value="540"/>
-                    </row>
-                    <row>
-                        <field id="scalex" value="100"/>
-                        <field id="scaley" value="100"/>
-                    </row>
-                    <row>
-                        <field id="uniformscale" value="1"/>
-                    </row>
-                    <row>
-                        <field id="rotation" value="0"/>
-                    </row>
-                    <row>
-                        <field id="anchorx" value="0"/>
-                        <field id="anchory" value="0"/>
-                    </row>
-                    <row>
-                        <field id="opacity" value="100"/>
-                    </row>
-                    <row>
-                        <field id="blendmode" value=""/>
-                    </row>
-                </effect>
-            </clip>
-            <clip id="53" enabled="1" name="Title" clipin="0" in="7" out="56" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="48" enabled="1" name="Title" clipin="0" in="7" out="56" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="12" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -1947,7 +1802,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="54" enabled="1" name="Title" clipin="-25" in="443" out="497" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="49" enabled="1" name="Title" clipin="-25" in="443" out="497" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="10" name="/Cross Dissolve" enabled="1"/>
                 <closing length="13" name="/Cross Dissolve" enabled="1"/>
@@ -2033,10 +1888,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="55" enabled="1" name="Title" clipin="0" in="58" out="140" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="50" enabled="1" name="Title" clipin="0" in="58" out="140" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="11" name="/Cross Dissolve" enabled="1"/>
-                <closing length="13" name="/Cross Dissolve" enabled="1"/>
+                <closing length="7" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1032"/>
@@ -2119,7 +1974,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="56" enabled="1" name="Title" clipin="0" in="146" out="240" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="51" enabled="1" name="Title" clipin="0" in="146" out="240" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="12" name="/Cross Dissolve" enabled="1"/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
@@ -2205,7 +2060,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="57" enabled="1" name="Title" clipin="3" in="240" out="288" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="52" enabled="1" name="Title" clipin="3" in="240" out="288" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="7" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -2291,7 +2146,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="58" enabled="1" name="Title" clipin="0" in="288" out="356" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="53" enabled="1" name="Title" clipin="0" in="288" out="356" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="10" name="/Cross Dissolve" enabled="1"/>
                 <closing length="10" name="/Cross Dissolve" enabled="1"/>
@@ -2377,7 +2232,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="59" enabled="1" name="Title" clipin="-11" in="356" out="441" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="54" enabled="1" name="Title" clipin="-11" in="356" out="441" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="12" name="/Cross Dissolve" enabled="1"/>
                 <closing length="15" name="/Cross Dissolve" enabled="1"/>
@@ -2409,7 +2264,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="and Ga undergoes a conformational change"/>
+                        <field id="text" value="and Gα undergoes a conformational change"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -2463,7 +2318,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="60" enabled="1" name="Title" clipin="-17" in="499" out="550" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="55" enabled="1" name="Title" clipin="-17" in="499" out="550" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -2549,7 +2404,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="61" enabled="1" name="Title" clipin="-17" in="550" out="601" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="56" enabled="1" name="Title" clipin="-17" in="550" out="601" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="9" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -2635,7 +2490,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="62" enabled="1" name="seq12frm000.png" clipin="0" in="605" out="628" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="2" stream="0">
+            <clip id="57" enabled="1" name="seq12frm000.png" clipin="0" in="605" out="628" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="2" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -2664,7 +2519,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="63" enabled="1" name="Title" clipin="-17" in="662" out="762" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="58" enabled="1" name="Title" clipin="-17" in="662" out="762" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="11" name="/Cross Dissolve" enabled="1"/>
                 <closing length="15" name="/Cross Dissolve" enabled="1"/>
@@ -2750,7 +2605,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="64" enabled="1" name="Title" clipin="-19" in="601" out="661" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="59" enabled="1" name="Title" clipin="-19" in="601" out="661" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="12" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -2836,7 +2691,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="65" enabled="1" name="Title" clipin="-31" in="762" out="802" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="60" enabled="1" name="Title" clipin="-31" in="762" out="802" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="11" name="/Cross Dissolve" enabled="1"/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
@@ -2922,7 +2777,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="66" enabled="1" name="Title" clipin="-33" in="782" out="816" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="61" enabled="1" name="Title" clipin="-33" in="782" out="816" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="11" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -2954,7 +2809,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="Ga is ready to dissociate from its effector,"/>
+                        <field id="text" value="Gα is ready to dissociate from its effector,"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -3008,7 +2863,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="67" enabled="1" name="Title" clipin="-22" in="816" out="839" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="62" enabled="1" name="Title" clipin="-22" in="816" out="839" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -3040,7 +2895,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="re-form the trimer with Gbg,"/>
+                        <field id="text" value="re-form the trimer with Gβγ"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -3094,7 +2949,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="68" enabled="1" name="Title" clipin="-17" in="872" out="968" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="63" enabled="1" name="Title" clipin="-17" in="872" out="968" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="12" name="/Cross Dissolve" enabled="1"/>
@@ -3180,7 +3035,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="69" enabled="1" name="Title" clipin="-21" in="839" out="868" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="64" enabled="1" name="Title" clipin="-21" in="839" out="868" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="10" name="/Cross Dissolve" enabled="1"/>
                 <closing length="10" name="/Cross Dissolve" enabled="1"/>
@@ -3266,7 +3121,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="70" enabled="1" name="Title" clipin="-17" in="1001" out="1057" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="65" enabled="1" name="Title" clipin="-17" in="1001" out="1057" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="7" name="/Cross Dissolve" enabled="1"/>
                 <closing length="5" name="/Cross Dissolve" enabled="1"/>
@@ -3352,7 +3207,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="71" enabled="1" name="Title" clipin="7" in="1057" out="1121" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="66" enabled="1" name="Title" clipin="7" in="1057" out="1121" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="10" name="/Cross Dissolve" enabled="1"/>
@@ -3438,7 +3293,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="72" enabled="1" name="Title" clipin="7" in="1130" out="1178" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="67" enabled="1" name="Title" clipin="7" in="1130" out="1178" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="4" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -3524,7 +3379,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="73" enabled="1" name="Title" clipin="7" in="1203" out="1255" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="68" enabled="1" name="Title" clipin="7" in="1203" out="1255" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="7" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -3610,7 +3465,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="74" enabled="1" name="Title" clipin="7" in="1294" out="1405" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="69" enabled="1" name="Title" clipin="7" in="1294" out="1405" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
@@ -3696,7 +3551,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="75" enabled="1" name="Title" clipin="7" in="1408" out="1506" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="70" enabled="1" name="Title" clipin="7" in="1408" out="1506" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="6" name="/Cross Dissolve" enabled="1"/>
                 <closing length="5" name="/Cross Dissolve" enabled="1"/>
@@ -3782,7 +3637,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="76" enabled="1" name="Title" clipin="7" in="1429" out="1506" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="71" enabled="1" name="Title" clipin="7" in="1429" out="1506" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="2" name="/Cross Dissolve" enabled="1"/>
                 <closing length="5" name="/Cross Dissolve" enabled="1"/>
@@ -3868,7 +3723,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="77" enabled="1" name="Title" clipin="7" in="1524" out="1629" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="72" enabled="1" name="Title" clipin="7" in="1524" out="1629" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="5" name="/Cross Dissolve" enabled="1"/>
@@ -3954,7 +3809,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="78" enabled="1" name="Title" clipin="7" in="1629" out="1710" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="73" enabled="1" name="Title" clipin="7" in="1629" out="1710" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
@@ -4040,7 +3895,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="79" enabled="1" name="Title" clipin="7" in="1710" out="1843" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="74" enabled="1" name="Title" clipin="7" in="1710" out="1843" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -4126,7 +3981,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="80" enabled="1" name="Title" clipin="-15" in="1843" out="1997" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="75" enabled="1" name="Title" clipin="-15" in="1843" out="1997" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -4212,7 +4067,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="81" enabled="1" name="Title" clipin="57" in="1913" out="2064" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="76" enabled="1" name="Title" clipin="57" in="1913" out="2064" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="17" name="/Cross Dissolve" enabled="1"/>
                 <closing length="9" name="/Cross Dissolve" enabled="1"/>
@@ -4298,7 +4153,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="82" enabled="1" name="Title" clipin="7" in="2064" out="2213" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="77" enabled="1" name="Title" clipin="7" in="2064" out="2213" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="7" name="/Cross Dissolve" enabled="1"/>
@@ -4384,7 +4239,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="83" enabled="1" name="Title" clipin="7" in="2096" out="2230" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="78" enabled="1" name="Title" clipin="7" in="2096" out="2230" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -4470,7 +4325,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="84" enabled="1" name="Title" clipin="7" in="2230" out="2505" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="79" enabled="1" name="Title" clipin="7" in="2230" out="2505" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="8" name="/Cross Dissolve" enabled="1"/>
                 <closing length="11" name="/Cross Dissolve" enabled="1"/>
@@ -4556,7 +4411,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="85" enabled="1" name="Title" clipin="7" in="2505" out="2560" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="80" enabled="1" name="Title" clipin="7" in="2505" out="2560" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="9" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -4642,7 +4497,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="86" enabled="1" name="Title" clipin="7" in="2560" out="2622" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="81" enabled="1" name="Title" clipin="7" in="2560" out="2622" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="4" name="/Cross Dissolve" enabled="1"/>
@@ -4728,7 +4583,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="87" enabled="1" name="Title" clipin="23" in="2652" out="2747" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="82" enabled="1" name="Title" clipin="23" in="2652" out="2747" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="10" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -4814,7 +4669,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="88" enabled="1" name="Title" clipin="23" in="2584" out="2652" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="83" enabled="1" name="Title" clipin="23" in="2584" out="2652" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="4" name="/Cross Dissolve" enabled="1"/>
                 <closing length="6" name="/Cross Dissolve" enabled="1"/>
@@ -4900,7 +4755,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="89" enabled="1" name="Title" clipin="23" in="3025" out="3138" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="84" enabled="1" name="Title" clipin="23" in="3025" out="3138" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="14" name="/Cross Dissolve" enabled="1"/>
                 <closing length="14" name="/Cross Dissolve" enabled="1"/>
@@ -4986,7 +4841,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="90" enabled="1" name="Title" clipin="23" in="3224" out="3338" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="85" enabled="1" name="Title" clipin="23" in="3224" out="3338" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="11" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -5072,7 +4927,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="92" enabled="1" name="Title" clipin="12" in="3400" out="3537" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="86" enabled="1" name="Title" clipin="12" in="3400" out="3537" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="5" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -5158,7 +5013,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="93" enabled="1" name="Title" clipin="12" in="3537" out="3841" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="87" enabled="1" name="Title" clipin="12" in="3537" out="3841" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="10" name="/Cross Dissolve" enabled="1"/>
                 <closing length="13" name="/Cross Dissolve" enabled="1"/>
@@ -5244,8 +5099,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="94" enabled="1" name="Title" clipin="-62" in="3841" out="4175" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="88" enabled="1" name="Title" clipin="-62" in="3841" out="4175" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="14" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1041"/>
@@ -5274,7 +5131,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="... the piecess of protein sequence identical in  all G proteins"/>
+                        <field id="text" value="... the piecess of protein sequence identical in  all Gα proteins"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -5328,8 +5185,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="95" enabled="1" name="Title" clipin="-74" in="3892" out="4175" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="89" enabled="1" name="Title" clipin="-74" in="3892" out="4175" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="14" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1094"/>
@@ -5412,8 +5271,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="96" enabled="1" name="Title" clipin="-61" in="3992" out="4175" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="90" enabled="1" name="Title" clipin="-61" in="3992" out="4175" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="13" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1839"/>
@@ -5496,8 +5357,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="97" enabled="1" name="Title" clipin="4" in="4175" out="4294" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="91" enabled="1" name="Title" clipin="4" in="4175" out="4294" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="14" name="/Cross Dissolve" enabled="1"/>
+                <closing length="14" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -5580,8 +5443,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="98" enabled="1" name="Title" clipin="21" in="4201" out="4294" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="92" enabled="1" name="Title" clipin="21" in="4201" out="4294" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="11" name="/Cross Dissolve" enabled="1"/>
+                <closing length="14" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1465"/>
@@ -5664,8 +5529,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="99" enabled="1" name="Title" clipin="43" in="4227" out="4294" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="93" enabled="1" name="Title" clipin="43" in="4227" out="4294" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="12" name="/Cross Dissolve" enabled="1"/>
+                <closing length="14" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -5748,7 +5615,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="100" enabled="1" name="Title" clipin="59" in="4250" out="4294" track="-2" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="94" enabled="1" name="Title" clipin="59" in="4250" out="4294" track="-2" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -5832,8 +5699,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="101" enabled="1" name="Title" clipin="-24" in="4394" out="4870" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="95" enabled="1" name="Title" clipin="-24" in="4394" out="4870" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="18" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -5916,8 +5785,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="102" enabled="1" name="Title" clipin="-24" in="4477" out="4870" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="96" enabled="1" name="Title" clipin="-24" in="4477" out="4870" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="17" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1211"/>
@@ -6000,8 +5871,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="103" enabled="1" name="Title" clipin="-70" in="5216" out="5384" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="97" enabled="1" name="Title" clipin="-70" in="5216" out="5384" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6084,8 +5957,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="104" enabled="1" name="Title" clipin="-70" in="5245" out="5384" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="98" enabled="1" name="Title" clipin="-70" in="5245" out="5384" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="13" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1442"/>
@@ -6168,8 +6043,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="105" enabled="1" name="Title" clipin="-16" in="5508" out="5732" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="99" enabled="1" name="Title" clipin="-16" in="5508" out="5732" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="22" name="/Cross Dissolve" enabled="1"/>
+                <closing length="18" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6252,8 +6129,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="106" enabled="1" name="Title" clipin="-9" in="5530" out="5732" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="100" enabled="1" name="Title" clipin="-9" in="5530" out="5732" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="14" name="/Cross Dissolve" enabled="1"/>
+                <closing length="18" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6282,7 +6161,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="harbor  variants resulting in exclusve epilepsy"/>
+                        <field id="text" value="harbor  variants resulting in epilepsy only,"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -6336,11 +6215,13 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="107" enabled="1" name="Title" clipin="16" in="5555" out="5732" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="101" enabled="1" name="Title" clipin="16" in="5555" out="5732" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="21" name="/Cross Dissolve" enabled="1"/>
+                <closing length="18" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
-                        <field id="posx" value="2051"/>
+                        <field id="posx" value="1932"/>
                         <field id="posy" value="943"/>
                     </row>
                     <row>
@@ -6366,7 +6247,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="or combined pheotypes."/>
+                        <field id="text" value="or in combined (MD+E) pheotypes."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -6420,8 +6301,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="108" enabled="1" name="Title" clipin="-16" in="5793" out="6025" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="102" enabled="1" name="Title" clipin="-16" in="5793" out="6025" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="22" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6504,8 +6387,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="109" enabled="1" name="Title" clipin="-9" in="5815" out="6025" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="103" enabled="1" name="Title" clipin="-9" in="5815" out="6025" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="13" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6588,8 +6473,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="110" enabled="1" name="Title" clipin="16" in="5840" out="6025" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="104" enabled="1" name="Title" clipin="16" in="5840" out="6025" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="16" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="927"/>
@@ -6672,8 +6559,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="111" enabled="1" name="Title" clipin="-16" in="6072" out="6259" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="105" enabled="1" name="Title" clipin="-16" in="6072" out="6259" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6756,8 +6645,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="112" enabled="1" name="Title" clipin="-3" in="6265" out="6380" track="-7" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="106" enabled="1" name="Title" clipin="-3" in="6265" out="6405" track="-7" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="10" name="/Cross Dissolve" enabled="1"/>
+                <closing length="6" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1074"/>
@@ -6840,8 +6731,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="113" enabled="1" name="Title" clipin="-16" in="6380" out="6471" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="107" enabled="1" name="Title" clipin="-16" in="6409" out="6500" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="7" name="/Cross Dissolve" enabled="1"/>
+                <closing length="7" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1027"/>
@@ -6870,7 +6763,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="...indicating, as much as the diseas phenotype itsef, that this region "/>
+                        <field id="text" value="...indicating, as much as the disease phenotype itsef, that this region "/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -6924,8 +6817,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="114" enabled="1" name="Title" clipin="13" in="6409" out="6471" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="108" enabled="1" name="Title" clipin="13" in="6409" out="6500" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="7" name="/Cross Dissolve" enabled="1"/>
+                <closing length="7" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="2162"/>
@@ -7008,12 +6903,14 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="115" enabled="1" name="Title" clipin="-16" in="6471" out="7026" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="109" enabled="1" name="Title" clipin="13" in="6500" out="7026" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="18" name="/Cross Dissolve" enabled="1"/>
+                <closing length="23" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
-                        <field id="posx" value="1908"/>
-                        <field id="posy" value="775"/>
+                        <field id="posx" value="1019"/>
+                        <field id="posy" value="116"/>
                     </row>
                     <row>
                         <field id="scalex" value="100"/>
@@ -7092,12 +6989,14 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="116" enabled="1" name="Title" clipin="31" in="6518" out="7026" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="110" enabled="1" name="Title" clipin="31" in="6518" out="7026" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="22" name="/Cross Dissolve" enabled="1"/>
+                <closing length="23" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1029"/>
-                        <field id="posy" value="887"/>
+                        <field id="posy" value="220"/>
                     </row>
                     <row>
                         <field id="scalex" value="100"/>
@@ -7176,12 +7075,14 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="117" enabled="1" name="Title" clipin="103" in="6590" out="7026" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="111" enabled="1" name="Title" clipin="103" in="6590" out="7026" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="11" name="/Cross Dissolve" enabled="1"/>
+                <closing length="23" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1025"/>
-                        <field id="posy" value="993"/>
+                        <field id="posy" value="352"/>
                     </row>
                     <row>
                         <field id="scalex" value="100"/>
@@ -7260,7 +7161,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="118" enabled="1" name="Title" clipin="13" in="6613" out="6726" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="112" enabled="1" name="Title" clipin="13" in="6613" out="6726" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -7344,7 +7245,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="119" enabled="1" name="Title" clipin="13" in="6726" out="6826" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="113" enabled="1" name="Title" clipin="13" in="6726" out="6826" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -7428,7 +7329,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="120" enabled="1" name="Title" clipin="13" in="6826" out="6926" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="114" enabled="1" name="Title" clipin="13" in="6826" out="6926" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -7512,8 +7413,9 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="121" enabled="1" name="Title" clipin="13" in="6926" out="7026" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="115" enabled="1" name="Title" clipin="13" in="6926" out="7026" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <closing length="23" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="2394"/>
@@ -7596,8 +7498,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="122" enabled="1" name="Title" clipin="13" in="7039" out="7138" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="116" enabled="1" name="Title" clipin="13" in="7039" out="7138" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="18" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -7680,8 +7584,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="123" enabled="1" name="Title" clipin="13" in="7203" out="7582" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="117" enabled="1" name="Title" clipin="13" in="7203" out="7582" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="21" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="985"/>
@@ -7764,8 +7670,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="124" enabled="1" name="Title" clipin="58" in="7248" out="7582" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="118" enabled="1" name="Title" clipin="58" in="7248" out="7582" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="17" name="/Cross Dissolve" enabled="1"/>
+                <closing length="21" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="976"/>
@@ -7848,8 +7756,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="125" enabled="1" name="Title" clipin="119" in="7309" out="7582" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="119" enabled="1" name="Title" clipin="119" in="7309" out="7582" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="20" name="/Cross Dissolve" enabled="1"/>
+                <closing length="21" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="985"/>
@@ -7932,8 +7842,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="126" enabled="1" name="Title" clipin="119" in="7309" out="7582" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="120" enabled="1" name="Title" clipin="119" in="7309" out="7582" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="20" name="/Cross Dissolve" enabled="1"/>
+                <closing length="21" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1908"/>
@@ -8016,8 +7928,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="127" enabled="1" name="Title" clipin="13" in="7582" out="8006" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="121" enabled="1" name="Title" clipin="13" in="7582" out="8006" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="11" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="985"/>
@@ -8100,8 +8014,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="128" enabled="1" name="Title" clipin="86" in="7654" out="8006" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="122" enabled="1" name="Title" clipin="86" in="7654" out="8006" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="17" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="996"/>
@@ -8184,8 +8100,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="129" enabled="1" name="Title" clipin="195" in="7763" out="8006" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="123" enabled="1" name="Title" clipin="195" in="7763" out="8006" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="18" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8268,8 +8186,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="130" enabled="1" name="Title" clipin="195" in="7763" out="8006" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="124" enabled="1" name="Title" clipin="195" in="7763" out="8006" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="18" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8352,8 +8272,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="131" enabled="1" name="Title" clipin="56" in="8027" out="8298" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="125" enabled="1" name="Title" clipin="56" in="8027" out="8298" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="9" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8436,8 +8358,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="132" enabled="1" name="Title" clipin="56" in="8036" out="8298" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="126" enabled="1" name="Title" clipin="56" in="8036" out="8298" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="16" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8520,8 +8444,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="133" enabled="1" name="Title" clipin="56" in="8052" out="8298" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="127" enabled="1" name="Title" clipin="56" in="8052" out="8298" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="17" name="/Cross Dissolve" enabled="1"/>
+                <closing length="15" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8604,8 +8530,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="134" enabled="1" name="Title" clipin="56" in="8351" out="8813" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="128" enabled="1" name="Title" clipin="56" in="8352" out="8650" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="13" name="/Cross Dissolve" enabled="1"/>
+                <closing length="57" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -8688,7 +8616,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="135" enabled="1" name="Title" clipin="29" in="1734" out="1843" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="129" enabled="1" name="Title" clipin="29" in="1734" out="1843" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="9" name="/Cross Dissolve" enabled="1"/>
                 <closing length="8" name="/Cross Dissolve" enabled="1"/>
@@ -8774,7 +8702,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="148" enabled="1" name="EMD_axes.png" clipin="0" in="4959" out="5110" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
+            <clip id="130" enabled="1" name="EMD_axes.png" clipin="0" in="4959" out="5110" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="50" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -8803,8 +8731,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="149" enabled="1" name="Title" clipin="-16" in="4965" out="5110" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="131" enabled="1" name="Title" clipin="-16" in="4965" out="5110" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="19" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="2382"/>
@@ -8887,8 +8817,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="150" enabled="1" name="Title" clipin="69" in="5050" out="5110" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="132" enabled="1" name="Title" clipin="69" in="5050" out="5110" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="2382"/>
@@ -8971,8 +8903,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="151" enabled="1" name="Title" clipin="24" in="5005" out="5110" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="133" enabled="1" name="Title" clipin="24" in="5005" out="5110" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1039"/>
@@ -9055,7 +8989,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="152" enabled="1" name="curved_arrow.png" clipin="22" in="5293" out="5384" track="-4" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
+            <clip id="134" enabled="1" name="curved_arrow.png" clipin="22" in="5293" out="5384" track="-4" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="51" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9084,7 +9018,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="153" enabled="1" name="seq23_3_frm002.png" clipin="0" in="5110" out="5119" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="41" stream="0">
+            <clip id="135" enabled="1" name="seq23_3_frm002.png" clipin="0" in="5110" out="5119" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="41" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9113,7 +9047,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="154" enabled="1" name="seq23_3_frm012.png" clipin="0" in="5119" out="5285" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
+            <clip id="136" enabled="1" name="seq23_3_frm012.png" clipin="0" in="5119" out="5216" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="52" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9142,7 +9076,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="155" enabled="1" name="seq23_4_frm013.png" clipin="0" in="5177" out="5258" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="59" stream="0">
+            <clip id="137" enabled="1" name="seq23_4_frm013.png" clipin="0" in="5177" out="5258" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="54" stream="0">
                 <linked/>
                 <opening length="39" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -9172,7 +9106,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="156" enabled="1" name="seq23_4_frm013.png" clipin="0" in="5258" out="5290" track="-3" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="58" stream="0">
+            <clip id="138" enabled="1" name="seq23_4_frm013.png" clipin="0" in="5258" out="5290" track="-3" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="53" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9201,7 +9135,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="157" enabled="1" name="seq23_4_frm028.png" clipin="0" in="5290" out="5384" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="60" stream="0">
+            <clip id="139" enabled="1" name="seq23_4_frm028.png" clipin="0" in="5290" out="5384" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="55" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9230,7 +9164,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="158" enabled="1" name="seq23_5_frm029.png" clipin="0" in="5384" out="5399" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="61" stream="0">
+            <clip id="140" enabled="1" name="seq23_5_frm029.png" clipin="0" in="5384" out="5399" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="56" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9259,7 +9193,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="159" enabled="1" name="seq23_6_frm045.png" clipin="0" in="5576" out="5608" track="-3" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="62" stream="0">
+            <clip id="141" enabled="1" name="seq23_6_frm045.png" clipin="0" in="5576" out="5608" track="-3" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="57" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9288,7 +9222,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="160" enabled="1" name="seq23_5_frm044.png" clipin="0" in="5399" out="5499" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="63" stream="0">
+            <clip id="142" enabled="1" name="seq23_5_frm044.png" clipin="0" in="5399" out="5499" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="58" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9317,7 +9251,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="161" enabled="1" name="seq23_6_frm045.png" clipin="0" in="5476" out="5576" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="64" stream="0">
+            <clip id="143" enabled="1" name="seq23_6_frm045.png" clipin="0" in="5476" out="5576" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="59" stream="0">
                 <linked/>
                 <opening length="23" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -9347,7 +9281,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="162" enabled="1" name="seq23_7_frm061.png" clipin="0" in="5608" out="5640" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
+            <clip id="144" enabled="1" name="seq23_7_frm061.png" clipin="0" in="5608" out="5640" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="60" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9376,7 +9310,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="163" enabled="1" name="seq23_7_frm076.png" clipin="0" in="5640" out="5785" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="66" stream="0">
+            <clip id="145" enabled="1" name="seq23_7_frm076.png" clipin="0" in="5640" out="5785" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="61" stream="0">
                 <linked/>
                 <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -9406,7 +9340,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="164" enabled="1" name="seq23_8_frm077.png" clipin="-8" in="5732" out="5840" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="67" stream="0">
+            <clip id="146" enabled="1" name="seq23_8_frm077.png" clipin="-8" in="5732" out="5840" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="62" stream="0">
                 <linked/>
                 <opening length="53" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -9436,7 +9370,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="165" enabled="1" name="seq24_1_000.png" clipin="0" in="6107" out="6167" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
+            <clip id="147" enabled="1" name="seq24_1_000.png" clipin="0" in="6107" out="6167" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="42" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9465,7 +9399,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="166" enabled="1" name="seq23_8_frm091.png" clipin="0" in="5872" out="6107" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="69" stream="0">
+            <clip id="148" enabled="1" name="seq23_8_frm091.png" clipin="0" in="5872" out="6107" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="64" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9494,7 +9428,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="167" enabled="1" name="seq23_8_frm077.png" clipin="0" in="5840" out="5872" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
+            <clip id="149" enabled="1" name="seq23_8_frm077.png" clipin="0" in="5840" out="5872" track="-2" r="192" g="160" b="128" autoscale="0" speed="0.5000000000" maintainpitch="0" reverse="0" type="0" media="63" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -9523,8 +9457,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="168" enabled="1" name="Title" clipin="-4" in="6312" out="6380" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="150" enabled="1" name="Title" clipin="-4" in="6312" out="6405" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="7" name="/Cross Dissolve" enabled="1"/>
+                <closing length="6" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1969"/>
@@ -9607,8 +9543,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="169" enabled="1" name="Title" clipin="40" in="6341" out="6380" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="151" enabled="1" name="Title" clipin="40" in="6341" out="6405" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="7" name="/Cross Dissolve" enabled="1"/>
+                <closing length="6" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="847"/>
@@ -9691,8 +9629,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="170" enabled="1" name="Title" clipin="-3" in="6265" out="6380" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="152" enabled="1" name="Title" clipin="-3" in="6265" out="6405" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="10" name="/Cross Dissolve" enabled="1"/>
+                <closing length="6" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1074"/>
@@ -9775,7 +9715,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="171" enabled="1" name="red_circle.png" clipin="0" in="6159" out="6259" track="-4" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="70" stream="0">
+            <clip id="153" enabled="1" name="red_circle.png" clipin="0" in="6159" out="6259" track="-4" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="65" stream="0">
                 <linked/>
                 <opening length="30" name="/Cross Dissolve" enabled="1"/>
                 <closing length="30" name="/Cross Dissolve" enabled="1"/>
@@ -9806,8 +9746,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="172" enabled="1" name="Title" clipin="13" in="7075" out="7188" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="154" enabled="1" name="Title" clipin="13" in="7075" out="7188" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="19" name="/Cross Dissolve" enabled="1"/>
+                <closing length="16" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="857"/>
@@ -9836,7 +9778,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="In the other regions, the available information about the &#10;therapy response gives the following picture ..."/>
+                        <field id="text" value="In the remaining regions, the available information about the &#10;therapy response gives the following picture ..."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -9890,8 +9832,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="173" enabled="1" name="Title" clipin="262" in="8557" out="8813" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="155" enabled="1" name="Title" clipin="262" in="8394" out="8650" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="15" name="/Cross Dissolve" enabled="1"/>
+                <closing length="57" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="995"/>
@@ -9974,8 +9918,10 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="174" enabled="1" name="Title" clipin="345" in="8640" out="8813" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="156" enabled="1" name="Title" clipin="345" in="8477" out="8650" track="-3" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
+                <opening length="16" name="/Cross Dissolve" enabled="1"/>
+                <closing length="57" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="1022"/>
@@ -10004,7 +9950,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="Detailed discussion and  references can be found therein."/>
+                        <field id="text" value="Details and  references can be found therein."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -10058,7 +10004,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="178" enabled="1" name="Title" clipin="23" in="2788" out="3013" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="157" enabled="1" name="Title" clipin="23" in="2788" out="3013" track="-4" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="13" name="/Cross Dissolve" enabled="1"/>
                 <closing length="30" name="/Cross Dissolve" enabled="1"/>
@@ -10144,7 +10090,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="180" enabled="1" name="Title" clipin="23" in="2855" out="3013" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+            <clip id="158" enabled="1" name="Title" clipin="23" in="2855" out="3013" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
                 <linked/>
                 <opening length="30" name="/Cross Dissolve" enabled="1"/>
                 <closing length="30" name="/Cross Dissolve" enabled="1"/>
@@ -10230,7 +10176,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="182" enabled="1" name="seq22_1_frm000.png" clipin="0" in="2652" out="2662" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="71" stream="0">
+            <clip id="159" enabled="1" name="seq22_1_frm000.png" clipin="0" in="2652" out="2662" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="66" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10259,7 +10205,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="183" enabled="1" name="seq22_2_frm011.png" clipin="0" in="2662" out="2715" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="73" stream="0">
+            <clip id="160" enabled="1" name="seq22_2_frm011.png" clipin="0" in="2662" out="2715" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="68" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10288,7 +10234,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="184" enabled="1" name="seq22_2_frm011.png" clipin="0" in="2715" out="2751" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="72" stream="0">
+            <clip id="161" enabled="1" name="seq22_2_frm011.png" clipin="0" in="2715" out="2751" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="67" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10317,7 +10263,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="185" enabled="1" name="seq22_2_frm047.png" clipin="0" in="2751" out="2800" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="74" stream="0">
+            <clip id="162" enabled="1" name="seq22_2_frm047.png" clipin="0" in="2751" out="2800" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="69" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10346,7 +10292,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="187" enabled="1" name="seq22_3_frm048.png" clipin="0" in="2888" out="2925" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="76" stream="0">
+            <clip id="163" enabled="1" name="seq22_3_frm048.png" clipin="0" in="2888" out="2925" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="71" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10375,7 +10321,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="188" enabled="1" name="seq22_3_frm048.png" clipin="0" in="2788" out="2888" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="75" stream="0">
+            <clip id="164" enabled="1" name="seq22_3_frm048.png" clipin="0" in="2788" out="2888" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="70" stream="0">
                 <linked/>
                 <opening length="13" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10405,7 +10351,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="189" enabled="1" name="seq22_3_frm084.png" clipin="0" in="2925" out="3025" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="77" stream="0">
+            <clip id="165" enabled="1" name="seq22_3_frm084.png" clipin="0" in="2925" out="3025" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="72" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10434,7 +10380,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="190" enabled="1" name="seq22_4_frm085.png" clipin="0" in="3009" out="3109" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="79" stream="0">
+            <clip id="166" enabled="1" name="seq22_4_frm085.png" clipin="0" in="3009" out="3109" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="74" stream="0">
                 <linked/>
                 <opening length="16" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10464,7 +10410,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="191" enabled="1" name="seq22_4_frm085.png" clipin="0" in="3109" out="3146" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="78" stream="0">
+            <clip id="167" enabled="1" name="seq22_4_frm085.png" clipin="0" in="3109" out="3146" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="73" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10493,7 +10439,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="192" enabled="1" name="seq22_4_frm121.png" clipin="0" in="3146" out="3224" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="80" stream="0">
+            <clip id="168" enabled="1" name="seq22_4_frm121.png" clipin="0" in="3146" out="3224" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="75" stream="0">
                 <linked/>
                 <closing length="26" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10523,7 +10469,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="193" enabled="1" name="seq22_5_frm158.png" clipin="0" in="3181" out="3281" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="83" stream="0">
+            <clip id="169" enabled="1" name="seq22_5_frm158.png" clipin="0" in="3181" out="3281" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="78" stream="0">
                 <linked/>
                 <opening length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10553,7 +10499,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="194" enabled="1" name="seq22_5_frm122.png" clipin="0" in="3281" out="3318" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="82" stream="0">
+            <clip id="170" enabled="1" name="seq22_5_frm122.png" clipin="0" in="3281" out="3318" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="77" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10582,7 +10528,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="195" enabled="1" name="seq22_5_frm158.png" clipin="0" in="3318" out="3400" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="83" stream="0">
+            <clip id="171" enabled="1" name="seq22_5_frm158.png" clipin="0" in="3318" out="3400" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="78" stream="0">
                 <linked/>
                 <closing length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10612,7 +10558,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="196" enabled="1" name="seq22_6_frm159.png" clipin="0" in="3381" out="3481" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="84" stream="0">
+            <clip id="172" enabled="1" name="seq22_6_frm159.png" clipin="0" in="3381" out="3481" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="79" stream="0">
                 <linked/>
                 <opening length="19" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10642,7 +10588,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="197" enabled="1" name="seq22_6_frm159.png" clipin="0" in="3481" out="3518" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="85" stream="0">
+            <clip id="173" enabled="1" name="seq22_6_frm159.png" clipin="0" in="3481" out="3518" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="80" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10671,7 +10617,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="198" enabled="1" name="seq22_6_frm195.png" clipin="0" in="3518" out="3697" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="86" stream="0">
+            <clip id="174" enabled="1" name="seq22_6_frm195.png" clipin="0" in="3518" out="3697" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="81" stream="0">
                 <linked/>
                 <closing length="54" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10701,7 +10647,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="199" enabled="1" name="seq22_7_frm196.png" clipin="0" in="3643" out="3804" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="87" stream="0">
+            <clip id="175" enabled="1" name="seq22_7_frm196.png" clipin="0" in="3643" out="3804" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="82" stream="0">
                 <linked/>
                 <opening length="54" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10731,7 +10677,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="200" enabled="1" name="seq22_7_frm196.png" clipin="0" in="3804" out="3841" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="88" stream="0">
+            <clip id="176" enabled="1" name="seq22_7_frm196.png" clipin="0" in="3804" out="3841" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="83" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10760,7 +10706,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="201" enabled="1" name="seq22_7_frm232.png" clipin="0" in="3841" out="4394" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="89" stream="0">
+            <clip id="177" enabled="1" name="seq22_7_frm232.png" clipin="0" in="3841" out="4394" track="-3" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="84" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10789,7 +10735,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="204" enabled="1" name="seq22_8_frm233.png" clipin="0" in="4394" out="4494" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="90" stream="0">
+            <clip id="178" enabled="1" name="seq22_8_frm233.png" clipin="0" in="4394" out="4494" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="85" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10818,7 +10764,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="205" enabled="1" name="seq22_8_frm233.png" clipin="0" in="4494" out="4504" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="91" stream="0">
+            <clip id="179" enabled="1" name="seq22_8_frm233.png" clipin="0" in="4494" out="4504" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="86" stream="0">
                 <linked/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
@@ -10847,7 +10793,7 @@
                     </row>
                 </effect>
             </clip>
-            <clip id="206" enabled="1" name="seq22_8_frm243.png" clipin="0" in="4504" out="4667" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="92" stream="0">
+            <clip id="180" enabled="1" name="seq22_8_frm243.png" clipin="0" in="4504" out="4667" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="87" stream="0">
                 <linked/>
                 <closing length="1" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
@@ -10874,6 +10820,582 @@
                     </row>
                     <row>
                         <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="181" enabled="1" name="seq25_2_016.png" clipin="0" in="7201" out="7582" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="88" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="182" enabled="1" name="seq25_2_016.png" clipin="0" in="7582" out="7595" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="89" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="183" enabled="1" name="seq25_2_031.png" clipin="0" in="7595" out="8006" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="90" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="184" enabled="1" name="seq25_3_032.png" clipin="0" in="8006" out="8021" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="91" stream="0">
+                <linked/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="185" enabled="1" name="seq25_3_047.png" clipin="0" in="8021" out="8701" track="-2" r="192" g="160" b="128" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0" type="0" media="92" stream="0">
+                <linked/>
+                <closing length="51" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="960"/>
+                        <field id="posy" value="540"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="186" enabled="1" name="Title" clipin="0" in="23" out="69" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <opening length="9" name="/Cross Dissolve" enabled="1"/>
+                <closing length="11" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="939"/>
+                        <field id="posy" value="61"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="-21"/>
+                        <field id="anchory" value="-241"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="GPCR"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="80"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="4"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="1"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#f57900"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="187" enabled="1" name="Title" clipin="0" in="75" out="133" track="-7" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <opening length="5" name="/Cross Dissolve" enabled="1"/>
+                <closing length="4" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="923"/>
+                        <field id="posy" value="178"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Gα"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="80"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="4"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="188" enabled="1" name="Title" clipin="0" in="75" out="133" track="-6" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <opening length="5" name="/Cross Dissolve" enabled="1"/>
+                <closing length="4" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="779"/>
+                        <field id="posy" value="387"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Gβ"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="80"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#73d216"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="4"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="189" enabled="1" name="Title" clipin="0" in="75" out="133" track="-5" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <opening length="5" name="/Cross Dissolve" enabled="1"/>
+                <closing length="4" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="809"/>
+                        <field id="posy" value="665"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Gγ"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="80"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#b940bf"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="4"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
+                    </row>
+                </effect>
+            </clip>
+            <clip id="190" enabled="1" name="Title" clipin="1" in="82" out="133" track="-8" r="192" g="192" b="64" autoscale="0" speed="1.0000000000" maintainpitch="0" reverse="0">
+                <linked/>
+                <opening length="5" name="/Cross Dissolve" enabled="1"/>
+                <closing length="4" name="/Cross Dissolve" enabled="1"/>
+                <effect name="Distort/Transform" enabled="1">
+                    <row>
+                        <field id="posx" value="1643"/>
+                        <field id="posy" value="847"/>
+                    </row>
+                    <row>
+                        <field id="scalex" value="100"/>
+                        <field id="scaley" value="100"/>
+                    </row>
+                    <row>
+                        <field id="uniformscale" value="1"/>
+                    </row>
+                    <row>
+                        <field id="rotation" value="0"/>
+                    </row>
+                    <row>
+                        <field id="anchorx" value="0"/>
+                        <field id="anchory" value="0"/>
+                    </row>
+                    <row>
+                        <field id="opacity" value="100"/>
+                    </row>
+                    <row>
+                        <field id="blendmode" value=""/>
+                    </row>
+                </effect>
+                <effect name="Render/Text" enabled="1">
+                    <row>
+                        <field id="text" value="Gα+Gβ+Gδ = G-trimer"/>
+                    </row>
+                    <row>
+                        <field id="font" value="Carlito"/>
+                    </row>
+                    <row>
+                        <field id="size" value="36"/>
+                    </row>
+                    <row>
+                        <field id="color" value="#ffffff"/>
+                    </row>
+                    <row>
+                        <field id="halign" value="4"/>
+                        <field id="valign" value="128"/>
+                    </row>
+                    <row>
+                        <field id="wordwrap" value="1"/>
+                    </row>
+                    <row>
+                        <field id="padding" value="0"/>
+                    </row>
+                    <row>
+                        <field id="posx" value="0"/>
+                        <field id="posy" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outline" value="0"/>
+                    </row>
+                    <row>
+                        <field id="outlinecolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="outlinewidth" value="20"/>
+                    </row>
+                    <row>
+                        <field id="shadow" value="0"/>
+                    </row>
+                    <row>
+                        <field id="shadowcolor" value="#000000"/>
+                    </row>
+                    <row>
+                        <field id="shadowangle" value="45"/>
+                    </row>
+                    <row>
+                        <field id="shadowdistance" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowsoftness" value="5"/>
+                    </row>
+                    <row>
+                        <field id="shadowopacity" value="100"/>
                     </row>
                 </effect>
             </clip>
