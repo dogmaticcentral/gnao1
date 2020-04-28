@@ -43,6 +43,7 @@ def human_readble(freq):
 		return "<1:100K"
 	return "%d:100K" % int(round(freq*1.e5))
 
+
 def parse_gnomad(infile):
 
 	if not os.path.exists(infile):
@@ -71,7 +72,45 @@ def parse_gnomad(infile):
 			pc = f"{aa_from}{pos}{aa_to}"
 			freqs[pc] = human_readble(freq)
 
+	inf.close()
+
 	return freqs
+
+
+def read_specs(infile):
+	if not os.path.exists(infile):
+		print(infile, "not found")
+		exit()
+
+	cons = {}
+	inf = open(infile, "r")
+	header =  None
+	for line in inf:
+		if not header:
+			# the first field is the comment sign
+			header = line.strip().split()[1:]
+		else:
+			named_field = dict(zip(header,line.strip().split()))
+			if float(named_field["rvet"])<0.23:
+				cons[int(named_field["pos_in_GNAO1"])] = "yes"
+
+	inf.close()
+
+	return cons
+
+
+def read_distances(infile):
+	dists = {}
+	if not os.path.exists(infile):
+		print(infile, "not found")
+		exit()
+	inf = open(infile, "r")
+	for line in inf:
+		[pos, d] = line.strip().split("\t")
+		dists[int(pos)] = d
+	inf.close()
+	return dists
+
 
 
 ##########################################
@@ -372,8 +411,8 @@ def prettyprint(targets):
 
 
 #################
-def write_rows(cursor, position, variants, targets_compact, gnomad_freqs, worksheet,  row_offset, xlsx_format):
-
+def write_rows(cursor, position, variants, targets_compact, other_stats, worksheet,  row_offset, xlsx_format):
+	[gnomad_freqs, cons_in_paras, distances] = other_stats
 	patients = {}
 	therapy  = {}
 	for variant in variants: # symptom description!
@@ -411,8 +450,18 @@ def write_rows(cursor, position, variants, targets_compact, gnomad_freqs, worksh
 	row_span = 4*sum([len(pts) for pts in patients.values()])
 	worksheet.merge_range(position_row, position_column, position_row+row_span-1, position_column, position)
 
+	id_in_paras_column = position_column + 1
+	# row span the same as for the position itself
+	worksheet.merge_range(position_row, id_in_paras_column, position_row+row_span-1,
+	                      id_in_paras_column, "    %s" % cons_in_paras.get(position, "no"))
+
+	dist_column  =  id_in_paras_column + 1
+	worksheet.merge_range(position_row, dist_column, position_row+row_span-1,
+	                      dist_column, distances.get(position, "all > 10"))
+
+
 	# the image of this position, for the orientation
-	image_column = position_column + 1
+	image_column =  dist_column + 1
 	worksheet.merge_range(position_row, image_column, position_row+row_span-1, image_column, "")
 	# 'object_position': 2 means "Move but don’t size with cells"; the offset is in pixels though it doe not seem to be working
 	# looks like the offset is from the upper left corner
@@ -475,10 +524,17 @@ def set_column_widths(worksheet, header, wwrap_format):
 
 	idx = header.index("protein position")
 	worksheet.set_column(column_string(idx), len("position"))
+	idx = header.index("identical in paralogues")
+	worksheet.set_column(column_string(idx), len("paralogues"))
+	idx = header.index("nearest interface [Å]")
+	worksheet.set_column(column_string(idx), len(" substrate:x.x "), wwrap_format)
+
 	idx = header.index("protein modification")
 	worksheet.set_column(column_string(idx), len("modification"))
 	idx = header.index("frequency (gnomAD)")
 	worksheet.set_column(column_string(idx), len(" frequency "))
+
+
 
 
 	for title in ["location schematic", "drugs (direction, activity[uM])"]:
@@ -502,7 +558,7 @@ def write_header(worksheet, header, header_format):
 		worksheet.write_string(0, column, header[column])
 
 ################
-def table_creator(cursor, targets_compact, gnomad_freqs):
+def table_creator(cursor, targets_compact, other_stats):
 
 	# Create an new Excel file and add a worksheet.
 	workbook = xlsxwriter.Workbook('gnao1_therapy.xlsx')
@@ -512,7 +568,7 @@ def table_creator(cursor, targets_compact, gnomad_freqs):
 					"hyperlink":workbook.add_format({'align': 'center', 'color': 'blue', 'underline': 1, 'valign': 'vcenter'})}
 	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
 	worksheet.set_default_row(40)
-	header = ["protein position", "location schematic", "protein modification", "frequency (gnomAD)", "phenotype",
+	header = ["protein position", "identical in paralogues", "nearest interface [Å]", "location schematic", "protein modification", "frequency (gnomAD)", "phenotype",
 	          "symptom", "effectiveness", "drugs (direction, activity[uM])", "gender", "pubmed"]
 	set_column_widths(worksheet, header, xlsx_format["wordwrap"])
 	write_header(worksheet, header, xlsx_format["header"])
@@ -527,7 +583,7 @@ def table_creator(cursor, targets_compact, gnomad_freqs):
 
 	row_offset = 0
 	for position in sorted(variants.keys()):
-		row_offset = write_rows(cursor, position, variants[position], targets_compact, gnomad_freqs, worksheet, row_offset, xlsx_format)
+		row_offset = write_rows(cursor, position, variants[position], targets_compact, other_stats, worksheet, row_offset, xlsx_format)
 
 	workbook.close()
 
@@ -535,7 +591,9 @@ def table_creator(cursor, targets_compact, gnomad_freqs):
 def main():
 
 
-	gnomad_freqs = parse_gnomad("downloads/gnomad_missense_gnao1.csv")
+	gnomad_freqs  = parse_gnomad("downloads/gnomad_missense_gnao1.csv")
+	cons_in_paras = read_specs("conservation/paras/specs_out.score")
+	distances = read_distances("raw_tables/gnao_if_distances.tsv")
 
 	db, cursor = gnao1_connect()
 
@@ -544,7 +602,8 @@ def main():
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
 	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
 	targets_compact = make_compact_profiles(target_activity)
-	table_creator(cursor, targets_compact, gnomad_freqs)
+	other_stats = [gnomad_freqs, cons_in_paras, distances]
+	table_creator(cursor, targets_compact, other_stats)
 
 	cursor.close()
 	db.close()
