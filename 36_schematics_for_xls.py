@@ -59,7 +59,6 @@ def gnao():
 	# careful: starting production mode with gui can freeze teh desktop
 	production = (sys.argv[1] == '-qc')
 
-
 	for dep in [structure_home, frames_home]:
 		if not os.path.exists(dep):
 			print(dep, "not found")

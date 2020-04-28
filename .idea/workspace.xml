@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/27_gnomad_vs_disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/27_gnomad_vs_disease.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/36_schematics_for_xls.py" beforeDir="false" afterPath="$PROJECT_DIR$/36_schematics_for_xls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/38_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,101 +18,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <file leaf-file-name="36_schematics_for_xls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            <state relative-caret-position="522">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="436" lean-forward="true" selection-start-line="436" selection-end-line="436" />
               <folding>
-                <element signature="e#1#48#0" expanded="true" />
+                <element signature="e#22#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="24_mysterious_epi_cluster.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
+      <file leaf-file-name="27_gnomad_vs_disease.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/27_gnomad_vs_disease.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-196">
-              <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            <state relative-caret-position="72">
+              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pymol_constants.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_constants.py">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="00_overview.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/00_overview.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_GNAO1_bound_to_GPCR.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quaternion_time_series.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.7/dist-packages/quaternion/quaternion_time_series.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-780">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" />
-                <element signature="e#127#191#0" expanded="true" />
-                <element signature="e#312#985#1" />
-                <element signature="e#2560#2616#0" />
-                <element signature="e#2898#2957#0" />
-                <element signature="e#3898#4014#0" />
-                <element signature="e#4739#4801#0" />
-                <element signature="e#5388#5501#0" />
-                <element signature="e#6192#6209#0" />
-                <element signature="e#7027#7087#0" />
-                <element signature="e#7771#8704#0" />
-                <element signature="e#8742#9515#0" />
-                <element signature="e#8813#9241#0" />
-                <element signature="e#8999#9241#0" />
-                <element signature="e#9278#9446#0" />
-                <element signature="e#9487#9515#0" />
-                <element signature="e#9595#12615#0" />
-                <element signature="e#9595#10523#1" />
-                <element signature="e#10678#11105#0" />
-                <element signature="e#11001#11044#0" />
-                <element signature="e#11150#11369#0" />
-                <element signature="e#11184#11202#0" />
-                <element signature="e#11285#11369#0" />
-                <element signature="e#11323#11338#0" />
-                <element signature="e#11398#11511#0" />
-                <element signature="e#11572#11834#0" />
-                <element signature="e#11853#12598#0" />
-                <element signature="e#12338#12507#0" />
-                <element signature="e#12420#12507#0" />
-                <element signature="e#12664#14301#0" />
-                <element signature="e#12664#13695#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_multiarray_umath.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-2066100795/numpy/core/_multiarray_umath.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="4735" column="4" selection-start-line="4735" selection-start-column="4" selection-end-line="4735" selection-end-column="4" />
+            <state relative-caret-position="662">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -206,9 +148,7 @@
         <option value="$PROJECT_DIR$/30_movie/18_it_moves.py" />
         <option value="$PROJECT_DIR$/30_movie/19_gnao_structure.py" />
         <option value="$PROJECT_DIR$/30_xlsx_compilation.py" />
-        <option value="$PROJECT_DIR$/27_gnomad_vs_disease.py" />
         <option value="$PROJECT_DIR$/utils/mysql.py" />
-        <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/50_movie/phenotype_sequence.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/utils/pdb_tools.py" />
@@ -237,19 +177,21 @@
         <option value="$PROJECT_DIR$/50_movie/20_var_positions.py" />
         <option value="$PROJECT_DIR$/50_movie/21_GBD_only.py" />
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
-        <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
-        <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
         <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
         <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
         <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
         <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
         <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
+        <option value="$PROJECT_DIR$/27_gnomad_vs_disease.py" />
+        <option value="$PROJECT_DIR$/utils/utils.py" />
+        <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
+        <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1945" />
-    <option name="y" value="7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2006" />
+    <option name="y" value="12" />
     <option name="width" value="1717" />
     <option name="height" value="1026" />
   </component>
@@ -268,11 +210,6 @@
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="50_movie" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
@@ -329,7 +266,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1945" y="7" width="1717" height="1026" extended-state="0" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -340,8 +277,8 @@
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49881935" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2107438" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.34988713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22825514" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.20212767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -382,7 +319,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -397,13 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="108" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/27_gnomad_vs_disease.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>
@@ -591,31 +521,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/25_therapy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="334" column="33" selection-start-line="334" selection-start-column="33" selection-end-line="334" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -756,7 +665,7 @@
     <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-196">
-          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -764,6 +673,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/27_gnomad_vs_disease.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="436" lean-forward="true" selection-start-line="436" selection-end-line="436" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>

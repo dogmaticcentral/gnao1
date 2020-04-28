@@ -9,13 +9,6 @@ import os
 from Bio.PDB import *
 
 
-single_letter_code = {'GLY':'G', 'ALA':'A',  'VAL':'V', 'LEU':'L', 'ILE':'I',
-		 'MET': 'M', 'PRO': 'P',  'TRP': 'W', 'PHE':'F', 'SER':'S',
-		 'CYS': 'C', 'THR': 'T',  'ASN': 'N', 'GLN':'Q', 'TYR':'Y',
-		 'LYS': 'K', 'ARG': 'R',  'HIS': 'H', 'ASP':'D', 'GLU':'E',
-		 'PTR':'Y'}
-
-
 def parse_gnomad(infile):
 
 	fnm = structure_filename["gnao-gpcr"]

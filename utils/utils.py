@@ -33,3 +33,11 @@ def subdir_prep(frames_home, subdir):
 	#if os.path.exists(outdir): shutil.rmtree(outdir)
 	if not os.path.exists(outdir):
 		os.makedirs(outdir)
+
+
+single_letter_code = {'GLY':'G', 'ALA':'A',  'VAL':'V', 'LEU':'L', 'ILE':'I',
+		 'MET': 'M', 'PRO': 'P',  'TRP': 'W', 'PHE':'F', 'SER':'S',
+		 'CYS': 'C', 'THR': 'T',  'ASN': 'N', 'GLN':'Q', 'TYR':'Y',
+		 'LYS': 'K', 'ARG': 'R',  'HIS': 'H', 'ASP':'D', 'GLU':'E',
+		 'PTR':'Y'}
+

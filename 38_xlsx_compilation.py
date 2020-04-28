@@ -1,7 +1,7 @@
 #!/usr/bin/python3 -u
 import math
-import re
-
+import os, re
+from utils.utils import *
 from utils.mysql import *
 import numpy as np
 import xlsxwriter
@@ -37,6 +37,41 @@ ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "imm
 main_families = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", "MTNR", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER"]
 
+
+def human_readble(freq):
+	if freq<1.e-5:
+		return "<1:100K"
+	return "%d:100K" % int(round(freq*1.e5))
+
+def parse_gnomad(infile):
+
+	if not os.path.exists(infile):
+		print(infile, "not found")
+		exit()
+
+	inf = open(infile, "r")
+	header =  None
+	freqs = {}
+
+	for line in inf:
+		if not header:
+			header = line.strip().split(",")
+		else:
+			named_field = dict(zip(header,line.strip().replace("\"gnomAD Exomes,gnomAD Genomes\"","gnomad").split(",")))
+			freq = float(named_field['Allele Frequency'])
+			# if freq<0.001: continue
+			pc = named_field[ 'Protein Consequence'].replace("p.","")
+			aa_from = pc[:3].upper()
+			aa_to = pc[-3:].upper()
+			pos = pc[3:-3]
+			if not aa_from in ["INS", "DEL"]:
+				aa_from = single_letter_code[aa_from]
+			if not aa_to in ["INS", "DEL"]:
+				aa_to = single_letter_code[aa_to]
+			pc = f"{aa_from}{pos}{aa_to}"
+			freqs[pc] = human_readble(freq)
+
+	return freqs
 
 
 ##########################################
@@ -337,7 +372,7 @@ def prettyprint(targets):
 
 
 #################
-def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offset, xlsx_format):
+def write_rows(cursor, position, variants, targets_compact, gnomad_freqs, worksheet,  row_offset, xlsx_format):
 
 	patients = {}
 	therapy  = {}
@@ -375,6 +410,7 @@ def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offs
 	position_row = row + 1
 	row_span = 4*sum([len(pts) for pts in patients.values()])
 	worksheet.merge_range(position_row, position_column, position_row+row_span-1, position_column, position)
+
 	# the image of this position, for the orientation
 	image_column = position_column + 1
 	worksheet.merge_range(position_row, image_column, position_row+row_span-1, image_column, "")
@@ -385,14 +421,21 @@ def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offs
 	worksheet.insert_image(position_row, image_column, image_name, {'object_position': 2, 'x_offset': 0, 'y_offset': y_offset})
 
 	for variant in variants:
+
 		variant_column = image_column + 1
 		variant_row = row + 1
 		row_span = 4*len(patients[variant])
 		worksheet.merge_range(variant_row, variant_column, variant_row+row_span-1, variant_column, variant)
+
+		freq_column = variant_column + 1
+		# the row and the  rowspan are the sam as for the variant
+		worksheet.merge_range(variant_row, freq_column, variant_row+row_span-1, freq_column, gnomad_freqs.get(variant,"none"))
+
 		for patient in patients[variant]:
 			# patient data
 			[id, pubmed, gender, phenotype] = patient
-			pheno_column = variant_column + 1
+
+			pheno_column = freq_column + 1
 			pheno_row  = row + 1
 			worksheet.merge_range(pheno_row, pheno_column, pheno_row+3, pheno_column, phenotype)
 			for symptom, effectiveness in therapy[id].items():
@@ -406,8 +449,10 @@ def write_rows(cursor, position, variants, targets_compact, worksheet,  row_offs
 					column = symptom_column + 1
 					worksheet.write_string(row, column, eff + "ective")
 					worksheet.write_string(row, column+1, drugs if drugs else "")
+
 			gender_column = pheno_column + 4
 			worksheet.merge_range(pheno_row, gender_column, pheno_row+3, gender_column, gender)
+
 			pubmed_column = gender_column + 1
 			pubmed_hyperlink = "http://pubmed.ncbi.nlm.nih.gov/%s" % pubmed
 			worksheet.merge_range(pheno_row, pubmed_column, pheno_row+3, pubmed_column, "", xlsx_format["hyperlink"])
@@ -432,6 +477,9 @@ def set_column_widths(worksheet, header, wwrap_format):
 	worksheet.set_column(column_string(idx), len("position"))
 	idx = header.index("protein modification")
 	worksheet.set_column(column_string(idx), len("modification"))
+	idx = header.index("frequency (gnomAD)")
+	worksheet.set_column(column_string(idx), len(" frequency "))
+
 
 	for title in ["location schematic", "drugs (direction, activity[uM])"]:
 		idx = header.index(title)
@@ -454,7 +502,7 @@ def write_header(worksheet, header, header_format):
 		worksheet.write_string(0, column, header[column])
 
 ################
-def table_creator(cursor, targets_compact):
+def table_creator(cursor, targets_compact, gnomad_freqs):
 
 	# Create an new Excel file and add a worksheet.
 	workbook = xlsxwriter.Workbook('gnao1_therapy.xlsx')
@@ -464,7 +512,7 @@ def table_creator(cursor, targets_compact):
 					"hyperlink":workbook.add_format({'align': 'center', 'color': 'blue', 'underline': 1, 'valign': 'vcenter'})}
 	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
 	worksheet.set_default_row(40)
-	header = ["protein position", "location schematic", "protein modification", "phenotype",
+	header = ["protein position", "location schematic", "protein modification", "frequency (gnomAD)", "phenotype",
 	          "symptom", "effectiveness", "drugs (direction, activity[uM])", "gender", "pubmed"]
 	set_column_widths(worksheet, header, xlsx_format["wordwrap"])
 	write_header(worksheet, header, xlsx_format["header"])
@@ -479,12 +527,15 @@ def table_creator(cursor, targets_compact):
 
 	row_offset = 0
 	for position in sorted(variants.keys()):
-		row_offset = write_rows(cursor, position, variants[position], targets_compact, worksheet, row_offset, xlsx_format)
+		row_offset = write_rows(cursor, position, variants[position], targets_compact, gnomad_freqs, worksheet, row_offset, xlsx_format)
 
 	workbook.close()
 
 #########################################
 def main():
+
+
+	gnomad_freqs = parse_gnomad("downloads/gnomad_missense_gnao1.csv")
 
 	db, cursor = gnao1_connect()
 
@@ -493,7 +544,7 @@ def main():
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
 	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
 	targets_compact = make_compact_profiles(target_activity)
-	table_creator(cursor, targets_compact)
+	table_creator(cursor, targets_compact, gnomad_freqs)
 
 	cursor.close()
 	db.close()
