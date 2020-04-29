@@ -39,7 +39,7 @@ main_families = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", 
 target_info = {"ABAT": ["4-Aminobutyrate aminotransferase", "https://en.wikipedia.org/wiki/ABAT"],
                "ADRA": ["alpha-adrenergic receptor", "https://en.wikipedia.org/wiki/Adrenergic_receptor"],
                "AVPR1B": ["Vasopressin V1b receptor", "https://en.wikipedia.org/wiki/Vasopressin_receptor_1B"],
-               "CA": ["https://en.wikipedia.org/wiki/Carbonic_anhydrase", "https://en.wikipedia.org/wiki/Carbonic_anhydrase"],
+               "CA": ["Carbonic anhydrase", "https://en.wikipedia.org/wiki/Carbonic_anhydrase"],
                "CACNA": ["Calcium voltage-gated channel subunit alpha", "https://en.wikipedia.org/wiki/Voltage-gated_calcium_channel"],
                "CHRM": ["Muscarinic acetylcholine receptor", "https://en.wikipedia.org/wiki/Muscarinic_acetylcholine_receptor"],
                "CHRN": ["Neuronal acetylcholine receptor", "https://en.wikipedia.org/wiki/Nicotinic_acetylcholine_receptor"],
@@ -590,7 +590,6 @@ def write_header(worksheet, header, header_format):
 def table_creator(cursor, workbook, xlsx_format, targets_compact, other_stats):
 
 	worksheet = workbook.add_worksheet("GNAO1 variants and therapy")
-	return
 
 	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
 	worksheet.set_default_row(40)
@@ -619,9 +618,26 @@ def legend_creator(cursor, workbook, xlsx_format, target_info, drug_info):
 
 	for idx in range(4):
 		worksheet.set_column(column_string(idx), 30)
+	worksheet.set_column(column_string(4), 160)
+
+	########## location schematics
+	# the image of this position, for the orientation
+	image_row = 2
+	image_column = 4
+	#  merge_range(first_row, first_col, last_row, last_col, data[, cell_format])
+	worksheet.write(image_row, image_column, "Mutation location within GNAO1 catalytic domain, schematic:", xlsx_format["header"])
+	worksheet.write(image_row+1, image_column, "See also the Supplementary Video. E = epilepsy, MD = movement disorder.")
+	row_span = len(target_info)
+	worksheet.merge_range(image_row+2, image_column, image_row+2+row_span-1, image_column, "")
+	# 'object_position': 2 means "Move but don’t size with cells"; the offset is in pixels though it does not seem to be working
+	# looks like the offset is from the upper left corner
+	# y_offset = max(row_span/2-2,0)*50
+	y_offset = 50
+	image_name = f"schematics/schematic_legend.annotated.png"
+	worksheet.insert_image(image_row+2, image_column, image_name, {'object_position': 1, 'x_offset': 0, 'y_offset': y_offset})
 
 	########## targets
-	target_row = 1
+	target_row = image_row
 	worksheet.write(target_row, 0, "Targeted protein families:", xlsx_format["header"])
 	target_row += 1
 	column = 0

@@ -37,6 +37,16 @@ def make_schematics(view, production= True):
 		cmd.select(phenotype, "gnao and resi {}".format("+".join(res_list)))
 	# cmd.zoom(" + ".join(residues.keys())) # front cutting plane moves forward - don't want that
 
+	# all residues at once - for the  Legend
+	cmd.hide("spheres", "gnao")
+	for phenotype, res_list in residues.items():
+		cmd.select(phenotype, "gnao and resi {}".format("+".join(res_list)))
+		cmd.show("spheres", phenotype)
+	cmd.deselect()
+	cmd.set_view(view)
+	if production: cmd.png("schematic_legend", width=768, height=432, ray=True)
+	return
+
 
 	for phenotype, res_list in residues.items():
 		cmd.hide("spheres", "gnao")
