@@ -44,20 +44,20 @@ def make_schematics(view, production= True):
 		cmd.show("spheres", phenotype)
 	cmd.deselect()
 	cmd.set_view(view)
-	if production: cmd.png("schematic_legend", width=768, height=432, ray=True)
-	return
+	if production:
+		cmd.png("schematic_legend", width=768, height=432, ray=True)
+		for phenotype, res_list in residues.items():
+			cmd.hide("spheres", "gnao")
+			cmd.select(phenotype, "gnao and resi {}".format("+".join(res_list)))
+			cmd.show("spheres", phenotype)
+			for resi in res_list:
+				cmd.set("sphere_transparency", 0.65, phenotype)
+				cmd.set("sphere_transparency", 0.0, "{} and resi {}".format("gnao", resi))
+				cmd.set_view(view)
+				cmd.png("schematic_{}".format(resi), width=384, height=216, ray=True)
+	else:
+		cmd.show("cartoon", "gnao")
 
-
-	for phenotype, res_list in residues.items():
-		cmd.hide("spheres", "gnao")
-		cmd.select(phenotype, "gnao and resi {}".format("+".join(res_list)))
-		cmd.show("spheres", phenotype)
-		for resi in res_list:
-			cmd.set("sphere_transparency", 0.65, phenotype)
-			cmd.set("sphere_transparency", 0.0, "{} and resi {}".format("gnao", resi))
-			cmd.set_view(view)
-			if production: cmd.png("schematic_{}".format(resi), width=384, height=216, ray=True)
-		if not production: return
 
 
 

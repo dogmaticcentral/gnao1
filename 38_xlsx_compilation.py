@@ -365,7 +365,7 @@ def collapse_coarse(targets):
 				family_found = True
 				break
 		if not family_found:
-			group[target] = {'directions': set(activity[0]), 'kis': [activity[1]]}
+			group[target] = {'directions': {activity[0]}, 'kis': [activity[1]]}
 
 	sorted_families = sorted(group.keys(), key = lambda family: min(group[family]['kis']))
 	cutoff_ki = 100*min(group[sorted_families[0]]['kis'])
@@ -702,7 +702,9 @@ def main():
 
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
 	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
+
 	targets_compact = make_compact_profiles(target_activity)
+
 	other_stats = [gnomad_freqs, cons_in_paras, distances]
 	table_creator(cursor, workbook, xlsx_format, targets_compact, other_stats)
 

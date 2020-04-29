@@ -343,88 +343,89 @@ def target_representative(target):
 
 
 #########################################
-def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight):
+def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight, norm):
 	# effecitveness shoud be "eff" or "ineff"; perhaps I should have a way to enforce is
-	if not variant in weight: weight[variant] = {}
 
 	# tagets compact is array of triplet, for example
 	# [['ADRA', 'up', 1], ['NISCH', 'unk', 50]]
+	# lets do it in two passes
+	# in the first pass we select the target rep that was targeted with the strongest afffinity
+	# (so if the patient was peppered with drugs which pretty much tdo the same thing
+	# we do not count it twice or trice
+	max_affinity  = {}
+	max_direction = {}
 	for descriptor in targets_compact:
 		target, direction, ki = descriptor
+		if direction == "unk" or direction == "conflicting": continue
 		# group targets:
 		target = target_representative(target)
-		if target not in weight[variant]:
-			weight[variant][target] = {"eff_up": 0, "ineff_up": 0, "eff_down": 0, "ineff_down": 0,
-										"eff_unk": 0, "ineff_unk":0}
+		# max affinity is the smallest ki
+		if not target in max_affinity or max_affinity[target]>ki:
+			max_affinity[target]  = ki
+			max_direction[target] = direction
 
-		#if direction == "unk" or direction == "conflicting": continue
-		eff_dir = "{}_{}".format(effectiveness, direction)
-		# +6 for micro in micromolar
-		weight[variant][target][eff_dir] += -math.log(ki)+6
-		#weight[variant][target][eff_dir] += 1.0 / float(1.0 + ki)
+	if len(max_affinity)==0: return
+
+	if not variant in weight:
+		weight[variant] = {}
+		norm[variant] = {}
+
+	if "SV2A" in max_affinity:
+		print("sv2a:", max_affinity["SV2A"], max_direction["SV2A"])
+	# the second pass
+	for target, ki in max_affinity.items():
+		direction = max_direction[target]
+		if target not in weight[variant]:
+			weight[variant][target] = 0
+			norm[variant][target] = 0
+		if (direction == "up" and effectiveness == "eff") or (direction == "down" and effectiveness == "ineff"):
+			weight[variant][target] += -math.log10(ki)+6
+		else:
+			weight[variant][target] -= -math.log10(ki)+6
+
+		norm[variant][target] += 1
 
 
 #################
-
 def drug_effectivness_matrix(cursor, targets_compact):
 
 	pattern = re.compile(r'\w(\d+)')
 	weight_per_position = {}
-	per_patient_descriptors = {}
-	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases";
-	for line in hard_landing_search(cursor, qry):
+	norm_per_position = {}
+	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases"
+	for line in hard_landing_search(cursor, qry): # each line corresponds to one patient
 		[variant, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
 		treatment = {"E": {"eff": treatment_effective_E, "ineff": treatment_ineff_E},
 					 "MD": {"eff": treatment_effective_MD, "ineff": treatment_ineff_MD}}
 		position = int(pattern.search(variant).group(1))
-		if position not in per_patient_descriptors: per_patient_descriptors[position] = []
+		#if position != 40: continue
 		for symptom in ["E", "MD"]:
 			for effectiveness, drugs in treatment[symptom].items():
 				if drugs is None: continue
 				for drug in drugs.lower().split(","):
 					if len(drug) == 0: continue
 					if drug in ignored: continue
-					per_patient_descriptors[position].append(f"{variant}  {symptom}  {effectiveness}  {drug}  {targets_compact[drug]}")
-					sort_out_weights_per_variant(position, effectiveness, targets_compact[drug], weight_per_position)
-	norm = {}
-	for position, weights in weight_per_position.items():
-		norm[position] = 0.0
-		for target, eff_vals in weights.items():
-			m = max(eff_vals.values())
-			if norm[position] < m: norm[position] = m
+					print(">>>", drug)
+					sort_out_weights_per_variant(position, effectiveness, targets_compact[drug],
+					                             weight_per_position, norm_per_position)
 
+	#exit()
 	positions_sorted = sorted(weight_per_position.keys(), key=lambda v: v)
 
 	twoD_matrix = {}
 	all_targets = []
 
 	for position in positions_sorted:
+		if len( weight_per_position[position]) == 0: continue
 		twoD_matrix[position] = {}
-		weights = weight_per_position[position]
-		if norm[position] == 0: continue
+		targets = weight_per_position[position].keys()
 		print("***********************************")
-		print(position)
-		#print("\n".join(per_patient_descriptors[position]))
-		targets_sorted = sorted(weights.keys(), key=lambda k: max(weights[k].values()), reverse=True)
+		print(position, targets)
+		maxval = max([abs(v) for v in weight_per_position[position].values()])
 
-		for target in targets_sorted:
-
-			# for target, eff_vals in weights.items():
-			eff_vals = weights[target]
-			outstr = ""
-			display_val = 0
-			for eff, val in eff_vals.items():
-				val /=  norm[position]
-				outstr += "\t\t %s  %.2f\n" % (eff, val)
-				if eff in ["eff_up", "ineff_down" "eff_unk"]:
-					display_val += val
-				elif eff in ["eff_down", "ineff_up", "ineff_unk"]:
-					display_val -= val
-			twoD_matrix[position][target] = display_val
+		for target in targets:
+			twoD_matrix[position][target] = weight_per_position[position][target]/maxval if maxval>0 else 0
 			if not target in all_targets: all_targets.append(target)
-			if outstr:
-				print("\t", target)
-				print(outstr)
 
 	return twoD_matrix, positions_sorted, sorted(all_targets)
 
