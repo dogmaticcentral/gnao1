@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/35_interfaces_on_gnao1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/38_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,17 +17,17 @@
       <file leaf-file-name="36_schematics_for_xls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
+            <state relative-caret-position="644">
               <caret line="60" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="459" column="72" selection-start-line="459" selection-start-column="72" selection-end-line="459" selection-end-column="72" />
+            <state relative-caret-position="626">
+              <caret line="641" column="60" selection-start-line="641" selection-start-column="60" selection-end-line="641" selection-end-column="60" />
               <folding>
                 <element signature="e#22#33#0" expanded="true" />
               </folding>
@@ -38,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02_GNAO1_bound_to_GPCR.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="02_GNAO1_bound_to_GPCR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="626">
               <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
             </state>
           </provider>
@@ -97,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print</find>
       <find>Attribute</find>
       <find>Tag</find>
       <find>ChildElement</find>
@@ -127,6 +123,7 @@
       <find>log</find>
       <find>scipy</find>
       <find>wordwrap</find>
+      <find>moiet</find>
     </findStrings>
     <replaceStrings>
       <replace>depth</replace>
@@ -710,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/35_interfaces_on_gnao1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -727,20 +717,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+    <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="459" column="72" selection-start-line="459" selection-start-column="72" selection-end-line="459" selection-end-column="72" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="626">
+          <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py">
+    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="61" column="117" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
+        <state relative-caret-position="644">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="641" column="60" selection-start-line="641" selection-start-column="60" selection-end-line="641" selection-end-column="60" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

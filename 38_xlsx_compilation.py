@@ -36,6 +36,35 @@ ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "imm
 
 main_families = ["GABR", "GABBR", "ADRA", "ADRB", "CHRN", "CHRM", "SLC", "KCN", "MTNR", "OPR", "PPAR", "PCC", "MCC",
 				"GRI", "SCN", "CACNA", "CA", "MAO", "DRD", "HTR", "FCGR", "C1Q", "ITG", "HDAC", "HRH", "NR3C", "PTGER"]
+target_info = {"ABAT": ["4-Aminobutyrate aminotransferase", "https://en.wikipedia.org/wiki/ABAT"],
+               "ADRA": ["alpha-adrenergic receptor", "https://en.wikipedia.org/wiki/Adrenergic_receptor"],
+               "AVPR1B": ["Vasopressin V1b receptor", "https://en.wikipedia.org/wiki/Vasopressin_receptor_1B"],
+               "CA": ["https://en.wikipedia.org/wiki/Carbonic_anhydrase", "https://en.wikipedia.org/wiki/Carbonic_anhydrase"],
+               "CACNA": ["Calcium voltage-gated channel subunit alpha", "https://en.wikipedia.org/wiki/Voltage-gated_calcium_channel"],
+               "CHRM": ["Muscarinic acetylcholine receptor", "https://en.wikipedia.org/wiki/Muscarinic_acetylcholine_receptor"],
+               "CHRN": ["Neuronal acetylcholine receptor", "https://en.wikipedia.org/wiki/Nicotinic_acetylcholine_receptor"],
+               "CYP": ["Cytochrome P450", "https://en.wikipedia.org/wiki/Cytochrome_P450"],
+               "DRD": ["Dopamine receptor", "https://en.wikipedia.org/wiki/Dopamine_receptor"],
+               "GABBR": ["GABA-B receptor", "https://en.wikipedia.org/wiki/GABAB_receptor"],
+               "GABR": ["GABA-A recptor", "https://en.wikipedia.org/wiki/GABAA_receptor"],
+               "GLUTAMATE KAINATE": ["Kainate receptor", "https://en.wikipedia.org/wiki/Kainate_receptor"],
+               "GRI": ["Glutamate receptor ionotropic", "https://en.wikipedia.org/wiki/Ionotropic_glutamate_receptor"],
+               "HRH": ["Histamine receptor", "https://en.wikipedia.org/wiki/Histamine_receptor"],
+               "HTR": ["5-HT2 receptor", "https://en.wikipedia.org/wiki/5-HT2_receptor"],
+               "KCN": ["Potassium voltage-gated channel", "https://en.wikipedia.org/wiki/Voltage-gated_potassium_channel"],
+               "KDM4E": ["Lysine-specific demethylase 4E", "https://www.uniprot.org/uniprot/B2RXH2"],
+               "MTNR": ["Melatonin receptor", "https://en.wikipedia.org/wiki/Melatonin_receptor"],
+               "NISCH": ["Nischarin", "https://www.uniprot.org/uniprot/Q9Y2I1"],
+               # "NQO2": ["Ribosyldihydronicotinamide dehydrogenase", ""],
+               "NR3C": ["Glucocorticoid receptor", "https://en.wikipedia.org/wiki/Glucocorticoid_receptor"],
+               "OPR": ["Opioid receptor", "https://en.wikipedia.org/wiki/Opioid_receptor"],
+               "SCN": ["Sodium channel", "https://en.wikipedia.org/wiki/Sodium_channel"],
+               "SERPINA6": ["Serine peptidase inhibitor", "https://www.ncbi.nlm.nih.gov/gene/12401"],
+               "SIGMAR1": ["Sigma-1 receptor", "https://en.wikipedia.org/wiki/Sigma-1_receptor"],
+               "SLC": ["Solute carrier", "https://en.wikipedia.org/wiki/Solute_carrier_family"],
+               "SV2A": ["Synaptic vesicle glycoprotein 2A", "https://www.uniprot.org/uniprot/Q7L0J3"],
+               "TAAR1":["Trace amine-associated receptor 1", "https://www.uniprot.org/uniprot/Q923Y8"],
+               "TMEM97":["Sigma-2 receptor", "https://en.wikipedia.org/wiki/Sigma-2_receptor"]}
 
 
 def human_readble(freq):
@@ -558,14 +587,11 @@ def write_header(worksheet, header, header_format):
 		worksheet.write_string(0, column, header[column])
 
 ################
-def table_creator(cursor, targets_compact, other_stats):
+def table_creator(cursor, workbook, xlsx_format, targets_compact, other_stats):
 
-	# Create an new Excel file and add a worksheet.
-	workbook = xlsxwriter.Workbook('gnao1_therapy.xlsx')
 	worksheet = workbook.add_worksheet("GNAO1 variants and therapy")
-	xlsx_format = {"header":workbook.add_format({'align': 'center',  'valign': 'vcenter', 'bold': True, 'text_wrap': True}),
-	               "wordwrap":workbook.add_format({'align': 'left', 'text_wrap': True}),
-					"hyperlink":workbook.add_format({'align': 'center', 'color': 'blue', 'underline': 1, 'valign': 'vcenter'})}
+	return
+
 	# the height, however, displays a normal height in points (? wtf?  A point is 1/72 of an inch?)
 	worksheet.set_default_row(40)
 	header = ["protein position", "identical in paralogues", "nearest interface [Å]", "location schematic", "protein modification", "frequency (gnomAD)", "phenotype",
@@ -585,7 +611,60 @@ def table_creator(cursor, targets_compact, other_stats):
 	for position in sorted(variants.keys()):
 		row_offset = write_rows(cursor, position, variants[position], targets_compact, other_stats, worksheet, row_offset, xlsx_format)
 
-	workbook.close()
+
+
+###################
+def legend_creator(cursor, workbook, xlsx_format, target_info, drug_info):
+	worksheet = workbook.add_worksheet("Legend")
+
+	for idx in range(4):
+		worksheet.set_column(column_string(idx), 30)
+
+	########## targets
+	target_row = 1
+	worksheet.write(target_row, 0, "Targeted protein families:", xlsx_format["header"])
+	target_row += 1
+	column = 0
+	for content in ["shorthand", "name", "more info"]:
+		worksheet.write(target_row, column, content, xlsx_format["header"])
+		column += 1
+
+	for target, [long_name, url] in target_info.items():
+		target_row += 1
+		column = 0
+		for content in [target, long_name]:
+			worksheet.write(target_row, column, content)
+			column += 1
+		info_tag = "info"
+		for site in ["Wikipedia", "Uniprot", "NCBI"]:
+			if site.lower() in url: info_tag = site
+
+		worksheet.write_url(target_row, column, url, string=info_tag)
+
+
+	########## drugs
+	[drugs, active_moiety, generic_names] = drug_info
+	drug_row = target_row+2
+	#worksheet.write_url(pheno_row, pubmed_column, pubmed_hyperlink, string=str(pubmed))
+	worksheet.write(drug_row, 0, "Drugs referenced:", xlsx_format["header"])
+	drug_row += 1
+	column = 0
+	for content in ["drug", "generic_name", "active moiety", "DrugBank"]:
+		worksheet.write(drug_row, column, content, xlsx_format["header"])
+		column += 1
+
+
+	for drug in sorted(drugs):
+		for generic_name in generic_names[drug]:
+			active = active_moiety.get(generic_name, generic_name)
+			drugbank_id = hard_landing_search(cursor, f"select drugbank_id from drugs where name = '{active}'")[0][0]
+			drug_row += 1
+			column = 0
+			for content in [drug, generic_name, active]:
+				worksheet.write(drug_row, column, content)
+				column += 1
+			worksheet.write_url(drug_row, column, f"https://www.drugbank.ca/drugs/{drugbank_id}", string=drugbank_id)
+
 
 #########################################
 def main():
@@ -597,13 +676,24 @@ def main():
 
 	db, cursor = gnao1_connect()
 
+	# Create an new Excel file and add a worksheet.
+	workbook = xlsxwriter.Workbook('gnao1_therapy.xlsx')
+	xlsx_format = {"header":workbook.add_format({'align': 'center',  'valign': 'vcenter', 'bold': True, 'text_wrap': True}),
+	               "wordwrap":workbook.add_format({'align': 'left', 'text_wrap': True}),
+					"hyperlink":workbook.add_format({'align': 'center', 'color': 'blue', 'underline': 1, 'valign': 'vcenter'})}
+
 	all_drugs, active_moiety = drugs_in_fabula(cursor)
 
 	[generic_names, drugbank_id, targets] = drugs_decompose(cursor, list(all_drugs) + list(active_moiety.values()))
 	target_activity = get_activities(cursor, all_drugs, generic_names, drugbank_id, targets, active_moiety, verbose=False)
 	targets_compact = make_compact_profiles(target_activity)
 	other_stats = [gnomad_freqs, cons_in_paras, distances]
-	table_creator(cursor, targets_compact, other_stats)
+	table_creator(cursor, workbook, xlsx_format, targets_compact, other_stats)
+
+	drug_info = [all_drugs, active_moiety, generic_names]
+	legend_creator(cursor, workbook, xlsx_format, target_info, drug_info)
+
+	workbook.close()
 
 	cursor.close()
 	db.close()
