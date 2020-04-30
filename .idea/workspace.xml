@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/26_pymol_vis.py" beforeDir="false" afterPath="$PROJECT_DIR$/26_pymol_vis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/27_gnomad_vs_disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/22_gnomad_vs_disease.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/36_schematics_for_xls.py" beforeDir="false" afterPath="$PROJECT_DIR$/36_schematics_for_xls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,145 +17,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="16_drug_mechanism_per_variant.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="363" column="38" lean-forward="true" selection-start-line="363" selection-start-column="38" selection-end-line="363" selection-end-column="38" />
-              <folding>
-                <element signature="e#2446#2776#0" />
-                <element signature="e#2858#4087#0" />
-                <element signature="e#4154#4455#0" />
-                <element signature="e#4506#5085#0" />
-                <element signature="e#5202#6660#0" />
-                <element signature="e#6717#6978#0" />
-                <element signature="e#7053#7389#0" />
-                <element signature="e#7515#9257#0" />
-                <element signature="e#9337#9686#0" />
-                <element signature="e#9765#10835#0" />
-                <element signature="e#10862#11737#0" />
-                <element signature="e#11785#11920#0" />
-                <element signature="e#11959#12042#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="587" lean-forward="true" selection-start-line="587" selection-end-line="588" selection-end-column="16" />
-              <folding>
-                <element signature="e#138#169#0" />
-                <element signature="e#1707#1899#0" />
-                <element signature="e#1917#2125#0" />
-                <element signature="e#2140#5091#0" />
-                <element signature="e#5120#5195#0" />
-                <element signature="e#5226#6001#0" />
-                <element signature="e#5259#5294#0" />
-                <element signature="e#5370#5972#0" />
-                <element signature="e#5432#5972#0" />
-                <element signature="e#6029#6445#0" />
-                <element signature="e#6062#6097#0" />
-                <element signature="e#6171#6417#0" />
-                <element signature="e#6189#6263#0" />
-                <element signature="e#6275#6417#0" />
-                <element signature="e#6477#6687#0" />
-                <element signature="e#6522#6557#0" />
-                <element signature="e#6603#6660#0" />
-                <element signature="e#6770#7998#0" />
-                <element signature="e#7075#7925#0" />
-                <element signature="e#7256#7365#0" />
-                <element signature="e#7443#7647#0" />
-                <element signature="e#7518#7603#0" />
-                <element signature="e#7717#7925#0" />
-                <element signature="e#7794#7879#0" />
-                <element signature="e#8065#8366#0" />
-                <element signature="e#8207#8344#0" />
-                <element signature="e#8242#8344#0" />
-                <element signature="e#8417#8996#0" />
-                <element signature="e#8568#8746#0" />
-                <element signature="e#8873#8962#0" />
-                <element signature="e#9294#9371#0" />
-                <element signature="e#9601#9764#0" />
-                <element signature="e#9964#10015#0" />
-                <element signature="e#10096#10182#0" />
-                <element signature="e#10404#10497#0" />
-                <element signature="e#10628#10889#0" />
-                <element signature="e#10701#10842#0" />
-                <element signature="e#10788#10842#0" />
-                <element signature="e#10964#11300#0" />
-                <element signature="e#11425#13151#0" />
-                <element signature="e#11503#13074#0" />
-                <element signature="e#11680#13060#0" />
-                <element signature="e#11766#11841#0" />
-                <element signature="e#11992#12175#0" />
-                <element signature="e#12276#13036#0" />
-                <element signature="e#12443#13036#0" />
-                <element signature="e#12504#13036#0" />
-                <element signature="e#12741#12992#0" />
-                <element signature="e#13231#13580#0" />
-                <element signature="e#13458#13533#0" />
-                <element signature="e#14756#15630#0" />
-                <element signature="e#14826#15046#0" />
-                <element signature="e#14903#15046#0" />
-                <element signature="e#15283#15613#0" />
-                <element signature="e#15414#15613#0" />
-                <element signature="e#15930#16016#0" />
-                <element signature="e#16428#20669#0" />
-                <element signature="e#16564#17670#0" />
-                <element signature="e#16835#17670#0" />
-                <element signature="e#17037#17177#0" />
-                <element signature="e#17214#17670#0" />
-                <element signature="e#17277#17670#0" />
-                <element signature="e#17378#17575#0" />
-                <element signature="e#17446#17489#0" />
-                <element signature="e#18564#18687#0" />
-                <element signature="e#18986#20656#0" />
-                <element signature="e#19441#20656#0" />
-                <element signature="e#19706#20231#0" />
-                <element signature="e#20066#20231#0" />
-                <element signature="e#20715#20764#0" />
-                <element signature="e#20824#22073#0" />
-                <element signature="e#20824#20897#0" />
-                <element signature="e#21710#21796#0" />
-                <element signature="e#21850#21946#0" />
-                <element signature="e#21993#22073#0" />
-                <element signature="e#22147#22273#0" />
-                <element signature="e#22374#23443#0" />
-                <element signature="e#22578#22825#0" />
-                <element signature="e#23114#23254#0" />
-                <element signature="e#23543#26267#0" />
-                <element signature="e#23705#23735#0" />
-                <element signature="e#24268#24392#0" />
-                <element signature="e#24896#24977#0" />
-                <element signature="e#25035#25340#0" />
-                <element signature="e#25105#25164#0" />
-                <element signature="e#25697#25776#0" />
-                <element signature="e#25809#26267#0" />
-                <element signature="e#25853#26267#0" />
-                <element signature="e#26100#26158#0" />
-                <element signature="e#26675#26980#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="36_schematics_for_xls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="402">
+              <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <file leaf-file-name="26_pymol_vis.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/26_pymol_vis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="576">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="710">
+              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+              <folding>
+                <element signature="e#1#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -236,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/30_movie/15_gnao_reopens.py" />
         <option value="$PROJECT_DIR$/30_movie/13_GTP_breakdown.py" />
         <option value="$PROJECT_DIR$/30_movie/14_ac_cplx_dissoc_and_GPCR_redock.py" />
         <option value="$PROJECT_DIR$/30_movie/16_zoom_into_GBD.py" />
@@ -277,16 +166,17 @@
         <option value="$PROJECT_DIR$/50_movie/25_therapy.py" />
         <option value="$PROJECT_DIR$/50_movie/23_disease_mutations.py" />
         <option value="$PROJECT_DIR$/50_movie/22_GBD_active_interfaces.py" />
-        <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
         <option value="$PROJECT_DIR$/50_movie/02_GNAO1_bound_to_GPCR.py" />
         <option value="$PROJECT_DIR$/27_gnomad_vs_disease.py" />
         <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/35_interfaces_on_gnao1.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
-        <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
         <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
+        <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
+        <option value="$PROJECT_DIR$/utils/pymol_pieces.py" />
+        <option value="$PROJECT_DIR$/26_pymol_vis.py" />
       </list>
     </option>
   </component>
@@ -429,13 +319,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/50_movie/phenotype_sequence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/dist-packages/bs4/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -723,16 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
-          <folding>
-            <element signature="e#1#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-196">
@@ -744,13 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/27_gnomad_vs_disease.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -782,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -903,7 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
+        <state relative-caret-position="-1470">
           <caret line="363" column="38" lean-forward="true" selection-start-line="363" selection-start-column="38" selection-end-line="363" selection-end-column="38" />
           <folding>
             <element signature="e#2446#2776#0" />
@@ -920,6 +779,37 @@
             <element signature="e#11785#11920#0" />
             <element signature="e#11959#12042#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/22_gnomad_vs_disease.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-750">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/36_schematics_for_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="e#1#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26_pymol_vis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>

@@ -59,14 +59,9 @@ def make_schematics(view, production= True):
 		cmd.show("cartoon", "gnao")
 
 
-
-
-###################################
-# uncomment to run from pymol
-# @cmd.extend
 def gnao():
 
-	# careful: starting production mode with gui can freeze teh desktop
+	# careful: starting production mode with gui can freeze the desktop
 	production = (sys.argv[1] == '-qc')
 
 	for dep in [structure_home, frames_home]:
@@ -75,7 +70,6 @@ def gnao():
 			return
 
 	phenotype_scene(gnao_cartoon=False)
-
 
 	if production:
 		time0 = time()
@@ -86,15 +80,10 @@ def gnao():
 		make_schematics(sequence_25_view[2])
 		print("done in %d secs" %(time()-time0))
 
-
 	else:
 
 		cmd.viewport(1920, 1080)
 		make_schematics(sequence_25_view[2], production=False)
-
-
-
-	#cmd.quit()
 
 ###################################
 gnao()

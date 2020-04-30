@@ -97,11 +97,11 @@ def residue_color(main_object, res_id, rgb_color_list):
 	cmd.color(color_name, "{} and resi {}".format(main_object, res_id))
 
 
-def clump_representation(regions, color, name, transparency=-1.0, small_molecule=False, grid_spacing=1.5):
+def clump_representation(regions, color, name, transparency=-1.0, small_molecule=False, grid_spacing=1.5, specular = False):
 
 	# show regions as clumps or blobs
 	cmd.set("surface_quality", 1)
-	cmd.set("spec_reflect", 0.0)
+	if not specular: cmd.set("spec_reflect", 0.0)
 
 	if small_molecule:
 		cmd.alter("all", "b=20")
@@ -146,12 +146,12 @@ def interface_clump_cleanup(reference_selection, interactant):
 	clump_cleanup([name], name)
 
 
-def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7, grid_spacing=1.5):
+def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7, grid_spacing=1.5, specular=False):
 	cmd.hide("everything", interactant)
 	name = if_clump_name(reference_selection, interactant)
 	# move selection to its own object
 	cmd.create(name, "byres {} within {} of {}".format(interactant, depth, reference_selection))
-	clump_representation([name], color, name, transparency=transparency, grid_spacing=grid_spacing)
+	clump_representation([name], color, name, transparency=transparency, grid_spacing=grid_spacing, specular=specular)
 
 
 def residue_cluster_clump(parent_selection, res_list, name, color, transparency=0.7):
