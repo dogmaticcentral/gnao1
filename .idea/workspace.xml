@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/36_schematics_for_xls.py" beforeDir="false" afterPath="$PROJECT_DIR$/36_schematics_for_xls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/38_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/gnao1_movie.ove.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/gnao1_movie.ove.bkp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="16_drug_mechanism_per_variant.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="16_drug_mechanism_per_variant.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="411" column="5" selection-start-line="411" selection-start-column="5" selection-end-line="411" selection-end-column="5" />
+            <state relative-caret-position="-390">
+              <caret line="363" column="38" lean-forward="true" selection-start-line="363" selection-start-column="38" selection-end-line="363" selection-end-column="38" />
               <folding>
                 <element signature="e#2446#2776#0" />
                 <element signature="e#2858#4087#0" />
@@ -43,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1602">
-              <caret line="373" selection-start-line="373" selection-end-line="373" />
+            <state relative-caret-position="900">
+              <caret line="587" lean-forward="true" selection-start-line="587" selection-end-line="588" selection-end-column="16" />
               <folding>
                 <element signature="e#138#169#0" />
                 <element signature="e#1707#1899#0" />
@@ -173,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Attribute</find>
       <find>Tag</find>
       <find>ChildElement</find>
       <find>LineNum</find>
@@ -203,6 +197,7 @@
       <find>scipy</find>
       <find>wordwrap</find>
       <find>moiet</find>
+      <find>xrange</find>
     </findStrings>
     <replaceStrings>
       <replace>depth</replace>
@@ -232,6 +227,7 @@
       <replace>substrate_GDP</replace>
       <replace>&quot;gnao-gpcr&quot;</replace>
       <replace>,</replace>
+      <replace>range</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -240,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/30_movie/10_docking_to_adcy.py" />
         <option value="$PROJECT_DIR$/30_movie/15_gnao_reopens.py" />
         <option value="$PROJECT_DIR$/30_movie/13_GTP_breakdown.py" />
         <option value="$PROJECT_DIR$/30_movie/14_ac_cplx_dissoc_and_GPCR_redock.py" />
@@ -289,8 +284,9 @@
         <option value="$PROJECT_DIR$/35_interfaces_on_gnao1.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$PROJECT_DIR$/36_schematics_for_xls.py" />
-        <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
         <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/16_drug_mechanism_per_variant.py" />
       </list>
     </option>
   </component>
@@ -433,13 +429,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/50_movie/phenotype_sequence.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -803,32 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="411" column="5" selection-start-line="411" selection-start-column="5" selection-end-line="411" selection-end-column="5" />
-          <folding>
-            <element signature="e#2446#2776#0" />
-            <element signature="e#2858#4087#0" />
-            <element signature="e#4154#4455#0" />
-            <element signature="e#4506#5085#0" />
-            <element signature="e#5202#6660#0" />
-            <element signature="e#6717#6978#0" />
-            <element signature="e#7053#7389#0" />
-            <element signature="e#7515#9257#0" />
-            <element signature="e#9337#9686#0" />
-            <element signature="e#9765#10835#0" />
-            <element signature="e#10862#11737#0" />
-            <element signature="e#11785#11920#0" />
-            <element signature="e#11959#12042#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="373" selection-start-line="373" selection-end-line="373" />
+        <state relative-caret-position="900">
+          <caret line="587" lean-forward="true" selection-start-line="587" selection-end-line="588" selection-end-column="16" />
           <folding>
             <element signature="e#138#169#0" />
             <element signature="e#1707#1899#0" />
@@ -920,6 +887,38 @@
             <element signature="e#25853#26267#0" />
             <element signature="e#26100#26158#0" />
             <element signature="e#26675#26980#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-end-line="11" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_drug_mechanism_per_variant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="363" column="38" lean-forward="true" selection-start-line="363" selection-start-column="38" selection-end-line="363" selection-end-column="38" />
+          <folding>
+            <element signature="e#2446#2776#0" />
+            <element signature="e#2858#4087#0" />
+            <element signature="e#4154#4455#0" />
+            <element signature="e#4506#5085#0" />
+            <element signature="e#5202#6660#0" />
+            <element signature="e#6717#6978#0" />
+            <element signature="e#7053#7389#0" />
+            <element signature="e#7515#9257#0" />
+            <element signature="e#9337#9686#0" />
+            <element signature="e#9765#10835#0" />
+            <element signature="e#10862#11737#0" />
+            <element signature="e#11785#11920#0" />
+            <element signature="e#11959#12042#0" />
           </folding>
         </state>
       </provider>

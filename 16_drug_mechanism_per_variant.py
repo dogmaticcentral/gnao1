@@ -343,7 +343,7 @@ def target_representative(target):
 
 
 #########################################
-def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight, norm):
+def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight, split_direction=True):
 	# effecitveness shoud be "eff" or "ineff"; perhaps I should have a way to enforce is
 
 	# tagets compact is array of triplet, for example
@@ -366,24 +366,27 @@ def sort_out_weights_per_variant(variant, effectiveness, targets_compact, weight
 
 	if len(max_affinity)==0: return
 
-	if not variant in weight:
-		weight[variant] = {}
-		norm[variant] = {}
+	if not variant in weight: weight[variant] = {}
 
-	if "SV2A" in max_affinity:
-		print("sv2a:", max_affinity["SV2A"], max_direction["SV2A"])
 	# the second pass
 	for target, ki in max_affinity.items():
 		direction = max_direction[target]
-		if target not in weight[variant]:
-			weight[variant][target] = 0
-			norm[variant][target] = 0
-		if (direction == "up" and effectiveness == "eff") or (direction == "down" and effectiveness == "ineff"):
-			weight[variant][target] += -math.log10(ki)+6
-		else:
-			weight[variant][target] -= -math.log10(ki)+6
 
-		norm[variant][target] += 1
+		target_key = f"{target}_{direction}" if split_direction else target
+		if target_key not in weight[variant]: weight[variant][target_key] = 0
+
+		weight_term =  -math.log10(ki)+6
+		if split_direction:
+			if effectiveness == "eff":
+				weight[variant][target_key] += weight_term
+			else:
+				weight[variant][target_key] -= weight_term
+		else:
+			if (direction=="up" and effectiveness == "eff") or (direction == "down" and effectiveness == "ineff"):
+				weight[variant][target_key] += weight_term
+			else:
+				weight[variant][target_key] -= weight_term
+
 
 
 #################
@@ -391,7 +394,6 @@ def drug_effectivness_matrix(cursor, targets_compact):
 
 	pattern = re.compile(r'\w(\d+)')
 	weight_per_position = {}
-	norm_per_position = {}
 	qry = "select protein, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD from cases"
 	for line in hard_landing_search(cursor, qry): # each line corresponds to one patient
 		[variant, treatment_effective_E, treatment_ineff_E, treatment_effective_MD, treatment_ineff_MD] = line
@@ -405,9 +407,7 @@ def drug_effectivness_matrix(cursor, targets_compact):
 				for drug in drugs.lower().split(","):
 					if len(drug) == 0: continue
 					if drug in ignored: continue
-					print(">>>", drug)
-					sort_out_weights_per_variant(position, effectiveness, targets_compact[drug],
-					                             weight_per_position, norm_per_position)
+					sort_out_weights_per_variant(position, effectiveness, targets_compact[drug], weight_per_position)
 
 	#exit()
 	positions_sorted = sorted(weight_per_position.keys(), key=lambda v: v)
@@ -457,7 +457,7 @@ def main():
 
 		print("%12s"%target[:10], end="")
 		for position in positions:
-			print("%7.2f"%twoD_matrix[position].get(target,0), end="")
+			print("%7.2f"%twoD_matrix[position].get(target,50), end="")
 		print()
 
 	positions = list(filter(lambda position: len(twoD_matrix[position])>0
