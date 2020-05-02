@@ -1,7 +1,6 @@
 
 from PIL import Image
-import os, shutil
-
+import os
 
 #########################################
 

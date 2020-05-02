@@ -106,13 +106,12 @@ def clump_representation(regions, color, name, transparency=-1.0, small_molecule
 	if small_molecule:
 		cmd.alter("all", "b=20")
 		cmd.alter("all", "q=1")
-		cmd.set("gaussian_resolution", 7)
-		gsp = 0.2
+		cmd.set("gaussian_resolution", 5)
 	else:
 		cmd.alter("all", "b=50")
 		cmd.alter("all", "q=1")
 		cmd.set("gaussian_resolution", 7)
-		gsp = grid_spacing
+	gsp = grid_spacing
 
 	idx = 0
 	for region in regions:
@@ -146,12 +145,14 @@ def interface_clump_cleanup(reference_selection, interactant):
 	clump_cleanup([name], name)
 
 
-def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7, grid_spacing=1.5, specular=False):
+def interface_clump(reference_selection, interactant, color, depth=5, transparency=0.7, grid_spacing=1.5,
+					specular=False, small_molecule=False):
 	cmd.hide("everything", interactant)
 	name = if_clump_name(reference_selection, interactant)
 	# move selection to its own object
 	cmd.create(name, "byres {} within {} of {}".format(interactant, depth, reference_selection))
-	clump_representation([name], color, name, transparency=transparency, grid_spacing=grid_spacing, specular=specular)
+	clump_representation([name], color, name, transparency=transparency, grid_spacing=grid_spacing,
+	                     specular=specular, small_molecule=small_molecule)
 
 
 def residue_cluster_clump(parent_selection, res_list, name, color, transparency=0.7):
