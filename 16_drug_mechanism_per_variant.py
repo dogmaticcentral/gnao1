@@ -200,8 +200,8 @@ def main():
 	ax = sns.clustermap(pandas_data_frame, center=0, cmap="seismic")
 	plt.setp(ax.ax_heatmap.yaxis.get_majorticklabels(), rotation=0) # ylabels rotatesd otherwise
 
-	plt.show() # beats me how this knows what to plot, but id does
-	#plt.savefig("test.svg")
+	#plt.show() # beats me how this knows what to plot, but id does
+	plt.savefig("gnao_clustermap.svg")
 
 #########################################
 if __name__ == '__main__':
