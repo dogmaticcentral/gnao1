@@ -17,3 +17,9 @@ svg/*
 *.m4v
 *.mp4
 .idea
+*.bngl
+*.cdat
+*.gdat
+*.gplt
+*.net
+*.png
