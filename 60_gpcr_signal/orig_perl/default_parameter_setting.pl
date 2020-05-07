@@ -1,11 +1,9 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
 sub set_literals();
 sub set_tweakable();
-
-my $agonist = 1;
-my $rootnm = "equilibrium_w_agonist";
-my $svg = 0;
 
 ####################################################
 my $literal1 = "";
@@ -15,17 +13,20 @@ my $tweakable = "";
 
 set_literals() ;
 set_tweakable() ;
+# run first with the rootnm base
+my $rootnm = "production";
+my $svg = 0;
 
 open (OUTF, ">$rootnm.bngl") || die "Cno  $rootnm.bngl: $!\n";
 print OUTF $literal1;
-print OUTF $tweakable;
-print OUTF $literal2;
+print  OUTF $tweakable;
+print  OUTF $literal2;
 close OUTF;
 
-# I also have alias bing='/home/ivana/third/BioNetGen-2.3.1/BNG2.pl  "$@"' 
+# I also have alias bing='/home/ivana/third/BioNetGen-2.3.1/BNG2.pl  "$@"'
 # in bashrc, but I do not need it here
-# run BioNetGen, and print its output 
-print `/home/ivana/third/BioNetGen-2.3.1/BNG2.pl $rootnm.bngl`;
+# run BioNetGen, and print its output
+print `/home/ivana/third/bionetgen/BNG2.pl $rootnm.bngl`;
 
 # plot the output
 open (OUTF, ">$rootnm.gplt") || die "Cno  $rootnm.gplt: $!\n";
@@ -43,7 +44,6 @@ if ($svg) {
     print OUTF "set output '$rootnm.png' \n";
 }
 
-
 print OUTF "# define axis\n";
 print OUTF "# remove border on top and right and set color to gray\n";
 print OUTF "set style line 11 lc rgb '#808080' lt 1\n";
@@ -56,11 +56,9 @@ print OUTF "# set grid back ls 12\n";
 
 print OUTF "# color definitions\n";
 print OUTF "set style line 1 lc rgb '#004c91' lt 1 lw 3 # --- blue\n";
-print OUTF "set style line 2 lc rgb '#004c91' lt 1 lw 3 dt '-' # --- blue dashed \n";
-print OUTF "set style line 3 lc rgb '#004c91' lt 1 lw 3 dt '.' # --- blue dotted \n";
+print OUTF "set style line 2 lc rgb '#ffc220' lt 1 lw 3 # --- yellow\n";
 
-
-print OUTF "set key center right\n";
+print OUTF "#set key top right\n";
 
 print OUTF "set xlabel 'seconds'\n";
 print OUTF "set ylabel 'molecular population size (%)'\n";
@@ -70,39 +68,35 @@ print OUTF "set yrange [0:100]\n";
 
 print OUTF "labelBG =  'G_{/Symbol b}_{/Symbol g}{\\267}effector'\n";
 print OUTF "labelA  =  'G_{/Symbol a}{\\267}effector'\n";
-print OUTF "labelABG  =  'G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'\n";
-print OUTF "labelGABG  =  'GPCR{\\267}G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'\n";
 
 
+if ($rootnm  ne "base") {
 
-# the G trimer is actually tied with GPCR
-if ($agonist) {
-   print OUTF "plot '$rootnm.gdat'   ";
-   print OUTF "    u 1:(\$14/50*100)  t labelA  w lines ls 1,";
-   print OUTF "  ''  u 1:(\$4/50*100)  t labelGABG w lines ls 2,   ";
-   print OUTF "  ''  u 1:(\$7/50*100)  t labelABG w lines ls 3 \n ";
-   
+    print OUTF "set style line 3 lc rgb '#004c91'  lt 2 lw 1 dt '.' # --- blue\n";
+    print OUTF "set style line 4 lc rgb '#ffc220'  lt 2 lw 1 dt '.' # --- yellow\n";
+
+
+    print OUTF "plot '$rootnm.gdat' u 1:(\$15/50*100)  t labelBG w lines ls 2, '$rootnm.gdat' u 1:(\$14/50*100)  t labelA w lines ls 1, ";
+    print OUTF "'base.gdat' u 1:(\$14/50*100) notitle  w lines ls 3,   'base.gdat' u 1:(\$15/50*100) notitle  w lines ls 4\n";
+
 } else {
-   print OUTF "plot '$rootnm.gdat'   ";
-   print OUTF "    u 1:(\$7/50*100)  t labelABG w lines ls 3,  ";
-   print OUTF "  ''  u 1:(\$4/50*100)  t labelGABG w lines ls 2,   ";
-   print OUTF "   '' u 1:(\$14/50*100)  t labelA  w lines ls 1 \n";
+  print OUTF "plot '$rootnm.gdat' u 1:(\$15/50*100)  t 'Gbg+effector' w lines ls 2,'$rootnm.gdat' u 1:(\$14/50*100)  t 'Ga+effector' w lines ls 1\n";
+
 }
 
 print `gnuplot $rootnm.gplt`;
-$svg || print "\nnow run eog $rootnm.png\n";
+$svg ||  print "\nnow run eog $rootnm.png\n";
+
+
 
 
 
 exit(0);
 
-
-
-
 ###################################################
 sub set_tweakable() {
 	# set the adjustable reaction rates here
-	my $kf, $kr;
+	my ($kf, $kr);
 
 	#  GTP->GDb converstion in mutant Galpha; wt values are 0.07, 0.001
 	$kf = "0.07";
@@ -117,7 +111,7 @@ sub set_tweakable() {
 	# Gtrimer binding to activated GPCR; wt values 10.0, 0.1
 	$kf = "10.0";
 	$kr = "0.1";
-	$tweakable .= "d2_Gtrimer_to_GPCR_active:  \@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~mutant).Gbg(p_site!1) <-> ";
+	$tweakable .= "d2_Gtrimer_to_GPCR_active:	\@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~mutant).Gbg(p_site!1) <-> ";
 	$tweakable .= "\@c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~mutant).Gbg(p_site!1)	 $kf, $kr	 \n";
 
 	# Gtrimer binding to  GPCR without agonist; wt values 0.3, 0.1\
@@ -125,7 +119,7 @@ sub set_tweakable() {
 	$kr = "0.1";
 	$tweakable .= "e2_Gtrimer_to_GPCR_free:	\@c0:GPCR(Galpha,agonist) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~mutant).Gbg(p_site!1) <-> \@c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~mutant).Gbg(p_site!2)    $kf, $kr	\n";
 
-	# exchange GDP -> GTP in GPCR; wt values 2.0. 0.0 
+	# exchange GDP -> GTP in GPCR; wt values 2.0. 0.0
 	$kf = "2.0";
 	$kr = "0.0";
 	$tweakable .= "g2_GPCR_as_GEF:	\@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~mutant).Gbg(p_site!2) -> \@c0:GPCR(Galpha,agonist!+) + \@c0:Galpha(GPCR,GnP~GTP,p_site,mut~mutant) + \@c0:Gbg(p_site)	$kf \n";
@@ -159,7 +153,7 @@ sub set_tweakable() {
 	$kf = "2.0";
 	$kr = "0.5";
 	$tweakable .= "e3_Galpha_to_GPCR_free:	\@c0:GPCR(Galpha,agonist) + \@c0:Galpha(GPCR,GnP~none,p_site,mut~mutant) <-> \@c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~mutant)	 $kf, $kr"
-	
+
 }
 
 
@@ -248,22 +242,15 @@ end model
 generate_network({max_iter=>10,max_agg=>100,overwrite=>1})
 # Equilibration
 # Note that the n_steps parameter controls only the reporting interval and not the step size used by the CVODE solver, which uses adaptive time stepping
-simulate_ode({t_end=>100000,n_steps=>100,sparse=>1,steady_state=>1}) ";
-	
-	if ($agonist) {
-	    $literal2 .= "
-# equilibrium without agonist
-simulate_ode({t_end=>50,n_steps=>10,atol=>1e-8,rtol=>1e-8,sparse=>1})
+simulate_ode({t_end=>100000,n_steps=>100,sparse=>1,steady_state=>1})
+
 # now trigger the GPCRs by adding the agonist
+simulate_ode({t_end=>20,n_steps=>20,atol=>1e-8,rtol=>1e-8,sparse=>1})
 setConcentration(\"\@c0:agonist(p_site)\", 60.0)
-simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+simulate_ode({continue=>1,t_end=>20.1,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+setConcentration(\"\@c0:AChE(agonist)\", 120.0)
+simulate_ode({continue=>1,t_end=>220,n_steps=>500,atol=>1e-8,rtol=>1e-8,sparse=>1})
 ";
-	} else {
-	    $literal2 .= "
-# equilibrium without agonist
-simulate_ode({t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
-";
-	}
 
 
 
