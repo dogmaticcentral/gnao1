@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os, subprocess
 from bionetgen.literals import *
 from bionetgen.tweakables import *
 from gnuplot.literals import *
@@ -16,14 +17,13 @@ setConcentration("@c0:AChE(agonist)", 120.0)
 simulate_ode({continue=>1,t_end=>220,n_steps=>500,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
-def write_bngl_input(rootname):
+def write_bngl_input(rootname, tweak):
 	outname = f"{rootname}.bngl"
 	with open(outname, "w") as outf:
-
 		model = model_template.format(molecule_types=default_molecule_types,
 		                            species=default_species,
 		                            observables=default_observables,
-									reaction_rules=(default_reaction_rules + mutant_reactions()))
+									reaction_rules=(default_reaction_rules + mutant_reactions(tweak)))
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(agonist_ping)
@@ -35,26 +35,23 @@ def write_bngl_input(rootname):
 
 # plot Galpha line las, so it would be in the top layer
 plot = ''' 
-plot '{}.gdat' u 1:($15/50*100)  t labelBG w lines ls 1,  '' u 1:($14/50*100)  t labelA w lines ls 5
+plot '{}.gdat' u 1:($15/50*100)  t labelBG w lines ls 1,  '' u 1:($14/50*100)  t labelA w lines ls 5, \
+	 '{}.gdat' u 1:($15/50*100)  t labelBGwt w lines ls 3,  '' u 1:($14/50*100)  t labelAwt  w lines ls 6
 '''
 
-def write_gnuplot_input(bngl_input_name):
+def write_gnuplot_input(bngl_input_name, wt_rootname):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
+		print("set key top right", file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname), file=outf)
-		print(plot.format(rootname), file=outf)
+		print(plot.format(rootname, wt_rootname), file=outf)
 
 	return outname
 
-
-def run_gnuplot(gnuplot, gnuplot_input):
-	gplt_out = gnuplot_input.replace(".gplt", ".gplt_out")
-	subprocess.call(["bash", "-c", f"{gnuplot} {gnuplot_input} > {gplt_out}"])
-	pass
 
 ###############################
 def main():
@@ -63,16 +60,34 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	rootname = "wt_signal"
-
+	# we'll use the outlint of the wt signal for comparison
+	wt_rootname = "wt_signal"
 	# run simulation
-	bngl_input  = write_bngl_input(rootname)
+	bngl_input  = write_bngl_input(wt_rootname, {})
 	run_bngl(bngl, bngl_input)
-	# make figure (image, plot)
-	gnuplot_input = write_gnuplot_input(bngl_input)
-	run_gnuplot(gnuplot, gnuplot_input)
-	# cleanup our mess
-	cleanup(rootname)
+
+	tweaks = {
+		"weakened_effector_if": {"G_alpha_T_to_effector": [0.4, 0.1]}, # default/wt is [4.0, 0.1]
+		"weakened_RGS_if": {"RGS_to_Galpha_T": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
+		"weakened_catalysis": {"RGS_as_GAP": [0.03, 0.0]},             # default/wt is [30.0, 0.0]
+		"weakened_GPCR_bindinding": {"trimer_to_GPCR_active": [0.1, 0.1], "Gtrimer_to_GPCR_free":[0.1, 0.1]},
+		"enhanced_GEF_activity_by_gpcr": {"GPCR_as_GEF": [200.0, 0.2]} # default/wt is [2.0, 0.2]
+	}
+
+	for title, tweak in tweaks.items():
+		rootname = f"{title}_signal"
+		# run simulation
+		bngl_input  = write_bngl_input(rootname, tweak)
+		run_bngl(bngl, bngl_input)
+		# make figure (image, plot)
+		gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname)
+		run_gnuplot(gnuplot, gnuplot_input)
+		# cleanup our mess
+		cleanup(rootname)
+
+
+	cleanup(wt_rootname)
+
 
 	return
 

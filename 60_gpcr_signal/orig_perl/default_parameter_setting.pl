@@ -14,7 +14,7 @@ my $tweakable = "";
 set_literals() ;
 set_tweakable() ;
 # run first with the rootnm base
-my $rootnm = "production";
+my $rootnm = "base";
 my $svg = 0;
 
 open (OUTF, ">$rootnm.bngl") || die "Cno  $rootnm.bngl: $!\n";
@@ -77,7 +77,8 @@ if ($rootnm  ne "base") {
 
 
     print OUTF "plot '$rootnm.gdat' u 1:(\$15/50*100)  t labelBG w lines ls 2, '$rootnm.gdat' u 1:(\$14/50*100)  t labelA w lines ls 1, ";
-    print OUTF "'base.gdat' u 1:(\$14/50*100) notitle  w lines ls 3,   'base.gdat' u 1:(\$15/50*100) notitle  w lines ls 4\n";
+    #print OUTF "'base.gdat' u 1:(\$14/50*100) notitle  w lines ls 3,   'base.gdat' u 1:(\$15/50*100) notitle  w lines ls 4\n";
+    print OUTF "'$rootnm.gdat' u 1:(\$14/50*100) notitle  w lines ls 3,   '$rootnm.gdat' u 1:(\$15/50*100) notitle  w lines ls 4\n";
 
 } else {
   print OUTF "plot '$rootnm.gdat' u 1:(\$15/50*100)  t 'Gbg+effector' w lines ls 2,'$rootnm.gdat' u 1:(\$14/50*100)  t 'Ga+effector' w lines ls 1\n";

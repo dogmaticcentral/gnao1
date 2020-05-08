@@ -1,5 +1,8 @@
 #!/usr/bin/perl
+# was thie ever working?
 
+use strict;
+use warnings;
 sub set_literals();
 sub set_tweakable();
 
@@ -17,14 +20,17 @@ my $tweakable = "";
 
 my $resfile = "$rootnm.wt.table";
 open (RES, ">$resfile") || die "Cno $resfile: $!\n";
-foreach $agonist_concentration (@agonist_concentrations) {
+
+
+my $GD_init_conc = 20.0;
+my $GT_init_conc =  5.0;
+my $G0_init_conc =  0.0;
+my $catalysis_rate = 30.0;
+my $agonist_concentration;
+foreach  $agonist_concentration (@agonist_concentrations) {
     $literal1 = "";
     $literal2 = "";
     $tweakable = "";
-    $GD_init_conc = 20.0;
-    $GT_init_conc =  5.0;
-    $G0_init_conc =  0.0;
-    $catalysis_rate = 30.0;
     set_literals() ;
     set_tweakable() ;
 
@@ -36,8 +42,8 @@ foreach $agonist_concentration (@agonist_concentrations) {
     # I also have alias bing='/home/ivana/third/BioNetGen-2.3.1/BNG2.pl  "$@"' 
     # in bashrc, but I do not need it here
     # run BioNetGen, and print its output 
-     `/home/ivana/third/BioNetGen-2.3.1/BNG2.pl $rootnm.bngl`;
-    $activated_wt =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
+     `/home/ivana/third/bionetgen/BNG2.pl $rootnm.bngl`;
+    my $activated_wt =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
     chomp $activated_wt;
 
 
@@ -59,8 +65,8 @@ foreach $agonist_concentration (@agonist_concentrations) {
     # I also have alias bing='/home/ivana/third/BioNetGen-2.3.1/BNG2.pl  "$@"' 
     # in bashrc, but I do not need it here
     # run BioNetGen, and print its output 
-     `/home/ivana/third/BioNetGen-2.3.1/BNG2.pl $rootnm.bngl`;
-    $activated_cat =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
+     `/home/ivana/third/bionetgen/BNG2.pl $rootnm.bngl`;
+    my $activated_cat =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
     chomp $activated_cat;
 
     $literal1 = "";
@@ -81,8 +87,8 @@ foreach $agonist_concentration (@agonist_concentrations) {
     # I also have alias bing='/home/ivana/third/BioNetGen-2.3.1/BNG2.pl  "$@"' 
     # in bashrc, but I do not need it here
     # run BioNetGen, and print its output 
-     `/home/ivana/third/BioNetGen-2.3.1/BNG2.pl $rootnm.bngl`;
-    $activated_empty =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
+     `/home/ivana/third/bionetgen/BNG2.pl $rootnm.bngl`;
+    my $activated_empty =  `awk 'BEGIN{max=0} {if (\$1!="#" && \$14>max) max=\$14 } END{print max}' $rootnm.gdat`;
     chomp $activated_empty;
 
     
@@ -151,7 +157,7 @@ exit(0);
 ###################################################
 sub set_tweakable() {
 	# set the adjustable reaction rates here
-	my $kf, $kr;
+	my ($kf, $kr);
 
 	#  GTP->GDb converstion in mutant Galpha; wt values are 0.07, 0.001
 	$kf = "0.07";

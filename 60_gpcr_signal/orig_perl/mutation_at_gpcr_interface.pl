@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
 sub set_literals();
 sub set_tweakable();
 
@@ -119,7 +121,7 @@ sub set_tweakable() {
 	$kr = "0.1";
 	$tweakable .= "e2_Gtrimer_to_GPCR_free:	\@c0:GPCR(Galpha,agonist) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~mutant).Gbg(p_site!1) <-> \@c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~mutant).Gbg(p_site!2)    $kf, $kr	\n";
 
-	# >>>>> exchange GDP -> GTP in GPCR; wt values 2.0. 0.0 
+	# exchange GDP -> GTP in GPCR; wt values 2.0. 0.0
 	$kf = "2.0";
 	$kr = "0.0";
 	$tweakable .= "g2_GPCR_as_GEF:	\@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~mutant).Gbg(p_site!2) -> \@c0:GPCR(Galpha,agonist!+) + \@c0:Galpha(GPCR,GnP~GTP,p_site,mut~mutant) + \@c0:Gbg(p_site)	$kf \n";

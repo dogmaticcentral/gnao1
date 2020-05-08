@@ -13,16 +13,40 @@ set tics font ", 16"
 # set grid back ls 12
 
 # color definitions
-set style line 1 lc rgb '#004c91' lt 1 lw 3 # --- blue
-set style line 2 lc rgb '#004c91' lt 1 lw 3 dt '-' # --- blue dashed 
-set style line 3 lc rgb '#004c91' lt 1 lw 3 dt '.' # --- blue dotted 
+set style line 1 lc rgb '#004c91' lw 3 # --- plain blue
+set style line 2 lc rgb '#004c91' lw 3 dt '-' # --- blue dashed 
+set style line 3 lc rgb '#004c91' lw 3 dt '.' # --- dotted blue  
+set style line 5 lc rgb '#ffc220' lw 3        # --- plain yellow
+set style line 6 lc rgb '#ffc220' lw 3 dt '.' # --- dotted yellow
 
 
 set key center right
+'''
 
+axes_signal = '''
 set xlabel 'seconds'
 set ylabel 'molecular population size (%)'
 
 set xrange [0:200]
 set yrange [0:100]
+'''
+
+axes_agonist_response = '''
+set xlabel 'log 10 agonist concentration'
+set ylabel 'effector moodulation (%max)'
+
+set xrange [-3:2]
+set yrange [-100:100]
+'''
+
+
+
+
+labels = '''
+labelBG =  'G_{/Symbol b}_{/Symbol g}{\\267}effector'
+labelA  =  'G_{/Symbol a}{\\267}effector'
+labelABG  =  'G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'
+labelGABG  =  'GPCR{\\267}G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'
+labelBGwt =  'G_{/Symbol b}_{/Symbol g}{\\267}effector, wt'
+labelAwt  =  'G_{/Symbol a}{\\267}effector, wt'
 '''

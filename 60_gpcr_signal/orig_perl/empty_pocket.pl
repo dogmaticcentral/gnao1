@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
 sub set_literals();
 sub set_tweakable();
 

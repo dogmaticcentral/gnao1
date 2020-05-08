@@ -1,15 +1,5 @@
 
-model_setup = '''
-begin model
-
-begin compartments
-c0	3	1
-end compartments
-
-begin parameters
-end parameters
-
-begin molecule types
+default_molecule_types = '''
 Galpha(GPCR,GnP~GTP~GDP~none,p_site,mut~wt~mutant)
 GPCR(Galpha,agonist)
 Gbg(p_site)
@@ -18,9 +8,9 @@ AChE(agonist)
 RGS(Galpha)
 Ga_effector(Galpha)
 Gbg_effector(Gbg)
-end molecule types
+'''
 
-begin seed species
+default_species = '''
 1 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) 20.0
 2 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) 5.0
 3 @c0:GPCR(Galpha,agonist) 50.0
@@ -33,9 +23,9 @@ begin seed species
 10 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~mutant) 20.0
 11 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~mutant) 5.0
 12 @c0:Galpha(GPCR,GnP~none,p_site,mut~mutant) 0.0
-end seed species
+'''
 
-begin observables
+default_observables = '''
 Molecules O0_Galpha_tot @c0:Galpha()
 Molecules O0_GPCR_tot @c0:GPCR()
 Molecules GPCR_Galpha_GDP_Gbg @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut).Gbg(p_site!2)
@@ -50,19 +40,16 @@ Molecules O0_Ga_effector_tot @c0:Ga_effector()
 Molecules O0_Gbg_effector_tot @c0:Gbg_effector()
 Molecules Ga_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut).Ga_effector(Galpha!1)
 Molecules Gbg_to_effector @c0:Gbg(p_site!1).Gbg_effector(Gbg!1)
-end observables
+'''
 
-begin functions
-end functions
-
-begin reaction rules
-a1_Ga_catalysis:	@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		0.07, 0.001
+default_reaction_rules = '''
+a1_Ga_catalysis:	        @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		0.07, 0.001
 e1_Gtrimer_to_GPCR_free:	@c0:GPCR(Galpha,agonist) + @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> @c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2)		0.3, 0.1
-g1_GPCR_as_GEF:	@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2) -> @c0:GPCR(Galpha,agonist!+) + @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + @c0:Gbg(p_site)		2.0
-b1_G_trimer_formation:	@c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) + @c0:Gbg(p_site) -> @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		6.0
-c_agonist_to_GPCR_free:	@c0:GPCR(Galpha,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha,agonist!1).agonist(p_site!1)		1.0, 0.2
-h_AChE_to_agonist:	@c0:AChE(agonist) + @c0:agonist(p_site) -> @c0:AChE(agonist!1).agonist(p_site!1)		50.0
-d1_Gtrimer_to_GPCR_active:	@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> @c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		10.0, 0.1
+g1_GPCR_as_GEF:         	@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2) -> @c0:GPCR(Galpha,agonist!+) + @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + @c0:Gbg(p_site)		2.0
+b1_G_trimer_formation:	    @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) + @c0:Gbg(p_site) -> @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		6.0
+c_agonist_to_GPCR_free:	    @c0:GPCR(Galpha,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha,agonist!1).agonist(p_site!1)		1.0, 0.2
+h_AChE_to_agonist:	        @c0:AChE(agonist) + @c0:agonist(p_site) -> @c0:AChE(agonist!1).agonist(p_site!1)		50.0
+d1_Gtrimer_to_GPCR_active:	@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> @c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) 10.0, 0.1
 f_agonist_to_GPCR_w_Gtrimer:	@c0:GPCR(Galpha!+,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha!+,agonist!1).agonist(p_site!1)		1.0, 0.062
 i1_RGS_to_Galpha_T:	@c0:RGS(Galpha) + @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> @c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt)		2.0, 0.2
 j1_RGS_as_GAP:	@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt) -> @c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~wt)		30.0
@@ -71,10 +58,6 @@ l1_G_alpha_T_to_effector:	@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + @c0:Ga_effect
 m_Gbg_to_effector:	@c0:Gbg(p_site) + @c0:Gbg_effector(Gbg) <-> @c0:Gbg(p_site!1).Gbg_effector(Gbg!1)		4.0, 1.0
 '''
 
-model_end = '''
-end reaction rules
-end model
-''' 
 
 equilibration='''
 generate_network({max_iter=>10,max_agg=>100,overwrite=>1})

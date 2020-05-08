@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use warnings FATAL => 'all';
+use strict;
 sub set_literals();
 sub set_tweakable();
 

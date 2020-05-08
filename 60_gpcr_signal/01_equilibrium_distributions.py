@@ -1,27 +1,10 @@
 #!/usr/bin/python3
 
-import os, subprocess
 from bionetgen.literals import *
 from bionetgen.tweakables import *
 from gnuplot.literals import *
 from gnuplot.tweakables import *
-
-def check_deps(deps):
-	for dependency in deps:
-		if not os.path.exists(dependency):
-			print(dependency, "not found")
-			exit()
-		if not os.access(dependency, os.X_OK):
-			print(dependency, "executable")
-			exit()
-
-def cleanup(rootname):
-	for fnm in os.listdir():
-		if rootname not in fnm: continue
-		for ext in ["gplt", "gplt_out", "bngl", "bngl_out", "gdat", "cdat", "net"]:
-			if fnm[-len(ext):] != ext: continue
-			os.remove(fnm)
-			break
+from utils.shellutils import *
 
 run_without_agonist = '''
 # equilibrium without agonist
@@ -39,33 +22,20 @@ simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>
 def write_bngl_input(rootname, agonist_present):
 	outname = f"{rootname}_w_agonist.bngl" if agonist_present else  f"{rootname}_no_agonist.bngl"
 	with open(outname, "w") as outf:
-		print(model_setup, file=outf)
-		print(tweakable(), file=outf)
-		print(model_end, file=outf)
-
-		print(equilibration, file=outf)
+		model = model_template.format(molecule_types=default_molecule_types,
+		                            species=default_species,
+		                            observables=default_observables,
+									reaction_rules=(default_reaction_rules + mutant_reactions()))
+		outf.write(model)
+		outf.write(equilibration)
 		if agonist_present:
-			print(run_with_agonist, file=outf)
+			outf.write(run_with_agonist)
 		else:
-			print(run_without_agonist, file=outf)
+			outf.write(run_without_agonist)
 	return outname
 
 
-def run_bngl(bngl, bngl_input):
-	bngl_out = bngl_input.replace(".bngl", ".bngl_out")
-	subprocess.call(["bash", "-c", f"{bngl} {bngl_input} > {bngl_out}"])
-	return
-
-
-
 ###############################
-labels = '''
-labelBG =  'G_{/Symbol b}_{/Symbol g}{\\267}effector'
-labelA  =  'G_{/Symbol a}{\\267}effector'
-labelABG  =  'G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'
-labelGABG  =  'GPCR{\\267}G_{/Symbol a}{\\267}G_{/Symbol b}_{/Symbol g}'
-'''
-
 plot_with_agonist = '''
 plot '{}.gdat'   \
        u 1:($14/50*100) t labelA  w lines ls 1, \
@@ -86,6 +56,7 @@ def write_gnuplot_input(bngl_input_name, agonist_present):
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
+		print(axes_signal, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname), file=outf)
 		if agonist_present:
@@ -93,12 +64,6 @@ def write_gnuplot_input(bngl_input_name, agonist_present):
 		else:
 			print(plot_without_agonist.format(rootname), file=outf)
 	return outname
-
-
-def run_gnuplot(gnuplot, gnuplot_input):
-	gplt_out = gnuplot_input.replace(".gplt", ".gplt_out")
-	subprocess.call(["bash", "-c", f"{gnuplot} {gnuplot_input} > {gplt_out}"])
-	pass
 
 ###############################
 def main():
