@@ -30,7 +30,7 @@ def write_gnuplot_input(data_table, max_effect, number_of_runs=1):
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname), file=outf)
 		print("set key autotitle columnheader", file=outf)
-		print("set key top right", file=outf)
+		print("set key top left", file=outf)
 		column_formatting = [f"plot '{data_table}'  u 1:($2/{max_effect}*100)  w lines ls 1"]
 		for i in range(1,number_of_runs):
 			color = colors[i%len(colors)]
@@ -247,6 +247,58 @@ def catalysis_scan(bngl, gnuplot):
 
 
 ###############################
+def double_impact_scan(bngl, gnuplot):
+	rootname = "double_impact_scan"
+	outnm = f"{rootname}.dat"
+
+	outf = open(outnm, "w")
+
+	kfs_catalysis = [30.0, 0.1, 0.003]
+	kfs_effector  = [4.0,  0.2, 0.02]
+	# kfs_catalysis = [30.0, 0.5, 0.003]
+	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
+
+
+	titles = []
+	for kfc in kfs_catalysis:
+		for kfe in kfs_effector:
+			titles.append("%.3f/%.2f"%(kfc,kfe))
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+	max_mod = -1
+	for step in range(-6,6):
+		log_agonist_concentration = float(step)/2.0
+		eff_modulation_out = []
+
+		s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+		# ####
+		o_tweaks = {"RGS_as_GAP": [30.0, 0.0], "effector": [4.0, 0.1]}
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		max_mod = max(max_mod, abs(effector_modulation))
+		eff_modulation_out.append(effector_modulation)
+		######
+		for title in titles[1:]:
+			[kfc, kfe] = [float(k) for k in title.split("/")]
+			o_tweaks = {"RGS_as_GAP": [kfc, 0.0], "effector": [kfe, 0.1] }
+			effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+			eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
+
+
+
+###############################
 def main():
 
 	bngl    = "/home/ivana/third/bionetgen/BNG2.pl"
@@ -255,7 +307,8 @@ def main():
 
 	#sanity(bngl, gnuplot)
 	#effector_interface_scan(bngl, gnuplot)
-	catalysis_scan(bngl, gnuplot)
+	#catalysis_scan(bngl, gnuplot)
+	double_impact_scan(bngl , gnuplot)
 
 ##########################
 if __name__=="__main__":
