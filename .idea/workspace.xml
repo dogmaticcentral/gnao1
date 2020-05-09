@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/60_gpcr_signal/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/60_gpcr_signal/utils/shellutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/agonist.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/agonist.gplt_out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/default_parameter_setting.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/default_parameter_setting.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/empty_pocket.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/empty_pocket.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/increased_GPCR_binding.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/increased_GPCR_binding.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/loop_over_agonist_concentration.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/loop_over_agonist_concentration.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_Ga_effector_if.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_Ga_effector_if.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_RGS_interface.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_RGS_interface.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_gpcr_interface.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_gpcr_interface.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_gpcr_interface_enhacing_GEF_activity.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_at_gpcr_interface_enhacing_GEF_activity.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_in_catalytic_pocket.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/mutation_in_catalytic_pocket.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,27 +22,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="4">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="literals.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
+            <file leaf-file-name="01_equilibrium_distributions.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="193">
-                    <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+                  <state relative-caret-position="204">
+                    <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
+            <file leaf-file-name="03_wt_signal.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="711">
-                    <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-                    <folding>
-                      <element signature="e#20#41#0" expanded="true" />
-                    </folding>
+                  <state relative-caret-position="432">
+                    <caret line="28" column="119" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="119" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="tweakables.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="694">
+                    <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
                   </state>
                 </provider>
               </entry>
@@ -63,32 +60,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="07_equilibrium_distros_as_function_of_agonist_concentration.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-              <folding>
-                <element signature="e#20#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tweakables.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="literals.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="40" />
+            <state relative-caret-position="211">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+              <folding>
+                <element signature="e#20#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>interpret_color</find>
       <find>)</find>
       <find>f&quot;schematic_{resi}&quot;</find>
       <find>ATP</find>
@@ -134,9 +121,9 @@
       <find>GEF</find>
       <find>2_</find>
       <find>mut~mutant</find>
+      <find>f&quot;</find>
     </findStrings>
     <replaceStrings>
-      <replace>no effect</replace>
       <replace>|effective</replace>
       <replace>levetiracetam</replace>
       <replace>valproate</replace>
@@ -166,6 +153,7 @@
       <replace>retstr</replace>
       <replace>{idx}_</replace>
       <replace>mut~{subtype}</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -174,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/50_movie/10_docking_to_adcy.py" />
         <option value="$PROJECT_DIR$/50_movie/12_RGS_docking.py" />
         <option value="$PROJECT_DIR$/50_movie/13_GTP_breakdown.py" />
         <option value="$PROJECT_DIR$/50_movie/14_ac_cplx_dissoc_and_GPCR_redock.py" />
@@ -204,7 +191,6 @@
         <option value="$PROJECT_DIR$/sqlite/16_drug_mechanism_per_variant.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/double_whammy.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/default_parameter_setting.pl" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/tweakables.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/default_parameter_setting.pl" />
@@ -217,22 +203,23 @@
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/empty_pocket.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/increased_GPCR_binding.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/loop_over_agonist_concentration.pl" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/utils/shellutils.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1926" />
-    <option name="y" value="7" />
-    <option name="width" value="1886" />
-    <option name="height" value="1065" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -265,24 +252,16 @@
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
               <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
-              <item name="gnuplot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
               <item name="orig_perl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="sqlite" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
@@ -335,7 +314,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1926" y="7" width="1886" height="1065" extended-state="0" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -346,7 +325,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49881935" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22544283" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15603584" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" weight="0.43891892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -392,7 +371,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/22_gnomad_vs_disease.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-750">
@@ -551,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="76" lean-forward="true" selection-start-line="72" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/orig_perl/default_parameter_setting.pl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -654,58 +625,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py">
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+        <state relative-caret-position="-648">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding>
-            <element signature="e#20#41#0" expanded="true" />
+            <element signature="e#20#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="486">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="243" lean-forward="true" selection-start-line="233" selection-start-column="1" selection-end-line="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="28" column="119" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+          <folding>
+            <element signature="e#20#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding>
-            <element signature="e#20#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="694">
+          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
         </state>
       </provider>
     </entry>

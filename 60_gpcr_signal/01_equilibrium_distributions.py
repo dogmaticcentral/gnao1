@@ -20,12 +20,15 @@ simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>
 
 
 def write_bngl_input(rootname, agonist_present):
-	outname = f"{rootname}_w_agonist.bngl" if agonist_present else  f"{rootname}_no_agonist.bngl"
+	# both subpopulatins are actually wildtype in this case
+	wt_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
+	mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
+	outname = f"{rootname}_w_agonist.bngl" if agonist_present else f"{rootname}_no_agonist.bngl"
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types=default_molecule_types,
 		                            species=default_species,
 		                            observables=default_observables,
-									reaction_rules=(default_reaction_rules + mutant_reactions()))
+									reaction_rules=(default_reaction_rules + wt_reaction_rules + mutant_reaction_rules))
 		outf.write(model)
 		outf.write(equilibration)
 		if agonist_present:

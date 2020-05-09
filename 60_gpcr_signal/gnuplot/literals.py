@@ -36,7 +36,7 @@ set xlabel 'log 10 agonist concentration'
 set ylabel 'effector moodulation (%max)'
 
 set xrange [-3:2]
-set yrange [-100:100]
+set yrange [-200:200]
 '''
 
 

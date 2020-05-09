@@ -43,19 +43,10 @@ Molecules Gbg_to_effector @c0:Gbg(p_site!1).Gbg_effector(Gbg!1)
 '''
 
 default_reaction_rules = '''
-a1_Ga_catalysis:	        @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		0.07, 0.001
-e1_Gtrimer_to_GPCR_free:	@c0:GPCR(Galpha,agonist) + @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> @c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2)		0.3, 0.1
-g1_GPCR_as_GEF:         	@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2) -> @c0:GPCR(Galpha,agonist!+) + @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + @c0:Gbg(p_site)		2.0
-b1_G_trimer_formation:	    @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) + @c0:Gbg(p_site) -> @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		6.0
-c_agonist_to_GPCR_free:	    @c0:GPCR(Galpha,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha,agonist!1).agonist(p_site!1)		1.0, 0.2
-h_AChE_to_agonist:	        @c0:AChE(agonist) + @c0:agonist(p_site) -> @c0:AChE(agonist!1).agonist(p_site!1)		50.0
-d1_Gtrimer_to_GPCR_active:	@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + @c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> @c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) 10.0, 0.1
-f_agonist_to_GPCR_w_Gtrimer:	@c0:GPCR(Galpha!+,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha!+,agonist!1).agonist(p_site!1)		1.0, 0.062
-i1_RGS_to_Galpha_T:	@c0:RGS(Galpha) + @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> @c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt)		2.0, 0.2
-j1_RGS_as_GAP:	@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt) -> @c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~wt)		30.0
-k1_RGS_to_Galpha_D:	@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~wt) <-> @c0:RGS(Galpha) + @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		100.0, 0.1
-l1_G_alpha_T_to_effector:	@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + @c0:Ga_effector(Galpha) <-> @c0:Galpha(GPCR,GnP~GTP,p_site!1,mut~wt).Ga_effector(Galpha!1)		4.0, 0.1
-m_Gbg_to_effector:	@c0:Gbg(p_site) + @c0:Gbg_effector(Gbg) <-> @c0:Gbg(p_site!1).Gbg_effector(Gbg!1)		4.0, 1.0
+agonist_to_GPCR_free:	    @c0:GPCR(Galpha,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha,agonist!1).agonist(p_site!1)		1.0, 0.2
+agonist_to_GPCR_w_Gtrimer:	@c0:GPCR(Galpha!+,agonist) + @c0:agonist(p_site) <-> @c0:GPCR(Galpha!+,agonist!1).agonist(p_site!1)		1.0, 0.062
+AChE_to_agonist:	        @c0:AChE(agonist) + @c0:agonist(p_site) -> @c0:AChE(agonist!1).agonist(p_site!1)		50.0
+Gbg_to_effector:	@c0:Gbg(p_site) + @c0:Gbg_effector(Gbg) <-> @c0:Gbg(p_site!1).Gbg_effector(Gbg!1)		4.0, 1.0
 '''
 
 

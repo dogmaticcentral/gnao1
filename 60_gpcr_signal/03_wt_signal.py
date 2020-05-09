@@ -17,13 +17,16 @@ simulate_ode({continue=>1,t_end=>220,n_steps=>500,atol=>1e-8,rtol=>1e-8,sparse=>
 '''
 
 def write_bngl_input(rootname):
+	# both subpopulatins are actually wildtype in this case
+	wt_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
+	mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
 	outname = f"{rootname}.bngl"
 	with open(outname, "w") as outf:
 
 		model = model_template.format(molecule_types=default_molecule_types,
 		                            species=default_species,
 		                            observables=default_observables,
-									reaction_rules=(default_reaction_rules + mutant_reactions()))
+									reaction_rules=(default_reaction_rules + wt_reaction_rules + mutant_reaction_rules))
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(agonist_ping)
@@ -35,7 +38,7 @@ def write_bngl_input(rootname):
 
 # plot Galpha line las, so it would be in the top layer
 plot = ''' 
-plot '{}.gdat' u 1:($15/50*100)  t labelBG w lines ls 1,  '' u 1:($14/50*100)  t labelA w lines ls 5
+plot '{}.gdat' u 1:($15/50*100)  t labelBG w lines ls 5,  '' u 1:($14/50*100)  t labelA w lines ls 1
 '''
 
 def write_gnuplot_input(bngl_input_name):

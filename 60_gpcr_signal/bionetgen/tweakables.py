@@ -32,104 +32,160 @@ end reaction rules
 end model
 '''
 
-# in this weird world mutant and galpha s are both subtypes of g alpha
+class Reaction:
+	def __init__(self,  partner, subtype, nucleotide,  reaction_from, reaction_to, kf, kr):
+		self.subtype = subtype # this can be wt or mutant - we might appropriate mutant to play s-type Galpha
+		self.nucleotide = nucleotide # GnP means: any of GDP, GTP; it can also be "none" for empty pocket
+		self.partner = partner
+		self.reaction_from = reaction_from
+		self.reaction_to = reaction_to
+		self.direction = "<->"
+		self.k_forward = kf
+		self.k_reverse = kr
 
-def mutant_reactions(tweaked={}, subtype="mutant"):
+	def name(self):
+		return "G_a_{}_{}_{}".format(self.subtype, self.nucleotide, self.partner)
 
-	tweakable_retstr = "" # return string
-	
-	idx= 3 if subtype=="s" else 2
-
-	#  GTP->GDP conversion in mutant Galpha wt values are 0.07, 0.001
-	if "Ga_catalysis" in tweaked:
-		[kf, kr] = tweaked["Ga_catalysis"]
-	else:
-		[kf, kr] = [0.07, 0.001]
-	tweakable_retstr += f"a{idx}_Ga_catalysis:	c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) <-> c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype})	{kf}, {kr} \n"
-
-	# Gbg forming a complex with GDP-bound Galpha wt values are 6.0, 0
-	if "G_trimer_formation" in tweaked:
-		[kf, kr] = tweaked["G_trimer_formation"]
-	else:
-		[kf, kr] = [6.0, 0.6]
-	tweakable_retstr += f"b{idx}_G_trimer_formation:	c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype}) + "
-	tweakable_retstr +=	f"c0:Gbg(p_site) -> c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1) {kf} \n"
-
-	# Gtrimer binding to activated GPCR wt values 10.0, 0.1
-	if "Gtrimer_to_GPCR_active" in tweaked:
-		[kf, kr] = tweaked["Gtrimer_to_GPCR_active"]
-	else:
-		[kf, kr] = [10.0, 0.1]
-	tweakable_retstr += f"d{idx}_Gtrimer_to_GPCR_active:  c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1) <-> "
-	tweakable_retstr += f"c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)	{kf}, {kr}\n"
-
-	# Gtrimer binding to  GPCR without agonist wt values 0.3, 0.1\
-	if "Gtrimer_to_GPCR_free" in tweaked:
-		[kf, kr] = tweaked["Gtrimer_to_GPCR_free"]
-	else:
-		[kf, kr] = [0.3, 0.1]
-	tweakable_retstr += f"e{idx}_Gtrimer_to_GPCR_free:	c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1) "
-	tweakable_retstr += f"<-> c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~{subtype}).Gbg(p_site!2)   {kf}, {kr}\n"
-
-	# exchange GDP -> GTP in GPCR wt values 2.0. 0.0 
-	if "GPCR_as_GEF" in tweaked:
-		[kf, kr] = tweaked["GPCR_as_GEF"]
-	else:
-		[kf, kr] = [2.0, 0.0]
-	tweakable_retstr += f"g{idx}_GPCR_as_GEF:	c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~{subtype}).Gbg(p_site!2) "
-	tweakable_retstr += f"-> c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) + c0:Gbg(p_site) {kf} \n"
-
-	# Galpha with GTP binding to RGS wt 2.0, 0.2
-	if "RGS_to_Galpha_T" in tweaked:
-		[kf, kr] = tweaked["RGS_to_Galpha_T"]
-	else:
-		[kf, kr] = [2.0, 0.2]
-	tweakable_retstr += f"i{idx}_RGS_to_Galpha_T:	c0:RGS(Galpha) + c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) <-> "
-	tweakable_retstr += f"c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype})   {kf}, {kr}\n"
-
-	# GTP to GDP catalyzed with the help of RGS wt 30.0, 0.0
-	if "RGS_as_GAP" in tweaked:
-		[kf, kr] = tweaked["RGS_as_GAP"]
-	else:
-		[kf, kr] = [30.0, 0.0]
-	tweakable_retstr += f"j{idx}_RGS_as_GAP:	c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype}) -> "
-	tweakable_retstr += f"c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}) {kf}  \n"
-
-	# releasing of GDP bound Galpha from RGS wt 100.0, 0.1
-	if "RGS_to_Galpha_D" in tweaked:
-		[kf, kr] = ["RGS_to_Galpha_D"]
-	else:
-		[kf, kr] = [100.0, 0.1]
-	tweakable_retstr += f"k{idx}_RGS_to_Galpha_D:	c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}) <-> "
-	tweakable_retstr += f"c0:RGS(Galpha) + c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype}) {kf},{kr}\n"
-
-	# G_alpha binding to its effector (presumably adenylate cyclase)  4.0, 0.1
-	if "G_alpha_T_to_effector" in tweaked:
-		[kf, kr] = tweaked["G_alpha_T_to_effector"]
-	else:
-		[kf, kr] = [4.0, 0.1]
-
-	tweakable_retstr += f"l{idx}_G_alpha_T_to_effector:	c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) + c0:Ga_effector(Galpha) "
-	tweakable_retstr += f"<-> c0:Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype}).Ga_effector(Galpha!1) {kf}, {kr} \n"
-
-
-	if subtype=="mutant":
-		# empty pocket G_alpha binding to its effector (presumably adenylate cyclase)  4.0, 0.1
-		if "G_alpha_T_to_effector" in tweaked:
-			[kf, kr] = tweaked["G_alpha_T_to_effector"]
+	def prettyprint(self):
+		rfrom = self.reaction_from.format(subtype=self.subtype)
+		rto =  self.reaction_to.format(subtype=self.subtype)
+		if self.direction=="->":
+			# f"{self.name()}: {rfrom} {self.direction} {rto} {self.k_forward}\n"
+			return "{}: {} {} {} {}".format(self.name(), rfrom, self.direction, rto, self.k_forward)
+		elif self.direction=="<-":
+			return "{}: {} {} {} {}".format(self.name(), rfrom, self.direction, rto, self.k_reverse)
 		else:
-			[kf, kr] = [0.0, 0.1]
-		tweakable_retstr += f"x_G_alpha_T_to_effector:	c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype}) + c0:Ga_effector(Galpha) "
-		tweakable_retstr += f"<-> c0:Galpha(GPCR,GnP~none,p_site!1,mut~{subtype}).Ga_effector(Galpha!1)  {kf}, {kr} \n"
-	
-		# empty pocket Ga binding to free GPCR,  1.0, 0.0
-		if "Galpha_to_GPCR_free" in tweaked:
-			[kf, kr] = tweaked["Galpha_to_GPCR_free"]
-		else:
-			[kf, kr] = [2.0, 0.5]
-		tweakable_retstr += f"y_Galpha_to_GPCR_free: c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype}) <-> "
-		tweakable_retstr += f"c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})  {kf}, {kr}  \n"
+			return "{}: {} {} {} {},{}".format(self.name(), rfrom, self.direction, rto, self.k_forward, self.k_reverse)
 
-	return tweakable_retstr
+'''
+1   1_Ga_catalysis:	\@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> \@c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		0.07, 0.001
+2   b1_G_trimer_formation:	\@c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) + \@c0:Gbg(p_site) -> \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		6.0
+3   d1_Gtrimer_to_GPCR_active:	\@c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> \@c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1)		10.0, 0.1
+4   e1_Gtrimer_to_GPCR_free:	\@c0:GPCR(Galpha,agonist) + \@c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~wt).Gbg(p_site!1) <-> \@c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2)		0.3, 0.1
+5   g1_GPCR_as_GEF:	\@c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~wt).Gbg(p_site!2) -> \@c0:GPCR(Galpha,agonist!+) + \@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + \@c0:Gbg(p_site)		2.0
+6   i1_RGS_to_Galpha_T:	\@c0:RGS(Galpha) + \@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) <-> \@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt)		2.0, 0.2
+7   j1_RGS_as_GAP:	\@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~wt) -> \@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~wt)		30.0
+8   k1_RGS_to_Galpha_D:	\@c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~wt) <-> \@c0:RGS(Galpha) + \@c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)		100.0, 0.1
+9   l1_G_alpha_T_to_effector:	\@c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) + \@c0:Ga_effector(Galpha) <-> \@c0:Galpha(GPCR,GnP~GTP,p_site!1,mut~wt).Ga_effector(Galpha!1)		4.0, 0.1
+f_agonist_to_GPCR_w_Gtrimer:	\@c0:GPCR(Galpha!+,agonist) + \@c0:agonist(p_site) <-> \@c0:GPCR(Galpha!+,agonist!1).agonist(p_site!1)		1.0, 0.062
 
+'''
+def set_default_galpha_reaction_rules(subtype):
+
+	reactions = []
+
+	# 1 GTP to GDP catalysis without RGS
+	r = Reaction("GTP", subtype, "GTP",
+	             "c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype})",
+	             "c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype})",
+	             0.07, 0.001)
+	reactions.append(r)
+
+	# 2 G-trimer formation, with GDP bound to Ga
+	r = Reaction("Gbg",  subtype, "GDP",
+	             "c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype}) + c0:Gbg(p_site)",
+	             "c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             6.0, 0.0)
+	r.direction = "->"
+	reactions.append(r)
+
+	# 3 G-trimer binding to activated GPCR
+	r = Reaction("GPCR_activated",  subtype, "GDP",
+	             "c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             "c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             10.0, 0.1)
+	reactions.append(r)
+
+	# 4 G-trimer binding to  GPCR without agonist
+	r = Reaction("GPCR_free", subtype,  "GDP",
+	             "c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             "c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~{subtype}).Gbg(p_site!2)",
+	             0.3, 0.1)
+	reactions.append(r)
+
+	# 5  exchange GDP -> GTP when bound to GPCR
+	r = Reaction("GPCR_as_GEF",  subtype, "GDP",
+	             "c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~{subtype}).Gbg(p_site!2)",
+	             "c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) + c0:Gbg(p_site)",
+	             2.0, 0.0)
+	r.direction = "->"
+	reactions.append(r)
+
+	# 6  Galpha with GTP binding to RGS
+	r = Reaction("RGS",  subtype, "GTP",
+	             "c0:RGS(Galpha) + c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype})",
+	             "c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype})",
+	             2.0, 0.2)
+
+	reactions.append(r)
+
+	# 7  GTP to GDP catalyzed with the help of RGS
+	r = Reaction("RGS_as_GAP",  subtype, "GTP",
+	             "c0:RGS(Galpha!1).Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype})",
+	             "c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype})",
+	             30.0, 0)
+	r.direction = "->"
+	reactions.append(r)
+
+	# 8 releasing of GDP from Galpha bount to RGS
+	r = Reaction("GDP",  subtype, "GDP",
+	             "c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype})",
+	             "c0:RGS(Galpha) + c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype})",
+	             100.0, 0.1)
+	reactions.append(r)
+
+	# 9 Galpha binding to its effector (presumably adenylate cyclase)
+	r = Reaction("effector",  subtype, "GTP",
+	             "c0:Galpha(GPCR,GnP~GTP,p_site,mut~{subtype}) + c0:Ga_effector(Galpha)",
+	             "c0:Galpha(GPCR,GnP~GTP,p_site!1,mut~{subtype}).Ga_effector(Galpha!1)",
+	             4.0, 0.1)
+	reactions.append(r)
+
+	return reactions
+
+
+###################
+def empty_pocket_reaction_rules(subtype):
+	reactions = []
+	# empty pocket G_alpha binding to its effector (presumably adenylate cyclase)
+	r = Reaction("effector",  subtype, "none",
+	             "c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype}) + c0:Ga_effector(Galpha)",
+	             "c0:Galpha(GPCR,GnP~none,p_site!1,mut~{subtype}).Ga_effector(Galpha!1)",
+	             0.0, 0.1)
+	reactions.append(r)
+
+	# empty pocket Ga binding to free GPCR
+	r = Reaction("GPCR_free",  subtype, "none",
+	             "c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
+	             "c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
+	             2.0, 0.5)
+	reactions.append(r)
+
+	return reactions
+
+
+###################
+def set_tweaked_reaction_rules(subtype="wt", tweaks = None):
+
+	reactions = set_default_galpha_reaction_rules(subtype)
+	if not tweaks: return reactions
+
+	for partner, [kf, kr] in tweaks.items():
+		found = False
+		for r in reactions:
+			if r.partner != partner: continue
+			r.k_forward = kf
+			r.k_reverse = kr
+			found = True
+			break
+		if not found:
+			print(partner, "not found")
+			exit()
+
+	return reactions
+
+
+###################
+def reaction_rules_string(reactions):
+	return "\n".join([r.prettyprint() for r in reactions])+"\n"
 

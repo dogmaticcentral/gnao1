@@ -53,7 +53,7 @@ def add_galpha_s(default_species):
 
 
 def galpha_s_species():
-	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 50.0\n"
+	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 30.0\n"
 	spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 0.0\n"
 	return spec
 
