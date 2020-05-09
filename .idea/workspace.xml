@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/agonist.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/agonist.gplt_out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,20 +26,14 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="03_wt_signal.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py">
+            <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="432">
-                    <caret line="28" column="119" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="119" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="tweakables.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="694">
-                    <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+                  <state relative-caret-position="546">
+                    <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+                    <folding>
+                      <element signature="e#20#41#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -69,14 +54,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
+      <file leaf-file-name="07_equilibrium_distros_as_function_of_agonist_concentration.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+            <state relative-caret-position="834">
+              <caret line="221" selection-start-line="221" selection-end-line="221" />
               <folding>
-                <element signature="e#20#41#0" expanded="true" />
+                <element signature="e#20#52#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="literals.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -204,15 +198,15 @@
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/increased_GPCR_binding.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/loop_over_agonist_concentration.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/utils/shellutils.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" />
       </list>
     </option>
   </component>
@@ -247,6 +241,12 @@
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
               <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
               <item name="bionetgen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
+              <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
+              <item name="gnuplot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
@@ -625,23 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="e#20#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
@@ -656,17 +639,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -679,18 +669,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+        <state relative-caret-position="546">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="e#20#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_equilibrium_distros_as_function_of_agonist_concentration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+        <state relative-caret-position="834">
+          <caret line="221" selection-start-line="221" selection-end-line="221" />
+          <folding>
+            <element signature="e#20#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -9,24 +9,32 @@ from utils.shellutils import *
 from math import log10, pow
 
 ###############################
+'''
+# color fading
+ 	hexcolor = "004c91"
+	base_color_rgb =  tuple(int(hexcolor[i:i+2], 16) for i in (0, 2, 4))
+	color_rgb = base_color_rgb
+	for i in range(1,number_of_runs):
+		color_rgb = [min(255,round(c*1.2)) for c in color_rgb]
+		hex_color = "#%02x%02x%02x" % (color_rgb[0], color_rgb[1], color_rgb[2])
+'''
 
-def write_gnuplot_input(data_table, max_effect, number_of_runs):
+
+def write_gnuplot_input(data_table, max_effect, number_of_runs=1):
+	colors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet"]
 	rootname = data_table.replace(".dat","")
 	outname = f"{rootname}.gplt"
-	hexcolor = "004c91"
-	base_color_rgb =  tuple(int(hexcolor[i:i+2], 16) for i in (0, 2, 4))
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
 		print(axes_agonist_response, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname), file=outf)
-
-		column_formatting = [f"plot '{data_table}'  u 1:($2/{max_effect}*100) t 'wt'  w lines ls 1"]
-		color_rgb = base_color_rgb
+		print("set key autotitle columnheader", file=outf)
+		print("set key top right", file=outf)
+		column_formatting = [f"plot '{data_table}'  u 1:($2/{max_effect}*100)  w lines ls 1"]
 		for i in range(1,number_of_runs):
-			color_rgb = [round(c*1.2) for c in color_rgb]
-			hex_color = "#%02x%02x%02x" % (color_rgb[0], color_rgb[1], color_rgb[2])
-			column_formatting.append(f"'' u 1:(${i+2}/{max_effect}*100) t 'wt'  w lines lw 3 lt rgb '{hex_color}'")
+			color = colors[i%len(colors)]
+			column_formatting.append(f"'' u 1:(${i+2}/{max_effect}*100)  w lines lw 3 lt rgb '{color}'")
 		print(", ".join(column_formatting), file=outf)
 	return outname
 
@@ -53,8 +61,8 @@ def add_galpha_s(default_species):
 
 
 def galpha_s_species():
-	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 30.0\n"
-	spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 0.0\n"
+	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 20.0\n"
+	spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 5.0\n"
 	return spec
 
 
@@ -67,13 +75,19 @@ def galpha_s_observables():
 
 def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	outname = f"{rootname}.bngl"
+	o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
+	if s_tweaks==None:
+		s_type_reaction_rules = ""
+	else:
+		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
+
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
 		                            species          = (default_species + galpha_s_species()),
 		                            observables      = (default_observables + galpha_s_observables()),
 									reaction_rules   = (default_reaction_rules
-									                    + mutant_reactions(tweaked=o_tweaks, subtype="mutant")
-									                    + mutant_reactions(tweaked=s_tweaks, subtype="s")))
+									                    + o_type_reaction_rules
+									                    + s_type_reaction_rules))
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(run_with_tweakable_agonist.replace("AGONIST", str(agonist_concentration)))
@@ -90,10 +104,146 @@ def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweak
 	gdatfile = bngl_input.replace("bngl", "gdat")
 	ret = subprocess.getoutput("tail -n1 %s | awk '{print $16 \"  \" $17 \"  \" $18 }'" % gdatfile)
 	[go_wt, go_mut, gs] = [float(r) for r in ret.strip().split()]
-	effector_modulation = go_wt + go_mut - gs
+	effector_modulation = -(go_wt + go_mut - gs) # minus to make it look like Neubig results
 	# cleanup our mess
 	#cleanup(rootname)
 	return effector_modulation
+
+###############################
+###############################
+###############################
+def sanity(bngl, gnuplot):
+
+	rootname = "agonist_sanity"
+	outnm = "agonist_sanity.dat"
+
+	outf = open(outnm, "w")
+
+	titles = ["withoutGaS", "GaS==GaO", "weakGaS/GPCR"]
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+	max_mod = -1
+	for step in range(-6,6):
+		log_agonist_concentration = float(step)/2.0
+		eff_modulation_out = []
+
+		o_tweaks = {}
+		##########################
+		s_tweaks = None
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		max_mod = max(max_mod, abs(effector_modulation))
+		eff_modulation_out.append(effector_modulation)
+
+		# # ####
+		s_tweaks = o_tweaks
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		# # ####
+		s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
+
+	print("sanity run done")
+
+###############################
+def effector_interface_scan(bngl, gnuplot):
+
+	rootname = "agonist_effector_if_scan"
+	outnm = f"{rootname}.dat"
+
+	outf = open(outnm, "w")
+
+	kfs = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
+	titles = ["%.1f"%kf for kf in kfs]
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+	max_mod = -1
+	for step in range(-6,6):
+		log_agonist_concentration = float(step)/2.0
+		eff_modulation_out = []
+
+		s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+		# ####
+		o_tweaks = {"effector": [4.0, 0.1]}
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		max_mod = max(max_mod, abs(effector_modulation))
+		eff_modulation_out.append(effector_modulation)
+		######
+		for kf in kfs[1:]:
+			o_tweaks = {"effector": [kf, 0.1]}
+			effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+			eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
+
+	print("effector if  run done")
+	return
+
+
+###############################
+def catalysis_scan(bngl, gnuplot):
+	rootname = "agonist_cat_scan"
+	outnm = f"{rootname}.dat"
+
+	outf = open(outnm, "w")
+
+	kfs = [30.0, 1.0, 0.5, 0.03, 0.003]
+	titles = ["%.3f"%kf for kf in kfs]
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+
+	max_mod = -1
+	for step in range(-6,6):
+		log_agonist_concentration = float(step)/2.0
+		eff_modulation_out = []
+
+		s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+		# ####
+		o_tweaks = {"RGS_as_GAP": [30.0, 0.0]}
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		max_mod = max(max_mod, abs(effector_modulation))
+		eff_modulation_out.append(effector_modulation)
+		######
+		for kf in kfs[1:]:
+			o_tweaks = {"RGS_as_GAP": [kf, 0.0]}
+			effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+			eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
 
 
 ###############################
@@ -103,38 +253,9 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	rootname = "agonist_tweak"
-	outnm = "agonist.dat"
-	outf = open(outnm, "w")
-	max_mod = -1
-	number_of_runs = 0
-	for step in range(-6,6):
-		log_agonist_concentration = float(step)/2.0
-		eff_modulation_out = []
-
-		o_tweaks = {}
-		##########################
-		s_tweaks = {}
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, effector_modulation)
-		eff_modulation_out.append(effector_modulation)
-		# ####
-		s_tweaks = {"Gtrimer_to_GPCR_active": [10.0, 0.1], "Gtrimer_to_GPCR_free":[0.3, 0.1]}
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		eff_modulation_out.append(effector_modulation)
-
-		number_of_runs = len(eff_modulation_out)
-		##########################
-		outf.write("%.2f " % log_agonist_concentration)
-		for effector_modulation in eff_modulation_out:
-			outf.write("%.2e " % effector_modulation)
-		outf.write("\n")
-	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs)
-	run_gnuplot(gnuplot, gnuplot_input)
-	#cleanup(outnm.replace(".dat",""))
-
-	return
+	#sanity(bngl, gnuplot)
+	#effector_interface_scan(bngl, gnuplot)
+	catalysis_scan(bngl, gnuplot)
 
 ##########################
 if __name__=="__main__":
