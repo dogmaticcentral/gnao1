@@ -7,15 +7,18 @@ from gnuplot.literals import *
 from gnuplot.tweakables import *
 from utils.shellutils import *
 
-def write_bngl_input(rootname, tweak):
+def write_bngl_input(rootname, mutant=False):
 	outname = f"{rootname}.bngl"
 	wt_reaction_rules     = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
-	mutant_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("mutant", tweak))
+	if mutant:
+		mutant_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules("mutant"))
+	else:
+		mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types=default_molecule_types,
-		                            species=default_species,
+		                            species=default_species + galpha_empty_species(),
 		                            observables=default_observables,
-									reaction_rules=(default_reaction_rules + wt_reaction_rules + mutant_reaction_rules))
+									reaction_rules=default_reaction_rules +  wt_reaction_rules + mutant_reaction_rules)
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(agonist_ping)
@@ -55,27 +58,18 @@ def main():
 	# we'll use the outlint of the wt signal for comparison
 	wt_rootname = "wt_signal"
 	# run simulation
-	bngl_input  = write_bngl_input(wt_rootname, {})
+	bngl_input  = write_bngl_input(wt_rootname)
 	run_bngl(bngl, bngl_input)
 
-	tweaks = {
-		"weakened_effector_if": {"effector": [0.4, 0.1]}, # default/wt is [4.0, 0.1]
-		"weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
-		"weakened_catalysis": {"RGS_as_GAP": [0.03, 0.0]},             # default/wt is [30.0, 0.0]
-		"weakened_GPCR_bindinding": {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]},
-		"enhanced_GEF_activity_by_gpcr": {"GPCR_as_GEF": [200.0, 0.2]} # default/wt is [2.0, 0.2]
-	}
-
-	for title, tweak in tweaks.items():
-		rootname = f"{title}_signal"
-		# run simulation
-		bngl_input  = write_bngl_input(rootname, tweak)
-		run_bngl(bngl, bngl_input)
-		# make figure (image, plot)
-		gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname)
-		run_gnuplot(gnuplot, gnuplot_input)
-		# cleanup our mess
-		cleanup(rootname)
+	rootname = "empty_pocket_signal"
+	# run simulation
+	bngl_input  = write_bngl_input(rootname, mutant=True)
+	run_bngl(bngl, bngl_input)
+	# make figure (image, plot)
+	gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname)
+	run_gnuplot(gnuplot, gnuplot_input)
+	# cleanup our mess
+	cleanup(rootname)
 
 	cleanup(wt_rootname)
 

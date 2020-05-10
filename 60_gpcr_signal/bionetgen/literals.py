@@ -22,7 +22,6 @@ default_species = '''
 9 @c0:Gbg_effector(Gbg) 50.0
 10 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~mutant) 20.0
 11 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~mutant) 5.0
-12 @c0:Galpha(GPCR,GnP~none,p_site,mut~mutant) 0.0
 '''
 
 default_observables = '''
@@ -54,5 +53,21 @@ equilibration='''
 generate_network({max_iter=>10,max_agg=>100,overwrite=>1})
 # Equilibration
 # Note that the n_steps parameter controls only the reporting interval and not the step size used by the CVODE solver, which uses adaptive time stepping
-simulate_ode({t_end=>100000,n_steps=>100,sparse=>1,steady_state=>1}) 
+simulate_ode({t_end=>100000,n_steps=>1000,sparse=>1,steady_state=>1}) 
+'''
+
+equilibration_long='''
+generate_network({max_iter=>10,max_agg=>100,overwrite=>1})
+simulate_ode({t_end=>1000000,n_steps=>10000,sparse=>1,steady_state=>1}) 
+'''
+
+
+agonist_ping = '''
+simulate_ode({t_end=>20,n_steps=>20,atol=>1e-8,rtol=>1e-8,sparse=>1})
+# now trigger the GPCRs by adding the agonist
+setConcentration("@c0:agonist(p_site)", 60.0)
+simulate_ode({continue=>1,t_end=>20.1,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+# ... and then, remove the agonist
+setConcentration("@c0:AChE(agonist)", 120.0)
+simulate_ode({continue=>1,t_end=>220,n_steps=>500,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''

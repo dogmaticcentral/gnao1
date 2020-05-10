@@ -21,7 +21,7 @@ from math import log10, pow
 
 
 def write_gnuplot_input(data_table, max_effect, number_of_runs=1):
-	colors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet"]
+	colors = ["royalblue", "blue", "magenta", "pink", "red", "orange", "salmon", "yellow", "green", "cyan" ]
 	rootname = data_table.replace(".dat","")
 	outname = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
@@ -41,10 +41,10 @@ def write_gnuplot_input(data_table, max_effect, number_of_runs=1):
 ####################################
 
 run_with_tweakable_agonist = '''
-simulate_ode({t_end=>50,n_steps=>10,atol=>1e-8,rtol=>1e-8,sparse=>1})
+simulate_ode({t_end=>50,n_steps=>10,atol=>1e-9,rtol=>1e-9,sparse=>1})
 # now trigger the GPCRs by adding the agonist
 setConcentration(\"@c0:agonist(p_site)\", AGONIST)
-simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+simulate_ode({continue=>1,t_end=>500,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
 def add_galpha_s(default_species):
@@ -60,12 +60,6 @@ def add_galpha_s(default_species):
 	return modified
 
 
-def galpha_s_species():
-	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 20.0\n"
-	spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 5.0\n"
-	return spec
-
-
 def galpha_s_observables():
 	obs  = "Molecules Ga_wt_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~wt).Ga_effector(Galpha!1)\n"
 	obs += "Molecules Ga_mut_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~mutant).Ga_effector(Galpha!1)\n"
@@ -75,7 +69,17 @@ def galpha_s_observables():
 
 def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	outname = f"{rootname}.bngl"
-	o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
+
+	empty_pocket_species = ""
+
+	if o_tweaks==None:
+		o_type_reaction_rules = ""
+	elif type(o_tweaks)==str and o_tweaks == "empty_pocket":
+		o_type_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules("wt"))
+		empty_pocket_species = galpha_empty_species()
+	else:
+		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
+
 	if s_tweaks==None:
 		s_type_reaction_rules = ""
 	else:
@@ -83,13 +87,13 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
-		                            species          = (default_species + galpha_s_species()),
+		                            species          = (default_species + empty_pocket_species + galpha_s_species()),
 		                            observables      = (default_observables + galpha_s_observables()),
 									reaction_rules   = (default_reaction_rules
 									                    + o_type_reaction_rules
 									                    + s_type_reaction_rules))
 		outf.write(model)
-		outf.write(equilibration)
+		outf.write(equilibration_long)
 		outf.write(run_with_tweakable_agonist.replace("AGONIST", str(agonist_concentration)))
 
 	return outname
@@ -98,8 +102,10 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 ###############
 def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks):
 	# run simulation
+	print(log_agonist_concentration, o_tweaks)
 	bngl_input  = write_bngl_input(f"{rootname}", pow(10, log_agonist_concentration), o_tweaks, s_tweaks)
 	run_bngl(bngl, bngl_input)
+
 	# make figure (image, plot)
 	gdatfile = bngl_input.replace("bngl", "gdat")
 	ret = subprocess.getoutput("tail -n1 %s | awk '{print $16 \"  \" $17 \"  \" $18 }'" % gdatfile)
@@ -108,6 +114,7 @@ def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweak
 	# cleanup our mess
 	#cleanup(rootname)
 	return effector_modulation
+
 
 ###############################
 ###############################
@@ -159,6 +166,7 @@ def sanity(bngl, gnuplot):
 
 	print("sanity run done")
 
+
 ###############################
 def effector_interface_scan(bngl, gnuplot):
 
@@ -166,8 +174,9 @@ def effector_interface_scan(bngl, gnuplot):
 	outnm = f"{rootname}.dat"
 
 	outf = open(outnm, "w")
-
-	kfs = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
+	# 1.5 and 0.4 are magical numbers -for any value in between the simulation  croaks
+	# and it is not the matter of number of steps
+	kfs = [4.0,  3.0, 2.0, 1.5, 0.3, 0.2, 0.1]
 	titles = ["%.1f"%kf for kf in kfs]
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
@@ -244,6 +253,8 @@ def catalysis_scan(bngl, gnuplot):
 	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
+	print("cat scan  run done")
+	return
 
 
 ###############################
@@ -295,6 +306,49 @@ def double_impact_scan(bngl, gnuplot):
 	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
+	print("double impact done")
+
+###############################
+def empty_pocket_scan(bngl, gnuplot):
+	rootname = "empty_pocket_scan"
+	outnm = "empty_pocket_scan.dat"
+
+	outf = open(outnm, "w")
+
+	titles = ["wt", "noGaO", "empty"]
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+	max_mod = -1
+	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free": [0.1, 0.1]}
+	for step in range(-6,6):
+		log_agonist_concentration = float(step)/2.0
+		eff_modulation_out = []
+
+		o_tweaks = {}
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		max_mod = max(max_mod, abs(effector_modulation))
+		eff_modulation_out.append(effector_modulation)
+
+		####
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, None, s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		####
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, "empty_pocket", s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
 
 
 
@@ -305,10 +359,13 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	#sanity(bngl, gnuplot)
-	#effector_interface_scan(bngl, gnuplot)
-	#catalysis_scan(bngl, gnuplot)
-	double_impact_scan(bngl , gnuplot)
+	# sanity(bngl, gnuplot)
+	# effector_interface_scan(bngl, gnuplot)
+	# catalysis_scan(bngl, gnuplot)
+	# double_impact_scan(bngl, gnuplot)
+	# something's wrong with this one:
+	empty_pocket_scan(bngl, gnuplot)
+
 
 ##########################
 if __name__=="__main__":

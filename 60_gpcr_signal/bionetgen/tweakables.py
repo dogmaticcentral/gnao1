@@ -158,7 +158,14 @@ def empty_pocket_reaction_rules(subtype):
 	r = Reaction("GPCR_free",  subtype, "none",
 	             "c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
 	             "c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
-	             2.0, 0.5)
+	             10.0, 0.5)
+	reactions.append(r)
+
+	# 3 G-trimer binding to activated GPCR
+	r = Reaction("GPCR_activated",  subtype, "none",
+	             "c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             "c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             10.0, 0.1)
 	reactions.append(r)
 
 	return reactions
@@ -188,4 +195,22 @@ def set_tweaked_reaction_rules(subtype="wt", tweaks = None):
 ###################
 def reaction_rules_string(reactions):
 	return "\n".join([r.prettyprint() for r in reactions])+"\n"
+
+
+
+
+def galpha_empty_species():
+	spec  = "12 @c0:Galpha(GPCR,GnP~none,p_site,mut~mutant) 25.0\n"
+	return spec
+
+###################
+def galpha_s_species(double=False):
+	if double: # when we have Gnao Wt and mutant
+		spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 40.0\n"
+		spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 10.0\n"
+	else:
+		spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 20.0\n"
+		spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 5.0\n"
+
+	return spec
 
