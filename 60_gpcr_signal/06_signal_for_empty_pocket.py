@@ -7,18 +7,27 @@ from gnuplot.literals import *
 from gnuplot.tweakables import *
 from utils.shellutils import *
 
-def write_bngl_input(rootname, mutant=False):
+def galpha_empty_observables():
+	obs = "Molecules Ga_X_to_GPCR @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~none,p_site,mut~mutant)\n"
+	return obs
+
+def write_bngl_input(rootname, mutant=True):
 	outname = f"{rootname}.bngl"
 	wt_reaction_rules     = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
+	species = default_species
+	observables = default_observables
 	if mutant:
-		mutant_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules("mutant"))
+		mutant_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules())
+		species +=  galpha_empty_species()
+		observables += galpha_empty_observables()
 	else:
+		# these are "mutants" without a mutation - that's our limit case
 		mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
+
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types=default_molecule_types,
-		                            species=default_species + galpha_empty_species(),
-		                            observables=default_observables,
-									reaction_rules=default_reaction_rules +  wt_reaction_rules + mutant_reaction_rules)
+		                            species=species, observables=observables,
+									reaction_rules= default_reaction_rules + wt_reaction_rules + mutant_reaction_rules)
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(agonist_ping)
@@ -55,10 +64,10 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	# we'll use the outlint of the wt signal for comparison
+	# we'll use the outline of the wt signal for comparison
 	wt_rootname = "wt_signal"
 	# run simulation
-	bngl_input  = write_bngl_input(wt_rootname)
+	bngl_input  = write_bngl_input(wt_rootname, mutant=False)
 	run_bngl(bngl, bngl_input)
 
 	rootname = "empty_pocket_signal"

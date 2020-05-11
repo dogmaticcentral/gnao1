@@ -64,6 +64,8 @@ def galpha_s_observables():
 	obs  = "Molecules Ga_wt_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~wt).Ga_effector(Galpha!1)\n"
 	obs += "Molecules Ga_mut_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~mutant).Ga_effector(Galpha!1)\n"
 	obs += "Molecules Ga_s_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~s).Ga_effector(Galpha!1)\n"
+	obs += "Molecules Ga_s_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
+	obs += "Molecules Ga_mut_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
 	return obs
 
 
@@ -75,7 +77,7 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	if o_tweaks==None:
 		o_type_reaction_rules = ""
 	elif type(o_tweaks)==str and o_tweaks == "empty_pocket":
-		o_type_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules("wt"))
+		o_type_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules())
 		empty_pocket_species = galpha_empty_species()
 	else:
 		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
@@ -176,7 +178,7 @@ def effector_interface_scan(bngl, gnuplot):
 	outf = open(outnm, "w")
 	# 1.5 and 0.4 are magical numbers -for any value in between the simulation  croaks
 	# and it is not the matter of number of steps
-	kfs = [4.0,  3.0, 2.0, 1.5, 0.3, 0.2, 0.1]
+	kfs = [4.0, 3.0, 2.0, 1.5, 0.3, 0.2, 0.1]
 	titles = ["%.1f"%kf for kf in kfs]
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
@@ -264,16 +266,15 @@ def double_impact_scan(bngl, gnuplot):
 
 	outf = open(outnm, "w")
 
-	kfs_catalysis = [30.0, 0.1, 0.003]
+	kfs_catalysis = [30.0, 10.0, 1.0]
 	kfs_effector  = [4.0,  0.2, 0.02]
 	# kfs_catalysis = [30.0, 0.5, 0.003]
 	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
 
-
 	titles = []
-	for kfc in kfs_catalysis:
-		for kfe in kfs_effector:
-			titles.append("%.3f/%.2f"%(kfc,kfe))
+	for kfe in kfs_effector:
+		for kfc in kfs_catalysis:
+			titles.append("%.2f/%.3f"%(kfe,kfc))
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
@@ -291,7 +292,7 @@ def double_impact_scan(bngl, gnuplot):
 		eff_modulation_out.append(effector_modulation)
 		######
 		for title in titles[1:]:
-			[kfc, kfe] = [float(k) for k in title.split("/")]
+			[kfe, kfc] = [float(k) for k in title.split("/")]
 			o_tweaks = {"RGS_as_GAP": [kfc, 0.0], "effector": [kfe, 0.1] }
 			effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
 			eff_modulation_out.append(effector_modulation)
@@ -363,7 +364,9 @@ def main():
 	# effector_interface_scan(bngl, gnuplot)
 	# catalysis_scan(bngl, gnuplot)
 	# double_impact_scan(bngl, gnuplot)
-	# something's wrong with this one:
+	# empty pocket (GX) does nothing just hangs around, parked at the nearest GPCR
+	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
+	# of reduced availability of GPCRs is felt
 	empty_pocket_scan(bngl, gnuplot)
 
 

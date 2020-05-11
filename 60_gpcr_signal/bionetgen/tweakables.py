@@ -90,9 +90,12 @@ def set_default_galpha_reaction_rules(subtype):
 	reactions.append(r)
 
 	# 3 G-trimer binding to activated GPCR
+	# An incomplete bond may also be specified using “!+”,
+	# where the  wild  card  “+”  indicates  that  the  identity  of  the  binding partner
+	# is irrelevant  for  purposes  of  matching.
 	r = Reaction("GPCR_activated",  subtype, "GDP",
-	             "c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
-	             "c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             "c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	             "c0:GPCR(Galpha!3,agonist!+).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
 	             10.0, 0.1)
 	reactions.append(r)
 
@@ -145,28 +148,41 @@ def set_default_galpha_reaction_rules(subtype):
 
 
 ###################
-def empty_pocket_reaction_rules(subtype):
+def empty_pocket_reaction_rules():
 	reactions = []
-	# empty pocket G_alpha binding to its effector (presumably adenylate cyclase)
-	r = Reaction("effector",  subtype, "none",
-	             "c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype}) + c0:Ga_effector(Galpha)",
-	             "c0:Galpha(GPCR,GnP~none,p_site!1,mut~{subtype}).Ga_effector(Galpha!1)",
-	             0.0, 0.1)
-	reactions.append(r)
 
 	# empty pocket Ga binding to free GPCR
-	r = Reaction("GPCR_free",  subtype, "none",
-	             "c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
-	             "c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
-	             10.0, 0.5)
-	reactions.append(r)
+	# r = Reaction("GPCR_free",  subtype, "none",
+	#              "c0:GPCR(Galpha,agonist) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
+	#              "c0:GPCR(Galpha!1,agonist).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
+	#              10.0, 0.1)
+	# reactions.append(r)
+	#
+	# # 3 G-trimer binding to activated GPCR
+	# r = Reaction("GPCR_activated",  subtype, "none",
+	#              "c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
+	#              "c0:GPCR(Galpha!1,agonist!+).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
+	#              10.0, 0.1)
+	# reactions.append(r)
 
-	# 3 G-trimer binding to activated GPCR
-	r = Reaction("GPCR_activated",  subtype, "none",
-	             "c0:agonist(p_site!1).GPCR(Galpha,agonist!1) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
-	             "c0:agonist(p_site!2).GPCR(Galpha!3,agonist!2).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
+	# language reference: https://www.csb.pitt.edu/Faculty/Faeder/Publications/Reprints/Faeder_2009.pdf
+	#  A wild card, “?”, may be used to indicate that a match may occur regardless
+	#  of  whether  a  bond  is  present  or  absent.
+	#  For example, the two patterns EGFR(Y1068~P) and EGFR(Y1068~P!?) are not equivalent:
+	#  The  EGFR(Y1068~P)  pattern selects only EGFR molecules in which the Y1068 component is
+	#  phosphorylated  and  unbound, whereas  the EGFR(Y1068~P!?) pattern selects  all  EGFR  molecules
+	#  in  which  the  Y1068  component is  phosphorylated, irrespective  of the existence of the bond
+
+	# empty pocket Ga binding to  GPCR irrespective of the agonist
+	# 3 G-trimer binding to activated GPCR - note the absence of Gbg
+	r = Reaction("GPCR_activated",  "mutant", "none",
+	             "c0:GPCR(Galpha,agonist!?) + c0:Galpha(GPCR,GnP~none,p_site,mut~{subtype})",
+	             "c0:GPCR(Galpha!1,agonist!?).Galpha(GPCR!1,GnP~none,p_site,mut~{subtype})",
 	             10.0, 0.1)
 	reactions.append(r)
+	# empty pocket does not bind Gbg (N Yu and M simon, 1998)
+	# basically, id toes nothing except eliminating itself from the Galpha pool
+
 
 	return reactions
 

@@ -70,7 +70,7 @@ def write_bngl_input(rootname, o_tweaks, s_tweaks):
 	elif type(o_tweaks)==str and o_tweaks == "empty_pocket":
 		empty_pocket_species  = galpha_empty_species()
 		o_type_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt")) + \
-								reaction_rules_string(empty_pocket_reaction_rules("mutant"))
+								reaction_rules_string(empty_pocket_reaction_rules())
 	else:
 		o_type_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt")) + \
 		                        reaction_rules_string(set_tweaked_reaction_rules("mutant", o_tweaks))
@@ -241,47 +241,31 @@ def double_impact_scan(bngl, gnuplot):
 	cleanup(rootname)
 	print("double impact run done")
 
+
 ###############################
 def empty_pocket_scan(bngl, gnuplot):
-	rootname = "empty_pocket_scan"
-	outnm = "empty_pocket_scan.dat"
+	rootname = "GaS_empty_pocket_signal"
+	outnm = f"{rootname}.dat"
 
-	outf = open(outnm, "w")
+	timepoints = {}
 
-	titles = ["wt", "noGaO", "empty"]
-	outf.write("% ")
-	for title in titles: outf.write(" %s " % title)
-	outf.write("\n")
-
-	max_mod = -1
 	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free": [0.1, 0.1]}
-	for step in range(-6,6):
-		log_agonist_concentration = float(step)/2.0
-		eff_modulation_out = []
 
-		o_tweaks = {}
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, abs(effector_modulation))
-		eff_modulation_out.append(effector_modulation)
+	o_tweaks = {}
+	timepoints["wt"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
 
-		# # ####
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, None, s_tweaks)
-		eff_modulation_out.append(effector_modulation)
 
-		# # ####
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, "empty_pocket", s_tweaks)
-		eff_modulation_out.append(effector_modulation)
+	timepoints["noGaO"]  = run_and_collect(bngl, rootname, None, s_tweaks)
 
-		##########################
-		outf.write("%.2f " % log_agonist_concentration)
-		for effector_modulation in eff_modulation_out:
-			outf.write("%.2e " % effector_modulation)
-		outf.write("\n")
+	timepoints["empty"] = run_and_collect(bngl, rootname,  "empty_pocket", s_tweaks)
 
-	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	##########################
+	write_timepoints(outnm, timepoints)
+
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()))
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
+	print("empty pocket run done")
 
 
 	pass
@@ -293,12 +277,12 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	sanity(bngl, gnuplot)
-	effector_interface_scan(bngl, gnuplot)
-	catalysis_scan(bngl, gnuplot)
-	double_impact_scan(bngl, gnuplot)
-	# something's wrong with this one:
-	#empty_pocket_scan(bngl, gnuplot)
+	# sanity(bngl, gnuplot)
+	# effector_interface_scan(bngl, gnuplot)
+	# catalysis_scan(bngl, gnuplot)
+	# double_impact_scan(bngl, gnuplot)
+	# see comments in 07
+	empty_pocket_scan(bngl, gnuplot)
 
 
 ##########################
