@@ -170,7 +170,7 @@ def sanity(bngl, gnuplot):
 
 
 ###############################
-def effector_interface_scan(bngl, gnuplot, svg=False):
+def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	rootname = "agonist_effector_if_scan"
 	outnm = f"{rootname}.dat"
@@ -190,7 +190,6 @@ def effector_interface_scan(bngl, gnuplot, svg=False):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
-		s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free": [0.01, 0.01], "effector": [8.0, 0.1]}
 		###### outer bound: no GNAO
 		o_tweaks = None
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
@@ -224,7 +223,7 @@ def effector_interface_scan(bngl, gnuplot, svg=False):
 
 
 ###############################
-def catalysis_scan(bngl, gnuplot, svg=False):
+def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 	rootname = "agonist_cat_scan"
 	outnm = f"{rootname}.dat"
 
@@ -242,7 +241,6 @@ def catalysis_scan(bngl, gnuplot, svg=False):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
-		s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free":[0.01, 0.01], "effector": [24.0, 0.1]}
 		# ####
 		o_tweaks = {"RGS_as_GAP": [30.0, 0.0]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
@@ -268,14 +266,14 @@ def catalysis_scan(bngl, gnuplot, svg=False):
 
 
 ###############################
-def double_impact_scan(bngl, gnuplot, svg=False):
+def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 	rootname = "double_impact_scan"
 	outnm = f"{rootname}.dat"
 
 	outf = open(outnm, "w")
 
-	kfs_catalysis = [0.1, 0.05, 0.01]
-	kfs_effector  = [2.0, 3.0]
+	kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
+	kfs_effector  = [2.0]
 	# kfs_catalysis = [30.0, 0.5, 0.003]
 	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
 
@@ -293,7 +291,6 @@ def double_impact_scan(bngl, gnuplot, svg=False):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
-		s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free":[0.01, 0.01]}
 		# ####
 		o_tweaks = {"RGS_as_GAP": [30.0, 0.0], "effector": [4.0, 0.1]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
@@ -320,7 +317,7 @@ def double_impact_scan(bngl, gnuplot, svg=False):
 
 
 ###############################
-def empty_pocket_scan(bngl, gnuplot, svg=False):
+def empty_pocket_scan(bngl, gnuplot,  s_tweaks, svg=False):
 	rootname = "empty_pocket_scan"
 	outnm = "empty_pocket_scan.dat"
 
@@ -376,10 +373,10 @@ def main():
 	# empty pocket (GX) does nothing just hangs around, parked at the nearest GPCR
 	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
 	# of reduced availability of GPCRs is felt
-	empty_pocket_scan(bngl, gnuplot, svg=False)
-	effector_interface_scan(bngl, gnuplot, svg=False)
-	catalysis_scan(bngl, gnuplot, svg=False)
-	double_impact_scan(bngl, gnuplot, svg=False)
+	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
+	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	# catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False)
 
 
 ##########################
