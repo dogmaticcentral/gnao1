@@ -3,7 +3,9 @@ def set_gnuplot_outfile(rootname, svg=False):
 	retstr = ""
 	if svg:
 		retstr += "# svg\n"
-		retstr += "set terminal svg size 410,250 fname 'Verdana, Helvetica, Arial, sans-serif' fsize '9' rounded dashed \n"
+		# says:  unrecognized terminal option
+		# for "set terminal svg size 410,250 fname 'Verdana, Helvetica, Arial, sans-serif' fsize '9' rounded dashed
+		retstr += "set terminal svg size 512,256 fname 'Verdana, Helvetica, Arial, sans-serif' rounded dashed \n"
 		retstr += f"set output '{rootname}.svg' \n"
 		retstr += "set size ratio 1  \n"
 	else:

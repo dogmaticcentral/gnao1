@@ -84,7 +84,7 @@ def write_bngl_input(rootname, o_tweaks, s_tweaks):
 	with open(outname, "w") as outf:
 
 		model = model_template.format(molecule_types=add_galpha_s(default_molecule_types),
-		                              species=default_species + empty_pocket_species + galpha_s_species(double=True),
+		                              species=default_species + empty_pocket_species + galpha_s_species(factor=1),
 		                              observables=default_observables+ galpha_s_observables(),
 									  reaction_rules=(default_reaction_rules
 									                + o_type_reaction_rules
@@ -255,7 +255,7 @@ def empty_pocket_scan(bngl, gnuplot):
 	timepoints["wt"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
 
 
-	timepoints["noGaO"]  = run_and_collect(bngl, rootname, None, s_tweaks)
+	timepoints["noGaO"] = run_and_collect(bngl, rootname, None, s_tweaks)
 
 	timepoints["empty"] = run_and_collect(bngl, rootname,  "empty_pocket", s_tweaks)
 

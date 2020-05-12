@@ -220,13 +220,9 @@ def galpha_empty_species():
 	return spec
 
 ###################
-def galpha_s_species(double=False):
-	if double: # when we have Gnao Wt and mutant
-		spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 40.0\n"
-		spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 10.0\n"
-	else:
-		spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) 20.0\n"
-		spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) 5.0\n"
+def galpha_s_species(factor=1.0):
+	spec  = "13 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~s) %.2f\n" % (20.0*factor)
+	spec += "14 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~s) %.2f\n" % ( 5.0*factor)
 
 	return spec
 
