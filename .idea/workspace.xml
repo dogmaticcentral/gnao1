@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/40_allen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
@@ -65,6 +63,15 @@
               <folding>
                 <element signature="e#20#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="40_allen.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/40_allen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -83,8 +90,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Perl5 package" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -160,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/50_movie/18_it_moves.py" />
         <option value="$PROJECT_DIR$/50_movie/19_gnao_structure.py" />
         <option value="$PROJECT_DIR$/50_movie/20_var_positions.py" />
         <option value="$PROJECT_DIR$/50_movie/21_GBD_only.py" />
@@ -211,6 +217,7 @@
         <option value="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
+        <option value="$PROJECT_DIR$/40_allen.py" />
       </list>
     </option>
   </component>
@@ -233,17 +240,6 @@
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
-              <item name="60_gpcr_signal" type="462c0819:PsiDirectoryNode" />
-              <item name="bionetgen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
@@ -363,13 +359,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" selection-start-line="28" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/drugs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -593,6 +582,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -603,10 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
+    <entry file="file://$PROJECT_DIR$/40_allen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+        <state relative-caret-position="702">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
