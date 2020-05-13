@@ -121,7 +121,7 @@ def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweak
 
 
 ##############################################################
-def sanity(bngl, gnuplot):
+def sanity(bngl, gnuplot, s_tweaks, svg=False):
 
 	rootname = "agonist_sanity"
 	outnm = "agonist_sanity.dat"
@@ -140,18 +140,18 @@ def sanity(bngl, gnuplot):
 
 		o_tweaks = {}
 		##########################
-		s_tweaks = None
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		#s_tweaks == None  ---  there is no GaS
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, None)
 		max_mod = max(max_mod, abs(effector_modulation))
 		eff_modulation_out.append(effector_modulation)
 
 		# # ####
-		s_tweaks = o_tweaks
-		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
+		#s_tweaks == o_tweaks --- should end up being seo, if the actiont on effector is proportional
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, o_tweaks)
 		eff_modulation_out.append(effector_modulation)
 
 		# # ####
-		s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+		# wild-tpe behavior in the presence of GaS
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
 		eff_modulation_out.append(effector_modulation)
 
@@ -162,7 +162,7 @@ def sanity(bngl, gnuplot):
 		outf.write("\n")
 
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles))
+	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles), svg=svg)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 
@@ -277,7 +277,7 @@ def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 	# kfs_catalysis = [30.0, 0.5, 0.003]
 	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
 
-	titles = ["%.2f/%.3f"%(30.0,4.0)]
+	titles = ["%.2f/%.3f"%(4.0,30.0)]
 	for kfe in kfs_effector:
 		for kfc in kfs_catalysis:
 			titles.append("%.2f/%.3f"%(kfe,kfc))
@@ -369,13 +369,13 @@ def main():
 	# s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free": [0.01, 0.01], "effector": [24.0, 0.1]}
 	s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free": [0.01, 0.01]}
 
-	# sanity(bngl, gnuplot)
+	sanity(bngl, gnuplot, s_tweaks, svg=False)
 	# empty pocket (GX) does nothing just hangs around, parked at the nearest GPCR
 	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
 	# of reduced availability of GPCRs is felt
-	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
-	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
-	# catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
+	effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
 	double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False)
 
 

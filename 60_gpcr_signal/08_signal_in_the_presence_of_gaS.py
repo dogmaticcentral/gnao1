@@ -20,7 +20,7 @@ from math import log10, pow
 '''
 
 
-def write_gnuplot_input(data_table, titles):
+def write_gnuplot_input(data_table, titles, svg=False):
 	colors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet"]
 	rootname = data_table.replace(".dat","")
 	outname = f"{rootname}.gplt"
@@ -28,7 +28,7 @@ def write_gnuplot_input(data_table, titles):
 		print(styling, file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
-		print(set_gnuplot_outfile(rootname), file=outf)
+		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		print("set key top right", file=outf)
 		print("set yrange [-30:85]", file=outf)
 		column_formatting = [f"plot '{data_table}'  u 1:($2/50*100) t '{titles[0]}'   w lines ls 1"]
@@ -84,7 +84,8 @@ def write_bngl_input(rootname, o_tweaks, s_tweaks):
 	with open(outname, "w") as outf:
 
 		model = model_template.format(molecule_types=add_galpha_s(default_molecule_types),
-		                              species=default_species + empty_pocket_species + galpha_s_species(factor=1),
+		                              # double the GaS because here we have double GaO (from two genes)
+		                              species=default_species + empty_pocket_species + galpha_s_species(factor=2),
 		                              observables=default_observables+ galpha_s_observables(),
 									  reaction_rules=(default_reaction_rules
 									                + o_type_reaction_rules
@@ -132,24 +133,24 @@ def write_timepoints(outnm, timepoints):
 ###############################
 ###############################
 ###############################
-def sanity(bngl, gnuplot):
+def sanity(bngl, gnuplot, s_tweaks, svg=False):
 
-	rootname = "signal_gaS_sanity"
+	rootname = "signal_GaS_sanity"
 	outnm = f"{rootname}.dat"
 
 	timepoints = {}
 
 	o_tweaks = {}
 	##########################
-	s_tweaks = None
-	timepoints["withoutGaS"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
+	#s_tweaks == None --- no GaS
+	timepoints["withoutGaS"] = run_and_collect(bngl, rootname, o_tweaks, None)
 
 	# ####
-	s_tweaks = o_tweaks
-	timepoints["GaS==GaO"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
+	# s_tweaks == o_tweaks --- equal  => no signal
+	timepoints["GaS==GaO"] = run_and_collect(bngl, rootname, o_tweaks, o_tweaks)
 
 	####
-	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+	# signal in the presence ow wild-type GaO
 	timepoints["weakGaS/GPCR"] = run_and_collect(bngl, rootname,  o_tweaks, s_tweaks)
 
 	write_timepoints(outnm, timepoints)
@@ -162,7 +163,7 @@ def sanity(bngl, gnuplot):
 
 
 ###############################
-def effector_interface_scan(bngl, gnuplot):
+def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	rootname = "signal_GaS_effector_if_scan"
 	outnm = f"{rootname}.dat"
@@ -170,7 +171,6 @@ def effector_interface_scan(bngl, gnuplot):
 	kfs = [4.0, 2.0, 1.0, 0.4, 0.2, 0.02, 0.01]
 	timepoints = {}
 
-	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
 	######
 	for kf in kfs:
 		o_tweaks = {"effector": [kf, 0.1]}
@@ -179,7 +179,7 @@ def effector_interface_scan(bngl, gnuplot):
 
 	##########################
 	write_timepoints(outnm, timepoints)
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()))
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
 
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
@@ -189,14 +189,13 @@ def effector_interface_scan(bngl, gnuplot):
 
 
 ###############################
-def catalysis_scan(bngl, gnuplot):
+def catalysis_scan(bngl, gnuplot, s_tweaks, svg=False):
 	rootname = "signal_GaS_cat_scan"
 	outnm = f"{rootname}.dat"
 
 	kfs = [30.0, 1.0, 0.03, 0.01, 0.003]
 	timepoints = {}
 
-	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
 	######
 	for kf in kfs:
 		o_tweaks = {"RGS_as_GAP": [kf, 0.0]}
@@ -205,7 +204,7 @@ def catalysis_scan(bngl, gnuplot):
 
 	##########################
 	write_timepoints(outnm, timepoints)
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()))
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
 
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
@@ -214,20 +213,25 @@ def catalysis_scan(bngl, gnuplot):
 	return
 
 
-
-
 ###############################
-def double_impact_scan(bngl, gnuplot):
+def double_impact_scan(bngl, gnuplot, s_tweaks, svg=False):
 	rootname = "signal_GaS_double_impact"
 	outnm = f"{rootname}.dat"
 
-	kfs_catalysis = [30.0, 0.1, 0.003]
-	kfs_effector  = [4.0,  0.2, 0.02]
-	# kfs_catalysis = [30.0, 0.5, 0.003]
-	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
+	# kfs_catalysis = [30.0, 0.1, 0.003]
+	# kfs_effector  = [4.0,  0.2, 0.02]
+	kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
+	kfs_effector  = [2.0]
+
 	timepoints = {}
 
-	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]}
+	# wild type
+	[kfc,kfe] = [30.0, 4.0]
+	title = "%.3f/%.2f"%(kfc,kfe)
+	o_tweaks = {"RGS_as_GAP": [kfc, 0.0], "effector": [kfe, 0.1] }
+	timepoints[title] = run_and_collect(bngl, rootname,  o_tweaks, s_tweaks)
+
+	# mutants
 	for kfc in kfs_catalysis:
 		for kfe in kfs_effector:
 			title = "%.3f/%.2f"%(kfc,kfe)
@@ -236,24 +240,21 @@ def double_impact_scan(bngl, gnuplot):
 
 	write_timepoints(outnm, timepoints)
 
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()))
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("double impact run done")
 
 
 ###############################
-def empty_pocket_scan(bngl, gnuplot):
-	rootname = "GaS_empty_pocket_signal"
+def empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False):
+	rootname = "signal_GaS_empty_pocket"
 	outnm = f"{rootname}.dat"
 
 	timepoints = {}
 
-	s_tweaks = {"GPCR_activated": [0.1, 0.1], "GPCR_free": [0.1, 0.1]}
-
 	o_tweaks = {}
 	timepoints["wt"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
-
 
 	timepoints["noGaO"] = run_and_collect(bngl, rootname, None, s_tweaks)
 
@@ -262,7 +263,7 @@ def empty_pocket_scan(bngl, gnuplot):
 	##########################
 	write_timepoints(outnm, timepoints)
 
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()))
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("empty pocket run done")
@@ -277,12 +278,13 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	# sanity(bngl, gnuplot)
-	# effector_interface_scan(bngl, gnuplot)
-	# catalysis_scan(bngl, gnuplot)
-	# double_impact_scan(bngl, gnuplot)
+	s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free": [0.01, 0.01]}
+	# sanity(bngl, gnuplot, s_tweaks, svg=False)
+	# effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False)
+	# catalysis_scan(bngl, gnuplot, s_tweaks, svg=False)
+	# double_impact_scan(bngl, gnuplot, s_tweaks, svg=False)
 	# see comments in 07
-	empty_pocket_scan(bngl, gnuplot)
+	empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
 
 
 ##########################

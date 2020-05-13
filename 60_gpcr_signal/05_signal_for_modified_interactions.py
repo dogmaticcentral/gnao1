@@ -62,8 +62,13 @@ def main():
 		"weakened_effector_if": {"effector": [0.4, 0.1]}, # default/wt is [4.0, 0.1]
 		"weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
 		"weakened_catalysis": {"RGS_as_GAP": [0.03, 0.0]},             # default/wt is [30.0, 0.0]
-		"weakened_GPCR_bindinding": {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]},
+		"weakened_GPCR_binding": {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]},
 		"enhanced_GEF_activity_by_gpcr": {"GPCR_as_GEF": [200.0, 0.2]} # default/wt is [2.0, 0.2]
+	}
+	tweaks = {
+	 	"double_compensating": {"effector": [2.0, 0.1], "RGS_as_GAP": [0.15, 0.0]}, # default/wt is [4.0, 0.1]
+	 	"double_noncompensating_1": {"effector": [0.2, 0.1], "RGS_as_GAP": [0.1, 0.0]}, # default/wt is [4.0, 0.1]
+	 	"double_noncompensating_2": {"effector": [2.0, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
 	}
 
 	for title, tweak in tweaks.items():

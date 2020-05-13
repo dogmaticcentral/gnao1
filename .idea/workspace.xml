@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" beforeDir="false" afterPath="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -10,6 +12,25 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="07_agonist_concentration_scan.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="36">
+                    <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -22,32 +43,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="07_agonist_concentration_scan.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
+      <file leaf-file-name="08_signal_in_the_presence_of_gaS.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="362" column="11" lean-forward="true" selection-start-line="362" selection-start-column="11" selection-end-line="362" selection-end-column="11" />
+            <state relative-caret-position="-838">
+              <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
               <folding>
-                <element signature="e#1757#2033#0" />
-                <element signature="e#1815#2016#0" />
-                <element signature="e#2065#2593#0" />
-                <element signature="e#3963#4549#0" />
-                <element signature="e#4483#4501#0" />
-                <element signature="e#4677#6069#0" />
-                <element signature="e#4943#5890#0" />
-                <element signature="e#8356#8546#0" />
-                <element signature="e#9159#9195#0" />
-                <element signature="e#9942#10211#0" />
+                <element signature="e#4498#5170#0" />
+                <element signature="e#5251#5845#0" />
+                <element signature="e#5916#6488#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="08_signal_in_the_presence_of_gaS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
+      <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1025">
-              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+            <state relative-caret-position="368">
+              <caret line="69" column="87" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
+              <folding>
+                <element signature="e#20#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,7 +198,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/orig_perl/equilibrium.pl" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/01_equilibrium_distributions.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/03_wt_signal.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/gdat_cleanup.pl.pm" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/gdat_cleanup.pl" />
@@ -191,9 +207,10 @@
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/tweakables.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/gnuplot/literals.py" />
-        <option value="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py" />
         <option value="$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py" />
+        <option value="$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py" />
       </list>
     </option>
   </component>
@@ -290,6 +307,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1911" height="1067" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
@@ -506,13 +524,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/double_impact_scan.0.png" />
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/signal_gaS_sanity.gplt" />
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/signal_gaS_sanity.bngl_out" />
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/signal_gaS_sanity.bngl" />
@@ -563,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1025">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -577,22 +581,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-838">
+          <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
+          <folding>
+            <element signature="e#4498#5170#0" />
+            <element signature="e#5251#5845#0" />
+            <element signature="e#5916#6488#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="69" column="87" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
+          <folding>
+            <element signature="e#20#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="362" column="11" lean-forward="true" selection-start-line="362" selection-start-column="11" selection-end-line="362" selection-end-column="11" />
-          <folding>
-            <element signature="e#1757#2033#0" />
-            <element signature="e#1815#2016#0" />
-            <element signature="e#2065#2593#0" />
-            <element signature="e#3963#4549#0" />
-            <element signature="e#4483#4501#0" />
-            <element signature="e#4677#6069#0" />
-            <element signature="e#4943#5890#0" />
-            <element signature="e#8356#8546#0" />
-            <element signature="e#9159#9195#0" />
-            <element signature="e#9942#10211#0" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
         </state>
       </provider>
     </entry>
