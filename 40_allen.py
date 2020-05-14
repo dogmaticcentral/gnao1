@@ -18,7 +18,7 @@ def human_brain_data(fnm):
 		for line in inf:
 			if not'Allen Brain Atlas Adult Human Brain Tissue Gene Expression Profiles' in line: continue
 			[location, dataset,	threshold_value, standardized_value] = line.strip().split("\t")
-			expression[location] = standardized_value
+			expression[location] = "%.2f"%float(standardized_value)
 	return expression
 
 
@@ -42,7 +42,12 @@ def main():
 
 	locations_sorted = sorted(expression["gnao1"].keys(), key= lambda location: float(expression["gnao1"][location]), reverse=True)
 
-	print("\t".join(["location", "gnao1"] + adcys))
+	# revmoe adcys with no positive correlation in expression with adcy5
+	# adcy10 actually has no info at at all
+	for adcy in ["adcy2", "adcy10"]:
+		adcys.remove(adcy)
+
+	print("\t".join(["location", "GNAO1"] + [a.upper() for a in adcys]))
 	for location in locations_sorted:
 		adcy_expression = [expression[gene].get(location,"") for gene in adcys]
 		print( "\t".join([location, expression["gnao1"][location]] + adcy_expression) )

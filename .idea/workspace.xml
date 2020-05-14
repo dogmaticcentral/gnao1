@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/40_allen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/40_allen.py" beforeDir="false" afterPath="$PROJECT_DIR$/40_allen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,46 +12,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="07_agonist_concentration_scan.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="36">
-                    <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="literals.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="44" column="129" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="08_signal_in_the_presence_of_gaS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-838">
+            <state relative-caret-position="2322">
               <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
-              <folding>
-                <element signature="e#4498#5170#0" />
-                <element signature="e#5251#5845#0" />
-                <element signature="e#5916#6488#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -58,7 +26,7 @@
       <file leaf-file-name="05_signal_for_modified_interactions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="847">
               <caret line="69" column="87" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
               <folding>
                 <element signature="e#20#41#0" expanded="true" />
@@ -70,8 +38,8 @@
       <file leaf-file-name="40_allen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/40_allen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="36">
+              <caret line="2" column="107" lean-forward="true" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -79,7 +47,7 @@
       <file leaf-file-name="tweakables.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
+            <state relative-caret-position="4086">
               <caret line="227" selection-start-line="227" selection-end-line="227" />
             </state>
           </provider>
@@ -241,15 +209,6 @@
               <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
               <item name="gnao1db" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="gnao1db" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -305,6 +264,7 @@
     <frame x="1920" y="0" width="1911" height="1067" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18697034" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -312,10 +272,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32978722" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49881935" weight="0.0" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18697034" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.100323625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49945414" weight="0.32963374" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,6 +282,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945414" visible="true" weight="0.100323625" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
@@ -558,40 +517,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/tweakables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
+        <state relative-caret-position="4086">
           <caret line="227" selection-start-line="227" selection-end-line="227" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/bionetgen/literals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="792">
           <caret line="44" column="129" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/08_signal_in_the_presence_of_gaS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-838">
+        <state relative-caret-position="2322">
           <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
-          <folding>
-            <element signature="e#4498#5170#0" />
-            <element signature="e#5251#5845#0" />
-            <element signature="e#5916#6488#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/07_agonist_concentration_scan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/60_gpcr_signal/05_signal_for_modified_interactions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="847">
           <caret line="69" column="87" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
           <folding>
             <element signature="e#20#41#0" expanded="true" />
@@ -601,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/40_allen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="36">
+          <caret line="2" column="107" lean-forward="true" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="107" />
         </state>
       </provider>
     </entry>
