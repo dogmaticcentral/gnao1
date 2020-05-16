@@ -35,7 +35,7 @@ axes_agonist_response = '''
 set xlabel 'log 10 agonist concentration'
 set ylabel 'effector modulation (%max)'
 
-set xrange [-3:2]
+set xrange [-2:4]
 #set yrange [-100:150]
 '''
 

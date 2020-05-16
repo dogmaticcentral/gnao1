@@ -21,7 +21,7 @@ simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>
 
 def write_bngl_input(rootname, agonist_present):
 	# both subpopulatins are actually wildtype in this case
-	wt_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
+	wt_reaction_rules     = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
 	mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
 	outname = f"{rootname}_w_agonist.bngl" if agonist_present else f"{rootname}_no_agonist.bngl"
 	with open(outname, "w") as outf:
@@ -39,18 +39,19 @@ def write_bngl_input(rootname, agonist_present):
 
 
 ###############################
+# in the column 12 we have the total effector conventration
 plot_with_agonist = '''
 plot '{}.gdat'   \
-       u 1:($14/50*100) t labelA  w lines ls 1, \
-   ''  u 1:($4/50*100)  t labelGABG w lines ls 2, \
-   ''  u 1:($7/50*100)  t labelABG w lines ls 3 
+       u 1:($14/$12*100) t labelA  w lines ls 1, \
+   ''  u 1:($4/$12*100)  t labelGABG w lines ls 2, \
+   ''  u 1:($7/$12*100)  t labelABG w lines ls 3 
 '''
 
 plot_without_agonist = '''
 plot '{}.gdat' \
-      u 1:($7/50*100)  t labelABG w lines ls 3, \
-  ''  u 1:($4/50*100)  t labelGABG w lines ls 2, \
-  '' u 1:($14/50*100)  t labelA  w lines ls 1
+      u 1:($7/$12*100)  t labelABG w lines ls 3, \
+  ''  u 1:($4/$12*100)  t labelGABG w lines ls 2, \
+  '' u 1:($14/$12*100)  t labelA  w lines ls 1
 '''
 
 

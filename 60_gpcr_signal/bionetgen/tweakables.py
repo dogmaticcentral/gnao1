@@ -96,7 +96,7 @@ def set_default_galpha_reaction_rules(subtype):
 	r = Reaction("GPCR_activated",  subtype, "GDP",
 	             "c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
 	             "c0:GPCR(Galpha!3,agonist!+).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
-	             10.0, 0.1)
+	             20.0, 1.0)
 	reactions.append(r)
 
 	# 4 G-trimer binding to  GPCR without agonist
