@@ -22,7 +22,7 @@ from math import log10, pow
 
 
 
-def write_gnuplot_input(data_table, number_of_runs=1, svg=False):
+def write_gnuplot_input(data_table, number_of_runs=1, svg=False, yrange="[0:800]"):
 	colors = ["royalblue", "blue", "magenta", "pink", "red", "orange", "salmon", "yellow", "green", "cyan" ]
 	rootname = data_table.replace(".dat","")
 	outname = f"{rootname}.gplt"
@@ -34,6 +34,7 @@ def write_gnuplot_input(data_table, number_of_runs=1, svg=False):
 		print("set key autotitle columnheader", file=outf)
 		print("set key top left", file=outf)
 		print("set size ratio 0.5", file=outf) # to lloh more like neubig
+		print(f"set yrange {yrange}", file=outf)
 		column_formatting = [f"plot '{data_table}'  u 1:($2*100)  w lines ls 1"]
 		for i in range(1,number_of_runs):
 			color = colors[i%len(colors)]
@@ -47,7 +48,7 @@ run_with_tweakable_agonist = '''
 simulate_ode({t_end=>50,n_steps=>10,atol=>1e-9,rtol=>1e-9,sparse=>1})
 # now trigger the GPCRs by adding the agonist
 setConcentration(\"@c0:agonist(p_site)\", AGONIST)
-simulate_ode({continue=>1,t_end=>500,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
 def add_galpha_s(default_molecule_types):
@@ -71,17 +72,31 @@ def galpha_s_observables():
 	return obs
 
 
-def reduce_gpcr_conc(default_species):
+def reduce_gpcr_conc(default_species, new_concentration):
 	modified = ""
 	for line in default_species.split("\n"):
 		line = line.strip()
 		if len(line)==0: continue
 		if "GPCR(Galpha,agonist)" in line:
-			modified += "3 @c0:GPCR(Galpha,agonist) 0.5"
+			modified += f"3 @c0:GPCR(Galpha,agonist) {new_concentration}"
 		else:
 			modified += line
 		modified += "\n"
 	return modified
+
+
+def reduce_effector_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "Ga_effector(Galpha)" in line:
+			modified += f"8 @c0:Ga_effector(Galpha) {new_concentration}"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
 
 def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	outname = f"{rootname}.bngl"
@@ -101,9 +116,12 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	else:
 		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
 
+	species = reduce_gpcr_conc(default_species, 5)
+	species = reduce_effector_conc(species, 10)
+
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
-		                            species          = (reduce_gpcr_conc(default_species) + empty_pocket_species + galpha_s_species()),
+		                            species          = (species + empty_pocket_species + galpha_s_species(factor=1.0)),
 		                            observables      = (default_observables + galpha_s_observables()),
 									reaction_rules   = (default_reaction_rules
 									                    + o_type_reaction_rules
@@ -119,7 +137,9 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks):
 	# run simulation
 	bngl_input  = write_bngl_input(f"{rootname}", pow(10, log_agonist_concentration), o_tweaks, s_tweaks)
-	run_bngl(bngl, bngl_input)
+	if run_bngl(bngl, bngl_input) != "ok":
+		print("not ok!!")
+		#return None
 
 	# make figure (image, plot)
 	gdatfile = bngl_input.replace("bngl", "gdat")
@@ -136,7 +156,9 @@ def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweak
 	if effector_total<1:
 		print("no effector ?!")
 		exit()
-	effector_modulation = (unaffected_population + 0.01*downregulated_population + 10*upregulated_population)/effector_total
+	effector_modulation = (unaffected_population + 0.01*downregulated_population + 60*upregulated_population)/effector_total
+	# print (f"{log_agonist_concentration}    {unaffected_population}   {downregulated_population}  "
+	#       f" {upregulated_population}  {effector_total}   {effector_modulation}")
 
 
 	# cleanup our mess
@@ -157,7 +179,7 @@ def sanity(bngl, gnuplot, s_tweaks, svg=False):
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
-	for step in range(-12,12):
+	for step in range(-16,12):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
@@ -184,7 +206,7 @@ def sanity(bngl, gnuplot, s_tweaks, svg=False):
 		outf.write("\n")
 
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[-10:900]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 
@@ -201,14 +223,13 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 	# 1.5 and 0.4 are magical numbers -for any value in between the simulation  croaks
 	# and it is not the matter of number of steps
 	kfs = [4.0, 3.0,  2.0,  0.1, 0.01]
-	kfs = [4.0, 3.0,  2.0, 0.4, 0.2, 0.1, 0.01]
+	kfs = [4.0, 2.0,  0.1, 0.01, 0.001]
 	titles = ["noGo"] + ["%.2f"%kf for kf in kfs]
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
-	max_mod = -1
-	for step in range(-10,8):
+	for step in range(-12,8):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
@@ -221,7 +242,6 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 		# ####
 		o_tweaks = {"effector": [4.0, 0.1], "GPCR_free": [0.1, 0.1]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, abs(effector_modulation))
 		eff_modulation_out.append(effector_modulation)
 
 		######
@@ -236,7 +256,7 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 			outf.write("%.2e " % effector_modulation)
 		outf.write("\n")
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 
@@ -251,22 +271,20 @@ def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 
 	outf = open(outnm, "w")
 
-	kfs = [30.0, 1.0, 0.1, 0.03, 0.003]
+	kfs = [30.0, 1.0,  0.1, 0.06, 0.03]
 	titles = ["%.3f"%kf for kf in kfs]
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
 
-	max_mod = -1
-	for step in range(-10,8):
-		log_agonist_concentration = float(step)/4.0
+	for step in range(-16,16):
+		log_agonist_concentration = float(step)/8.0
 		eff_modulation_out = []
 
 		# ####
 		o_tweaks = {"RGS_as_GAP": [30.0, 0.0]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, abs(effector_modulation))
 		eff_modulation_out.append(effector_modulation)
 		######
 		for kf in kfs[1:]:
@@ -280,7 +298,7 @@ def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 			outf.write("%.2e " % effector_modulation)
 		outf.write("\n")
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:140]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("cat scan  run done")
@@ -294,12 +312,15 @@ def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 
 	outf = open(outnm, "w")
 
-	kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
-	kfs_effector  = [2.0]
-	# kfs_catalysis = [30.0, 0.5, 0.003]
-	# kfs_effector  = [4.0, 3.5, 3.0, 2.0, 1.0, 0.4, 0.2]
+	# kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
+	# kfs_effector  = [2.0]
+	kfs_catalysis = [0.3, 0.003]
+	kfs_effector  = [1.0, 0.1]
+	# kfs_catalysis = []
+	# kfs_effector  = []
 
-	titles = ["%.2f/%.3f"%(4.0,30.0)]
+	titles = ["withoutGaO", "%.2f/%.3f"%(4.0,30.0)]
+	#titles = ["withoutGaO"]
 	for kfe in kfs_effector:
 		for kfc in kfs_catalysis:
 			titles.append("%.2f/%.3f"%(kfe,kfc))
@@ -307,32 +328,35 @@ def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
-	max_mod = -1
 
-	for step in range(-10,8):
-		log_agonist_concentration = float(step)/4.0
+	for step in range(-24,16):
+		log_agonist_concentration = float(step)/8.0
 		eff_modulation_out = []
 
-		# ####
+		#o_tweaks == None  ---  there is no Ga0
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, None, s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		# #### wild type
 		o_tweaks = {"RGS_as_GAP": [30.0, 0.0], "effector": [4.0, 0.1]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, abs(effector_modulation))
 		eff_modulation_out.append(effector_modulation)
+
 		######
-		for title in titles[1:]:
+		for title in titles[2:]:
 			[kfe, kfc] = [float(k) for k in title.split("/")]
 			o_tweaks = {"RGS_as_GAP": [kfc, 0.0], "effector": [kfe, 0.1] }
 			effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
 			eff_modulation_out.append(effector_modulation)
 
-		##########################
+		######
 		outf.write("%.2f " % log_agonist_concentration)
 		for effector_modulation in eff_modulation_out:
 			outf.write("%.2e " % effector_modulation)
 		outf.write("\n")
 
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:1400]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("double impact done")
@@ -350,14 +374,12 @@ def empty_pocket_scan(bngl, gnuplot,  s_tweaks, svg=False):
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
-	max_mod = -1
 	for step in range(-10,8):
 		log_agonist_concentration = float(step)/4.0
 		eff_modulation_out = []
 
 		o_tweaks = {}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
-		max_mod = max(max_mod, abs(effector_modulation))
 		eff_modulation_out.append(effector_modulation)
 
 		####
@@ -375,10 +397,10 @@ def empty_pocket_scan(bngl, gnuplot,  s_tweaks, svg=False):
 		outf.write("\n")
 
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, max_mod, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
-
+	print("empty pocket done")
 
 
 ###############################
@@ -388,16 +410,17 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	s_tweaks = {"GPCR_activated": [0.01, 0.001], "GPCR_free": [0.00, 0.00], "effector": [1.0, 0.01 ]}
+	s_tweaks = {"GPCR_activated": [0.0015, 0.0001], "GPCR_free": [0.0001, 0.0001],
+	            "effector": [2.0, 2.0/40], "RGS": [2.0, 2.0/10]}
 
-	sanity(bngl, gnuplot, s_tweaks, svg=False)
+	# sanity(bngl, gnuplot, s_tweaks, svg=False)
 	# empty pocket (GX) does nothing just hangs around, parked at the nearest GPCR
 	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
 	# of reduced availability of GPCRs is felt
 	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
 	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
 	# catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
-	# double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False)
 
 
 ##########################

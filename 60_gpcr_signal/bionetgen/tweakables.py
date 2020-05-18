@@ -130,7 +130,7 @@ def set_default_galpha_reaction_rules(subtype):
 	r.direction = "->"
 	reactions.append(r)
 
-	# 8 releasing of GDP from Galpha bount to RGS
+	# 8 releasing of GDP from Galpha bound to RGS
 	r = Reaction("GDP",  subtype, "GDP",
 	             "c0:RGS(Galpha!1).Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype})",
 	             "c0:RGS(Galpha) + c0:Galpha(GPCR,GnP~GDP,p_site,mut~{subtype})",

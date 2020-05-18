@@ -19,8 +19,11 @@ def cleanup(rootname):
 
 def run_bngl(bngl, bngl_input):
 	bngl_out = bngl_input.replace(".bngl", ".bngl_out")
-	subprocess.call(["bash", "-c", f"{bngl} {bngl_input} > {bngl_out}"])
-	return
+	#  2>&1 is stderr to stdout
+	status = subprocess.call(["bash", "-c", f"{bngl} {bngl_input} > {bngl_out} 2>&1  "])
+	if status == 0:
+		return "ok"
+	return "failure"
 
 def run_gnuplot(gnuplot, gnuplot_input):
 	gplt_out = gnuplot_input.replace(".gplt", ".gplt_out")
