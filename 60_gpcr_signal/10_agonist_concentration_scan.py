@@ -29,8 +29,11 @@ def write_gnuplot_input(data_table, number_of_runs=1, svg=False, yrange="[0:800]
 		print(axes_agonist_response, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
-		print("set key autotitle columnheader", file=outf)
-		print("set key top left", file=outf)
+		if svg:
+			print("set key off", file=outf)  # in svg the line and the color bar from the legend are the same object - we don't want that
+		else:
+			print("set key autotitle columnheader", file=outf)
+			print("set key top left", file=outf)
 		print("set size ratio 0.5", file=outf) # to lloh more like neubig
 		print(f"set yrange {yrange}", file=outf)
 		column_formatting = [f"plot '{data_table}'  u 1:($2*100)  w lines ls 1"]
@@ -70,9 +73,9 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	species = reduce_gpcr_conc(default_species, 5)
 	species = reduce_effector_conc(species, 10)
 	# this is a hack (among all hacks) to show tath super increase in the camp
-	# current is die to RGS availability
-	# species = increase_RGS_conc(species, 100)
-	# species = reduce_gpcr_conc(species, 50)
+	# current is due to RGS availability
+	species = increase_RGS_conc(species, 100)
+	species = reduce_gpcr_conc(species, 50)
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
 		                            species          = (species + empty_pocket_species + galpha_s_species(factor=1.0)),
@@ -231,12 +234,11 @@ def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 	for title in titles: outf.write(" %s " % title)
 	outf.write("\n")
 
-
 	for step in range(-16,16):
 		log_agonist_concentration = float(step)/8.0
 		eff_modulation_out = []
 
-		# ####
+		######
 		o_tweaks = {"RGS_as_GAP": [30.0, 0.0]}
 		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks)
 		eff_modulation_out.append(effector_modulation)
@@ -251,7 +253,10 @@ def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 		for effector_modulation in eff_modulation_out:
 			outf.write("%.2e " % effector_modulation)
 		outf.write("\n")
+
 	outf.close()
+
+
 	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:140]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
@@ -273,8 +278,11 @@ def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 
 	outf = open(outnm, "w")
 
-	kfs_catalysis = [0.3, 0.003]
-	kfs_effector  = [1.0, 0.1]
+	# kfs_catalysis = [0.3, 0.03, 0.003, 0.001]
+	# kfs_effector  = [3.0]
+	kfs_effector  = [0.1]
+	kfs_catalysis = [0.003]
+
 
 	if compensating:
 		kfs_catalysis = [1.5, 1.2, 1.0, 0.8, 0.5,  0.2]
@@ -383,9 +391,9 @@ def main():
 	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
 	# of reduced availability of GPCRs is felt
 	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
-	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
-	# catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
-	double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=True)
+	# catalysis_scan(bngl, gnuplot,  s_tweaks, svg=True)
+	double_impact_scan(bngl, gnuplot,  s_tweaks, svg=True)
 
 
 ##########################
