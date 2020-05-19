@@ -22,14 +22,18 @@ def write_bngl_input(rootname, tweak):
 
 	return outname
 
-
 ###############################
-
-# plot Galpha line las, so it would be in the top layer
+# plot Galpha line last, so it would be in the top layer
 #  in the column 12 we have the total effector concentration (see observables in literals.py)
+###############################
+# column 12:  total effector of Ga
+# column 13:  total effector of Gb
+# column 14:  Ga*effector (Ga bound to its effector)
+# column 15:  Gb*effector (Gb bound to its effector)
+
 plot = ''' 
-plot '{}.gdat' u 1:($15/$12*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1, \
-	 '{}.gdat' u 1:($15/$12*100)  t labelBGwt w lines ls 6,  '' u 1:($14/$12*100)  t labelAwt  w lines ls 3
+plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1, \
+	 '{}.gdat' u 1:($15/$13*100)  t labelBGwt w lines ls 6,  '' u 1:($14/$12*100)  t labelAwt  w lines ls 3
 '''
 
 def write_gnuplot_input(bngl_input_name, wt_rootname):
@@ -59,17 +63,17 @@ def main():
 	bngl_input  = write_bngl_input(wt_rootname, {})
 	run_bngl(bngl, bngl_input)
 
+	# tweaks = {
+	# 	"weakened_effector_if": {"effector": [0.4, 0.1]},  # default/wt is [4.0, 0.1]
+	# 	"weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
+	# 	"weakened_catalysis": {"RGS_as_GAP": [0.1, 0.0]},             # default/wt is [30.0, 0.0]
+	# 	"weakened_GPCR_binding": {"GPCR_activated": [0.0, 0.0], "GPCR_free":[0.0, 0.0]},
+	# 	"enhanced_GPCR_as_GEF": {"GPCR_as_GEF": [200.0, 0.2]}  # default/wt is [2.0, 0.2]
+	# }
 	tweaks = {
-		"weakened_effector_if": {"effector": [0.4, 0.1]}, # default/wt is [4.0, 0.1]
-		"weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
-		"weakened_catalysis": {"RGS_as_GAP": [0.03, 0.0]},             # default/wt is [30.0, 0.0]
-		"weakened_GPCR_binding": {"GPCR_activated": [0.1, 0.1], "GPCR_free":[0.1, 0.1]},
-		"enhanced_GEF_activity_by_gpcr": {"GPCR_as_GEF": [200.0, 0.2]} # default/wt is [2.0, 0.2]
-	}
-	tweaks = {
-	 	"double_compensating": {"effector": [2.0, 0.1], "RGS_as_GAP": [0.15, 0.0]}, # default/wt is [4.0, 0.1]
-	 	"double_noncompensating_1": {"effector": [0.2, 0.1], "RGS_as_GAP": [0.1, 0.0]}, # default/wt is [4.0, 0.1]
-	 	"double_noncompensating_2": {"effector": [2.0, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
+	 	"double_compensating": {"effector": [1.5, 0.1], "RGS_as_GAP": [2.0, 0.0]}, # default/wt is [4.0, 0.1]
+	 	"double_noncompensating_1": {"effector": [0.2, 0.1], "RGS_as_GAP": [2.0, 0.0]}, # default/wt is [4.0, 0.1]
+	 	"double_noncompensating_2": {"effector": [1.5, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
 	}
 
 	for title, tweak in tweaks.items():

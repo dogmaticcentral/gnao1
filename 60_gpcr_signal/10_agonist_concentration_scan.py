@@ -20,8 +20,6 @@ from math import log10, pow
 '''
 
 
-
-
 def write_gnuplot_input(data_table, number_of_runs=1, svg=False, yrange="[0:800]"):
 	colors = ["royalblue", "blue", "magenta", "pink", "red", "orange", "salmon", "yellow", "green", "cyan" ]
 	rootname = data_table.replace(".dat","")
@@ -51,53 +49,6 @@ setConcentration(\"@c0:agonist(p_site)\", AGONIST)
 simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
-def add_galpha_s(default_molecule_types):
-	modified = ""
-	for line in default_molecule_types.split("\n"):
-		line = line.strip()
-		if len(line)==0: continue
-		if line[:len("Galpha")]=="Galpha":
-			modified += "Galpha(GPCR,GnP~GTP~GDP~none,p_site,mut~wt~mutant~s)"
-		else:
-			modified += line
-		modified += "\n"
-	return modified
-
-def galpha_s_observables():
-	obs  = "Molecules Ga_wt_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~wt).Ga_effector(Galpha!1)\n"
-	obs += "Molecules Ga_mut_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~mutant).Ga_effector(Galpha!1)\n"
-	obs += "Molecules Ga_s_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~s).Ga_effector(Galpha!1)\n"
-	obs += "Molecules Ga_s_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
-	obs += "Molecules Ga_mut_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
-	return obs
-
-
-def reduce_gpcr_conc(default_species, new_concentration):
-	modified = ""
-	for line in default_species.split("\n"):
-		line = line.strip()
-		if len(line)==0: continue
-		if "GPCR(Galpha,agonist)" in line:
-			modified += f"3 @c0:GPCR(Galpha,agonist) {new_concentration}"
-		else:
-			modified += line
-		modified += "\n"
-	return modified
-
-
-def reduce_effector_conc(default_species, new_concentration):
-	modified = ""
-	for line in default_species.split("\n"):
-		line = line.strip()
-		if len(line)==0: continue
-		if "Ga_effector(Galpha)" in line:
-			modified += f"8 @c0:Ga_effector(Galpha) {new_concentration}"
-		else:
-			modified += line
-		modified += "\n"
-	return modified
-
-
 def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	outname = f"{rootname}.bngl"
 
@@ -118,7 +69,10 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 
 	species = reduce_gpcr_conc(default_species, 5)
 	species = reduce_effector_conc(species, 10)
-
+	# this is a hack (among all hacks) to show tath super increase in the camp
+	# current is die to RGS availability
+	# species = increase_RGS_conc(species, 100)
+	# species = reduce_gpcr_conc(species, 50)
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
 		                            species          = (species + empty_pocket_species + galpha_s_species(factor=1.0)),
@@ -223,7 +177,7 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 	# 1.5 and 0.4 are magical numbers -for any value in between the simulation  croaks
 	# and it is not the matter of number of steps
 	kfs = [4.0, 3.0,  2.0,  0.1, 0.01]
-	kfs = [4.0, 2.0,  0.1, 0.01, 0.001]
+	kfs = [4.0, 2.0,  0.5,  0.1, 0.01]
 	titles = ["noGo"] + ["%.2f"%kf for kf in kfs]
 	outf.write("% ")
 	for title in titles: outf.write(" %s " % title)
@@ -256,7 +210,7 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 			outf.write("%.2e " % effector_modulation)
 		outf.write("\n")
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:120]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 
@@ -307,17 +261,25 @@ def catalysis_scan(bngl, gnuplot, s_tweaks,  svg=False):
 
 ###############################
 def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
+
+	compensating = False
+
 	rootname = "double_impact_scan"
-	outnm = f"{rootname}.dat"
+	if compensating:
+		outnm = f"compensating_{rootname}.dat"
+	else:
+		outnm = f"{rootname}.dat"
+
 
 	outf = open(outnm, "w")
 
-	# kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
-	# kfs_effector  = [2.0]
 	kfs_catalysis = [0.3, 0.003]
 	kfs_effector  = [1.0, 0.1]
-	# kfs_catalysis = []
-	# kfs_effector  = []
+
+	if compensating:
+		kfs_catalysis = [1.5, 1.2, 1.0, 0.8, 0.5,  0.2]
+		kfs_effector  = [2.5]
+
 
 	titles = ["withoutGaO", "%.2f/%.3f"%(4.0,30.0)]
 	#titles = ["withoutGaO"]
@@ -356,7 +318,10 @@ def double_impact_scan(bngl, gnuplot,  s_tweaks, svg=False):
 		outf.write("\n")
 
 	outf.close()
-	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:1400]")
+	if compensating:
+		gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:120]")
+	else:
+		gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg, yrange="[0:1600]")
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("double impact done")

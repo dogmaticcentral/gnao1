@@ -31,9 +31,17 @@ set xrange [0:200]
 set yrange [0:100]
 '''
 
+axes_gas_signal = '''
+set xlabel 'seconds'
+set ylabel 'effector modulation (% unregulated)'
+
+set xrange [0:200]
+set yrange [0:800]
+'''
+
 axes_agonist_response = '''
 set xlabel 'log 10 agonist concentration'
-set ylabel 'effector modulation (%max)'
+set ylabel 'effector modulation (% unregulated)'
 
 set xrange [-2:2]
 #set yrange [-100:150]

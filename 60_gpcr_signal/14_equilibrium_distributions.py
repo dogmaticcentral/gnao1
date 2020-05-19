@@ -39,19 +39,21 @@ def write_bngl_input(rootname, agonist_present):
 
 
 ###############################
-# in the column 12 we have the total effector conventration
-plot_with_agonist = '''
-plot '{}.gdat'   \
-       u 1:($14/$12*100) t labelA  w lines ls 1, \
-   ''  u 1:($4/$12*100)  t labelGABG w lines ls 2, \
-   ''  u 1:($7/$12*100)  t labelABG w lines ls 3 
-'''
+# column  2:  total Ga
+# column 14:  Ga*effector (Ga bound to its effector)
+# column  7:  total G_trimer not bound to GPCR
+
+plot_with_agonist   = "plot '{}.gdat' \\\n"
+plot_with_agonist  += "u 1:($14/$2*100) t labelA  w lines ls 1, \\\n"  # %of total Ga bound to effector
+plot_with_agonist  += "''  u 1:($4/$2*100)  t labelGABG w lines ls 2, \\\n" # %of total Ga bound to GPCR (as a part of G-trimer)
+plot_with_agonist  += "''  u 1:($7/$2*100)  t labelABG w lines ls 3 \\\n"
+
 
 plot_without_agonist = '''
-plot '{}.gdat' \
-      u 1:($7/$12*100)  t labelABG w lines ls 3, \
-  ''  u 1:($4/$12*100)  t labelGABG w lines ls 2, \
-  '' u 1:($14/$12*100)  t labelA  w lines ls 1
+plot '{}.gdat'\
+      u 1:($7/$2*100)  t labelABG w lines ls 3,\
+  ''  u 1:($4/$2*100)  t labelGABG w lines ls 2,\
+  '' u 1:($14/$2*100)  t labelA  w lines ls 1
 '''
 
 

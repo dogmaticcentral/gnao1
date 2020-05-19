@@ -295,7 +295,7 @@ def main():
 	param_values['activation_factor']  = Parameter(value=60, minval=20, maxval=40, steps=1)  # the factor by which cAMP activation is enhanced by GaS
 	param_values['gpcr_concentration'] = Parameter(value=5, minval=1, maxval=9, steps=1)
 	param_values['effector_concentration'] = Parameter(value=10, minval=5.0, maxval=15.0, steps=1)
-	param_values['gs_factor'] = Parameter(value=1.0, minval=0.5, maxval=1.5, steps=1) # scales the gs_concentration relative to go
+	param_values['gs_factor'] = Parameter(value=1.0, minval=0.5, maxval=1.5, steps=1)  # scales the gs_concentration relative to go
 
 	grid = grid_points([param_values[p].steps for p in params])
 

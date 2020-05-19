@@ -27,8 +27,14 @@ def write_bngl_input(rootname):
 ###############################
 # plot Galpha line last, so it would be in the top layer
 #  in the column 12 we have the total effector concentration (see observables in literals.py)
+###############################
+# column 12:  total effector of Ga
+# column 13:  total effector of Gb
+# column 14:  Ga*effector (Ga bound to its effector)
+# column 15:  Gb*effector (Gb bound to its effector)
+
 plot = ''' 
-plot '{}.gdat' u 1:($15/$12*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1
+plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1
 '''
 
 def write_gnuplot_input(bngl_input_name):

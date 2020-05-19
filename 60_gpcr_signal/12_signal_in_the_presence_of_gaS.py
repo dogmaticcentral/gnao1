@@ -20,80 +20,58 @@ from math import log10, pow
 '''
 
 
-def write_gnuplot_input(data_table, titles, svg=False):
+def write_gnuplot_input(data_table, titles, svg=False, yrange="[0:800]"):
 	colors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet"]
 	rootname = data_table.replace(".dat","")
 	outname = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
-		print(axes_signal, file=outf)
+		print(axes_gas_signal, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		print("set key top right", file=outf)
-		print("set yrange [-30:85]", file=outf)
-		column_formatting = [f"plot '{data_table}'  u 1:($2/50*100) t '{titles[0]}'   w lines ls 1"]
+		print(f"set yrange {yrange}", file=outf)
+		column_formatting = [f"plot '{data_table}'  u 1:($2*100) t '{titles[0]}'   w lines ls 1"]
 		for i in range(1,len(titles)):
 			color = colors[i%len(colors)]
-			column_formatting.append(f"'' u 1:(${i+2}/50*100)  t '{titles[i]}'  w lines lw 3 lt rgb '{color}'")
+			column_formatting.append(f"'' u 1:(${i+2}*100)  t '{titles[i]}'  w lines lw 3 lt rgb '{color}'")
 		print(", ".join(column_formatting), file=outf)
 	return outname
 
+
 ####################################
-
-def add_galpha_s(default_species):
-	modified = ""
-	for line in default_species.split("\n"):
-		line = line.strip()
-		if len(line)==0: continue
-		if line[:len("Galpha")]=="Galpha":
-			modified += "Galpha(GPCR,GnP~GTP~GDP~none,p_site,mut~wt~mutant~s)"
-		else:
-			modified += line
-		modified += "\n"
-	return modified
-
-
-def galpha_s_observables():
-	obs  = "Molecules Ga_wt_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~wt).Ga_effector(Galpha!1)\n"
-	obs += "Molecules Ga_mut_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~mutant).Ga_effector(Galpha!1)\n"
-	obs += "Molecules Ga_s_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~s).Ga_effector(Galpha!1)\n"
-	return obs
-
-
 def write_bngl_input(rootname, o_tweaks, s_tweaks):
 	outname = f"{rootname}.bngl"
 
 	empty_pocket_species = ""
-	#
-	if o_tweaks is None:
+
+	if o_tweaks==None:
 		o_type_reaction_rules = ""
 	elif type(o_tweaks)==str and o_tweaks == "empty_pocket":
-		empty_pocket_species  = galpha_empty_species()
-		o_type_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt")) + \
-								reaction_rules_string(empty_pocket_reaction_rules())
+		o_type_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules())
+		empty_pocket_species = galpha_empty_species()
 	else:
-		o_type_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt")) + \
-		                        reaction_rules_string(set_tweaked_reaction_rules("mutant", o_tweaks))
+		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
 
-	if s_tweaks is None:
+	if s_tweaks==None:
 		s_type_reaction_rules = ""
 	else:
 		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
 
+	species = reduce_gpcr_conc(default_species, 5)
+	species = reduce_effector_conc(species, 10)
 
 	with open(outname, "w") as outf:
+		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
+		                            species          = (species + empty_pocket_species + galpha_s_species(factor=1.0)),
+		                            observables      = (default_observables + galpha_s_observables()),
+									reaction_rules   = (default_reaction_rules
+									                    + o_type_reaction_rules
+									                    + s_type_reaction_rules))
 
-		model = model_template.format(molecule_types=add_galpha_s(default_molecule_types),
-		                              # double the GaS because here we have double GaO (from two genes)
-		                              species=default_species + empty_pocket_species + galpha_s_species(factor=2),
-		                              observables=default_observables+ galpha_s_observables(),
-									  reaction_rules=(default_reaction_rules
-									                + o_type_reaction_rules
-									                + s_type_reaction_rules))
 		outf.write(model)
 		outf.write(equilibration_long)
 		outf.write(agonist_ping)
-
 
 
 	return outname
@@ -111,10 +89,20 @@ def run_and_collect(bngl, rootname, o_tweaks, s_tweaks):
 		for line in inf:
 			if line[0]=='#': continue
 			field = line.strip().split()
-			[go_wt, go_mut, gs] = [float(r) for r in field[-3:]]
 			time = float(field[0])
-			effector_modulation = go_wt + go_mut - gs
-			timepoints.append([time,effector_modulation])
+
+			[effector_total, go_wt_bound_to_effector, go_mut_bound_to_effector, gs_bound_to_effector] = \
+				[float(field[i]) for i in [11, 15, 16, 17]]
+			downregulated_population = go_wt_bound_to_effector + go_mut_bound_to_effector
+			upregulated_population   = gs_bound_to_effector
+			unaffected_population    = effector_total - go_wt_bound_to_effector - go_mut_bound_to_effector- gs_bound_to_effector
+			if effector_total<1:
+				print("no effector ?!")
+				exit()
+			effector_modulation = (unaffected_population + 0.01*downregulated_population + 60*upregulated_population)/effector_total
+
+			timepoints.append([time, effector_modulation])
+
 	return timepoints
 
 
@@ -146,11 +134,11 @@ def sanity(bngl, gnuplot, s_tweaks, svg=False):
 	timepoints["withoutGaS"] = run_and_collect(bngl, rootname, o_tweaks, None)
 
 	# ####
-	# s_tweaks == o_tweaks --- equal  => no signal
-	timepoints["GaS==GaO"] = run_and_collect(bngl, rootname, o_tweaks, o_tweaks)
+	#o_tweaks == None  ---  there is no Ga0
+	timepoints["withoutGaO"] = run_and_collect(bngl, rootname, None, s_tweaks)
 
 	####
-	# signal in the presence ow wild-type GaO
+	# signal in the presence ow wild-type GaO and GaS
 	timepoints["weakGaS/GPCR"] = run_and_collect(bngl, rootname,  o_tweaks, s_tweaks)
 
 	write_timepoints(outnm, timepoints)
@@ -163,9 +151,9 @@ def sanity(bngl, gnuplot, s_tweaks, svg=False):
 
 
 ###############################
-def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
+def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False, yrange="[50:300]"):
 
-	rootname = "signal_GaS_effector_if_scan"
+	rootname = "signal_GaS_effector_if"
 	outnm = f"{rootname}.dat"
 
 	kfs = [4.0, 2.0, 1.0, 0.4, 0.2, 0.02, 0.01]
@@ -179,7 +167,7 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	##########################
 	write_timepoints(outnm, timepoints)
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg, yrange=yrange)
 
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
@@ -189,7 +177,7 @@ def effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 
 ###############################
-def catalysis_scan(bngl, gnuplot, s_tweaks, svg=False):
+def catalysis_scan(bngl, gnuplot, s_tweaks, svg=False, yrange="[0:250]"):
 	rootname = "signal_GaS_cat_scan"
 	outnm = f"{rootname}.dat"
 
@@ -204,7 +192,7 @@ def catalysis_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	##########################
 	write_timepoints(outnm, timepoints)
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg, yrange=yrange)
 
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
@@ -214,13 +202,13 @@ def catalysis_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 
 ###############################
-def double_impact_scan(bngl, gnuplot, s_tweaks, svg=False):
+def double_impact_scan(bngl, gnuplot, s_tweaks, svg=False, yrange="[50:250]"):
 	rootname = "signal_GaS_double_impact"
 	outnm = f"{rootname}.dat"
 
 	# kfs_catalysis = [30.0, 0.1, 0.003]
 	# kfs_effector  = [4.0,  0.2, 0.02]
-	kfs_catalysis = [0.3, 0.25, 0.20, 0.15]
+	kfs_catalysis = [0.3, 0.2, 0.1]
 	kfs_effector  = [2.0]
 
 	timepoints = {}
@@ -240,14 +228,14 @@ def double_impact_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	write_timepoints(outnm, timepoints)
 
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg, yrange=yrange)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("double impact run done")
 
 
 ###############################
-def empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False):
+def empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False, yrange="[50:250]"):
 	rootname = "signal_GaS_empty_pocket"
 	outnm = f"{rootname}.dat"
 
@@ -255,15 +243,15 @@ def empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False):
 
 	o_tweaks = {}
 	timepoints["wt"] = run_and_collect(bngl, rootname, o_tweaks, s_tweaks)
-
-	timepoints["noGaO"] = run_and_collect(bngl, rootname, None, s_tweaks)
+	#
+	# timepoints["noGaO"] = run_and_collect(bngl, rootname, None, s_tweaks)
 
 	timepoints["empty"] = run_and_collect(bngl, rootname,  "empty_pocket", s_tweaks)
 
 	##########################
 	write_timepoints(outnm, timepoints)
 
-	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg)
+	gnuplot_input = write_gnuplot_input(outnm, list(timepoints.keys()), svg=svg, yrange=yrange)
 	run_gnuplot(gnuplot, gnuplot_input)
 	cleanup(rootname)
 	print("empty pocket run done")
@@ -278,11 +266,13 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	s_tweaks = {"GPCR_activated": [0.01, 0.01], "GPCR_free": [0.01, 0.01]}
-	# sanity(bngl, gnuplot, s_tweaks, svg=False)
-	# effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False)
-	# catalysis_scan(bngl, gnuplot, s_tweaks, svg=False)
-	# double_impact_scan(bngl, gnuplot, s_tweaks, svg=False)
+	s_tweaks = {"GPCR_activated": [0.0015, 0.0001], "GPCR_free": [0.0001, 0.0001],
+	            "effector": [2.0, 2.0/40], "RGS": [2.0, 2.0/10]}
+
+	sanity(bngl, gnuplot, s_tweaks, svg=False)
+	effector_interface_scan(bngl, gnuplot, s_tweaks, svg=False)
+	catalysis_scan(bngl, gnuplot, s_tweaks, svg=False)
+	double_impact_scan(bngl, gnuplot, s_tweaks, svg=False)
 	# see comments in 07
 	empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
 

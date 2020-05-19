@@ -13,13 +13,13 @@ Gbg_effector(Gbg)
 default_species = '''
 1 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt) 20.0
 2 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) 5.0
-3 @c0:GPCR(Galpha,agonist) 50.0
+3 @c0:GPCR(Galpha,agonist) 5.0
 4 @c0:Gbg(p_site) 50.0
 5 @c0:agonist(p_site) 0.0
 6 @c0:AChE(agonist) 0.0
 7 @c0:RGS(Galpha) 30.0
-8 @c0:Ga_effector(Galpha) 50.0
-9 @c0:Gbg_effector(Gbg) 50.0
+8 @c0:Ga_effector(Galpha) 10.0
+9 @c0:Gbg_effector(Gbg) 10.0
 10 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~mutant) 20.0
 11 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~mutant) 5.0
 '''

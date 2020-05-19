@@ -96,7 +96,7 @@ def set_default_galpha_reaction_rules(subtype):
 	r = Reaction("GPCR_activated",  subtype, "GDP",
 	             "c0:GPCR(Galpha,agonist!+) + c0:Galpha(GPCR,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
 	             "c0:GPCR(Galpha!3,agonist!+).Galpha(GPCR!3,GnP~GDP,p_site!1,mut~{subtype}).Gbg(p_site!1)",
-	             20.0, 1.0)
+	             10.0, 1.0)
 	reactions.append(r)
 
 	# 4 G-trimer binding to  GPCR without agonist
@@ -226,3 +226,61 @@ def galpha_s_species(factor=1.0):
 
 	return spec
 
+
+def add_galpha_s(default_molecule_types):
+	modified = ""
+	for line in default_molecule_types.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if line[:len("Galpha")]=="Galpha":
+			modified += "Galpha(GPCR,GnP~GTP~GDP~none,p_site,mut~wt~mutant~s)"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
+def galpha_s_observables():
+	obs  = "Molecules Ga_wt_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~wt).Ga_effector(Galpha!1)\n"
+	obs += "Molecules Ga_mut_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~mutant).Ga_effector(Galpha!1)\n"
+	obs += "Molecules Ga_s_to_effector @c0:Galpha(GPCR,GnP,p_site!1,mut~s).Ga_effector(Galpha!1)\n"
+	obs += "Molecules Ga_s_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
+	obs += "Molecules Ga_mut_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
+	return obs
+
+# these should be called "change" rather than increase or decrease
+def reduce_gpcr_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "GPCR(Galpha,agonist)" in line:
+			modified += f"3 @c0:GPCR(Galpha,agonist) {new_concentration}"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
+
+def reduce_effector_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "Ga_effector(Galpha)" in line:
+			modified += f"8 @c0:Ga_effector(Galpha) {new_concentration}"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
+def increase_RGS_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "RGS(Galpha)" in line:
+			modified += f"7 @c0:RGS(Galpha) {new_concentration}"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
