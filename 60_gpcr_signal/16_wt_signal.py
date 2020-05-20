@@ -37,14 +37,14 @@ plot = '''
 plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1
 '''
 
-def write_gnuplot_input(bngl_input_name):
+def write_gnuplot_input(bngl_input_name, svg=False):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
-		print(set_gnuplot_outfile(rootname), file=outf)
+		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		print(plot.format(rootname), file=outf)
 
 	return outname
@@ -68,7 +68,7 @@ def main():
 	bngl_input  = write_bngl_input(rootname)
 	run_bngl(bngl, bngl_input)
 	# make figure (image, plot)
-	gnuplot_input = write_gnuplot_input(bngl_input)
+	gnuplot_input = write_gnuplot_input(bngl_input, svg=True)
 	run_gnuplot(gnuplot, gnuplot_input)
 	# cleanup our mess
 	cleanup(rootname)

@@ -36,15 +36,18 @@ plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100) 
 	 '{}.gdat' u 1:($15/$13*100)  t labelBGwt w lines ls 6,  '' u 1:($14/$12*100)  t labelAwt  w lines ls 3
 '''
 
-def write_gnuplot_input(bngl_input_name, wt_rootname):
+def write_gnuplot_input(bngl_input_name, wt_rootname, svg=False):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
-		print("set key top right", file=outf)
+		if svg:
+			print("set key off", file=outf)  # in svg the line and the color bar from the legend are the same object - we don't want that
+		else:
+			print("set key top right", file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
-		print(set_gnuplot_outfile(rootname), file=outf)
+		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		print(plot.format(rootname, wt_rootname), file=outf)
 
 	return outname
@@ -63,17 +66,17 @@ def main():
 	bngl_input  = write_bngl_input(wt_rootname, {})
 	run_bngl(bngl, bngl_input)
 
-	# tweaks = {
-	# 	"weakened_effector_if": {"effector": [0.4, 0.1]},  # default/wt is [4.0, 0.1]
-	# 	"weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
-	# 	"weakened_catalysis": {"RGS_as_GAP": [0.1, 0.0]},             # default/wt is [30.0, 0.0]
-	# 	"weakened_GPCR_binding": {"GPCR_activated": [0.0, 0.0], "GPCR_free":[0.0, 0.0]},
-	# 	"enhanced_GPCR_as_GEF": {"GPCR_as_GEF": [200.0, 0.2]}  # default/wt is [2.0, 0.2]
-	# }
 	tweaks = {
-	 	"double_compensating": {"effector": [1.5, 0.1], "RGS_as_GAP": [2.0, 0.0]}, # default/wt is [4.0, 0.1]
-	 	"double_noncompensating_1": {"effector": [0.2, 0.1], "RGS_as_GAP": [2.0, 0.0]}, # default/wt is [4.0, 0.1]
-	 	"double_noncompensating_2": {"effector": [1.5, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
+		# "weakened_effector_if": {"effector": [0.01, 0.1]},  # default/wt is [4.0, 0.1]
+		# "weakened_RGS_if": {"RGS": [0.2, 0.2]},            # default/wt is [2.0, 0.2]
+		# "weakened_catalysis": {"RGS_as_GAP": [0.1, 0.0]},             # default/wt is [30.0, 0.0]
+		# "weakened_GPCR_binding": {"GPCR_activated": [0.0, 0.0], "GPCR_free":[0.0, 0.0]},
+		# "enhanced_GPCR_as_GEF": {"GPCR_as_GEF": [200.0, 0.2]},  # default/wt is [2.0, 0.2]
+
+	 	# "double_compensating_1": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.8, 0.0]}, # default/wt is [4.0, 0.1]
+	 	# "double_compensating_2": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.1, 0.0]}, # default/wt is [4.0, 0.1]
+	 	# "double_noncompensating": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
+	 	"noninteracting": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.003, 0.0]} # default/wt is [4.0, 0.1]
 	}
 
 	for title, tweak in tweaks.items():
@@ -82,7 +85,7 @@ def main():
 		bngl_input  = write_bngl_input(rootname, tweak)
 		run_bngl(bngl, bngl_input)
 		# make figure (image, plot)
-		gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname)
+		gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname, svg=True)
 		run_gnuplot(gnuplot, gnuplot_input)
 		# cleanup our mess
 		cleanup(rootname)

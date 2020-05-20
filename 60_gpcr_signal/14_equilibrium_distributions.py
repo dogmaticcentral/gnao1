@@ -57,14 +57,14 @@ plot '{}.gdat'\
 '''
 
 
-def write_gnuplot_input(bngl_input_name, agonist_present):
+def write_gnuplot_input(bngl_input_name, agonist_present, svg=False):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
-		print(set_gnuplot_outfile(rootname), file=outf)
+		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		if agonist_present:
 			print(plot_with_agonist.format(rootname), file=outf)
 		else:
@@ -85,7 +85,7 @@ def main():
 		bngl_input  = write_bngl_input(rootname, agonist_present)
 		run_bngl(bngl, bngl_input)
 		# make figure (image, plot)
-		gnuplot_input = write_gnuplot_input(bngl_input, agonist_present)
+		gnuplot_input = write_gnuplot_input(bngl_input, agonist_present, svg=True)
 		run_gnuplot(gnuplot, gnuplot_input)
 		# cleanup our mess
 		cleanup(rootname)

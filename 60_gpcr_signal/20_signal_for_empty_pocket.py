@@ -47,15 +47,18 @@ plot '{}.gdat' u 1:($15/$13*100)  t labelBG   w lines ls 5,  '' u 1:($14/$12*100
 	 '{}.gdat' u 1:($15/$13*100)  t labelBGwt w lines ls 6,  '' u 1:($14/$12*100)  t labelAwt  w lines ls 3
 '''
 
-def write_gnuplot_input(bngl_input_name, wt_rootname):
+def write_gnuplot_input(bngl_input_name, wt_rootname, svg=False):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
-		print("set key top right", file=outf)
+		if svg:
+			print("set key off", file=outf)  # in svg the line and the color bar from the legend are the same object - we don't want that
+		else:
+			print("set key top right", file=outf)
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
-		print(set_gnuplot_outfile(rootname), file=outf)
+		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
 		print(plot.format(rootname, wt_rootname), file=outf)
 
 	return outname
@@ -79,7 +82,7 @@ def main():
 	bngl_input  = write_bngl_input(rootname, mutant=True)
 	run_bngl(bngl, bngl_input)
 	# make figure (image, plot)
-	gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname)
+	gnuplot_input = write_gnuplot_input(bngl_input, wt_rootname, svg=True)
 	run_gnuplot(gnuplot, gnuplot_input)
 	# cleanup our mess
 	cleanup(rootname)
