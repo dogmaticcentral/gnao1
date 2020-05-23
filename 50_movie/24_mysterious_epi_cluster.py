@@ -10,8 +10,8 @@
 
 import sys
 
-from utils.pymol_pieces import *
 from utils.pymol_constants import *
+from utils.pymol_pieces import *
 from utils.pheno_scene_views import *
 from utils.utils import *
 from random import random

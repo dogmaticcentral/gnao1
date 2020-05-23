@@ -8,8 +8,8 @@ from math import pi, cos
 import numpy as np
 import quaternion  # pip3 install numpy-quaternion and numba
 
-#from utils.pymol_constants import * # this is pymol3
-from pymol_constants import *
+from utils.pymol_constants import * # this is pymol3
+#from pymol_constants import * pymol 2.4 it looks like we have finally moved to python3
 from random import random
 
 ########################################################################
