@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_read_drugbank/db_parse.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_read_drugbank/load_test.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_read_drugbank/readb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_read_drugbank/tinyxml2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_read_drugbank/tinyxml2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_load_drugbank.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_fix_prodrugs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_load_pubmed_from_hgmd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_load_bindingdb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/09_load_pdsp_ki.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_target_affinity_from_pubchem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/11_load_guidetopharm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_drug_mode_of_action_fix.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/30_pdbs_w_galpha.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/31_pdbs_download.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/32_find_interacting_chains.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/33_pdbs_match.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/12_drug_mechanism_per_variant.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/14_drug_mechanism_per_position.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/putative_impact.xlsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/70_for_codeocean/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/70_for_codeocean/fig_3_wt_gpcr_signal.py" beforeDir="false" afterPath="$PROJECT_DIR$/70_for_codeocean/fig_3_wt_gpcr_signal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,72 +17,6 @@
         <option value="Python Script" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ATP</find>
-      <find>ABD</find>
-      <find>substrate-GDP</find>
-      <find>copy</find>
-      <find>AC</find>
-      <find>re.</find>
-      <find>&quot;gnao&quot;</find>
-      <find>in descr or</find>
-      <find>alse</find>
-      <find>log</find>
-      <find>scipy</find>
-      <find>wordwrap</find>
-      <find>moiet</find>
-      <find>xrange</find>
-      <find>512</find>
-      <find>target_info</find>
-      <find>+</find>
-      <find>;</find>
-      <find>\@c0:</find>
-      <find>\@</find>
-      <find>restr</find>
-      <find>base</find>
-      <find>basecd  .</find>
-      <find>\n&quot;;</find>
-      <find>GEF</find>
-      <find>2_</find>
-      <find>mut~mutant</find>
-      <find>f&quot;</find>
-      <find>method</find>
-      <find>.append(Parameter</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>levetiracetam</replace>
-      <replace>valproate</replace>
-      <replace>levodopa</replace>
-      <replace>phenobarbital</replace>
-      <replace>immunoglobulin</replace>
-      <replace>target</replace>
-      <replace>MD+E</replace>
-      <replace>position</replace>
-      <replace>appenzeller2014novo</replace>
-      <replace>outf.write</replace>
-      <replace>drug</replace>
-      <replace>target_name</replace>
-      <replace>drugbank_id</replace>
-      <replace>given_string</replace>
-      <replace>family</replace>
-      <replace>&quot;,</replace>
-      <replace>&quot;schematic_{}&quot;.format(resi)</replace>
-      <replace>GDP</replace>
-      <replace>GBD</replace>
-      <replace>substrate_GDP</replace>
-      <replace>&quot;gnao-gpcr&quot;</replace>
-      <replace>,</replace>
-      <replace>range</replace>
-      <replace>size</replace>
-      <replace>@</replace>
-      <replace>retstr</replace>
-      <replace>{idx}_</replace>
-      <replace>mut~{subtype}</replace>
-      <replace>&quot;</replace>
-      <replace>[] = Parameter</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,23 +32,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;Markdown" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/70_for_codeocean" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/70_for_codeocean" />
+      <recent name="$PROJECT_DIR$/60_gpcr_signal" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/50_movie" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/raw_tables" />
       <recent name="$PROJECT_DIR$/60_gpcr_signal/exp_data" />
       <recent name="$PROJECT_DIR$/30_movie/tools" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/07_first_pass" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/60_gpcr_signal" />
-      <recent name="$PROJECT_DIR$/utils" />
-      <recent name="$PROJECT_DIR$/50_movie" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/30_movie" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -152,5 +66,11 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tex" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="449" y="0" width="1280" height="1023" key="dock-window-1" timestamp="1591115654539">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="449" y="0" width="1280" height="1023" key="dock-window-1/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591115654539" />
   </component>
 </project>

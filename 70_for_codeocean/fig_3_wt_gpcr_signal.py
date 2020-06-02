@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-from bionetgen.literals import *
-from bionetgen.tweakables import *
-from gnuplot.literals import *
-from gnuplot.tweakables import *
+from bngutils.literals import *
+from bngutils.tweakables import *
+from gpltutils.literals import *
+from gpltutils.tweakables import *
 import os, subprocess
 
 ###########################################################
@@ -39,7 +39,7 @@ def run_gnuplot(gnuplot, gnuplot_input):
 	return
 
 ###########################################################
-# bngl
+# bngl - simulation
 run_without_agonist = '''
 # equilibrium without agonist
 simulate_ode({t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
@@ -52,12 +52,31 @@ setConcentration(\"@c0:agonist(p_site)\", 60.0)
 simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
+agonist_ping = '''
+simulate_ode({t_end=>20,n_steps=>20,atol=>1e-8,rtol=>1e-8,sparse=>1})
+# now trigger the GPCRs by adding the agonist
+setConcentration("@c0:agonist(p_site)", 60.0)
+simulate_ode({continue=>1,t_end=>20.1,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
+# ... and then, remove the agonist
+setConcentration("@c0:AChE(agonist)", 120.0)
+simulate_ode({continue=>1,t_end=>220,n_steps=>500,atol=>1e-8,rtol=>1e-8,sparse=>1})
+'''
 
-def write_bngl_input(rootname, agonist_present):
+
+def write_bngl_input(rootname, run_type):
 	# both subpopulatins are actually wildtype in this case
 	wt_reaction_rules     = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
 	mutant_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("mutant"))
-	outname = f"{rootname}_w_agonist.bngl" if agonist_present else f"{rootname}_no_agonist.bngl"
+	if run_type=="equilibrium_without_agonist":
+		outname = f"{rootname}A.bngl"
+	elif run_type=="equilibrium_with_agonist":
+		outname = f"{rootname}B.bngl"
+	elif run_type=="signal":
+		outname = f"{rootname}C.bngl"
+	else:
+		print("unrecognized run type:", run_type)
+		exit()
+
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types=default_molecule_types,
 		                            species=default_species,
@@ -65,14 +84,19 @@ def write_bngl_input(rootname, agonist_present):
 									reaction_rules=(default_reaction_rules + wt_reaction_rules + mutant_reaction_rules))
 		outf.write(model)
 		outf.write(equilibration)
-		if agonist_present:
-			outf.write(run_with_agonist)
-		else:
+		if run_type=="equilibrium_without_agonist":
 			outf.write(run_without_agonist)
+		elif run_type=="equilibrium_with_agonist":
+			outf.write(run_with_agonist)
+		elif run_type=="signal":
+			outf.write(agonist_ping)
+		else:
+			exit()
 	return outname
 
 
 ###############################
+# gnuplot: plotting the simulation results
 # column  2:  total Ga
 # column 14:  Ga*effector (Ga bound to its effector)
 # column  7:  total G_trimer not bound to GPCR
@@ -91,7 +115,20 @@ plot '{}.gdat'\
 '''
 
 
-def write_gnuplot_input(bngl_input_name, agonist_present, svg=False):
+###############################
+# plot Galpha line last, so it would be in the top layer
+#  in the column 12 we have the total effector concentration (see observables in literals.py)
+###############################
+# column 12:  total effector of Ga
+# column 13:  total effector of Gb
+# column 14:  Ga*effector (Ga bound to its effector)
+# column 15:  Gb*effector (Gb bound to its effector)
+
+plot_signal = ''' 
+plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1
+'''
+
+def write_gnuplot_input(bngl_input_name, run_type, svg=False):
 	rootname = bngl_input_name.replace(".bngl","")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
@@ -99,10 +136,18 @@ def write_gnuplot_input(bngl_input_name, agonist_present, svg=False):
 		print(axes_signal, file=outf)
 		print(labels, file=outf)
 		print(set_gnuplot_outfile(rootname, svg=svg), file=outf)
-		if agonist_present:
+
+		if run_type=="equilibrium_without_agonist":
 			print(plot_with_agonist.format(rootname), file=outf)
-		else:
+		elif run_type=="equilibrium_with_agonist":
 			print(plot_without_agonist.format(rootname), file=outf)
+		elif run_type=="signal":
+			print(plot_signal.format(rootname), file=outf)
+		else:
+			print("unrecognized run type:", run_type)
+			exit()
+
+
 	return outname
 
 ###############################
@@ -112,17 +157,19 @@ def main():
 	gnuplot = "/usr/bin/gnuplot"
 	check_deps([bngl, gnuplot])
 
-	rootname = "equilibrium"
-
-	for agonist_present in [True, False]:
+	rootname = "Fig_3"
+	# equilibrium
+	for run_type in ["equilibrium_with_agonist", "equilibrium_without_agonist", "signal"]:
 		# run simulation
-		bngl_input  = write_bngl_input(rootname, agonist_present)
+		bngl_input  = write_bngl_input(rootname, run_type)
 		run_bngl(bngl, bngl_input)
 		# make figure (image, plot)
-		gnuplot_input = write_gnuplot_input(bngl_input, agonist_present, svg=True)
+		gnuplot_input = write_gnuplot_input(bngl_input, run_type, svg=False)
 		run_gnuplot(gnuplot, gnuplot_input)
 		# cleanup our mess
 		cleanup(rootname)
+
+	subprocess.call(["bash", "-c", f"mv {rootname}*.png ../results"])
 
 	return
 
