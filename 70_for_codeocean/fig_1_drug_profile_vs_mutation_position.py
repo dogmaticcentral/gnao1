@@ -4,9 +4,10 @@ import math
 import re
 
 import sqlite3
-import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
+
 # {} is set literal
 ignored = {"kd", "phenobarbitone", "phenobarbital", "biotin", "pyridoxine", "immunoglobulin", "rufinamide",
 		   "valproic acid", "valproate", "acth", "corticotropin", "botox", "botulinum toxin type a"}
@@ -378,7 +379,7 @@ def main():
 	ax = sns.clustermap(pandas_data_frame, center=0, cmap="seismic")
 	plt.setp(ax.ax_heatmap.yaxis.get_majorticklabels(), rotation=0) # ylabels rotatesd otherwise
 
-	plt.savefig("gnao_clustermap.png")
+	plt.savefig("../results/Fig_1.png")
 
 #########################################
 if __name__ == '__main__':
