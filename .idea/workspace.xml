@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/42_phen_vs_distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.gnao1_therapy.xlsx#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/24_mysterious_epi_cluster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pymol_pieces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pymol_pieces.py" afterDir="false" />
-    </list>
+    <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2198" />
     <option name="width" value="1576" />
     <option name="height" value="1067" />
@@ -289,8 +282,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="7" />
-    <editor active="true" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18977332" />
       <window_info anchor="bottom" id="TODO" order="6" />
