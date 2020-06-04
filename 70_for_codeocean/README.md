@@ -9,11 +9,12 @@ aiming to explain this puzzling system.
  
 ## How To Run
 Click on the big blue 'Re-run' button to reproduce the main figures from the publication and the supplement of the
-related publication.
+related publication. The figures will be generated in the "results" folder.
 
 ## How to play with the code
-Two file sin code/bngutils folder (literla.py and tweakables.py) contain the parametrization for the BopNetGen simulation.
-You can make the tweaks there, or, if you are aiming for a larger exercise, fork the code on  [GitHub](https://github.com/dogmaticcentral/gnao1).
+Two files in code/bngutils folder (literals.py and tweakables.py) contain the parametrization for the BopNetGen simulation.
+You can make the tweaks there and re-run any of the fig*.py scripts, 
+or, if you are aiming for a larger exercise, you can fork the code on  [GitHub](https://github.com/dogmaticcentral/gnao1).
 
 ## References
 
