@@ -260,6 +260,20 @@ def reduce_gpcr_conc(default_species, new_concentration):
 		modified += "\n"
 	return modified
 
+def reduce_galpha_o_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "Galpha(GPCR,GnP~GDP,p_site,mut~wt)" in line:
+			modified += f"1 @c0:Galpha(GPCR,GnP~GDP,p_site,mut~wt)  {new_concentration}"
+		elif "Galpha(GPCR,GnP~GTP,p_site,mut~wt)" in line:
+			modified += "2 @c0:Galpha(GPCR,GnP~GTP,p_site,mut~wt) 0.0"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
 
 def reduce_effector_conc(default_species, new_concentration):
 	modified = ""

@@ -52,16 +52,23 @@ setConcentration(\"@c0:agonist(p_site)\", AGONIST)
 simulate_ode({continue=>1,t_end=>200,n_steps=>100,atol=>1e-8,rtol=>1e-8,sparse=>1})
 '''
 
-def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
+def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks, go_conc=25.0):
 	outname = f"{rootname}.bngl"
 
 	empty_pocket_species = ""
+	species = default_species
 
 	if o_tweaks==None:
 		o_type_reaction_rules = ""
+
 	elif type(o_tweaks)==str and o_tweaks == "empty_pocket":
 		o_type_reaction_rules = reaction_rules_string(empty_pocket_reaction_rules())
 		empty_pocket_species = galpha_empty_species()
+
+	elif type(o_tweaks)==str and o_tweaks == "reduced_expr":
+		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt"))
+		species = reduce_galpha_o_conc(default_species, go_conc)
+
 	else:
 		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
 
@@ -70,7 +77,6 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 	else:
 		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
 
-	species = default_species
 	# this is a hack (among all hacks) to show tath super increase in the camp
 	# current is due to RGS availability
 	# species = increase_RGS_conc(species, 100)
@@ -90,9 +96,9 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks):
 
 
 ###############
-def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks):
+def run_and_collect(bngl, rootname, log_agonist_concentration, o_tweaks, s_tweaks, go_conc=25.0):
 	# run simulation
-	bngl_input  = write_bngl_input(f"{rootname}", pow(10, log_agonist_concentration), o_tweaks, s_tweaks)
+	bngl_input  = write_bngl_input(f"{rootname}", pow(10, log_agonist_concentration), o_tweaks, s_tweaks,  go_conc)
 	if run_bngl(bngl, bngl_input) != "ok":
 		print("not ok!!")
 		#return None
@@ -374,6 +380,47 @@ def empty_pocket_scan(bngl, gnuplot,  s_tweaks, svg=False):
 
 
 ###############################
+def reduced_expression_scan(bngl, gnuplot,  s_tweaks, svg=False):
+	rootname = "reduced_expr_scan"
+	outnm = "reduced_expr_scan.dat"
+
+	outf = open(outnm, "w")
+
+	titles = [ "noGaO", "GaOat5%", "GaOat20%"]
+	outf.write("% ")
+	for title in titles: outf.write(" %s " % title)
+	outf.write("\n")
+
+	for step in range(-10,8):
+		log_agonist_concentration = float(step)/4.0
+		eff_modulation_out = []
+
+		####
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, None, s_tweaks)
+		eff_modulation_out.append(effector_modulation)
+
+		# ####
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, "reduced_expr", s_tweaks,  go_conc= 25*0.05)
+		eff_modulation_out.append(effector_modulation)
+
+		# ####
+		effector_modulation = run_and_collect(bngl, rootname, log_agonist_concentration, "reduced_expr", s_tweaks,  go_conc= 25*0.2)
+		eff_modulation_out.append(effector_modulation)
+
+		##########################
+		outf.write("%.2f " % log_agonist_concentration)
+		for effector_modulation in eff_modulation_out:
+			outf.write("%.2e " % effector_modulation)
+		outf.write("\n")
+
+	outf.close()
+	gnuplot_input = write_gnuplot_input(outnm, number_of_runs=len(titles), svg=svg)
+	run_gnuplot(gnuplot, gnuplot_input)
+	cleanup(rootname)
+	print("reduced_expr done")
+
+
+###############################
 def main():
 
 	bngl    = "/home/ivana/third/bionetgen/BNG2.pl"
@@ -388,7 +435,8 @@ def main():
 	# in this simulation there is 1:1:1 GPCR, Gs and GX, so a little bit
 	# of reduced availability of GPCRs is felt
 	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
-	effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	reduced_expression_scan(bngl, gnuplot,  s_tweaks, svg=False)
 	#catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
 	#double_impact_scan(bngl, gnuplot,  s_tweaks, svg=True)
 
