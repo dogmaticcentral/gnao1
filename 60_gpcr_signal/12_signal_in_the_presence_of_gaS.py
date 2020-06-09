@@ -58,8 +58,8 @@ def write_bngl_input(rootname, o_tweaks, s_tweaks):
 	else:
 		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
 
-	species = reduce_gpcr_conc(default_species, 5)
-	species = reduce_effector_conc(species, 10)
+	species = modify_gpcr_conc(default_species, 5)
+	species = modify_effector_conc(species, 10)
 
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),

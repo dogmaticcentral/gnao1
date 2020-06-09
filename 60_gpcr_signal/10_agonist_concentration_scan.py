@@ -66,8 +66,11 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks, go_con
 		empty_pocket_species = galpha_empty_species()
 
 	elif type(o_tweaks)==str and o_tweaks == "reduced_expr":
+
 		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt"))
-		species = reduce_galpha_o_conc(default_species, go_conc)
+		# compound with slpw catalysis
+		#o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", {"RGS_as_GAP": [0.1, 0.0]}))
+		species = modify_galpha_o_conc(default_species, go_conc)
 
 	else:
 		o_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("wt", o_tweaks))
@@ -436,7 +439,7 @@ def main():
 	# of reduced availability of GPCRs is felt
 	# empty_pocket_scan(bngl, gnuplot, s_tweaks, svg=False)
 	# effector_interface_scan(bngl, gnuplot,  s_tweaks, svg=False)
-	reduced_expression_scan(bngl, gnuplot,  s_tweaks, svg=False)
+	reduced_expression_scan(bngl, gnuplot,  s_tweaks, svg=True)
 	#catalysis_scan(bngl, gnuplot,  s_tweaks, svg=False)
 	#double_impact_scan(bngl, gnuplot,  s_tweaks, svg=True)
 

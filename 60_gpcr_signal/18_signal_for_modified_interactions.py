@@ -9,11 +9,21 @@ from utils.shellutils import *
 
 def write_bngl_input(rootname, tweak):
 	outname = f"{rootname}.bngl"
-	wt_reaction_rules     = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
-	mutant_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("mutant", tweak))
+
+	species = default_species
+	species = modify_gpcr_conc(species, 50.0)
+
+	wt_reaction_rules  = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
+
+	if type(tweak)==str and  tweak=="null mutant":
+		mutant_reaction_rules = ""
+		species = modify_galpha_o_conc(species, 25) # this sets mut~wt concentration to 25, amd mutant to 0
+	else: # null tweak means null mutant
+		mutant_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("mutant", tweak))
+
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types=default_molecule_types,
-		                            species=default_species,
+		                            species=species,
 		                            observables=default_observables,
 									reaction_rules=(default_reaction_rules + wt_reaction_rules + mutant_reaction_rules))
 		outf.write(model)
@@ -76,7 +86,8 @@ def main():
 	 	# "double_compensating_1": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.8, 0.0]}, # default/wt is [4.0, 0.1]
 	 	# "double_compensating_2": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.1, 0.0]}, # default/wt is [4.0, 0.1]
 	 	# "double_noncompensating": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.01, 0.0]} # default/wt is [4.0, 0.1]
-	 	"noninteracting": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.003, 0.0]} # default/wt is [4.0, 0.1]
+	 	# "noninteracting": {"effector": [0.01, 0.1], "RGS_as_GAP": [0.003, 0.0]} # default/wt is [4.0, 0.1]
+		"null_mutant": "null mutant"
 	}
 
 	for title, tweak in tweaks.items():

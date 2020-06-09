@@ -85,8 +85,8 @@ def write_bngl_input(rootname, agonist_concentration, o_tweaks, s_tweaks, gpcr_c
 	else:
 		s_type_reaction_rules = reaction_rules_string(set_tweaked_reaction_rules("s", s_tweaks))
 
-	species = reduce_gpcr_conc(default_species, gpcr_concentration)
-	species = reduce_effector_conc(species, 50.0)
+	species = modify_gpcr_conc(default_species, gpcr_concentration)
+	species = modify_effector_conc(species, 50.0)
 	with open(outname, "w") as outf:
 		model = model_template.format(molecule_types = add_galpha_s(default_molecule_types),
 		                            species          = (species

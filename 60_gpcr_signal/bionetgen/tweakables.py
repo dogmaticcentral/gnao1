@@ -247,8 +247,8 @@ def galpha_s_observables():
 	obs += "Molecules Ga_mut_to_GPCR  @c0:GPCR(Galpha!1).Galpha(GPCR!1,GnP~GDP,p_site!2,mut~s).Gbg(p_site!2) \n"
 	return obs
 
-# these should be called "change" rather than increase or decrease
-def reduce_gpcr_conc(default_species, new_concentration):
+
+def modify_gpcr_conc(default_species, new_concentration):
 	modified = ""
 	for line in default_species.split("\n"):
 		line = line.strip()
@@ -260,7 +260,22 @@ def reduce_gpcr_conc(default_species, new_concentration):
 		modified += "\n"
 	return modified
 
-def reduce_galpha_o_conc(default_species, new_concentration):
+
+def modify_gbg_conc(default_species, new_concentration):
+	modified = ""
+	for line in default_species.split("\n"):
+		line = line.strip()
+		if len(line)==0: continue
+		if "GPCR(Galpha,agonist)" in line:
+			modified += f"3 @c0:GPCR(Galpha,agonist) {new_concentration}"
+		else:
+			modified += line
+		modified += "\n"
+	return modified
+
+
+
+def modify_galpha_o_conc(default_species, new_concentration):
 	modified = ""
 	for line in default_species.split("\n"):
 		line = line.strip()
@@ -275,7 +290,7 @@ def reduce_galpha_o_conc(default_species, new_concentration):
 	return modified
 
 
-def reduce_effector_conc(default_species, new_concentration):
+def modify_effector_conc(default_species, new_concentration):
 	modified = ""
 	for line in default_species.split("\n"):
 		line = line.strip()
@@ -287,7 +302,8 @@ def reduce_effector_conc(default_species, new_concentration):
 		modified += "\n"
 	return modified
 
-def increase_RGS_conc(default_species, new_concentration):
+
+def modify_RGS_conc(default_species, new_concentration):
 	modified = ""
 	for line in default_species.split("\n"):
 		line = line.strip()
