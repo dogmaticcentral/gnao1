@@ -20,10 +20,8 @@ def convert_pm(pm):
 	return ",".join(pmcids)
 
 
-
 #########################################
 def main():
-
 
 	db = connect_to_mysql("/home/ivana/.tcga_conf")
 	cursor = db.cursor()
@@ -52,8 +50,3 @@ if __name__ == '__main__':
 	main()
 
 
-
-
-#########################################
-if __name__ == '__main__':
-	main()

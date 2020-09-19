@@ -12443,7 +12443,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="Ivana Mihalek, Meredith Park, McKenna Kelly, Jeff L. Waugh, Annapurna Poduri, and Olaf Bodamer"/>
+                        <field id="text" value="Ivana Mihalek, Jeff L. Waugh, Meredith Park, Saima Kayani, Annapurna Poduri, and Olaf Bodamer"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
