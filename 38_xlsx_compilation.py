@@ -243,7 +243,6 @@ def write_rows(cursor, position, variants, targets_compact, other_stats, workshe
 	return row
 
 
-
 ################
 def column_string(idx):
 	char = chr(ord('A')+idx)
@@ -266,8 +265,6 @@ def set_column_widths(worksheet, header, wwrap_format):
 	worksheet.set_column(column_string(idx), len("modification"))
 	idx = header.index("frequency (gnomAD)")
 	worksheet.set_column(column_string(idx), len(" frequency "))
-
-
 
 
 	for title in ["location schematic", "drugs (direction, activity[uM])"]:

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6061fe1c-781a-4568-8a9f-3fda30497834" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_check_open_access.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_check_open_access.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/38_xlsx_compilation.py" beforeDir="false" afterPath="$PROJECT_DIR$/38_xlsx_compilation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/40_allen.py" beforeDir="false" afterPath="$PROJECT_DIR$/40_allen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" beforeDir="false" afterPath="$PROJECT_DIR$/50_movie/movie/gnao1_movie.ove" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnao1_therapy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/gnao1_therapy.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pymol_pieces.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
+      <file leaf-file-name="40_allen.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/40_allen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="127" selection-start-line="127" selection-end-line="129" selection-end-column="39" />
+            <state relative-caret-position="378">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="38_xlsx_compilation.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="249" lean-forward="true" selection-start-line="245" selection-end-line="249" />
+              <folding>
+                <element signature="e#13050#15953#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,13 +65,15 @@
         <option value="$PROJECT_DIR$/60_gpcr_signal/18_signal_for_modified_interactions.py" />
         <option value="$PROJECT_DIR$/15_check_open_access.py" />
         <option value="$PROJECT_DIR$/38_xlsx_creator.py" />
+        <option value="$PROJECT_DIR$/40_allen.py" />
+        <option value="$PROJECT_DIR$/38_xlsx_compilation.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="102" />
+    <option name="width" value="1777" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectId" id="1cl0HUgIateBcfFf9rm2Vb14ygt" />
   <component name="ProjectLevelVcsManager">
@@ -138,9 +155,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="102" y="0" width="1777" height="1043" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20769636" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2240593" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -446,20 +464,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/38_xlsx_creator.py" />
-    <entry file="file://$PROJECT_DIR$/40_allen.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/pymol_pieces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="127" selection-start-line="127" selection-end-line="129" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/40_allen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/38_xlsx_compilation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="249" lean-forward="true" selection-start-line="245" selection-end-line="249" />
+          <folding>
+            <element signature="e#13050#15953#0" />
+          </folding>
         </state>
       </provider>
     </entry>
