@@ -266,7 +266,6 @@ def set_column_widths(worksheet, header, wwrap_format):
 	idx = header.index("frequency (gnomAD)")
 	worksheet.set_column(column_string(idx), len(" frequency "))
 
-
 	for title in ["location schematic", "drugs (direction, activity[uM])"]:
 		idx = header.index(title)
 		worksheet.set_column(column_string(idx), 50, wwrap_format)
@@ -285,6 +284,7 @@ def write_header(worksheet, header, header_format):
 	worksheet.set_row(0, 40, header_format)
 	for column in range(len(header)):
 		worksheet.write_string(0, column, header[column])
+
 
 ################
 def table_creator(cursor, workbook, xlsx_format, targets_compact, other_stats):

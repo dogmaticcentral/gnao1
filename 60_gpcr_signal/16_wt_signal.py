@@ -6,6 +6,12 @@ from gnuplot.literals import *
 from gnuplot.tweakables import *
 from utils.shellutils import *
 
+
+def sbml_otput_request():
+	# used to submit to BioModels https://www.ebi.ac.uk/biomodels
+	return "\nwriteSBML()\n"
+
+
 def write_bngl_input(rootname):
 	# both subpopulatins are actually wildtype in this case
 	wt_reaction_rules = reaction_rules_string(set_default_galpha_reaction_rules("wt"))
@@ -20,6 +26,7 @@ def write_bngl_input(rootname):
 		outf.write(model)
 		outf.write(equilibration)
 		outf.write(agonist_ping)
+		outf.write(sbml_otput_request())
 
 	return outname
 
@@ -37,8 +44,9 @@ plot = '''
 plot '{}.gdat' u 1:($15/$13*100)  t labelBG w lines ls 5,  '' u 1:($14/$12*100)  t labelA w lines ls 1
 '''
 
+
 def write_gnuplot_input(bngl_input_name, svg=False):
-	rootname = bngl_input_name.replace(".bngl","")
+	rootname = bngl_input_name.replace(".bngl", "")
 	outname  = f"{rootname}.gplt"
 	with open(outname, "w") as outf:
 		print(styling, file=outf)
@@ -71,7 +79,7 @@ def main():
 	gnuplot_input = write_gnuplot_input(bngl_input, svg=True)
 	run_gnuplot(gnuplot, gnuplot_input)
 	# cleanup our mess
-	cleanup(rootname)
+	#cleanup(rootname)
 
 	return
 
