@@ -5819,7 +5819,7 @@
                 <closing length="17" name="/Cross Dissolve" enabled="1"/>
                 <effect name="Distort/Transform" enabled="1">
                     <row>
-                        <field id="posx" value="1442"/>
+                        <field id="posx" value="1055"/>
                         <field id="posy" value="866"/>
                     </row>
                     <row>
@@ -5845,7 +5845,7 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="overlap with the interfaces with the effector and RGS."/>
+                        <field id="text" value="overlap (incompletely) with the interfaces with the effector and RGS."/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
@@ -12307,7 +12307,7 @@
                 <effect name="Distort/Transform" enabled="1">
                     <row>
                         <field id="posx" value="961"/>
-                        <field id="posy" value="683"/>
+                        <field id="posy" value="662"/>
                     </row>
                     <row>
                         <field id="scalex" value="100"/>
@@ -12332,13 +12332,13 @@
                 </effect>
                 <effect name="Render/Text" enabled="1">
                     <row>
-                        <field id="text" value="Molecular map of GNAO1-related&#10; disease phenotypes and reactions to therapy&#10;"/>
+                        <field id="text" value="Molecular map of GNAO1-related disease phenotypes and reactions to therapy"/>
                     </row>
                     <row>
                         <field id="font" value="Carlito"/>
                     </row>
                     <row>
-                        <field id="size" value="60"/>
+                        <field id="size" value="56"/>
                     </row>
                     <row>
                         <field id="color" value="#eeeeec"/>
